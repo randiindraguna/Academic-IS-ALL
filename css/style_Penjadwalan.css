@@ -1,0 +1,183 @@
+/* Dikerjakan Oleh Adhymas Fajar Sudrajad */
+/* Body */
+
+/* Navbar Brand */
+.navbar-brand {
+    font-family: viga;
+    color: #fff !important;
+    font-size: 32px;
+}
+
+/* Background color */
+
+.bg-one {
+    background-color: #DAC2A8;
+}
+
+
+.bg-two {
+    background-color: #EFF3F8;
+}
+
+.bg-tre {
+    background-color: #fff;
+}
+
+.bg-four {
+    background-color: #3598DC;
+}
+
+.bg-five {
+    background-color: #0D2127;
+}
+
+/* Color */
+.bgone {
+    color: #DAC2A8;
+}
+
+
+.bgtwo {
+    color: #4B847D;
+}
+
+.bgtre {
+    color: #fff;
+}
+
+
+/* Text */
+
+.box1-uji {
+    margin-top: 6px;
+    font-family: viga;
+    padding-top: 20px;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.pone {
+    font-family: Roboto;
+    color: #000 !important;
+    font-size: 18px;
+}
+
+.ptwo {
+    color: #000 !important;
+    font-size: 14px;
+}
+
+.ptre {
+    color: #DAC2A8;
+    font-size: 5px;
+}
+
+.judul {
+    font-family: viga;
+    color: #3598DC !important;
+    text-shadow: 1px 1px 1px #fff;
+    font-size: 24px;
+}
+
+/* Navbar Primary & Seconndary */
+.nav-link {
+    margin-right: 30px;
+    font-family: viga;
+    color: #4B847D !important;
+}
+
+.link2 {
+    margin-right: 30px;
+    font-family: viga;
+    color: #fff !important;
+}
+
+.drop-link {
+    margin-right: 30px;
+    color: #fff !important;
+}
+
+.drop-link:hover {
+    margin-right: 30px;
+    text-shadow: 2px 2px 2px #000000;
+    background-color: #55616F;
+}
+
+.navbox {
+    padding: 2px 2px 2px;
+    text-shadow: 1px 1px 1px #000000;
+    background-color: #55616F;
+}
+
+/* sizes */
+.px {
+    width: 150px;
+    height: 150px;
+}
+
+.w10 {
+    width: 70px;
+    height: 70px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.w10-1 {
+    width: 50px;
+    height: 50px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.w50 {
+    width: 400px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+
+/* Utility */
+
+.box2 {
+    background-color: #EFF3F8;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 1px 1px 12px grey;
+}
+
+.box2-1 {
+    background-color: #EFF3F8;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0px 0px 10px grey;
+}
+
+.under {
+    width: 90%;
+    border-top: 2px solid #fff;
+
+}
+
+/* Input type */
+
+input[type=text]:focus {
+    background-color: #3598DC;
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Table */
+
+.table td {
+    background-color: #fff;
+    color: black;
+}
+
+.table th {
+    background-color: #3598DC;
+    border-top-color: #3598DC;
+    color: #fff;
+}
+
+/* image */
+img .img-circle {
+    background-color: #000000;
+    border-radius: 100%;
+}

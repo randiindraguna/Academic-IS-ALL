@@ -1,0 +1,76 @@
+/* Dikerjakan Oleh Sandy valentino gerani & Adhymas Fajar Sudrajad */
+
+.butn {
+  border: 1px solid #000;
+  background: none;
+  padding: 5px 18px;
+  font-size: 18;
+  font-family: "montserrat";
+  cursor: pointer;
+  transition: 0.8s;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 7px;
+}
+
+.butn1,
+.butn2 {
+  color: #000;
+
+}
+
+.butn3,
+.butn4 {
+  color: #000;
+
+}
+
+.butn1:hover,
+.butn2:hover {
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+.butn3:hover,
+.butn4:hover {
+  color: #fff;
+}
+
+.butn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: #3598DC;
+  transition: 0.8s;
+}
+
+.butn1::before,
+.butn3::before {
+  top: 0;
+  border-radius: 0 0 50% 50%;
+}
+
+.butn2::before,
+.butn4::before {
+  bottom: 0;
+  border-radius: 50% 50% 0 0;
+}
+
+.butn3::before,
+.butn4::before {
+  height: 180%;
+}
+
+.butn1:hover::before,
+.butn2:hover::before {
+  height: 180%;
+}
+
+.butn3:hover::before,
+.butn4:hover::before {
+  height: 0%;
+}

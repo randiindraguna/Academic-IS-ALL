@@ -45,12 +45,12 @@ if(isset($_POST['username'])){
 				else
 				{	
 					session_destroy();
-					header("location:loginformV2.php?fail");
+					header("location:index.php?fail");
 				}
 	}
 	else
 	{
-		header("location:loginformV2.php?fail");
+		header("location:index.php?fail");
 	}
 	
 

@@ -21,7 +21,7 @@ else{
 		}
 		else{
 				$login->insert_tabel_login($username,$password,'mahasiswa','baru');
-				header("location:loginformV2.php?succes");
+				header("location:index.php?succes");
 		}
 }
 ?>

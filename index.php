@@ -35,6 +35,9 @@
     </script>
   </head>
   <body>
+<br>
+<br>
+<br>
 <div class="container">
   <div class="row mb-5 ">
     <div class="col-3"></div>
@@ -66,7 +69,7 @@
             <label class="form-check-label" for="showpass">Show Password</label>
           </div>
           <button type="submit" class="btn btn-primary">Login</button>
-         <a href="formInputAkun.php" class="btn btn-warning">belum punya akun? Daftar</a>
+         <a href="formInputAkun.php" class="btn btn-warning">Daftar</a>
         </form>
         </div>
       </div>

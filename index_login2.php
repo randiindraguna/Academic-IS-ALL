@@ -28,19 +28,15 @@ if(isset($_POST['username'])){
 
 				if($who['level']=="admin")
 				{
-					echo"ini untuk admin $_SESSION[username]";
-					//header("location:cobasaja.php");
-					//akan diisi
+					header("location:pengelola/index.php");
 				}
 				else if($who['level']=="dosen")
 				{
-					echo"ini untuk dosen $_SESSION[username]";
-					//akan diisi
+					header("location:dosen/index.php");
 				}
 				else if($who['level']=="mahasiswa")
 				{  
-				   echo"ini untuk mahasiswa $_SESSION[username]";
-				   	//akan diisi
+				   header("location:mahasiswa/index.php");
 				}
 				else
 				{	

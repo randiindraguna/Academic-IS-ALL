@@ -43,7 +43,7 @@ include '../templates/header_penjadwalan.php';
   <body style="background-color= #808080;">
    
     <table border="0" width="100%" height="100%" align="center">
-      <tr><td colspan="3"bgcolor="#808080"><br><br><br><br><br></td></tr>
+      <tr><td colspan="3"bgcolor="#808080"><br><br><br><br><br><br<br></td></tr>
       <tr>
         <td width="25%" bgcolor="#808080" rowspan="2"></td>
         <td width="50%">
@@ -68,7 +68,7 @@ include '../templates/header_penjadwalan.php';
     <table cellpadding="27" border="0" width="100%" height="20%">
       <tr align="center">
         <td bgcolor="#808080">
-          <br><br><br><br><br>
+          <br><br><br><br><br><br><br>
           <div class="fixed-bottom" id="footer" style="height:50px; line-height:50px; background:#333; color:white;">
             Copyright &copy; 2019
             Designed by . . . . . . . .

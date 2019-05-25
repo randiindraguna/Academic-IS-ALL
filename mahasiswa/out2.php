@@ -62,6 +62,7 @@ include '../templates/header_penjadwalan.php';
                     ?>
 					<table class="table table-striped">
 						<tr align="center">
+              <th>No</th>
 							<th>NIY</th>
 							<th>Nama</th>
 							<th>Email</th>
@@ -69,16 +70,19 @@ include '../templates/header_penjadwalan.php';
 						</tr>
 
 						<?php 
+            $i=1;
 							foreach ($akses->getDosen() as $key) {
 								# code...
 								echo "
 								<tr align='center'>
+                  <td>$i</td>
 									<td>$key[niy]</td>
 									<td>$key[nama]</td>
 									<td>$key[email]</td>
 									<td>$key[bidang_keahlian]</td>
 								</tr>
 								";
+                $i=$i+1;
               }
 
               // foreach ($akses->getJumlahMahasiswaBimbingan() as $key) {

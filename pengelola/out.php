@@ -61,6 +61,7 @@ include '../templates/header_penjadwalan.php';
 
           <table class="table table-striped">
             <tr align="center">
+              <th>No</th>
               <th>NIM</th>
               <th>Nama</th>
               <th>Semester</th>
@@ -72,9 +73,11 @@ include '../templates/header_penjadwalan.php';
               <th colspan="2">Aksi</th>
             </tr>
             <?php 
+              $i=1;
               foreach ($akses->getMhs() as $key) {
                 echo "
                 <tr>
+                  <td>$i</td>
                   <td>$key[nim]</td>
                   <td>$key[nama]</td>
                   <td>$key[periode]</td>
@@ -86,9 +89,13 @@ include '../templates/header_penjadwalan.php';
                   <td><a href='update.php?nim=$key[nim]'>Update</a></td>
                   <td><a href='delete.php?nim=$key[nim]'>delete</a></td>
                 </tr>
+
                 ";
+                $i=$i+1;
               }
+              
              ?>
+
           </table>
           <button type="submit" class="btn btn-primary"><a target="_blank" href="export_excel.php" style="color: white">Cetak (Excel)</a></button>
           </center>

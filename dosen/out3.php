@@ -55,22 +55,24 @@ include '../templates/header_penjadwalan.php';
                 <center><h3>Data Dosen</h3>
 					<table class="table table-striped">
 						<tr align="center">
+              <th>No</th>
 							<th>Nama</th>
               <th>Jumlah Mahasiswa Bimbingan</th>
 						</tr>
 
 						<?php 
-
+              $i=1;
               foreach ($akses->getJumlahMahasiswaBimbingan() as $key) {
                 # code...
                 echo "
                   <tr align='center'>
+                  <td>$i</td>
                   <td>$key[nama]</td>
                   <td><a href='out4.php?niy=$key[niy]'>$key[jumlah_mahasiswa]</a></td>
                   </tr>
                 ";
+                $i=$i+1;
               }
-							
 						 ?>
 
 					</table>

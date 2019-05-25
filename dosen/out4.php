@@ -71,21 +71,24 @@ include '../templates/header_penjadwalan.php';
                 ?>
 					<table class="table table-striped">
 						<tr align="center">
+            <th>No</th>
               <th>Nama Mahasiswa</th>
               <th>Nim Mahasiswa</th>
 						</tr>
 
-						<?php 
+						<?php
+            $i=1; 
               $niy = $_GET['niy'];
               foreach ($akses->getDataMahasiswaBimbinganDosenTertentu($niy) as $key) {
                 # code...
                 echo "
                   <tr align='center'>
+                  <td>$i</td>
                   <td>$key[nama_mhs]</td>
                   <td>$key[nim_mhs]</td>
                   </tr>
                 ";
-
+                $i=$i+1;
               }
 							
 						 ?>

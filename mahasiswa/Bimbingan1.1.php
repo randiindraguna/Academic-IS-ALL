@@ -10,8 +10,8 @@
         $id = $_POST['nm'];
         $materi = $_POST['materi'];
         $id_skripsi = $_GET['id_s'];
-        $tanggal = $_POST['tanggal'];
-        $jam = $_POST['mulai'];
+        $tanggal = date('Y-m-d');
+        $jam = date('h:i:s');
         $jenis = $_POST['jenis']; // edit di bagian ini lagi
 
         $cek = $car->masuk_ke_log($id,$materi,$id_skripsi,$tanggal,$jam,$jenis); 
@@ -130,32 +130,7 @@
             </td>
           </tr>
 
-          <tr>
-            <td>
-                          
-               <div class='form-group'>
-                <label for='exampleFormControlInput1'>Waktu Mahasiswa Melakukan Konsultasi</label>
-               </div>
-
-               <div class='form-row'>
-                <div class='col-md-3 mb-3'>
-                  <label for='validationCustom05'>Jam mulai</label>
-                  <input type='time' class='form-control' id='validationCustom05' placeholder='mulai' name='mulai' required>
-                  <div class='invalid-feedback'>
-                    tolong isi kolom ini.
-                  </div>
-                </div>
-
-                <div class='col-md-6 mb-3'>
-                  <label for='validationCustom04'>Tanggal</label>
-                  <input type='date' name='tanggal' class='form-control' id='exampleFormControlInput1' required>
-                  <div class='invalid-feedback'>
-                    tolong isikan tanggal.
-                  </div>
-                </div>
-              </div>
-            </td>
-          </tr>
+          
 
           <tr>
             <td>
@@ -229,32 +204,7 @@
             </td>
           </tr>
 
-          <tr>
-            <td>
-                          
-               <div class='form-group'>
-                <label for='exampleFormControlInput1'>Waktu Mahasiswa Melakukan Konsultasi</label>
-               </div>
-
-               <div class='form-row'>
-                <div class='col-md-3 mb-3'>
-                  <label for='validationCustom05'>Jam mulai</label>
-                  <input type='time' class='form-control' id='validationCustom05' placeholder='mulai' name='mulai' required>
-                  <div class='invalid-feedback'>
-                    tolong isi kolom ini.
-                  </div>
-                </div>
-
-                <div class='col-md-6 mb-3'>
-                  <label for='validationCustom04'>Tanggal</label>
-                  <input type='date' name='tanggal' class='form-control' id='exampleFormControlInput1' required>
-                  <div class='invalid-feedback'>
-                    tolong isikan tanggal.
-                  </div>
-                </div>
-              </div>
-            </td>
-          </tr>
+         
 
           <tr>
             <td>

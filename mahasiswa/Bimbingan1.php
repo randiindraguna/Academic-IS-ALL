@@ -1,8 +1,6 @@
 <?php  
   session_start();
   include '../Db_bimbingan/database.php';
-  $car = new Database();
-  $car->connect();
   $data_perhalaman = 10;
   $total_data = mysqli_num_rows($car->jumlah_data());
   $total_halaman = ceil($total_data/$data_perhalaman);
@@ -16,6 +14,8 @@
     $page = $_GET['page'];
   }
   $batas_atas = ($page - 1)*$data_perhalaman;
+
+  $name = $car->getHeaderLogbimbingan($_SESSION['username']);
 ?>
 <!DOCTYPE>  
 <html lang="en">
@@ -118,7 +118,7 @@ nav{
 </table> -->
 
 <?php
-include '../templates/navbar_mhs_bimbingan.html';
+include '../templates/navbar_mhs_bimbingan.php';
 ?>
 
 
@@ -182,7 +182,7 @@ include '../templates/navbar_mhs_bimbingan.html';
                                                   </td>
                                              <td align='center' valign='middle'>
                                              "; 
-                                            if("$key[nim]" != $_SESSION['nim'])
+                                            if("$key[nim]" != $_SESSION['username'])
                                             {
                                              echo " 
                                              <form method='POST' action='Bimbingan1.php'>
@@ -223,7 +223,7 @@ include '../templates/navbar_mhs_bimbingan.html';
                                                       </form>
                                                     </td>
                                               <td align='center' valign='middle'>";
-                                            if("$key[nim]" != $_SESSION['nim'])
+                                            if("$key[nim]" != $_SESSION['username'])
                                             {
                                              echo " 
                                              <form method='POST' action='Bimbingan1.php'>

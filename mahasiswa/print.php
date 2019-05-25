@@ -1,7 +1,5 @@
 <?php
-	include 'Database.php';
-	 $car = new Database();
-    $car->connect();
+	include '../Db_bimbingan/Database.php';
     $benar = True;
  if(isset($_GET['jenis'])){
     $jenis = $_GET['jenis'];
@@ -60,7 +58,9 @@ $i=0;
     	</tr>
     	</table>
 
-    	<table class=tablex>
+      <br>
+
+    	<table class=tablex cellpadding=5>
     	<tr class=trx align=center id=cl>
     		<td rowspan=2 class=tdx>No.</td>
     		<td rowspan=2 class=tdx>Materi Bimbingan</td>
@@ -92,7 +92,7 @@ foreach ($car->select_one_mahasiswa($nim) as $data)
     $i = $i +1;
         echo"
                 <tr class=trx>
-                    <td class=tdx>$i</td>
+                    <td class=tdx align=center>$i</td>
                     <td class=tdx>$data[materi_bimbingan]</td>
                     <td class=tdx>$data[tanggal_bimbingan]</td>
                     <td class=tdx>$data[jam]</td>

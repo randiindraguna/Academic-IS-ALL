@@ -21,7 +21,7 @@
               <td>
                 <center><h3>Data Mahasiswa Metopen</h3>
                   <?php 
-                    require_once('database.php');
+                    require_once('../database.php');
                     $akses = new Database();
                     $akses->connect();
                     $sql=$akses->getJumlahMhs();

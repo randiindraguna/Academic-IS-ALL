@@ -21,9 +21,9 @@ if(isset($_POST['nim'])){
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- include navbar -->
-<link rel="stylesheet" type="text/css" href="css/style_penjadwalan.css">
-<link rel="stylesheet" type="text/css" href="css/switches_penjadwalan.css">
-<link rel="stylesheet" type="text/css" href="css/tombol_Penjadwalan.css">
+<link rel="stylesheet" type="text/css" href="../css/style_penjadwalan.css">
+<link rel="stylesheet" type="text/css" href="../css/switches_penjadwalan.css">
+<link rel="stylesheet" type="text/css" href="../css/tombol_Penjadwalan.css">
 
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
@@ -57,12 +57,12 @@ if(isset($_POST['nim'])){
         box-shadow: 0px 0px 10px 1px #d1d1d1;
       }
       .navbar1{
-        background-image: url(desain/navbar.jpg);
+        background-image: url(../desain/navbar.jpg);
         background-position: center;
       }
       .bodyBG{
         background-position: 50%;
-        background-image: url(desain/bguad.jpg);
+        background-image: url(../desain/bguad.jpg);
       }
       nav{
         position: fixed;
@@ -74,7 +74,7 @@ if(isset($_POST['nim'])){
 <body >
 
   <?php
-include 'templates/navbar_mhs2.php';
+include '../templates/navbar_mhs2_bimbingan.php';
   ?>
 <!-- <table width="100%" class="bgimage" height="10%">
   <tr align="left" class="border rounded">

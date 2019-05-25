@@ -5,7 +5,7 @@
     
     if (isset($_POST['nma'])) {
 
-      include 'database.php';
+      include '../Db_bimbingan/database.php';
 
         $id = $_POST['nm'];
         $materi = $_POST['materi'];

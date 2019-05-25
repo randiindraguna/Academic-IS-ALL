@@ -1,5 +1,5 @@
 <?php
-include 'database.php';
+include '../Db_bimbingan/database.php';
 $car = new Database();
 $car->connect();
 

@@ -1,21 +1,20 @@
 <?php
-include 'database.php';
+
+include '../Db_bimbingan/database.php';
 $car = new Database();
 $car->connect();
 
-
-
 if(isset($_POST['save']))
 {
-
   $nim = $_POST['idd'];
   $materi = $_POST['materi'];
   $tanggal = $_POST['tanggal'];
   $jam = $_POST['jam'];
   
-
-  $car->update_data($materi,$tanggal,$jam,$nim);
  
+  
+  
+      $car->update_data($materi,$tanggal,$jam,$nim);
 }
 ?>
 <!DOCTYPE html>
@@ -38,11 +37,11 @@ if(isset($_POST['save']))
 
           <h2 align="center">Log Bimbingan Skripsi</h2>
           <?php
-          $id = $_POST['nam'];
+          $id = $_POST['nim'];
           $use = $car->getHeaderLogbimbingan($id);
           foreach ($use as $key) {
             # code...
-           echo "
+          echo "
           <div class='ml-4 pb-4 pt-5'>
             <table border='0' cellpadding='6' width='100%'>
             <tr>
@@ -54,22 +53,24 @@ if(isset($_POST['save']))
 
                  <th rowspan='3'> <div class='ml-5'>
                  ";
-                 if($nim2 != $_SESSION['nim'])
-                 { 
+                  if($nim != $_SESSION['nim'])
+                  {
                  echo "
             <form action='Bimbingan1.php' method='POST'>
-              <input type='text' name='nim' value=$key[nim] hidden>
-              <input type='submit' class='btn btn-primary' name='' value='TAMBAH BIMBINGAN' disabled>
-            </form> ";
-              }
-              else
-              {
-                echo "
+              <input type='text' name='nim' value=$key[nim] hidden >
+              <input type='submit' class='btn btn-primary' name='nero' value='TAMBAH Konsultasi' disabled>
+            </form>
+            ";
+                  }
+                  else{
+                    echo "
             <form action='Bimbingan1.php' method='POST'>
               <input type='text' name='nim' value=$key[nim] hidden>
-              <input type='submit' class='btn btn-primary' name='' value='TAMBAH BIMBINGAN' >
-            </form> ";
-              }
+              <input type='submit' class='btn btn-primary' name='nero' value='TAMBAH Konsultasi' >
+            </form>
+            ";
+                  }
+
             echo "
           </div></th>
               </strong>
@@ -93,14 +94,14 @@ if(isset($_POST['save']))
           ";
           }
           ?>
-
+         
         <div class="container">
 
           <table class="table table-light table-stripe tp-2" align="center">
             <thead>
               <tr align="center" class="bg-secondary" >
-                <th rowspan="2" class="align-middle">MATERI BIMBINGAN</th>
-                <th colspan="2" align="center">WAKTU BIMBINGAN</th>
+                <th rowspan="2" class="align-middle">MATERI Konsultasi</th>
+                <th colspan="2" align="center">WAKTU Konsultasi</th>
                 <th rowspan="2" class="align-middle">ACTION</th>
               </tr>
               <tr align="center" class="bg-secondary">
@@ -114,8 +115,7 @@ if(isset($_POST['save']))
             <tbody align="center">
 
               <?php
-              
-              $malaria = $_POST['nam'];
+              $malaria = $_POST['nim'];
               $ulala=$car->show_data($malaria); // sebagai pendeteksi saja
               if($malaria==NULL || !$ulala)
               {
@@ -123,12 +123,10 @@ if(isset($_POST['save']))
               }
               else
               {
-                  $id = $_POST['nam'];
-                  $scr = $_POST['karakter'];
+                  $id = $_POST['nim'];
+                  $g = $car->select_one_mahasiswa($id); // untuk menampilkan daftar atau log bimbingan satu mahasiswa
 
-                  
-                  $g = $car->mencari_data_log_melalui_kata_yang_ingin_dicari($id,$scr); // untuk menampilkan daftar atau log bimbingan satu mahasiswa
-                    $miaw = $car->getNimFromId_log($id);
+                   $miaw = $car->getNimFromId_log($id);
                     foreach ($miaw as $key) {
                       error_reporting(0);
                       $nim = $key[nim];
@@ -145,7 +143,9 @@ if(isset($_POST['save']))
                         <td>$key[jam]</td>
                         <td>
                       ";
-                      if($nim2 != $_SESSION['nim'])
+
+
+                      if($nim != $_SESSION['nim'])
                       {
                           echo "
                               <form method='POST' action='Bimbingan2.php'>
@@ -171,6 +171,8 @@ if(isset($_POST['save']))
                           </tr>
                         ";
                       }
+
+
                     }
                     else
                     {
@@ -180,7 +182,9 @@ if(isset($_POST['save']))
                         <td>$key[tanggal_bimbingan]</td>
                         <td>$key[jam]</td>
                         <td> ";
-                        if($nim2 != $_SESSION['nim'])
+
+
+                        if($nim != $_SESSION['nim'])
                       {
                           echo "
                               <form method='POST' action='Bimbingan2.php'>
@@ -206,6 +210,9 @@ if(isset($_POST['save']))
                           </tr>
                         ";
                       }
+
+
+
                     }
                   }
               }
@@ -213,11 +220,34 @@ if(isset($_POST['save']))
             </tbody>
           </table>
         </div>
-        <div align="left" class="ml-4">
-        ket. tombol edit : <br>
-        -hijau = metopen<br>
-        -biru  = skripsi
+        <div align="left" class="ml-5">
+        ket : <br>  <BR>
+        HIJAU = SKRIPSI<br>
+        BIRU  = METOPEN
         </div>
+
+        <form method="GET" action="print.php">
+
+          <?php
+          $id = $_POST['nim'];
+          echo "<input type='text' name='nim' value='$id' hidden>";
+          ?>
+          <input type="text" name="jenis" value="metopen" hidden>
+          
+          <input type='submit' name='save' value='print metopen'>
+        </form>
+
+        <form method="GET" action="print.php">
+
+          <?php
+          $id = $_POST['nim'];
+          echo "<input type='text' name='nim' value='$id' hidden>";
+          ?>
+          <input type="text" name="jenis" value="skripsi" hidden>
+          
+          <input type='submit' name='save' value='print skripsi'>
+        </form>
+
     </td>
   </tr>
     

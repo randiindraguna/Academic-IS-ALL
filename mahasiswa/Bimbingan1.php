@@ -1,6 +1,6 @@
 <?php  
   session_start();
-  include 'database.php';
+  include '../Db_bimbingan/database.php';
   $car = new Database();
   $car->connect();
   $data_perhalaman = 10;
@@ -31,9 +31,9 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 <!-- include navbar -->
-<link rel="stylesheet" type="text/css" href="css/style_penjadwalan.css">
-<link rel="stylesheet" type="text/css" href="css/switches_penjadwalan.css">
-<link rel="stylesheet" type="text/css" href="css/tombol_Penjadwalan.css">
+<link rel="stylesheet" type="text/css" href="../css/style_penjadwalan.css">
+<link rel="stylesheet" type="text/css" href="../css/switches_penjadwalan.css">
+<link rel="stylesheet" type="text/css" href="../css/tombol_Penjadwalan.css">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -75,7 +75,7 @@ nav{
       }
       .bodyBG{
         background-position: 50%;
-        background-image: url(desain/bguad.jpg);
+        background-image: url(../desain/bguad.jpg);
       }
   </style>
 
@@ -118,7 +118,7 @@ nav{
 </table> -->
 
 <?php
-include 'templates/navbar_mhs.html';
+include '../templates/navbar_mhs_bimbingan.html';
 ?>
 
 

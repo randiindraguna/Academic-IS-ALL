@@ -208,7 +208,7 @@
 		// fungsi ini menampilkan data nama, nim, dan nama dosen pembimbing di header log bimbingan 
 		public function getHeaderLogbimbingan($nim)
 		{
-			$query = "SELECT mahasiswa_metopen.nama as nama, mahasiswa_metopen.nim as nim, dosen.nama as namdos FROM mahasiswa_metopen join dosen on mahasiswa_metopen.dosen = dosen.niy and mahasiswa_metopen.nim = $nim";
+			$query = "SELECT mahasiswa_metopen.nama as nama, mahasiswa_metopen.nim as nim, dosen.nama as namdos, dosen.niy as niy FROM mahasiswa_metopen join dosen on mahasiswa_metopen.dosen = dosen.niy and mahasiswa_metopen.nim = $nim";
 			// menampilkan nama mahasiswa, nim mahasiswa dan nama dosen pembimbing 
 			// yang nantinya di program di gunakan untuk header daftar log bimbingan
 			$this->eksekusi($query); // untuk mengeksekusi query sql di atas pada fungsi eksekusi yang ada pada class Database();

@@ -190,7 +190,7 @@ if(isset($_POST['save']))
                               <form method='POST' action='Bimbingan2.php'>
                               <input name='nim2' type='text' value=$key[id] hidden></input>
                               <input name='true_nim' type='text' value=$key[Nm] hidden>
-                                  <input type='submit' class='btn btn-primary' value='edit' disabled> 
+                                  <input type='submit' class='btn btn-success' value='edit' disabled> 
 
                               </form>
                             </td>
@@ -203,7 +203,7 @@ if(isset($_POST['save']))
                               <form method='POST' action='Bimbingan2.php'>
                               <input name='nim2' type='text' value=$key[id] hidden></input>
                               <input name='true_nim' type='text' value=$key[Nm] hidden>
-                                  <input type='submit' class='btn btn-primary' value='edit' > 
+                                  <input type='submit' class='btn btn-success' value='edit' > 
 
                               </form>
                             </td>

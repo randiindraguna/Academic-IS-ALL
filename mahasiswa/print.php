@@ -17,10 +17,19 @@ $i=0;
     <html>
 
     <head>
+    <!-- Bootstrap CSS -->
+    <link rel=stylesheet href=https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css integrity=sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm crossorigin=anonymous>
  	<style>
 .tablex, .tdx, .trx {
   border: 1px solid black;
 }
+
+.padding{
+
+  margin-top: 500px;
+  margin-left: 450px;
+}
+
 #cl {
 	background-color: #DCDCDC;
 }
@@ -41,7 +50,7 @@ $i=0;
 <td width=10%></td>
 <td width=80%>";
 
-    echo"	<table  border=0>
+    echo"	<table  border=0 cellpadding=5>
     	<tr>
     	<center>
     	<h3>Log Bimbingan Skripsi</h3>
@@ -65,6 +74,7 @@ $i=0;
     		<td rowspan=2 class=tdx>No.</td>
     		<td rowspan=2 class=tdx>Materi Bimbingan</td>
     		<td colspan=2 class=tdx>Waktu Bimbingan</td>
+        <td rowspan=2>ttd</td>
     	</tr>
     	<tr class=trx align=center id=cl>
     		<td class=tdx>Tanggal</td>
@@ -86,16 +96,17 @@ if($count == 0)
 }
 else
 {
-foreach ($car->select_one_mahasiswa($nim) as $data)
+  foreach ($car->select_one_mahasiswa($nim) as $data)
 {
    if("$data[model]"==$jenis){
     $i = $i +1;
         echo"
                 <tr class=trx>
                     <td class=tdx align=center>$i</td>
-                    <td class=tdx>$data[materi_bimbingan]</td>
-                    <td class=tdx>$data[tanggal_bimbingan]</td>
-                    <td class=tdx>$data[jam]</td>
+                    <td class=tdx align=center>$data[materi_bimbingan]</td>
+                    <td class=tdx align=center>$data[tanggal_bimbingan]</td>
+                    <td class=tdx align=center>$data[jam]</td>
+                    <td class=tdx></td>
                 </tr>";
 
    }
@@ -119,6 +130,19 @@ foreach ($car->select_one_mahasiswa($nim) as $data)
 <td width=10%></td>
 </tr>
 </table>
+
+
+
+
+
+
+
+<div class='container padding'> 
+  <div align=center>
+    $key[namdos]<br>
+    $key[niy]
+  </div>
+</div>
      	</body>
     			</html>";
 ?>

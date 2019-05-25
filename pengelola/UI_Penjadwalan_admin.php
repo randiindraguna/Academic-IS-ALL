@@ -58,6 +58,7 @@
                                                 <tr>
                                                     <th scope="col">No.</th>
                                                     <!-- <th scope="col">ID Jadwal</th> -->
+                                                    <th scope="col">Nama</th>
                                                     <th scope="col">NIM</th>
                                                     <th scope="col">Jenis Jadwal</th>
                                                     <th scope="col">Tanggal</th>
@@ -75,6 +76,15 @@
                                                     <td class="text-left"><?=$i?></td>
                                                     <!-- ID Jadwal -->
                                                     <!-- <td></td> -->
+                                                    <?php 
+                                                        $nmm = $P->getNamaMhs($ambil['nim']);
+                                                        foreach ($nmm as $key) {
+                                                            ?>
+                                                            <td class="text-left"><?=$key['nama']?></td>
+                                                        <?php
+                                                        }
+                                                    ?>
+                                                    <!-- <td class="text-left"><?=$ambil['nama']?></td> -->
                                                     <!-- Jenis Ujian -->
                                                     <td class="text-left"><?=$ambil['nim']?></td>
                                                     <!-- Jenis Ujian -->

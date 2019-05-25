@@ -46,6 +46,7 @@ class Database
 	//Dibuat oleh agung parmono
 	public function eksekusi($query){	//fungsi yang digunakan untuk eksekusi query yang ada
 		$this->result=mysqli_query($this->conn,$query);	//mengembalikan hasil dari query yang dieksekusi
+		return $this->result; // menambahkan return
 	}
 	//Dibuat oleh agung parmono
 	public function getDosen(){	//fungsi yang dibuat untuk menampilkan seluruh data dosen

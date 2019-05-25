@@ -54,7 +54,7 @@ if(isset($_POST['save']))
 
                  <th rowspan='3'> <div class='ml-5'>
                  ";
-                 if($nim2 != $_SESSION['nim'])
+                 if($nim2 != $_SESSION['username'])
                  { 
                  echo "
             <form action='Bimbingan1.php' method='POST'>
@@ -145,7 +145,7 @@ if(isset($_POST['save']))
                         <td>$key[jam]</td>
                         <td>
                       ";
-                      if($nim2 != $_SESSION['nim'])
+                      if($nim2 != $_SESSION['username'])
                       {
                           echo "
                               <form method='POST' action='Bimbingan2.php'>
@@ -180,7 +180,7 @@ if(isset($_POST['save']))
                         <td>$key[tanggal_bimbingan]</td>
                         <td>$key[jam]</td>
                         <td> ";
-                        if($nim2 != $_SESSION['nim'])
+                        if($nim2 != $_SESSION['username'])
                       {
                           echo "
                               <form method='POST' action='Bimbingan2.php'>

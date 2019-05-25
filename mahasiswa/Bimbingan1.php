@@ -305,7 +305,7 @@ include '../templates/navbar_mhs_bimbingan.html';
                                                     </td>
                                                <td valign='middle' align='center'>
                                                ";
-                                              if("$key[nim]" != $_SESSION['nim'])
+                                              if("$key[nim]"  != $_SESSION['username'])
                                               {
                                                echo "
                                                 <form method='POST' action='Bimbingan1.php'>
@@ -345,7 +345,7 @@ include '../templates/navbar_mhs_bimbingan.html';
                                                       </form>
                                                     </td>
                                               <td class = 'align-middle'>";
-                                              if("$key[nim]" != $_SESSION['nim'])
+                                              if("$key[nim]" != $_SESSION['username'])
                                               {
                                               echo "
                                                 <form method='POST' action='Bimbingan1.php'>

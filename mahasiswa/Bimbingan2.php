@@ -75,7 +75,7 @@ if(isset($_POST['nim'])){
 <body >
 
   <?php
-include '../templates/navbar_mhs2_bimbingan.php';
+include '../header_bimbingan_biarngga_hilang/navbar_mhs2_bimbingan.php';
   ?>
 <!-- <table width="100%" class="bgimage" height="10%">
   <tr align="left" class="border rounded">

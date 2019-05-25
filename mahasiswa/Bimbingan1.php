@@ -118,7 +118,7 @@ nav{
 </table> -->
 
 <?php
-include '../templates/navbar_mhs_bimbingan.php';
+include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
 ?>
 
 

@@ -27,7 +27,7 @@
           <!-- Harus Merubah Nama sesuai database -->
           <a class="nav-item nav-link ml-auto link2 mt-2" href="#">Nama Mahasiswa<span
               class="sr-only ">(current)</span></a>
-          <img class=" w10-1 rounded-circle" src="img/avatar_Penjadwalan2.jpeg">
+          <img class=" w10-1 rounded-circle" src="../img/avatar_Penjadwalan2.jpeg">
           <!-- End -->
         </div>
       </div>

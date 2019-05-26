@@ -23,10 +23,14 @@ $i=0;
 .tablex, .tdx, .trx {
   border: 1px solid black;
 }
-
-.padding{
+.paddingpengesahan{
 
   margin-top: 500px;
+  margin-left: 450px;
+}
+.padding{
+
+  margin-top: 200px;
   margin-left: 450px;
 }
 
@@ -135,7 +139,12 @@ else
 
 
 
-
+<div class='container paddingpengesahan'>
+  <div align='center'>
+  Mengetahui, <br>
+  Dosen Pembimbing
+  </div>
+</div>
 
 <div class='container padding'> 
   <div align=center>

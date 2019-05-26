@@ -213,11 +213,6 @@ if(isset($_POST['save']))
             </tbody>
           </table>
         </div>
-        <div align="left" class="ml-4">
-        ket. tombol edit : <br>
-        -hijau = metopen<br>
-        -biru  = skripsi
-        </div>
     </td>
   </tr>
     

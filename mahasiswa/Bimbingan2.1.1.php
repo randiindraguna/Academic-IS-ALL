@@ -128,6 +128,7 @@ $car->connect();
                     echo"
                       <tr class='bg-primary'>
                        <form method='POST' action='Bimbingan2.php'>
+                       
                         <td><textarea value='$key[materi_bimbingan]' name='materi' Required></textarea></td>
                         <td><input value='$key[tanggal_bimbingan]' type='text' name='tanggal' Required></td>
                         <td><input value='$key[jam]' type='text' name='jam' Required></td>

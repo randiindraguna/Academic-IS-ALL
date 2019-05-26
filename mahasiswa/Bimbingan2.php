@@ -2,8 +2,8 @@
 session_start();
 
 
-if(isset($_POST['nim'])){
-  $nim = $_POST['nim'];
+if(isset($_SESSION['username'])){
+  $nim = $_SESSION['username'];
   $abc = array();
   $abc[0] = $nim;
 }
@@ -136,7 +136,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs2_bimbingan.php';
     <td width="50%" rowspan="" class="pt-4">
       <main  class="kotak" >
         <?php 
-            if(isset($_POST['nim'])){
+            if(isset($_POST['nma']) || isset($_POST['save']) || isset($_GET['first'])){
             include 'Bimbingan2.1.php';
             }
             else if(isset($_POST['karakter']))
@@ -156,7 +156,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs2_bimbingan.php';
   <tr height="10%">
     <td >
         <center>
-          <div class=" rounded pt-2 pb-2 bg-dark clr ml-4 mr-4 text-light">
+          <div class="text-success">
             <font size="2" face="arial">
               Copyright &copy; Programmer-fitur-Bimbingan-Skripsi UAD 2019
             </font> 

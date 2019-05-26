@@ -6,7 +6,7 @@ $car->connect();
 
 if(isset($_POST['save']))
 {
-  $nim = $_POST['idd'];
+  $nim2 = $_POST['idd'];
   $materi = $_POST['materi'];
   $tanggal = $_POST['tanggal'];
   $jam = $_POST['jam'];
@@ -14,7 +14,7 @@ if(isset($_POST['save']))
  
   
   
-      $car->update_data($materi,$tanggal,$jam,$nim);
+      $car->update_data($materi,$tanggal,$jam,$nim2);
 }
 ?>
 <!DOCTYPE html>
@@ -37,7 +37,7 @@ if(isset($_POST['save']))
 
           <h2 align="center">Log Bimbingan Skripsi</h2>
           <?php
-          $id = $_POST['nim'];
+          $id = $_SESSION['username'];
           $use = $car->getHeaderLogbimbingan($id);
           foreach ($use as $key) {
             # code...
@@ -115,7 +115,7 @@ if(isset($_POST['save']))
             <tbody align="center">
 
               <?php
-              $malaria = $_POST['nim'];
+              $malaria = $_SESSION['username'];
               $ulala=$car->show_data($malaria); // sebagai pendeteksi saja
               if($malaria==NULL || !$ulala)
               {
@@ -123,7 +123,7 @@ if(isset($_POST['save']))
               }
               else
               {
-                  $id = $_POST['nim'];
+                  $id = $_SESSION['username'];
                   $g = $car->select_one_mahasiswa($id); // untuk menampilkan daftar atau log bimbingan satu mahasiswa
 
                    $miaw = $car->getNimFromId_log($id);
@@ -220,32 +220,27 @@ if(isset($_POST['save']))
             </tbody>
           </table>
         </div>
-        <div align="left" class="ml-5">
-        ket : <br>  <BR>
-        HIJAU = SKRIPSI<br>
-        BIRU  = METOPEN
-        </div>
 
         <form method="GET" action="print.php">
 
           <?php
-          $id = $_POST['nim'];
+          $id = $_SESSION['username'];
           echo "<input type='text' name='nim' value='$id' hidden>";
           ?>
           <input type="text" name="jenis" value="metopen" hidden>
           
-          <input type='submit' name='save' value='print metopen'>
+          <input type='submit' class="btn btn-primary" name='save' value='print metopen'>
         </form>
 
         <form method="GET" action="print.php">
 
           <?php
-          $id = $_POST['nim'];
+          $id = $_SESSION['username'];
           echo "<input type='text' name='nim' value='$id' hidden>";
           ?>
           <input type="text" name="jenis" value="skripsi" hidden>
           
-          <input type='submit' name='save' value='print skripsi'>
+          <input type='submit' class="btn btn-success" name='save' value='print skripsi'>
         </form>
 
     </td>

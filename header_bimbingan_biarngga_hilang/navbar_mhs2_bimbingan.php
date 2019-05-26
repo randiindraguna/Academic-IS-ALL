@@ -62,7 +62,7 @@
                   Skripsi
                 </a>
                 <div class="dropdown-menu navbox" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item  drop-link" href="Bimbingan1.php">Log Bimbingan</a>
+                  <a class="dropdown-item  drop-link" href="Bimbingan2.php?first">Log Bimbingan</a>
                   <a class="dropdown-item  drop-link" href="#">Pendadaran</a>
                 </div>
               </li>
@@ -80,15 +80,15 @@
          echo "
          <form class='form-inline my-2 my-lg-0' method='POST' action='Bimbingan2.php'>
          ";
-         if(isset($_POST['nim'])){
-        echo "  <input type = 'text' name='nam' value='$abc[0]' hidden>";
-       }
+
+        if(isset($_SESSION['username'])){
+          echo "  <input type = 'text' name='nam' value='$abc[0]' hidden>";
+        }
 
         if(isset($_POST['nam']))
         {
           $nim2 = $_POST['nam'];
-
-        echo "  <input type = 'text' name='nam' value='$nim2' hidden>";
+          echo "  <input type = 'text' name='nam' value='$nim2' hidden>";
         }
 
       ?>

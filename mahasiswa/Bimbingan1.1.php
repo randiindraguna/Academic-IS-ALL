@@ -19,13 +19,13 @@
         if(!$cek)
         {
           echo '<script type="text/javascript">alert("terjadi kesalahan , data tidak dapat di save")</script>';
-          header('Refresh: 0 URL=Bimbingan1.php');
+          header('Refresh: 0 URL=Bimbingan2.php?first');
         } 
         else
         {
           echo '<script type="text/javascript">alert("data tersimpan")</script>';
 
-          header('Refresh: 0 URL=Bimbingan1.php');
+          header('Refresh: 0 URL=Bimbingan2.php?first');
 
         }
     }

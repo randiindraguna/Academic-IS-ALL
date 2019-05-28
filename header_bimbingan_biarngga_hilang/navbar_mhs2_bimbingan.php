@@ -40,7 +40,7 @@
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
               <li class="nav-item active">
-                <a class="nav-link link2" href="#">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link link2" href="../mahasiswa/index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <!-- Metopen -->
               <li class="nav-item dropdown">

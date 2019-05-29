@@ -1,21 +1,6 @@
 <?php  
   session_start();
   include '../Db_bimbingan/database.php';
-  $data_perhalaman = 10;
-  $total_data = mysqli_num_rows($car->jumlah_data());
-  $total_halaman = ceil($total_data/$data_perhalaman);
-
-  if(!isset($_GET['page']))
-  {
-    $page = 1;
-  }
-  else
-  {
-    $page = $_GET['page'];
-  }
-  $batas_atas = ($page - 1)*$data_perhalaman;
-
-  $name = $car->getHeaderLogbimbingan($_SESSION['username']);
 ?>
 <!DOCTYPE>  
 <html lang="en">
@@ -128,8 +113,8 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
           }
           ?>
 
-        <table class="table container border mt-3">
-          <tr>
+        <table class="container border mt-3" bgcolor="white" cellpadding="8">
+          <tr class="bg-primary">
             <td rowspan="2">NAMA MAHASISWA</td>
             <td rowspan="2">NIM </td>
             <td rowspan="2">JUDUL SKRIPSI/METOPEN</td>
@@ -143,7 +128,21 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               foreach ($hasil_cari as $key) {
                 if($key['model'] == "metopen")
                 {
-                  echo "
+                  
+                  if($key['jumlah_bimbingan'] >= 10)
+                  {
+                    echo "
+                  <tr class='bg-warning'>
+                  <td>".$key['name']."</td>
+                  <td>".$key['nim']."</td>
+                  <td>".$key['judul']."</td>
+                  <td><div class='btn btn-primary disabled'>".$key['jumlah_bimbingan']."</div></td>
+                  </tr>
+                  ";
+                  }
+                  else
+                  {
+                    echo "
                   <tr>
                   <td>".$key['name']."</td>
                   <td>".$key['nim']."</td>
@@ -151,17 +150,33 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                   <td><div class='btn btn-primary disabled'>".$key['jumlah_bimbingan']."</div></td>
                   </tr>
                   ";
+                  }
                 }
                 else if($key['model'] == "skripsi")
                 {
-                  echo "
-                  <tr>
-                  <td>".$key['name']."</td>
-                  <td>".$key['nim']."</td>
-                  <td>".$key['judul']."</td>
-                  <td><div class='btn btn-success disabled'>".$key['jumlah_bimbingan']."</div></td>
-                  </tr>
-                  ";
+                 
+                  if($key['jumlah_bimbingan'] >= 10)
+                  {
+                     echo "
+                    <tr class='bg-warning'>
+                    <td>".$key['name']."</td>
+                    <td>".$key['nim']."</td>
+                    <td>".$key['judul']."</td>
+                    <td><div class='btn btn-success disabled'>".$key['jumlah_bimbingan']."</div></td>
+                    </tr>
+                    ";
+                  }
+                  else
+                  {
+                    echo "
+                    <tr>
+                    <td>".$key['name']."</td>
+                    <td>".$key['nim']."</td>
+                    <td>".$key['judul']."</td>
+                    <td><div class='btn btn-success disabled'>".$key['jumlah_bimbingan']."</div></td>
+                    </tr>
+                    "; 
+                  }
                 }
               }
             }
@@ -171,25 +186,56 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               foreach ($tampilan_awal as $key) {
                 if($key['model'] == "metopen")
                 {
-                  echo "
-                  <tr>
-                  <td>".$key['name']."</td>
-                  <td>".$key['nim']."</td>
-                  <td>".$key['judul']."</td>
-                  <td><div class='btn btn-primary disabled'>".$key['jumlah_bimbingan']."</div></td>
-                  </tr>
-                  ";
+                  
+                  if($key['jumlah_bimbingan'] >= 10)
+                  {
+
+                    echo "
+                    <tr class='bg-warning'>
+                    <td>".$key['name']."</td>
+                    <td>".$key['nim']."</td>
+                    <td>".$key['judul']."</td>
+                    <td><div class='btn btn-primary disabled'>".$key['jumlah_bimbingan']."</div></td>
+                    </tr>
+                    ";
+                  }
+                  else
+                  {
+                    echo "
+                    <tr>
+                    <td>".$key['name']."</td>
+                    <td>".$key['nim']."</td>
+                    <td>".$key['judul']."</td>
+                    <td><div class='btn btn-primary disabled'>".$key['jumlah_bimbingan']."</div></td>
+                    </tr>
+                    "; 
+                  }
                 }
                 else if($key['model'] == "skripsi")
                 {
-                  echo "
-                  <tr>
-                  <td>".$key['name']."</td>
-                  <td>".$key['nim']."</td>
-                  <td>".$key['judul']."</td>
-                  <td><div class='btn btn-success disabled'>".$key['jumlah_bimbingan']."</div></td>
-                  </tr>
-                  ";
+                  
+                  if($key['jumlah_bimbingan'] >= 10)
+                  {
+                    echo "
+                    <tr class='bg-warning'>
+                    <td>".$key['name']."</td>
+                    <td>".$key['nim']."</td>
+                    <td>".$key['judul']."</td>
+                    <td><div class='btn btn-success disabled'>".$key['jumlah_bimbingan']."</div></td>
+                    </tr>
+                    ";
+                  }
+                  else
+                  {
+                    echo "
+                    <tr>
+                    <td>".$key['name']."</td>
+                    <td>".$key['nim']."</td>
+                    <td>".$key['judul']."</td>
+                    <td><div class='btn btn-success disabled'>".$key['jumlah_bimbingan']."</div></td>
+                    </tr>
+                    ";
+                  }
                 }
               }
             }

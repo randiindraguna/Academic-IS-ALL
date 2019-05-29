@@ -77,25 +77,31 @@
       </div>
       <?php
                 
-         echo "
+         
+        if(!isset($_POST['nero']))
+        {
+          echo "
          <form class='form-inline my-2 my-lg-0' method='POST' action='Bimbingan2.php'>
          ";
+            if(isset($_SESSION['username'])){
+              echo "  <input type = 'text' name='nam' value='$abc[0]' hidden>";
+            }
 
-        if(isset($_SESSION['username'])){
-          echo "  <input type = 'text' name='nam' value='$abc[0]' hidden>";
+            if(isset($_POST['nam']))
+            {
+              $nim2 = $_POST['nam'];
+              echo "  <input type = 'text' name='nam' value='$nim2' hidden>";
+            }
+
+            echo '
+                  <input name="karakter" class="form-control mr-sm-2" type="search" placeholder="cari materi" aria-label="Search" required="inputkan nim">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">&telrec;</button>
+          </form>
+            ';
         }
-
-        if(isset($_POST['nam']))
-        {
-          $nim2 = $_POST['nam'];
-          echo "  <input type = 'text' name='nam' value='$nim2' hidden>";
-        }
-
       ?>
 
-      <input name="karakter" class="form-control mr-sm-2" type="search" placeholder="cari materi" aria-label="Search" required="inputkan nim">
-      <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">&telrec;</button>
-    </form>
+      
   </nav>
 </body>
 <!-- dmonh3h3 -->

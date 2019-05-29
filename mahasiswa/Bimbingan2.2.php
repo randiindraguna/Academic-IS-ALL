@@ -59,7 +59,7 @@ if(isset($_POST['save']))
                  echo "
             <form action='Bimbingan1.php' method='POST'>
               <input type='text' name='nim' value=$key[nim] hidden>
-              <input type='submit' class='btn btn-primary' name='' value='TAMBAH BIMBINGAN' disabled>
+              <input type='submit' class='btn btn-primary' name='nero' value='TAMBAH konsultasi' disabled>
             </form> ";
               }
               else
@@ -67,7 +67,7 @@ if(isset($_POST['save']))
                 echo "
             <form action='Bimbingan1.php' method='POST'>
               <input type='text' name='nim' value=$key[nim] hidden>
-              <input type='submit' class='btn btn-primary' name='' value='TAMBAH BIMBINGAN' >
+              <input type='submit' class='btn btn-primary' name='nero' value='TAMBAH konsultasi' >
             </form> ";
               }
             echo "

@@ -11,9 +11,6 @@ if(isset($_POST['save']))
   $tanggal = $_POST['tanggal'];
   $jam = $_POST['jam'];
   
- 
-  
-  
       $car->update_data($materi,$tanggal,$jam,$nim2);
 }
 ?>

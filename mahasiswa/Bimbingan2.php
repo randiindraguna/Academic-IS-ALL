@@ -136,7 +136,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs2_bimbingan.php';
     <td width="50%" rowspan="" class="pt-4">
       <main  class="kotak" >
         <?php 
-            if(isset($_POST['nma']) || isset($_POST['save']) || isset($_GET['first'])){
+            if(isset($_POST['nim']) || isset($_POST['nma']) || isset($_POST['save']) || isset($_GET['first'])){
             include 'Bimbingan2.1.php';
             }
             else if(isset($_POST['karakter']))

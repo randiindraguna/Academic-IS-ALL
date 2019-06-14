@@ -1,5 +1,12 @@
 <!-- Dikerjakan oleh Adhymas Fajar Sudrajad -->
 <?php 
+session_start();
+if($_SESSION['status'] == "login"){
+  // menampilkan pesan selamat datang
+  //echo "Hai, selamat datang ". $_SESSION['username'];
+}else{
+  header("location:../index.php");
+}
  
 // PROSES AKSES APAKAH MEMILIKI JADWAL ATAU TIDAK
 if ($_GET) {
@@ -15,7 +22,7 @@ if($_GET||$_POST){
     include '../Class_penjadwalan.php';
     $P = new Penjadwalan();
     //echo $nim;
-    session_start();
+    // session_start();
     $P->connect();
     $hasil=$P->getDataALLMahasiswaByNim($nim);
     if($hasil){
@@ -34,7 +41,7 @@ if($_GET||$_POST){
             $tgl_uji=$_SESSION['tanggal'];
             $jam_uji=$_SESSION['jam'];
             $tempat_uji=$_SESSION['tempat'];
-            session_destroy();
+            
         }else{
             // JIKA TIDAK MEMILIKI JADWAL MAKA DAFTAR JADWAL
             $nama=$_SESSION['nama'];
@@ -45,7 +52,7 @@ if($_GET||$_POST){
             $email_dosen=$_SESSION['email'];
             $ahli_dosen=$_SESSION['bidang_keahlian'];
             $jenis_Uji="none";
-            session_destroy();
+          
         }
     }else{
     header('location:UI_Search_Penjadwalan.php');
@@ -104,7 +111,7 @@ if($_GET||$_POST){
                             </div>
                             <p class="ptwo">
                                 <!-- Harus disesuaikan dengan database -->
-                                <?=$_SESSION['nama']?>
+                                <?=$nama?>
                             </p>
                         </div>
                         <div class="row ">
@@ -192,7 +199,7 @@ if($_GET||$_POST){
                                                     
                                                     
                                                     <?php 
-                                                    $dosen_uji=$P->getDosenUjibyNiy($nim);
+                                                    $dosen_uji=$P->getDosenUji($nim,$id_jadwal);
                                                     foreach ($dosen_uji as $key) {?>
                                                             <td><?php echo $key['nama_dosen'];?></td>
                                                         <?php } ?>

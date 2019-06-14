@@ -76,7 +76,7 @@ class Penjadwalan extends Database{
 			JOIN penjadwalan ON penjadwalan.nim = mahasiswa_metopen.nim 
 			JOIN penguji ON penguji.id_jadwal = penjadwalan.id_jadwal 
 			-- JOIN dosen_penguji ON penguji.niy=  dosen_penguji.niy_dosen_penguji
-			WHERE mahasiswa_metopen.nim='$nim'";// Querry ini mengambil seluruh atribut dari tabel mahasiswa_metopen,Dosen,Penjadwalan,Penguji,Dosen_Penguji namun dengan syarat atribut nim di tabel mahasiswa_metopen harus sama dengan parameter nim yg diberikan.
+			WHERE mahasiswa_metopen.nim='$nim' order BY penjadwalan.tanggal DESC limit 1";// Querry ini mengambil seluruh atribut dari tabel mahasiswa_metopen,Dosen,Penjadwalan,Penguji,Dosen_Penguji namun dengan syarat atribut nim di tabel mahasiswa_metopen harus sama dengan parameter nim yg diberikan.
 		//  cek penguji dan mahasiswa
 		$sql=$this->eksekusi($query);// Mengeksekusi Querry diatas dan variabel $sql diisi oleh hasil Eksekusi Querry
 		$hasil=$this->hitung_row($sql);// Menghitung Querry Diatas dan variabel $hasil diisi oleh hasil Eksekusi hitung row
@@ -129,11 +129,11 @@ class Penjadwalan extends Database{
 		$result= $this->eksekusi($query); // ini untuk mengeksekui query
 		return $result; // untuk mengembalikan nilai
 	}
-	public function getDosenUjibyNiy($niy) // function untuk menampilkan dosen penguji dengan niy dan menampilkan data mahasiswa  yang akan dia uji 
+	public function getDosenUjibyNiy($nim) // function untuk menampilkan dosen penguji dengan niy dan menampilkan data mahasiswa  yang akan dia uji 
 	{
 		// sitiapryanti 
 		$query = "SELECT dosen.nama as nama_dosen,dosen.niy FROM dosen JOIN penguji on dosen.niy = penguji.niy JOIN penjadwalan on penjadwalan.id_jadwal = penguji.id_jadwal 
-		JOIN mahasiswa_metopen on mahasiswa_metopen.nim = penjadwalan.nim WHERE mahasiswa_metopen.nim=$niy"; // query mengambil data dosen, data jadwal mahasiswa berdasarkan nim, dan dosen dapat melihat mahasiswa mana yang kan dia uji 
+		JOIN mahasiswa_metopen on mahasiswa_metopen.nim = penjadwalan.nim WHERE mahasiswa_metopen.nim=$nim"; // query mengambil data dosen, data jadwal mahasiswa berdasarkan nim, dan dosen dapat melihat mahasiswa mana yang kan dia uji 
 		$hasil=$this->eksekusi($query); // mengeksekusi query yang telah di buat
 		return $hasil; // pengembalian dari query yang di panggil
 	}
@@ -503,6 +503,46 @@ class Penjadwalan extends Database{
 		$query = "SELECT mahasiswa_metopen.nama from mahasiswa_metopen where mahasiswa_metopen.nim = '$nim'";
 		$sql = $this->eksekusi($query);
 			return $sql;
+	}
+
+	public function getDosenUji($nim,$id_jadwal) // function untuk menampilkan dosen penguji dengan niy dan menampilkan data mahasiswa  yang akan dia uji 
+	{
+		//Yanti
+		
+		$query = "SELECT dosen.nama as nama_dosen,dosen.niy FROM dosen JOIN penguji on dosen.niy = penguji.niy JOIN penjadwalan on penjadwalan.id_jadwal = penguji.id_jadwal 
+		JOIN mahasiswa_metopen on mahasiswa_metopen.nim = penjadwalan.nim WHERE mahasiswa_metopen.nim=$nim AND penguji.id_jadwal = '$id_jadwal'"; // query mengambil data dosen, data jadwal mahasiswa berdasarkan nim, dan dosen dapat melihat mahasiswa mana yang kan dia uji 
+		$hasil=$this->eksekusi($query); // mengeksekusi query yang telah di buat
+		return $hasil; // pengembalian dari query yang di panggil
+	}
+
+	public function getCountBimbinganSkripsi($nim)
+	{
+		$query = "SELECT COUNT(*) as jb from logbook_bimbingan WHERE id_skripsi = '$nim' AND jenis = 'skripsi'";
+		$hasil = $this->eksekusi($query);
+		return $hasil;
+	}
+
+	public function getLamaBimbingan($nim)
+	{
+		//Andi
+		$query = "SELECT 
+					DATEDIFF(CURDATE(),penjadwalan.tanggal) as lamabimbingan 
+					from penjadwalan WHERE nim = '$nim' AND jenis_ujian = 'SEMPROP'";
+				// (
+				// ((YEAR(CURDATE()) - YEAR(penjadwalan.tanggal)) *365) +
+				// ((MONTH(CURDATE()) - MONTH(penjadwalan.tanggal)) *30)+
+				// ((DAY(CURDATE()) - DAY(penjadwalan.tanggal))) 
+				// )
+		$hasil = $this->eksekusi($query);
+		return $hasil;
+	}
+
+	public function getLamaBimbingan_Bulan($nim)
+	{
+		$query = "SELECT TIMESTAMPDIFF(month,penjadwalan.tanggal,CURDATE()) AS lamabimbingan
+					from penjadwalan WHERE nim = '$nim' AND jenis_ujian = 'SEMPROP'";
+		$hasil = $this->eksekusi($query);
+		return $hasil;
 	}
 }
 

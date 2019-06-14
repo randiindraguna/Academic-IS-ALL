@@ -21,14 +21,18 @@ semprop.addEventListener('click', function () {
             $(function () {
                 $('.modalku').on('click', function () {
                     const id = $(this).data('id');
+                    const lb = $(this).data('lb');
+                    const jb = $(this).data('jb');
                     console.log(id);
+                    console.log(lb);
+                    console.log(jb);
                     var ju = id.slice(0, 2);
-                    var status = id.slice(14, 27);
+                    var status = id.slice(12, 27);
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
                             console.log(ju);
-                            console.log(status);
+                            console.log(status);        
                             isimodals.innerHTML = xhr.responseText;
                             judulmodal.innerHTML = isijudulmodal;
                         }
@@ -68,7 +72,11 @@ pendadaran.addEventListener('click', function () {
             $(function () {
                 $('.modalku').on('click', function () {
                     const id = $(this).data('id');
+                    const lb = $(this).data('lb');
+                    const jb = $(this).data('jb');
                     console.log(id);
+                    console.log(lb);
+                    console.log(jb);
                     var ju = id.slice(0, 2);
                     var status = id.slice(14, 27);
                     var xhr = new XMLHttpRequest();
@@ -115,9 +123,17 @@ terdekat.addEventListener('click', function () {
             $(function () {
                 $('.modalku').on('click', function () {
                     const id = $(this).data('id');
+                    const lb = $(this).data('lb');
+                    const jb = $(this).data('jb');
                     console.log(id);
+                    console.log(lb);
+                    console.log(jb);
                     var ju = id.slice(0, 2);
-                    var status = id.slice(14, 27);
+                    if(ju == "UP"){
+                        var status = id.slice(14, 27);
+                    }else{
+                        var status = id.slice(12, 27);
+                    }
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -163,9 +179,17 @@ all.addEventListener('click', function () {
             $(function () {
                 $('.modalku').on('click', function () {
                     const id = $(this).data('id');
+                    const lb = $(this).data('lb');
+                    const jb = $(this).data('jb');
                     console.log(id);
+                    console.log(lb);
+                    console.log(jb);
                     var ju = id.slice(0, 2);
-                    var status = id.slice(14, 27);
+                    if(ju == "UP"){
+                        var status = id.slice(14, 27);
+                    }else{
+                        var status = id.slice(12, 27);
+                    }
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -210,9 +234,17 @@ key.addEventListener('keyup', function () {
             $(function () {
                 $('.modalku').on('click', function () {
                     const id = $(this).data('id');
+                    const lb = $(this).data('lb');
+                    const jb = $(this).data('jb');
                     console.log(id);
+                    console.log(lb);
+                    console.log(jb);
                     var ju = id.slice(0, 2);
-                    var status = id.slice(14, 27);
+                    if(ju == "UP"){
+                        var status = id.slice(14, 27);
+                    }else{
+                        var status = id.slice(12, 27);
+                    }
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
@@ -250,7 +282,11 @@ key.addEventListener('keyup', function () {
 $(function () {
     $('.modalku').on('click', function () {
         const id = $(this).data('id');
+        const lb = $(this).data('lb');
+        const jb = $(this).data('jb');
         console.log(id);
+        console.log(lb);
+        console.log(jb);
         var ju = id.slice(0, 2);
         var me = id.slice(2, 12);
         var status = id.slice(12, 27);

@@ -32,12 +32,16 @@ $akses ->connect();
                     if ($nilai_waktuDS==true) {
                         if ($nilai_ruangDS==true) {
                             if ($nilai_ruangwaktudlmsehari==true) {
-                                $akses->eksekusi("SET foreign_key_checks = 0");
-                                $akses->UpdateTabelPenjadwalanByIdJadwal($idjadwal,$idjadwal_baru,"UNDARAN",$nim,$tanggal,$waktu,$ruang);
-                                $akses->eksekusi("SET foreign_key_checks = 0");
-                                $akses->UpdateTabelPengujiByIdJadwal($idjadwal,$idjadwal_baru,$penguji1,$penguji1);
-                                $akses->eksekusi("SET foreign_key_checks = 1");
+                                // $akses->eksekusi("SET foreign_key_checks = 0");
+                                // $akses->UpdateTabelPenjadwalanByIdJadwal($idjadwal,$idjadwal_baru,"UNDARAN",$nim,$tanggal,$waktu,$ruang);
+                                // $akses->eksekusi("SET foreign_key_checks = 0");
+                                // $akses->UpdateTabelPengujiByIdJadwal($idjadwal,$idjadwal_baru,$penguji1,$penguji1);
+                                // $akses->eksekusi("SET foreign_key_checks = 1");
+                                // $akses->insertPenguji($idjadwal_baru,$penguji2);
+                                $akses->insertJadwal($idjadwal_baru,"UNDARAN",$nim,$tanggal,$waktu,$ruang);
+                                $akses->insertPenguji($idjadwal_baru,$penguji1);
                                 $akses->insertPenguji($idjadwal_baru,$penguji2);
+
                                 ?>
                                 <form id="my_form" action="../pengelola/UI_Penjadwalan_detail_admin.php" method="GET">
                                 <input type="hidden" name="nim" value="<?=$nim;?>">

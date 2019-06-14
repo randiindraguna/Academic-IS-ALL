@@ -60,6 +60,8 @@
                                                     <!-- <th scope="col">ID Jadwal</th> -->
                                                     <th scope="col">Nama</th>
                                                     <th scope="col">NIM</th>
+                                                    <th scope="col">Jumlah Bimbingan</th>
+                                                    <th scope="col">Lama Bimbingan</th>
                                                     <th scope="col">Jenis Jadwal</th>
                                                     <th scope="col">Tanggal</th>
                                                     <th scope="col">Waktu</th>
@@ -76,6 +78,7 @@
                                                     <td class="text-left"><?=$i?></td>
                                                     <!-- ID Jadwal -->
                                                     <!-- <td></td> -->
+                                                    <!-- nama mhs -->
                                                     <?php 
                                                         $nmm = $P->getNamaMhs($ambil['nim']);
                                                         foreach ($nmm as $key) {
@@ -87,6 +90,25 @@
                                                     <!-- <td class="text-left"><?=$ambil['nama']?></td> -->
                                                     <!-- Jenis Ujian -->
                                                     <td class="text-left"><?=$ambil['nim']?></td>
+                                                    <!-- lama bimbingan -->
+                                                    
+                                                        <?php
+                                                            $lb = $P->getCountBimbinganSkripsi($ambil['nim']);
+                                                            foreach ($lb as $key1) {
+                                                                ?>
+                                                                <td class="text-center"><?=$key1['jb']?></td>   
+                                                                <?php
+                                                            }
+                                                        ?>
+                                                    <!-- lamabimbingan -->
+                                                    <?php
+                                                    $lb=$P->getLamaBimbingan($ambil['nim']);
+                                                    foreach ($lb as $key2) {
+                                                        ?>
+                                                        <td class="text-center"><?=$key2['lamabimbingan']?> hari</td>   
+                                                        <?php
+                                                    }
+                                                    ?>
                                                     <!-- Jenis Ujian -->
                                                     <td class="text-left"><?=$ambil['jenis_ujian']?></td>
                                                     <!-- Tanggal -->
@@ -110,14 +132,14 @@
                                                     <!-- Dosen -->
                                                     <?php
                                                     if($ambil['jenis_ujian'] == "SEMPROP"){
-                                                        $ddp = $P->getDosenUjibyNiy($ambil['nim']);
+                                                        $ddp = $P->getDosenUji($ambil['nim'],$ambil['id_jadwal']);
                                                         foreach ($ddp as $key) {?>
                                                     <td class="text-left"><?=$key['nama_dosen']?></td>
                                                     <?php }?>
                                                     <td>---</td>
                                                     <?php
                                                     }else{
-                                                        $ddp = $P->getDosenUjibyNiy($ambil['nim']);
+                                                        $ddp = $P->getDosenUji($ambil['nim'],$ambil['id_jadwal']);
                                                         foreach ($ddp as $key) {?>
                                                         <td class="text-left"><?=$key['nama_dosen']?></td>
                                                     <?php }
@@ -172,7 +194,7 @@
                                                     <td>
                                                         <a class="modalku" href="" id="modalku" data-toggle="modal"
                                                             data-target="#ModalUbah"
-                                                            data-id="<?=$ambil['id_jadwal'].$status_p?>">Edit</a> |
+                                                            data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-st="<?=$status_p?>">Edit</a> |
                                                         <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
                                                         <a
                                                             href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
@@ -269,7 +291,7 @@
     <!-- Script -->
     <script src="../js/jquery 3.4.0.js"></script>
     <script src="../js/jquery  3.4.0.min.js"></script>
-    <script src="../js/penjadwalanJSs10.js"></script>
+    <script src="../js/penjadwalanJSs11.js"></script>
 
 
 </body>

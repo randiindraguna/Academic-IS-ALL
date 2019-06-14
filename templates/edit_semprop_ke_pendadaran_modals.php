@@ -29,12 +29,33 @@
         $niy_dosen_penguji = $key['niy'];
         $nama_penguji = $key['nama_dosen'];
     }
+
+    // cari lama Bimbingan
+    $lb = $akses->getLamaBimbingan($nim);
+    foreach ($lb as $key) {
+        $lb2 = $key['lamabimbingan'];
+    }
+    $lb2 = $lb2/30;
 ?>
 </head>
 <body class="">
         <!-- Button Semprop atau Pendadaran-->
         <div class="col-12 ">
             <form id="fform" action="../control/edit_semprop_ke_pendadaran.php" method="post">
+            
+            <?php
+                if($lb2 >=8){
+                    ?>
+                    <div class="row" >
+                        <div class="alert alert-warning alert-dismissible ">
+                        <span class="align-text-top"><strong><i class="material-icons" >error_outline</i></strong></span>
+                        <span class="align-top">Nilai Anda Maksimal B, Karena Lama Bimbingan > 8 bulan</span>
+                        </div>
+                    </div>
+                    <?php
+                }
+            ?>
+
             <div class="row">
                 <div class="col-6 mt-2">                   
                     <label for="inputEmail4">ID Jadwal</label>

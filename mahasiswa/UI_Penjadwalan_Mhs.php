@@ -200,7 +200,7 @@ if($_SESSION['status'] == "login"){
                                                     </td>
                                                     <!-- Haurs disesuaikan dengan database -->
                                                     <?php 
-                                                    $dosen_uji=$P->getDosenUjibyNiy($nim);
+                                                    $dosen_uji=$P->getDosenUji($nim,$id_jadwal);
                                                     foreach ($dosen_uji as $key) {?>
                                                     <td><?php echo $key['nama_dosen'];?></td>
                                                     <?php } ?>

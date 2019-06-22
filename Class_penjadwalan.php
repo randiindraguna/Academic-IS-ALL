@@ -524,7 +524,7 @@ class Penjadwalan extends Database{
 
 	public function getLamaBimbingan($nim)
 	{
-		//Andi
+		//Sandi
 		$query = "SELECT 
 					DATEDIFF(CURDATE(),penjadwalan.tanggal) as lamabimbingan 
 					from penjadwalan WHERE nim = '$nim' AND jenis_ujian = 'SEMPROP'";

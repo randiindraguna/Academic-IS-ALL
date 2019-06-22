@@ -49,10 +49,10 @@
                   Metopen
                 </a>
                 <div class="dropdown-menu navbox" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item  drop-link" href="#">Register Metopen</a>
-                  <a class="dropdown-item  drop-link" href="#">Status Metopen</a>
-                  <a class="dropdown-item  drop-link" href="#">Seminar Proposal</a>
-                  <a class="dropdown-item  drop-link" href="#">Log Bimbingan</a>
+                  <a class="dropdown-item  drop-link" href="input.php">Pendaftaran Metopen</a>
+                  <a class="dropdown-item  drop-link" href="out2.php">Lihat Data Dosen</a>
+                  <a class="dropdown-item  drop-link" href="caridata.php">Cari Data Mahasiswa</a>
+                  <a class="dropdown-item  drop-link" href="lihat_semprop_dimahasiswa.php">Seminar Proposal</a>
                 </div>
               </li>
               <!-- Skripsi -->
@@ -63,7 +63,7 @@
                 </a>
                 <div class="dropdown-menu navbox" aria-labelledby="navbarDropdownMenuLink">
                   <a class="dropdown-item  drop-link" href="Bimbingan2.php?first">Log Bimbingan</a>
-                  <a class="dropdown-item  drop-link" href="#">Pendadaran</a>
+                  <a class="dropdown-item  drop-link" href="lihat_pendadaran_dimahasiswa.php">Pendadaran</a>
                 </div>
               </li>
               <!-- Jadwal -->

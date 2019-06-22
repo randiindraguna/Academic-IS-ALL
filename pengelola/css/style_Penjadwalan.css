@@ -1,0 +1,148 @@
+/* Dikerjakan Oleh Adhymas Fajar Sudrajad */
+/* Body */
+
+/* Navbar Brand */
+.navbar-brand {
+    font-family: viga;
+    color: #4B847D !important;
+    font-size: 32px;
+}
+
+/* Background color */
+
+.bg-one {
+    background-color: #DAC2A8;
+}
+
+
+.bg-two {
+    background-color: #4B847D;
+}
+
+.bg-tre {
+    background-color: #fff;
+}
+
+.bg-four {
+    background-color: #F1EEE9;
+}
+
+/* Color */
+.bgone {
+    color: #DAC2A8;
+}
+
+
+.bgtwo {
+    color: #4B847D;
+}
+
+.bgtre {
+    color: #fff;
+}
+
+
+/* Text */
+
+.box1-uji {
+    margin-top: 6px;
+    font-family: viga;
+    padding-top: 20px;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+.pone {
+    font-family: Roboto;
+    color: #fff !important;
+    text-shadow: 1px 1px 1px #000000;
+    font-size: 18px;
+}
+
+.ptwo {
+    font-family: viga;
+    color: #FFFFFF !important;
+    text-shadow: 1px 1px 1px #000000;
+    font-size: 14px;
+}
+
+.ptre {
+    color: #DAC2A8;
+    font-size: 5px;
+}
+
+.judul {
+    font-family: viga;
+    color: #FFFFFF !important;
+    text-shadow: 1px 1px 1px #000000;
+    font-size: 24px;
+}
+
+/* Navbar Primary */
+.nav-link {
+    margin-right: 30px;
+    font-family: viga;
+    color: #4B847D !important;
+}
+
+.nav-link:hover::after {
+    content: "";
+    display: block;
+    border-bottom: 3px solid #4B847D;
+    width: 50%;
+    margin: auto;
+    padding-bottom: 4px;
+    margin-bottom: -7px;
+    color: #fff !important;
+}
+
+/* sizes */
+.px {
+    width: 150px;
+    height: 150px;
+}
+
+.w10 {
+    width: 70px;
+    height: 70px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+.w50 {
+    width: 400px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+
+/* Utility */
+
+.box2 {
+    background-color: #4B847D;
+    border-radius: 7px 7px 7px 7px;
+}
+
+.under {
+    width: 90%;
+    border-top: 2px solid #fff;
+
+}
+
+/* Input type */
+
+input[type=text]:focus {
+    background-color: #DAC2A8;
+    color: #fff;
+    border-color: #fff;
+}
+
+/* Table */
+.table td {
+    background-color: #fff;
+    color: black;
+}
+
+.table th {
+    background-color: #DAC2A8;
+    color: #fff;
+}

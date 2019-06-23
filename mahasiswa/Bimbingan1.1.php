@@ -30,12 +30,30 @@
 
         if(!$cek)
         {
-          echo '<script type="text/javascript">alert("terjadi kesalahan , data tidak dapat di save")</script>';
+          echo '
+          <script type="text/javascript">
+            Swal.fire({
+              position: "middle",
+              type: "warning",
+              title: "terjadi kesalahan saat memproses data",
+              showConfirmButton: false,
+              timer: 1500 
+            })
+          </script>';
           header('Refresh: 0 URL=Bimbingan2.php?first');
         } 
         else
         {
-          echo '<script type="text/javascript">alert("data tersimpan")</script>';
+          echo '
+          <script type="text/javascript">
+            Swal.fire({
+              position: "middle",
+              type: "success",
+              title: "data tersimpan",
+              showConfirmButton: false,
+              timer: 1500 
+            })
+          </script>';
 
           header('Refresh: 0 URL=Bimbingan2.php?first');
 

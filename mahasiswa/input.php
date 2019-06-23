@@ -5,7 +5,13 @@ require_once('../database.php');
  
 // mengaktifkan session
 session_start();
- 
+ $cek=$_SESSION['username'];
+ $tes=$akses->ceknim($cek);
+ $data=mysqli_fetch_array($tes);
+ if($data['jum']>0){
+  echo '<script type="text/javascript">alert("NIM sudah terdaftar sebagai mahasiswa metopen !")</script>';
+  echo '<script>window.location="index.php"</script>';//header("location:index.php");
+ }
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 if($_SESSION['status'] == "login"){
   // menampilkan pesan selamat datang
@@ -56,7 +62,7 @@ include '../templates/header_penjadwalan.php';
             <form action="pos.php" method="POST">
               <div class="form-group">
                 <label for="nim">NIM</label>
-                <input type="text" name="nim" class="form-control" id="nim" placeholder="Masukkan NIM" required>
+                <input type="text" name="nim" class="form-control" id="nim" value=<?php echo $_SESSION['username'];?> readonly>
               </div>
               <div class="form-group">
                 <label for="nama">Nama</label>

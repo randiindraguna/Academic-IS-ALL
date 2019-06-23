@@ -3,7 +3,7 @@
 	require_once('database.php'); // menyertakan file database.php ke dalam file ini. 
 
 	// UTS-1700018167-Adhymas Fajar Sudrajat-dmonh3h3
-	// UTS-1700018141-Siti -sitiapryantii
+	// UTS-1700018141-Siti apryanti k -sitiapryantii
 	// UTS-1700018174-m Andika Riski-Andikariski
 	// UTS-1700018144-M Yulianto Andi S-LianEx
 	// UTS-1700018116-Nanda Suci -nandasuci

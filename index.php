@@ -1,4 +1,5 @@
 <?php 
+    include 'kelolaAkun.php';
     if(isset($_GET['succes'])){
         echo '<script type="text/javascript">alert("Pendaftaran berhasil")</script>';
     }

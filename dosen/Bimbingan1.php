@@ -69,6 +69,7 @@ nav{
 <body>
 <?php
 include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
+
 ?>
 
 
@@ -128,28 +129,31 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               foreach ($hasil_cari as $key) {
                 if($key['model'] == "metopen")
                 {
+                  foreach ($car->jumlah_bimbingan_satu_mahasiswa_untuk_ubah_warna($key['nim']) as $ke){
                   
-                  if($key['jumlah_bimbingan'] >= 10)
-                  {
-                    echo "
-                  <tr class='bg-warning'>
-                  <td>".$key['name']."</td>
-                  <td>".$key['nim']."</td>
-                  <td>".$key['judul']."</td>
-                  <td><div class='btn btn-primary disabled'>".$key['jumlah_bimbingan']."</div></td>
-                  </tr>
-                  ";
-                  }
-                  else
-                  {
-                    echo "
-                  <tr>
-                  <td>".$key['name']."</td>
-                  <td>".$key['nim']."</td>
-                  <td>".$key['judul']."</td>
-                  <td><div class='btn btn-primary disabled'>".$key['jumlah_bimbingan']."</div></td>
-                  </tr>
-                  ";
+                    if($ke['jumlah'] >= 10 && $ke['model'] == "skripsi")
+                    {
+                      echo "
+                    <tr class='bg-warning'>
+                    <td>".$key['name']."</td>
+                    <td>".$key['nim']."</td>
+                    <td>".$key['judul']."</td>
+                    <td><div class='btn btn-primary disabled'>".$key['jumlah_bimbingan']."</div></td>
+                    </tr>
+                    ";
+                    }
+                    else
+                    {
+                      echo "
+                    <tr>
+                    <td>".$key['name']."</td>
+                    <td>".$key['nim']."</td>
+                    <td>".$key['judul']."</td>
+                    <td><div class='btn btn-primary disabled'>".$key['jumlah_bimbingan']."</div></td>
+                    </tr>
+                    ";
+                    }
+
                   }
                 }
                 else if($key['model'] == "skripsi")
@@ -182,7 +186,8 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
             }
             else
             {
-              $tampilan_awal = $car->mahasiswa_bimbingan_dosen($_SESSION['username']);
+              $tampilan_awal = $car->jumlah_bimbingan_satu_mahasiswa($_SESSION['username']);
+
               foreach ($tampilan_awal as $key) {
                 if($key['model'] == "metopen")
                 {

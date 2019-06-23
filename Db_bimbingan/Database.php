@@ -105,9 +105,9 @@
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
-		public function jumlah_bimbingan_satu_mahasiswa_untuk_ubah_warna($nim)
+		public function jumlah_bimbingan_satu_mahasiswa_untuk_ubah_warna($nim,$jenis)
 		{
-			$query = "SELECT count(logbook_bimbingan.id_skripsi) as jumlah, logbook_bimbingan.jenis as model from mahasiswa_metopen join logbook_bimbingan on logbook_bimbingan.id_skripsi = mahasiswa_metopen.nim where mahasiswa_metopen.nim = $nim GROUP by logbook_bimbingan.jenis";
+			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,logbook_bimbingan.jenis as model, COUNT(logbook_bimbingan.jenis) AS jumlah FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and mahasiswa_metopen.nim = $nim and logbook_bimbingan.jenis = '$jenis' GROUP BY logbook_bimbingan.jenis HAVING COUNT(mahasiswa_metopen.nim)>=0";
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}

@@ -46,7 +46,7 @@
           		timer: 1500
           		})
           </script>";
-          header('Refresh: 0 URL=Bimbingan2.php?first');
+          header('Refresh: 1.5 URL=Bimbingan2.php?first');
         } 
         else
         {
@@ -62,7 +62,7 @@
           		})
           </script>";
 
-          header('Refresh: 0 URL=Bimbingan2.php?first');
+          header('Refresh: 1.5 URL=Bimbingan2.php?first');
 
         }
     }

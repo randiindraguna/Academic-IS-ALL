@@ -8,11 +8,16 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <script type="text/javascript" src="sweetalert2/dist/sweetalert2.all.min.js"></script>
     <script type="text/javascript" src="sweetalert2/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" type="text/css" href="sweetalert2/dist/sweetalert2.min.css">
 
     <title></title>
   </head>
+
+
+
+  <body>
 
 <?php
     if (isset($_POST['nma'])) {
@@ -30,20 +35,39 @@
 
         if(!$cek)
         {
-          echo '<script type="text/javascript">alert("terjadi kesalahan , data tidak dapat di save")</script>';
+          echo
+          "
+          <script type='text/javascript'>
+          	Swal.fire({
+          		position: 'middle',
+          		type: 'warning',
+          		title: 'gagal menyimpan',
+          		showConfirmButton: false,
+          		timer: 1500
+          		})
+          </script>";
           header('Refresh: 0 URL=Bimbingan2.php?first');
         } 
         else
         {
-          echo '<script type="text/javascript">alert("data tersimpan")</script>';
+          echo
+          "
+          <script type='text/javascript'>
+          	Swal.fire({
+          		position: 'middle',
+          		type: 'success',
+          		title: 'berhasil menyimpan',
+          		showConfirmButton: false,
+          		timer: 1500
+          		})
+          </script>";
 
           header('Refresh: 0 URL=Bimbingan2.php?first');
 
         }
     }
 ?>
-
-  <body>
+  	
     <center>
       <table width="70%" align="center" class="text text-light">
         <tr>

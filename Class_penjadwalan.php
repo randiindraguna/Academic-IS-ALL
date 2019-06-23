@@ -4,10 +4,10 @@
 
 	// UTS-1700018167-Adhymas Fajar Sudrajat-dmonh3h3
 	// UTS-1700018141-Siti apryanti k -sitiapryantii
-	// UTS-1700018174-m Andika Riski-Andikariski
+	// UTS-1700018174-M Andika Riski-Andikariski
 	// UTS-1700018144-M Yulianto Andi S-LianEx
 	// UTS-1700018116-Nanda Suci -nandasuci
-	// UTS-17000118-Adil Baihaqi-adilbaihaqi
+	// UTS-1700018118-Adil Baihaqi-adilbaihaqi
 	// UTS-1700018133-Sandy Valentino G-iamsand
 	// UTS-1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
 
@@ -47,7 +47,7 @@ class Penjadwalan extends Database{
 	}
 	public function insertJadwal($id_jadwal,$jenis_ujian,$nim,$tanggal,$jam,$tempat)
 	{
-		// -1700018116-Nanda Suci Pratwi-nandasuci
+		// 1700018116-Nanda Suci Pratwi-nandasuci
 		$query = "INSERT INTO `penjadwalan` (`id_jadwal`, `jenis_ujian`, `nim`, `tanggal`, `jam`, `tempat`) 
 		-- berfungsi untuk digunakan memasukkan data ke pada database.
 		VALUES ('$id_jadwal', '$jenis_ujian', '$nim', '$tanggal', '$jam', '$tempat')";
@@ -57,7 +57,7 @@ class Penjadwalan extends Database{
 	// Insert Dosen Uji ke database
 	public function insertPenguji($id_jadwal,$niy)
 	{
-		//-1700018116-Nanda Suci Pratwi-nandasuci
+		//1700018116-Nanda Suci Pratwi-nandasuci
 		$query = "INSERT INTO `penguji` (`id_penguji`, `id_jadwal`, `niy`) VALUES (NULL, '$id_jadwal', '$niy')"; //query ini berfungsi untuk menghubungkan
 		$this->eksekusi($query); //funsi ini untuk mengembalikan hasil eksekusi fungsi ini
 	}
@@ -140,7 +140,7 @@ class Penjadwalan extends Database{
 	}
 
 	public function getDataBanyakRuangDalamSehari($tanggal){
-			//1700018174-m Andika Riski-Andikariski
+			//1700018174-M Andika Riski-Andikariski
 			//Fungsi untuk menghitung banyaknya ruang dalam sehari atau setiap tanggal akan di hitung jumlah ruangan yang terpakai  
    //         $query="SELECT SUBSTRING(id_jadwal, 12, 1)AS id_jadwal, COUNT(*)as hitung,penjadwalan.tempat FROM penjadwalan WHERE 
 		 //   SUBSTRING(id_jadwal, 9, 2) GROUP BY SUBSTRING(id_jadwal, 12, 1)";
@@ -277,7 +277,7 @@ class Penjadwalan extends Database{
     
 
 	public function cekNimdataYangSama($nim){
-		   //1700018174-m Andika Riski-Andikariski
+		   //1700018174-M Andika Riski-Andikariski
 		   //Fungsi untuk mengecek nim dari database dengan nim yang akan di inputkan user
        		$query="SELECT nim from penjadwalan WHERE nim = $nim";
 			$sql = $this->eksekusi($query);
@@ -295,7 +295,7 @@ class Penjadwalan extends Database{
 	   }
 
 	public function getDosenPenguji(){
-		//1700018174-m Andika Riski-Andikariski
+		//1700018174-M Andika Riski-Andikariski
 		//Fungsi untuk menampilkan daftar dosen penguji dari database kemudian di tampilkan di menu pemilihan dosen penguji.
 			$query = "SELECT dosen.nama as nama_dosen,dosen.niy from dosen ";
 			$sql = $this->eksekusi($query);

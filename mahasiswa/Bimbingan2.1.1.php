@@ -154,11 +154,6 @@ $car->connect();
             </tbody>
           </table>
         </div>
-        <div align="left" class="ml-4">
-        ket : <br>
-        -hijau = metopen<br>
-        -biru  = skripsi
-        </div>
     </td>
   </tr>
     

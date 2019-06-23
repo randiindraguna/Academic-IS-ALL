@@ -44,7 +44,7 @@
         <div class="col-6">
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link link2" href="index.php">Home <span class="sr-only">(current)</span></a>
               </li>
               <!-- Metopen -->
@@ -70,11 +70,11 @@
                 </div>
               </li>
               <!-- Jadwal -->
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link link2" href="#">Jadwal </a>
               </li>
               <!-- Chart -->
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link link2" href="#">Chart </a>
               </li>
             </ul>

@@ -112,18 +112,6 @@
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
 
-		//intan 1700018126
-		//fungsi ini lebih mengarah kepada nim mahasiswa atau nama dosen pembimbing yang di cari
-		public function mahasiswa_bimbingan_dosen_hasil_search($dosen,$cari)
-		{
-			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as model, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy = $dosen where mahasiswa_metopen.nim like '%$cari%' or mahasiswa_metopen.topik like '%$cari%' GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ";         
-			// query sql yang menunjukkan data jumlah bimbingan mahasiswa dan dengan atribut "like" untuk menyaring / mencari nim mahasiswa atau nama dosen 
-			//yang memiliki strtuktur kata atau angka yang sama 
-			
-			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
-			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
-		}
-
 		//Dibuat oleh Arifaleo Nurdin (1700018158)
 		//KETERANGAN : Fungsi ini digunakan untuk menampilkan mahasiswa dengan dosen yang sama 
 		//			   (siapa saja yang dibimbing oleh dosen "A") yang ditampilkan adalah Nama, Nim, Judul, 
@@ -149,14 +137,6 @@
 			// query untuk mengurutkan daftar nama mahasiswa berdasarkan abjad a - z dari fungsi yang sama yang di kerjakan rizki dengan sedikit modif tambahan pada kode sql " order by mahasiswa_metopen.nama " sebagai pengrut  
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
-		}
-
-		// fungsi buat gino
-		public function a5() // tambah parameter jika di perlukan
-		{
-			$query = "";                  // isi sesuai tugas fungsi masing masing
-			$this->eksekusi($query);
-			return $this->result;
 		}
 
 		//Nur 1700018140

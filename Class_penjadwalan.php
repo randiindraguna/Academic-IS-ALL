@@ -2,14 +2,15 @@
 
 	require_once('database.php'); // menyertakan file database.php ke dalam file ini. 
 
-	// UTS-1700018167-Adhymas Fajar Sudrajat
-	// UTS-1700018141-Siti Apryanti
-	// UTS-1700018174-m Andika Riski
-	// UTS-1700018144-M Yulianto Andi S
-	// UTS-1700018116-Nanda Suci Pratwi
-	// UTS-17000118-Adil Baihaqi
-	// UTS-1700018133-Sandy Valentino G
-	// UTS-1700018148-Abima Febrian Nugraha
+	// UTS-1700018167-Adhymas Fajar Sudrajat-dmonh3h3
+	// UTS-1700018141-Siti -sitiapryantii
+	// UTS-1700018174-m Andika Riski-Andikariski
+	// UTS-1700018144-M Yulianto Andi S-LianEx
+	// UTS-1700018116-Nanda Suci -nandasuci
+	// UTS-17000118-Adil Baihaqi-adilbaihaqi
+	// UTS-1700018133-Sandy Valentino G-iamsand
+	// UTS-1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
+
 
 	// class penjadwalan ini berguna untuk menampung semua fungsi fungsi yang berkaitan dengan fitur penjadwalan
 	// serta didalam class penjadwalan ini mengekstend file database.php untuk mengambil class Database guna untuk memakai fungsi yang telah kita buat

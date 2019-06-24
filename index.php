@@ -95,6 +95,7 @@
             <label class="form-check-label" for="showpass">Show Password</label>
           </div>
           <button type="submit" class="btn btn-primary">Login</button>
+          <input type="button" onclick="window.location = 'google_acc.php';" value="Log in dengan google" class="btn btn-danger">
          <a href="formInputAkun.php" class="btn btn-warning">Daftar</a>
         </form>
         </div>

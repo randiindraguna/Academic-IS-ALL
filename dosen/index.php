@@ -44,13 +44,13 @@ include '../templates/header_penjadwalan.php';
   </head>
   <body style="background-color= #808080;">
     <table border="0" width="100%" height="100%" align="center">
-      <tr><td colspan="3"bgcolor="#808080"><br><br><br><br><br><br><br></td></tr>
+      <tr><td colspan="3"><br><br><br><br><br><br></td></tr>
       <tr>
-        <td width="25%" bgcolor="#808080" rowspan="2"></td>
+        <td width="25%" rowspan="2"></td>
         <td width="50%">
           <table cellpadding="20"width="100%" border="0"  height="100%">
             <tr>
-              <td bgcolor="#F5F5F5">
+              <td bgcolor="#B5B5B5" style="width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px #d1d1d1;">
                 <center><h3>Selamat Datang Dosen<br>
                   PRPL Manajemen Skripsi<br>
                   Kelas C<br>
@@ -62,17 +62,17 @@ include '../templates/header_penjadwalan.php';
             </tr>
           </table>
         </td>
-        <td width="25%" bgcolor="#808080" rowspan="2"></td>
+        <td width="25%" rowspan="2"></td>
       </tr>
     </table>
 
     <table cellpadding="27" border="0" width="100%" height="20%">
       <tr align="center">
-        <td bgcolor="#808080">
-          <br><br><br><br><br><br><br>
-          <div class="fixed-bottom" id="footer" style="height:50px; line-height:50px; background:#333; color:white;">
+        <td >
+          <br><br><br><br><br><br>
+          <div  id="footer" style="height:50px; line-height:50px; background:#333; color:white;border-radius: 30px;">
             Copyright &copy; 2019
-            Designed by . . . . . . . .
+            Designed by Team Register Metopen
           </div>
         </td>
       </tr> 

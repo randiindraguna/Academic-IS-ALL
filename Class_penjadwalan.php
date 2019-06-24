@@ -480,7 +480,7 @@ class Penjadwalan extends Database{
 	
 	
 	public function getAllDosenKecualiDuaDosen($niy,$niy2)
-	
+	{
 		//1700018174-m Andika Riski-Andikariski
 		$query ="SELECT dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian FROM dosen 
 		WHERE NOT dosen.niy='$niy' AND NOT dosen.niy='$niy2'";

@@ -83,7 +83,7 @@ if($_SESSION['status'] == "login"){
                         </select>                   
                 </div>
             <!-- </div> --> <br>
-                <button type="submit" class="btn btn-primary">Simpan</button>
+                <button type="submit" class="btn btn-primary" name="save" >Simpan</button>
             </div>
             </form>
             </center>
@@ -93,7 +93,13 @@ if($_SESSION['status'] == "login"){
     </div>
 
     <?php
-        $bidang = $_POST['bidmin']
+    if (isset($_POST['save'])) {
+        if(is_null($_POST['bidmin'])){
+            echo "Silahkan pilih bidang minat";
+        }else{
+             $bidang = $_POST['bidmin'];
+        }
+    }
      ?>
 
     <script>

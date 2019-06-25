@@ -21,10 +21,10 @@ if($_SESSION['status'] == "login"){
    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
-        .next{
-        background-color:   #1E90FF;
-        color: white;
-        }
+        .previous {
+  background-color: #1E90FF;
+  color: white;
+}
     </style>
 
     <!-- Bootstrap CSS -->
@@ -71,7 +71,7 @@ if($_SESSION['status'] == "login"){
             </div> -->
             <!--Grafik-->
         </br>
-            <h2 class="judul"><center>Statistik Ruangan<br>--SEMINAR PROPOSAL--</center></h2>
+            <h2 class="judul"><center>Statistik Ruangan<br>--UJIAN PENDADARAN--</center></h2>
         <br>
        <div style="width: 800px;margin: 0px auto;">
         <canvas id="myChart"></canvas>
@@ -88,16 +88,16 @@ if($_SESSION['status'] == "login"){
                     label: '',
                     data: [
                     <?php 
-                    foreach($akses->getruang1() as $k){
-                    echo" $k[jumlah1]"; 
+                    foreach($akses->getruang21() as $k){
+                    echo" $k[jumlah21]"; 
                     }?>,
                     <?php 
-                    foreach($akses->getruang2() as $k){
-                    echo" $k[jumlah2]"; 
+                    foreach($akses->getruang22() as $k){
+                    echo" $k[jumlah22]"; 
                     }?>,
                     <?php 
-                    foreach($akses->getruang3() as $k){
-                    echo" $k[jumlah3]"; 
+                    foreach($akses->getruang23() as $k){
+                    echo" $k[jumlah23]"; 
                     }?>,
                     ],
                     backgroundColor: [
@@ -126,9 +126,9 @@ if($_SESSION['status'] == "login"){
     </script>
             <!--Grafik--></br>
  <div class="row">
+    <div class="col-sm-4" style=""><a href="statistik_ruangan.php" class="previous">&laquo; Previous</a></div>
     <div class="col-sm-4" style=""></div>
     <div class="col-sm-4" style=""></div>
-    <div class="col-sm-4" style=""><a href="statistik_ruangan2.php" class="next">Next &raquo;</a></div>
 </div>
 <br>
         </div>

@@ -43,6 +43,24 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
+	//Di buat oleh Muhammad Nashir A (1700018117)
+	public function getruang21(){
+		$query="SELECT count(tempat)as jumlah21 from penjadwalan where tempat='1'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
+		$this->eksekusi($query);  //mengeksekusi query diatas
+		return $this->result;  //mengembalikan hasil dari query diatas
+	}
+	//Di buat oleh Muhammad Nashir A (1700018117)
+	public function getruang22(){
+		$query="SELECT count(tempat)as jumlah22 from penjadwalan where tempat='2'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
+		$this->eksekusi($query);  //mengeksekusi query diatas
+		return $this->result;  //mengembalikan hasil dari query diatas
+	}
+	//Di buat oleh Muhammad Nashir A (1700018117)
+	public function getruang23(){
+		$query="SELECT count(tempat)as jumlah23 from penjadwalan where tempat='3'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
+		$this->eksekusi($query);  //mengeksekusi query diatas
+		return $this->result;  //mengembalikan hasil dari query diatas
+	}
 
 	// di buat oleh : RICCO YHANDY FERNANDO (1700018154)		
 	public function getbidangminat(){

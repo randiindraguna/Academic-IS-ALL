@@ -25,21 +25,21 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 
 	//Di buat oleh Muhammad Nashir A (1700018117)
 	public function getruang1(){
-		$query="SELECT count(tempat)as jumlah1 from penjadwalan Group by where tempat='1'";  //Query menampilkan jumlah pemakai ruangan di ruang 1, karena ini pakai jenis enum
+		$query="SELECT count(tempat)as jumlah1 from penjadwalan where tempat='1' and jenis_ujian='SEMPROP'";  //Query menampilkan jumlah pemakai ruangan di ruang 1, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
 
 	//Di buat oleh Muhammad Nashir A (1700018117)
 	public function getruang2(){
-		$query="SELECT count(tempat)as jumlah2 from penjadwalan where tempat='2'";   //Query menampilkan jumlah pemakai ruangan di ruang 2, karena ini pakai jenis enum
+		$query="SELECT count(tempat)as jumlah2 from penjadwalan where tempat='2' and jenis_ujian='SEMPROP'";   //Query menampilkan jumlah pemakai ruangan di ruang 2, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
 
 	//Di buat oleh Muhammad Nashir A (1700018117)
 	public function getruang3(){
-		$query="SELECT count(tempat)as jumlah3 from penjadwalan where tempat='3'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
+		$query="SELECT count(tempat)as jumlah3 from penjadwalan where tempat='3'  and jenis_ujian='SEMPROP'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}

@@ -86,15 +86,29 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 	}
 
 	//Dibuat oleh : Isnan A. Cahyadi (1700018161)
-	public function lulus(){ //function untuk menghitung jumlah mahasiswa yang lulus semprop
+	public function lulus_SEMPROP(){ //function untuk menghitung jumlah mahasiswa yang lulus semprop
 		$query="SELECT COUNT(id_seminar) AS jml_lulus FROM seminar_proposal WHERE status='lulus' GROUP BY status"; //query untuk menghitung jumlah mahasiswa yang lulus semprop
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //mengembalikan hasil query diatas
 	}
 
 	//Dibuat oleh : Isnan A. Cahyadi (1700018161)
-	public function tidaklulus(){ //function untuk menghitung jumlah mahasiswa yang tidak lulus semprop
+	public function tidaklulus_SEMPROP(){ //function untuk menghitung jumlah mahasiswa yang tidak lulus semprop
 		$query="SELECT COUNT(id_seminar) AS jml_tdk_lulus FROM seminar_proposal WHERE status='tidak_lulus' GROUP BY status"; //query untuk menghitung jumlah mahasiswa yang tidak lulus semprop
+		$this->eksekusi($query); //mengeksekusi query diatas
+		return $this->result; //mengembalikan hasil query diatas
+	}
+
+	//Dibuat oleh : Isnan A. Cahyadi (1700018161)
+	public function lulus_UNDARAN(){ //function untuk menghitung jumlah mahasiswa yang lulus undaran
+		$query="SELECT COUNT(id_pendadaran) AS jml_lulus FROM ujian_pendadaran WHERE status='lulus' GROUP BY status"; //query untuk menghitung jumlah mahasiswa yang lulus undaran
+		$this->eksekusi($query); //mengeksekusi query diatas
+		return $this->result; //mengembalikan hasil query diatas
+	}
+
+	//Dibuat oleh : Isnan A. Cahyadi (1700018161)
+	public function tidaklulus_UNDARAN(){ //function untuk menghitung jumlah mahasiswa yang tidak lulus undaran
+		$query="SELECT COUNT(id_pendadaran) AS jml_tdk_lulus FROM ujian_pendadaran WHERE status='tidak_lulus' GROUP BY status"; //query untuk menghitung jumlah mahasiswa yang tidak lulus undaran
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //mengembalikan hasil query diatas
 	}

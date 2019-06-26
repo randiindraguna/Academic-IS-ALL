@@ -168,21 +168,28 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 	}
 
 	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
-	public function jenis_kelamin(){
-		$query="SELECT jenis_kelamin, COUNT(jenis_kelamin) AS total FROM mahasiswa_metopen WHERE jenis_kelamin = 'Perempuan' OR jenis_kelamin = 'Laki-laki' GROUP BY jenis_kelamin"; //untuk menampilkan jumlah kelulusan mahasiswa berdasarkan jenis kelamin 
+	public function gender(){
+		$query = "SELECT jenis_kelamin FROM mahasiswa_metopen GROUP BY jenis_kelamin";
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
-
 	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
-	public function total_lk(){
-		$query="SELECT nama FROM mahasiswa_metopen  WHERE jenis_kelamin = 'Laki-laki'"; //untuk menampilkan jumlah kelulusan mahasiswa berdasarkan jenis kelamin 
+	public function gender_metopen_pr($status){
+		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_gen1,  seminar_proposal.status 
+				  FROM mahasiswa_metopen JOIN seminar_proposal 
+				  ON mahasiswa_metopen.nim = seminar_proposal.nim 
+				  WHERE mahasiswa_metopen.jenis_kelamin = 'Laki-laki' 
+				  AND seminar_proposal.status = '$status'";
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
-
-	public function total_pr(){
-		$query="SELECT nama FROM mahasiswa_metopen  WHERE jenis_kelamin = 'Perempuan'"; //untuk menampilkan jumlah kelulusan mahasiswa berdasarkan jenis kelamin 
+	
+	public function gender_metopen_lk($status){
+		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_gen2,  seminar_proposal.status 
+				  FROM mahasiswa_metopen JOIN seminar_proposal 
+				  ON mahasiswa_metopen.nim = seminar_proposal.nim 
+				  WHERE mahasiswa_metopen.jenis_kelamin = 'Perempuan' 
+				  AND seminar_proposal.status = '$status'";
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}

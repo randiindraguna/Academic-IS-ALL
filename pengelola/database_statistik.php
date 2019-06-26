@@ -147,6 +147,7 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
+	//dibuat oleh : Rifka Riyani Radilla (1700018171)
 	public function tanggal_seminar_R2($tgl){
 		$query="SELECT COUNT(nim) AS jumlah2, tanggal AS tgl, tempat FROM penjadwalan 
 				WHERE jenis_ujian = 'SEMPROP' AND tanggal = '$tgl' 
@@ -154,6 +155,7 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
+	//dibuat oleh : Rifka Riyani Radilla (1700018171)
 	public function tanggal_seminar_R3($tgl){
 		$query="SELECT COUNT(nim) AS jumlah3, tanggal AS tgl, tempat FROM penjadwalan 
 				WHERE jenis_ujian = 'SEMPROP' AND tanggal = '$tgl' 

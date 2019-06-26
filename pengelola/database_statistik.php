@@ -119,26 +119,28 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		return $this->result;
 	}
 	  //dibuat oleh : Tiara Anggraini Gaib (1700018175)
-	public function tanggal_pendadaran(){    
-		$query="SELECT id_jadwal, nim, tanggal, jam, tempat FROM penjadwalan GROUP BY jenis_ujian"; //untuk menampilkan tanggal pendadaran 
-		$this->eksekusi($query);// mengeksekusi query diatas
-		return $this->result;//mengembalikan hasil query diatas
+	public function tanggal_undaran_R1($tgl){
+		$query="SELECT COUNT(nim) AS jumlah1, tanggal AS tgl, tempat FROM penjadwalan 
+				WHERE jenis_ujian = 'UNDARAN' AND tanggal = '$tgl' 
+				AND tempat = '1'"; //untuk menampilkan tanggal dari tabel penjadwalan
+		$this->eksekusi($query); //untuk mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
 	}
 	//dibuat oleh : Tiara Anggraini Gaib (1700018175)
-	public function waktu_pendadaran1($tgl){   
-		$query="SELECT  COUNT(nim) AS jumlah1 FROM penjadwalan WHERE jam = '1' AND jenis_ujian = 'UNDARAN' AND tanggal = '$tgl'"; //untuk menampilkan jumlah orang yang pendadaran pada setiap tanggal 
-		$this->eksekusi($query);// mengeksekusi query diatas
-		return $this->result;//mengembalikan hasil query diatas
+	public function tanggal_undaran_R2($tgl){
+		$query="SELECT COUNT(nim) AS jumlah2, tanggal AS tgl, tempat FROM penjadwalan 
+				WHERE jenis_ujian = 'UNDARAN' AND tanggal = '$tgl' 
+				AND tempat = '2'"; //untuk menampilkan tanggal dari tabel penjadwalan
+		$this->eksekusi($query); //untuk mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
 	}
-	public function waktu_pendadaran2($tgl){   
-		$query="SELECT  COUNT(nim) AS jumlah2 FROM penjadwalan WHERE jam = '2' AND jenis_ujian = 'UNDARAN' AND tanggal = '$tgl'"; //untuk menampilkan jumlah orang yang pendadaran pada setiap tanggal 
-		$this->eksekusi($query);// mengeksekusi query diatas
-		return $this->result;//mengembalikan hasil query diatas
-	}
-	public function waktu_pendadaran3($tgl){   
-		$query="SELECT  COUNT(nim) AS jumlah3 FROM penjadwalan WHERE jam = '3' AND jenis_ujian = 'UNDARAN' AND tanggal = '$tgl'"; //untuk menampilkan jumlah orang yang pendadaran pada setiap tanggal 
-		$this->eksekusi($query);// mengeksekusi query diatas
-		return $this->result;//mengembalikan hasil query diatas
+	//dibuat oleh : Tiara Anggraini Gaib (1700018175)
+	public function tanggal_undaran_R3($tgl){
+		$query="SELECT COUNT(nim) AS jumlah3, tanggal AS tgl, tempat FROM penjadwalan 
+				WHERE jenis_ujian = 'UNDARAN' AND tanggal = '$tgl' 
+				AND tempat = '3'"; //untuk menampilkan tanggal dari tabel penjadwalan
+		$this->eksekusi($query); //untuk mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
 	}
 	//dibuat oleh : Rifka Riyani Radilla (1700018171)
 	public function tanggal_seminar_R1($tgl){

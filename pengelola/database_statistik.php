@@ -183,13 +183,34 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
-	
+	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
 	public function gender_metopen_lk($status){
 		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_gen2,  seminar_proposal.status 
 				  FROM mahasiswa_metopen JOIN seminar_proposal 
 				  ON mahasiswa_metopen.nim = seminar_proposal.nim 
 				  WHERE mahasiswa_metopen.jenis_kelamin = 'Perempuan' 
 				  AND seminar_proposal.status = '$status'";
+		$this->eksekusi($query); //mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
+	}
+	
+	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
+	public function gender_undaran_lk($status){
+		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_gen4, ujian_pendadaran.status  
+				  FROM mahasiswa_metopen JOIN ujian_pendadaran 
+				  ON mahasiswa_metopen.nim = ujian_pendadaran.nim 
+				  WHERE mahasiswa_metopen.jenis_kelamin = 'Laki-laki' 
+				  AND ujian_pendadaran.status = '$status'";
+		$this->eksekusi($query); //mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
+	}
+	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
+	public function gender_undaran_pr($status){
+		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_gen3, ujian_pendadaran.status  
+				  FROM mahasiswa_metopen JOIN ujian_pendadaran 
+				  ON mahasiswa_metopen.nim = ujian_pendadaran.nim 
+				  WHERE mahasiswa_metopen.jenis_kelamin = 'Perempuan' 
+				  AND ujian_pendadaran.status = '$status'";
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}

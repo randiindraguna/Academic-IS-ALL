@@ -70,8 +70,9 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		return $this->result;   // mengembalikan hasil dari query diatas
 	}
 
-	public function getbidangminatall(){
-	$query="SELECT nama as nama, bidang_minat as bidang_minat from mahasiswa_metopen "; 
+	public function getbidangminatall($bidang){
+	$query="SELECT nama as nama, bidang_minat as bidang_minat 
+			from mahasiswa_metopen WHERE bidang_minat = '$bidang'"; 
 	$this->eksekusi($query);// mengeksekusi query diatas
 	return $this->result; 
 	}

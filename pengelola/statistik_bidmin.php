@@ -119,30 +119,64 @@ if($_SESSION['status'] == "login"){
             }
         });
     </script>
-        <br><br>
-        <h2 align="center">Data sistem cerdas</h2>
-        <br><br>
-       <table border="1" width="1000px">
-            <tr align="center">
-              <th width="300px">Nama Mahasiswa</th>
-              <center><th>Bidang Minat</th></center>
-            </tr>
+
+            <br><br>
+            <h2 class="judul"><center>-- Data Mahasiswa -- </center></h2>
             
-            <?php
-              foreach($akses->getbidangminatall() as $k ) {
-                echo "
-                <tr>
-                 <td>$k[nama]</td>
-                 <td>$k[bidang_minat]</td>
-                
-                </tr>
-                ";
-              }
-             ?>
-    
-            <!--Grafik--></br>
-        </div>
-    
+            <center>
+            <form method="POST" action="statistik_bidmin.php">
+            <!-- <div class="row"> -->
+                <div class="col-6 mt-2">
+                    <label for="inputState"> Pilihan Bidang Minat </label>
+                        <select name="bidmin" id="inputState" class="form-control" >
+                            <option selected value="0 ">Pilih Bidang Minat</option>
+                            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
+                            <option value="Sistem Cerdas">Sistem Cerdas</option>
+                            <option value="Multimedia">Multimedia</option>
+                            <option value="Sistem Informasi">Sistem Informasi</option>
+                            <option value="Media Pembelajaran">Media Pembelajaran</option>
+                        </select>                   
+                </div>
+            <!-- </div> --> <br>
+                <button type="submit" class="btn btn-primary" name="save" >Simpan</button>
+            </div>
+            </form>
+            </center>
+            <?php 
+            if (isset($_POST['save'])) {
+                if (!is_null($_POST['bidmin'])) {
+                    $bidang = $_POST['bidmin'];
+                ?>
+               
+                    <br><br>
+                    <h2 align="center">Data Mahasiswa <?php echo "$bidang"; ?></h2>
+                    <br><br>
+                    <center>
+                    <table border="1" width="1000px">
+                        <tr align="center"> 
+                          <th width="300px">Nama Mahasiswa</th>
+                        </tr>
+                        
+                        <?php
+                          foreach($akses->getbidangminatall($bidang) as $k ) {
+                            echo "
+                            <tr>
+                                <td>$k[nama]</td>
+                            </tr>
+                            ";
+                          }
+                     }
+                     elseif ($_POST['bidmin']==0) {
+                         # code...
+                     
+                         echo "Silahkan pilih bidang minat";
+                     }
+                    }
+                    ?>
+                <!--Grafik--></br>
+            </div>
+            </table>
+            </center>   
     </body>
 </html>
         

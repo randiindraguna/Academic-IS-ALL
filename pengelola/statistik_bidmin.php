@@ -83,7 +83,7 @@ if($_SESSION['status'] == "login"){
             //      echo" $k[jumlah_bidang_minat1]"; 
             //      }?>,
             //      ],
-                            data: {
+                    data: {
                     labels: [<?php foreach($akses->getbidangminat() as $k){echo '"'.$k['bidang_minat'].'",';}?>],
                     datasets: [{
                     label: '',
@@ -119,7 +119,26 @@ if($_SESSION['status'] == "login"){
             }
         });
     </script>
-
+        <br><br>
+        <h2 align="center">Data sistem cerdas</h2>
+        <br><br>
+       <table border="1" width="1000px">
+            <tr align="center">
+              <th width="300px">Nama Mahasiswa</th>
+              <center><th>Bidang Minat</th></center>
+            </tr>
+            
+            <?php
+              foreach($akses->getbidangminatall() as $k ) {
+                echo "
+                <tr>
+                 <td>$k[nama]</td>
+                 <td>$k[bidang_minat]</td>
+                
+                </tr>
+                ";
+              }
+             ?>
     
             <!--Grafik--></br>
         </div>

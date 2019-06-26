@@ -140,15 +140,25 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		return $this->result;//mengembalikan hasil query diatas
 	}
 	//dibuat oleh : Rifka Riyani Radilla (1700018171)
-	public function tanggal_seminar(){
-		$query="SELECT tanggal FROM penjadwalan GROUP BY tanggal"; //untuk menampilkan tanggal dari tabel penjadwalan
+	public function tanggal_seminar_R1($tgl){
+		$query="SELECT COUNT(nim) AS jumlah1, tanggal AS tgl, tempat FROM penjadwalan 
+				WHERE jenis_ujian = 'SEMPROP' AND tanggal = '$tgl' 
+				AND tempat = '1'"; //untuk menampilkan tanggal dari tabel penjadwalan
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
-	//dibuat oleh : Rifka Riyani Radilla (1700018171) 
-	public function jumlah_seminar(){
-		$query="SELECT tanggal, COUNT(nim) AS jumlah FROM penjadwalan WHERE jenis_ujian='SEMPROP' GROUP BY tanggal"; //untuk menampilkan jumlah mahasiswa yang semprop pada setiap tanggal
-		$this->eksekusi($query); //mengeksekusi query diatas
+	public function tanggal_seminar_R2($tgl){
+		$query="SELECT COUNT(nim) AS jumlah2, tanggal AS tgl, tempat FROM penjadwalan 
+				WHERE jenis_ujian = 'SEMPROP' AND tanggal = '$tgl' 
+				AND tempat = '2'"; //untuk menampilkan tanggal dari tabel penjadwalan
+		$this->eksekusi($query); //untuk mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
+	}
+	public function tanggal_seminar_R3($tgl){
+		$query="SELECT COUNT(nim) AS jumlah3, tanggal AS tgl, tempat FROM penjadwalan 
+				WHERE jenis_ujian = 'SEMPROP' AND tanggal = '$tgl' 
+				AND tempat = '3'"; //untuk menampilkan tanggal dari tabel penjadwalan
+		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
 

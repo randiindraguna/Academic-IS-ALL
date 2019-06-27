@@ -152,13 +152,6 @@
 	     return $this->result; // untuk mengembalikan hasil eksekusi fungsi ini.
 		}
 		
-		//fungsi ancas 1700018164
-		// public function getDataSkripsiFromSemprop($one,$two,$three,$four,$five,$six) // nama fungsi yang digunakan untuk memanggil fungsi nya nanti beserta parameter nya
-		// {
-		// 	$query = "INSERT INTO skripsi values ('$one','$two','$three','$four','$five','$six')"; // query untuk memasukkan value setiap variabel di parameter fungsi ini kedalam database tabel skripsi
-		// 	$this->eksekusi($query); //berguna untuk mengeksekusi query sql diatas yang telah dibuat. 
-	 //     	return $this->result; // untuk mengembalikan hasil eksekusi fungsi ini.
-		// }
 
 		// nofand 1700018152
 

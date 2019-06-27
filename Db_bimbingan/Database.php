@@ -143,11 +143,7 @@
 		public function mengurutkan_judul($dosen) // tambah parameter jika diperlukan
 		{
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos,
-			mahasiswa_metopen.topik as  judul, mahasiswa_metopen.status as status_mahasiswa, COUNT(
-				logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN
-				mahasiswa_metopen on mahasiswa_metopen.nim = loogbook_bimbingan.id_skripsi join dosen on dosen.niy = 
-				mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY  mahasiswa_metopen.nim HAVING COUNT(
-				mahasiswa_metopen.nim)>=0  ORDER BY mahasiswa_metopen.topik  desc";
+			mahasiswa_metopen.topik as  judul, mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = loogbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy = $dosen GROUP BY  mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0  ORDER BY mahasiswa_metopen.topik  desc";
 			// query untuk mengurutkan daftar nama mahasiswa berdsarkan abjad a - z dari fungsi yang sama yang di kerjakan rizki
 				//dengan sedikit modif tambahan padakode sql "order by mahasiswa_metopen.nama " sebagai pengrut
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat

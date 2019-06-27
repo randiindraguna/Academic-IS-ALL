@@ -140,8 +140,7 @@ class Database
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk mengembalikan hasil eksekusi query diatas
 	}
-
-
+	//Dikerjakan oleh randi indraguna
 	public function SemesterTerbuka(){
 		$query="SELECT * from semester where status='terbuka'"; //query ini untuk menampilkan semester dengan status terbuka
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
@@ -153,7 +152,7 @@ class Database
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk mengembalikan hasil query diatas
 	}
-	
+	//Dikerjakan oleh randi indraguna
 		public function Semester(){
 		$query="SELECT * from semester"; //query ini untuk menampilkan seluruh semester baik terbuka maupun yang tertutup
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
@@ -163,6 +162,12 @@ class Database
 		public function getsatuDosen($niy){
 		$query="SELECT * from dosen where niy='$niy'"; //query ini untuk menampilkan satu dosen yang dipilih
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
+		return $this->result; //untuk mengembalikan hasil query diatas
+	}
+	//Dikerjakan oleh agung parmono
+		public function ceknim($cek){
+		$query="SELECT COUNT(nim) AS jum FROM mahasiswa_metopen WHERE nim = '$cek'"; //query untuk menghitung jumlah mahasiswa berdasarkan nim
+		$this->eksekusi($query);  //untuk mengeksekusi query diatas
 		return $this->result; //untuk mengembalikan hasil query diatas
 	}
 

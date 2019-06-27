@@ -2,14 +2,15 @@
 
 	require_once('database.php'); // menyertakan file database.php ke dalam file ini. 
 
-	// UTS-1700018167-Adhymas Fajar Sudrajat
-	// UTS-1700018141-Siti Apryanti
-	// UTS-1700018174-m Andika Riski
-	// UTS-1700018144-M Yulianto Andi S
-	// UTS-1700018116-Nanda Suci Pratwi
-	// UTS-17000118-Adil Baihaqi
-	// UTS-1700018133-Sandy Valentino G
-	// UTS-1700018148-Abima Febrian Nugraha
+	// UTS-1700018167-Adhymas Fajar Sudrajat-dmonh3h3
+	// UTS-1700018141-Siti apryanti k -sitiapryantii
+	// UTS-1700018174-M Andika Riski-Andikariski
+	// UTS-1700018144-M Yulianto Andi S-LianEx
+	// UTS-1700018116-Nanda Suci -nandasuci
+	// UTS-1700018118-Adil Baihaqi-adilbaihaqi
+	// UTS-1700018133-Sandy Valentino G-iamsand
+	// UTS-1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
+
 
 	// class penjadwalan ini berguna untuk menampung semua fungsi fungsi yang berkaitan dengan fitur penjadwalan
 	// serta didalam class penjadwalan ini mengekstend file database.php untuk mengambil class Database guna untuk memakai fungsi yang telah kita buat
@@ -24,14 +25,14 @@ class Penjadwalan extends Database{
 	// Menghirung Banyaknya Baris dari query yg dieksekusi
 	public function hitung_row($sql)
 	{
-		// dmonh3h3(Adhymas Fajar Sudrajad)1
+		// 1700018167-Adhymas Fajar Sudrajat-dmonh3h3(Adhymas Fajar Sudrajad)
 		// UTS_Adhymas Fajar Sudrajad_1700018167
 		$result=mysqli_num_rows($sql); // Untuk Mendapatkan Jumlah Baris Dari parameter $sql yang telah di eksekusi
 		return $result; // Untuk mengembalikan nilai dari hasil Jumlah Baris Querry yg dieksekusi diatas
 	}
 	
 	
-	//Abima Nugraha
+	//1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
 	public function createIdJadwal($id, $penguji1, $penguji2, $tanggal, $jam, $tempat)
 	{ // Membuat id_jadwal berdasarkan id, niy penguji, tanggal, dan tempat.
 		$id_jadwal 	= $id; //mengisi variabel id_jadwal dengan variabel id
@@ -46,7 +47,7 @@ class Penjadwalan extends Database{
 	}
 	public function insertJadwal($id_jadwal,$jenis_ujian,$nim,$tanggal,$jam,$tempat)
 	{
-		// nanda
+		// 1700018116-Nanda Suci Pratwi-nandasuci
 		$query = "INSERT INTO `penjadwalan` (`id_jadwal`, `jenis_ujian`, `nim`, `tanggal`, `jam`, `tempat`) 
 		-- berfungsi untuk digunakan memasukkan data ke pada database.
 		VALUES ('$id_jadwal', '$jenis_ujian', '$nim', '$tanggal', '$jam', '$tempat')";
@@ -56,13 +57,13 @@ class Penjadwalan extends Database{
 	// Insert Dosen Uji ke database
 	public function insertPenguji($id_jadwal,$niy)
 	{
-		// nanda
+		//1700018116-Nanda Suci Pratwi-nandasuci
 		$query = "INSERT INTO `penguji` (`id_penguji`, `id_jadwal`, `niy`) VALUES (NULL, '$id_jadwal', '$niy')"; //query ini berfungsi untuk menghubungkan
 		$this->eksekusi($query); //funsi ini untuk mengembalikan hasil eksekusi fungsi ini
 	}
 	public function getDataPenjadwalanByNIM($nim) // fungsi ini berfungsi untuk melihat atau menampilkan jadwal yang diambil dari nim
 	{
-		// sandi
+		// 1700018133-Sandy Valentino G-iamsand
 		$query = "SELECT penjadwalan.id_jadwal,penjadwalan.jenis_ujian,penjadwalan.nim,penjadwalan.tanggal,penjadwalan.jam,penjadwalan.tempat from penjadwalan where nim='$nim'"; // query ini yg berfungsi mengambil data dari table penjadwalan melalui nim
 		$result= $this->eksekusi($query); // ini untuk mengeksekusi
 		return $result; // untuk mengembalikan nilai
@@ -70,7 +71,7 @@ class Penjadwalan extends Database{
 	
 	// Mengambil seluruh Data Mahasiswa Dan Jadwal
 	public function getDataALLMahasiswaByNim($nim){
-		// dmonh3h3(Adhymas Fajar Sudrajad)2
+		// 1700018167-Adhymas Fajar Sudrajat-dmonh3h3(Adhymas Fajar Sudrajad)
 		// UTS_Adhymas Fajar Sudrajad_1700018167
 		$query = "SELECT mahasiswa_metopen.nim,mahasiswa_metopen.nama as nama,mahasiswa_metopen.topik,mahasiswa_metopen.dosen,dosen.niy as niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian,penjadwalan.id_jadwal,penjadwalan.jenis_ujian,penjadwalan.tanggal,penjadwalan.jam,penjadwalan.tempat,penguji.niy as niy_dosen_penguji FROM mahasiswa_metopen JOIN dosen on dosen.niy = mahasiswa_metopen.dosen 
 			JOIN penjadwalan ON penjadwalan.nim = mahasiswa_metopen.nim 
@@ -124,14 +125,14 @@ class Penjadwalan extends Database{
 	}
 	public function getDataStatusSemprop($nim) // fungsi ini berfungsi untuk melihat status mahasiswa 
 	{
-		// sandi
+		// 1700018133-Sandy Valentino G-iamsand
 		$query = "SELECT seminar_proposal.status as status_sp from seminar_proposal where nim=$nim"; // query ini berfungi untuk mengambil data dari table seminar_proposal dan status lalu kolom status di dirubah nama nya menjadi status_sp yg akan dicek melalui nim
 		$result= $this->eksekusi($query); // ini untuk mengeksekui query
 		return $result; // untuk mengembalikan nilai
 	}
 	public function getDosenUjibyNiy($nim) // function untuk menampilkan dosen penguji dengan niy dan menampilkan data mahasiswa  yang akan dia uji 
 	{
-		// sitiapryanti 
+		//1700018141-sitiapryanti-sitiapryantii
 		$query = "SELECT dosen.nama as nama_dosen,dosen.niy FROM dosen JOIN penguji on dosen.niy = penguji.niy JOIN penjadwalan on penjadwalan.id_jadwal = penguji.id_jadwal 
 		JOIN mahasiswa_metopen on mahasiswa_metopen.nim = penjadwalan.nim WHERE mahasiswa_metopen.nim=$nim"; // query mengambil data dosen, data jadwal mahasiswa berdasarkan nim, dan dosen dapat melihat mahasiswa mana yang kan dia uji 
 		$hasil=$this->eksekusi($query); // mengeksekusi query yang telah di buat
@@ -139,7 +140,7 @@ class Penjadwalan extends Database{
 	}
 
 	public function getDataBanyakRuangDalamSehari($tanggal){
-			//Andika risky
+			//1700018174-M Andika Riski-Andikariski
 			//Fungsi untuk menghitung banyaknya ruang dalam sehari atau setiap tanggal akan di hitung jumlah ruangan yang terpakai  
    //         $query="SELECT SUBSTRING(id_jadwal, 12, 1)AS id_jadwal, COUNT(*)as hitung,penjadwalan.tempat FROM penjadwalan WHERE 
 		 //   SUBSTRING(id_jadwal, 9, 2) GROUP BY SUBSTRING(id_jadwal, 12, 1)";
@@ -159,7 +160,7 @@ class Penjadwalan extends Database{
 	
 	public function cekRuangDalamSehari($ruang,$tanggal)
 	{
-		// dmonh3h3(Adhymas Fajar Sudrajad)
+		// 1700018167-Adhymas Fajar Sudrajat-dmonh3h3(Adhymas Fajar Sudrajad)
 		// UTS_Adhymas Fajar Sudrajad_1700018167
 		$db_RuangDalamSehari = $this->getDataBanyakRuangDalamSehari($tanggal);//Memanggil fucntion getDataBanyakRuangDalamSehari dengan parameter $tanggal yg sama dari fucntion pemanggil
 		foreach ($db_RuangDalamSehari as $key) {// dilakukan perulangan sebanyak baris reccord yg didapat dan dimasalkan sebagai $key
@@ -174,7 +175,7 @@ class Penjadwalan extends Database{
 	// function untuk mengambil data daftar dosen beserta jumlah mengujinya berdasarkan tanggal
 	public function getDataBanyakPengujiDalamSehari($tgl)
 	{
-		// andi
+		//1700018144-M Yulianto Andi S-LianEx
 		$query = "SELECT penguji.niy as niy, (SELECT count(*) from penguji where penguji.niy = dosen.niy ) as jumlahMenguji
 			-- from dosen_penguji join penguji on dosen_penguji.niy_dosen_penguji = penguji.niy
 			
@@ -190,7 +191,7 @@ class Penjadwalan extends Database{
 
 	public function CekPengujiDalamSehari($niy,$tanggal)
 	{ // function untuk mengecek apakah dosen dalam hari itu masih bisa menguji
-		// BIMA
+		//1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
 		$db_DosenDalamSehari = $this->getDataBanyakPengujiDalamSehari($tanggal); // mengambil data banyak penguji dalam sehari lalu disimpan dalam variabel $db_DosenDalamSehari
 		foreach ($db_DosenDalamSehari as $key) {
 			if($niy==$key['niy'] && $key['jumlahMenguji'] >= 3){ // mengecek apakah dosen dengan niy tersebut tidak lebih dari 3 kali menguji
@@ -203,15 +204,14 @@ class Penjadwalan extends Database{
 	
 	public function getDataBanyakWaktuDalamSehari($tgl) // function untuk menampilkan pada tanggal sekian, dan jam sekian ada berapa banyak yang di uji
 	{
-		//siti apryanti
+		//1700018141-siti apryanti-sitiapryantii
 		$query = "SELECT tanggal,jam, COUNT(*) as banyak FROM penjadwalan WHERE tanggal='$tgl' GROUP BY jam";
   	$result=$this->eksekusi($query); // query mengambil tanggal dan jam pada tabel penjadwalan lalu di jumlahkan  dan di kelompokan berdasarkan jam 
 		return $result; // pengembalian query dari query yang kita panggil
 	} 
 	
-	public function cekRuangWaktuDalamSehari($ruang,$waktu,$tanggal)
-	{ // Mengecek dalam tanggal tersebut apakah ada ruang dan waktu yang tabrakan atau sama
-		// bima
+	public function cekRuangWaktuDalamSehari($ruang,$waktu,$tanggal){ // Mengecek dalam tanggal tersebut apakah ada ruang dan waktu yang tabrakan atau sama
+		//1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
 		$query = "SELECT jam,tempat FROM penjadwalan WHERE tanggal='$tanggal'"; //query untuk mengambil data jam dan tempat dari tabel penjadwalan berdasarkan tanggal
 		$result=$this->eksekusi($query); //mengeksekusi query diatas
 		foreach ($result as $key) { //melakukan perulangan sebanyak data yg ada divariabel result
@@ -225,7 +225,7 @@ class Penjadwalan extends Database{
 	
 	public function cekDuaPengujiYangSama($penguji1,$penguji2) // fungsi ini untuk mengecek apakah ada dua penguji yang sama atau tidak.
 	{
-		// adil baihaqi
+		//1700018118-Adil Baihaqi-adilbaihaqi
 		if($penguji1==$penguji2){ // jika penguji 1 sama dengan penguji 2, maka data gagal disimpan ke database.
 			return false;
 		}else{ // jika penguji 1 dan penguji 2 berbeda, maka data berhasil disimpan ke database.
@@ -237,7 +237,7 @@ class Penjadwalan extends Database{
 
 	public function cekWaktuDalamSehari($waktu,$tanggal) // fungsi ini untuk mengecek apakah jadwal dalam sehari yang sama dengan batas maksimal 3 jadwal.
 	{
-		// adil baihaqi
+		//1700018118-Adil Baihaqi-adilbaihaqi
 		$db_WaktuDalamSehari = $this->getDataBanyakWaktuDalamSehari($tanggal);
 		foreach ($db_WaktuDalamSehari as $key) { // mengecek jika dalam sehari maksimal 3 jadwal.
 			if($waktu==$key['jam'] && $key['banyak'] >= 3){ // jika jadwal(waktu dan tanggal) sudah maksimal 3, maka data gagal disimpan ke database.
@@ -248,10 +248,9 @@ class Penjadwalan extends Database{
 		return true;
 	}
 
-	// function untuk mengecek kuota penguji
-	public function cekKuotaPenguji($niy)
-	{
-		// andi
+	
+	public function cekKuotaPenguji($niy){// function untuk mengecek kuota penguji
+		//1700018144-M Yulianto Andi S-LianEx
 		$query = "SELECT count(*) as jumlahMenguji
 					
 					-- from dosen_penguji join penguji on dosen_penguji.niy_dosen_penguji = penguji.niy
@@ -278,7 +277,7 @@ class Penjadwalan extends Database{
     
 
 	public function cekNimdataYangSama($nim){
-		   //Andika Risky
+		   //1700018174-M Andika Riski-Andikariski
 		   //Fungsi untuk mengecek nim dari database dengan nim yang akan di inputkan user
        		$query="SELECT nim from penjadwalan WHERE nim = $nim";
 			$sql = $this->eksekusi($query);
@@ -295,9 +294,8 @@ class Penjadwalan extends Database{
 			}
 	   }
 
-    //edit
 	public function getDosenPenguji(){
-		//Andhika risky
+		//1700018174-M Andika Riski-Andikariski
 		//Fungsi untuk menampilkan daftar dosen penguji dari database kemudian di tampilkan di menu pemilihan dosen penguji.
 			$query = "SELECT dosen.nama as nama_dosen,dosen.niy from dosen ";
 			$sql = $this->eksekusi($query);
@@ -306,7 +304,7 @@ class Penjadwalan extends Database{
 
 	// edit
 	public function getAllDosenKecualiSatuDosen($niy){
-		//Andika risky
+		//1700018174-m Andika Riski-Andikariski
 		//Fungsi untuk menampilkan nama dosen penguji tanpa menampilkan nama dosen sebelumnya saat mau di edit
 		$query ="SELECT dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian FROM dosen  
 		WHERE NOT dosen.niy='$niy'";
@@ -317,7 +315,7 @@ class Penjadwalan extends Database{
 
 
 	public function getDataJadwal(){            // fungsi untuk menampilkan seluruh jadwal dari database dan di tamplkan pada halaman web
-		//Yanti
+		//1700018141-siti apryanti K- sitiapryantii
 		$query ="SELECT * FROM `penjadwalan`"; //  query atau sintax untuk mengambil data jadwal dari tabel penjadwalan
 		$sql = $this->eksekusi($query);        // mengeksekusi apakah query yang kita buat itu benar
 		return $sql;                           // pengembalian terhadap query yang di panggil 
@@ -325,7 +323,7 @@ class Penjadwalan extends Database{
 	
 	public function getJadwalByIDJadwal($id_jadwal) // fungsi ini untuk menampilkan data jadwal berdasarkan idjadwal yang sudah ada didatabase.
 	{
-	// adil baihaqi
+	//1700018118-Adil Baihaqi-adilbaihaqi
 			// query ini untuk mengambil data jadwal berdasarkan idjadwal
 			$query = "SELECT 
 			mahasiswa_metopen.nim,mahasiswa_metopen.nama as nama,mahasiswa_metopen.topik,mahasiswa_metopen.dosen as dosen ,dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian,penguji.niy as niy_dosen_penguji,penjadwalan.id_jadwal,penjadwalan.jenis_ujian,penjadwalan.nim,penjadwalan.tanggal,penjadwalan.jam,penjadwalan.tempat 
@@ -363,7 +361,7 @@ class Penjadwalan extends Database{
 		$sql = $this->eksekusi($query); // pengeksekusian query
 		return $sql; // pengembalian nilai
 	}
-	//nandahsuci
+	
 	public function getDataJadwalUjianPendadaran() // funsi untuk menampikkan seluruh jadwal ujian pendadaran
 	{
 		$query ="SELECT * FROM `penjadwalan` WHERE jenis_ujian = 'UNDARAN' ORDER BY penjadwalan.tanggal ASC"; // funsi untuk mengurutkan data dari terkecil hingga terbesar
@@ -379,9 +377,11 @@ class Penjadwalan extends Database{
 		return $result; // mengembalikan nilai dari hasil eksekusi query
 	}
 
-	//Andi
+	
 	public function getDataJadwalSeminarProposal() // function untuk mengambil data jadwal seminar proposal
 	{
+		//1700018144-M Yulianto Andi S-LianEx
+
 		$query ="SELECT mahasiswa_metopen.nim,mahasiswa_metopen.nama as nama,mahasiswa_metopen.topik,mahasiswa_metopen.dosen,dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian,penjadwalan.jenis_ujian,penjadwalan.tempat,penjadwalan.jam,penjadwalan.id_jadwal,penjadwalan.tanggal
 		FROM mahasiswa_metopen join penjadwalan on mahasiswa_metopen.nim = penjadwalan.nim
 		join penguji on penjadwalan.id_jadwal = penguji.id_jadwal
@@ -392,9 +392,10 @@ class Penjadwalan extends Database{
 		return $sql;	// mengembalikan nilai dari hasil query tersebut
 	}
 
-	//Andi
+	
 	public function UpdateTabelPengujiByIdJadwal($id,$id_baru,$niy,$niy_baru)
 	{
+		//1700018144-M Yulianto Andi S-LianEx
 		$this->eksekusi('SET foreign_key_checks = 0');
 		$querry_penguji ="UPDATE `penguji` SET `id_jadwal` = '$id_baru',`niy`='$niy_baru' WHERE `penguji`.`id_jadwal` = '$id' AND penguji.niy='$niy'";		
 		$result=$this->eksekusi($querry_penguji);
@@ -403,7 +404,8 @@ class Penjadwalan extends Database{
 	}
 	public function caridatajadwal($key)
 	{
-		// dikerjakan oleh dmonh3h3(Adhymas fajar Sudrajad)
+		
+		//1700018167-Adhymas Fajar Sudrajat-dmonh3h3(Adhymas Fajar Sudrajad)
 		// UTS_Adhymas Fajar Sudrajad_1700018167
 		$query =" SELECT * FROM `penjadwalan` WHERE 
 				jenis_ujian LIKE '%$key%' OR 
@@ -417,24 +419,27 @@ class Penjadwalan extends Database{
 	}
 	public function UpdateTabelPenjadwalanByIdJadwal($id,$id_baru,$jenis_ujian,$nim,$tanggal,$waktu,$ruang)
 	{
-		// dmonh3h3(Adhymas Fajar Sudrajad)3
+	
+		//1700018167-Adhymas Fajar Sudrajat-dmonh3h3(Adhymas Fajar Sudrajad)
 		// UTS_Adhymas Fajar Sudrajad_1700018167
 		$querry_penjadwalan ="UPDATE `penjadwalan` SET `id_jadwal`='$id_baru',`jenis_ujian`='$jenis_ujian',`nim`='$nim',`tanggal`='$tanggal',`jam`='$waktu',`tempat`='$ruang' WHERE id_jadwal='$id'";// Querry ini untuk mengupdate tabel penjadwalan di setiap atributnya dengan syarat hanya baris yang id jadwal-nya harus sama dengan parameter $id		
 		$result=$this->eksekusi($querry_penjadwalan);// variabel result diisikan oleh hasil dari eksekusi querry diatas
 		return $result;// Mengembalikan nilai dari variabel result
 	}
 	
-	//ADIL
+
 	public function getDosenJamTanggalSamaBedaRuang($niy,$jam,$ruang,$tgl)
 	{
+		//1700018118-Adil Baihaqi-adilbaihaqi
 		$querry_penguji ="SELECT * FROM `penguji` JOIN penjadwalan ON penjadwalan.id_jadwal=penguji.id_jadwal WHERE Penjadwalan.tanggal='$tgl' AND penguji.niy='$niy' AND penjadwalan.jam='$jam'";	
 		$result=$this->eksekusi($querry_penguji);
 		return $result;
 	}
 	
-	//Yanti
+	
 	public function cekDosenJamTanggalSamaBedaRuang($niy,$jam,$ruang,$tgl)
 	{		
+	//1700018141-siti apryanti-sitiapryantii	
 		$result=$this->getDosenJamTanggalSamaBedaRuang($niy,$jam,$ruang,$tgl);
 		$result=$this->hitung_row($result);
 		if ($result>0) {
@@ -444,41 +449,46 @@ class Penjadwalan extends Database{
 		}
 	}
 	
-	//Sandy
+	
 	public function getDataDosenPenguji1byIdJadwal($id_jadwal)
 	{
+		// 1700018133-Sandy Valentino G-iamsand
 		$query ="SELECT dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian FROM penguji JOIN dosen ON dosen.niy=penguji.niy WHERE id_jadwal='$id_jadwal' LIMIT 1";
 		$result=$this->eksekusi($query);
 		return $result;
 
 	}
 	
-	//Nanda
+	
 	public function getJadwalTerdekat()
-	{		
+	{
+	//-1700018116-Nanda Suci Pratwi-nandasuci
+
 		$query ="SELECT * FROM `penjadwalan` ORDER BY `penjadwalan`.`tanggal` ASC, `penjadwalan`.`jam` ASC, `penjadwalan`.`tempat` ASC";	
 		$result=$this->eksekusi($query);
 		return $result;
 	}
 	
-	//Bima
+	
 	public function getDataDosenPenguji2byIdJadwal($id_jadwal)
 	{
+		//1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
 		$query ="SELECT dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian FROM penguji JOIN dosen ON dosen.niy=penguji.niy WHERE id_jadwal='$id_jadwal' LIMIT 1,1";
 		$result=$this->eksekusi($query);
 		return $result;
 	}
 	
-	//Andika
+	
 	public function getAllDosenKecualiDuaDosen($niy,$niy2)
 	{
+		//1700018174-m Andika Riski-Andikariski
 		$query ="SELECT dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian FROM dosen 
 		WHERE NOT dosen.niy='$niy' AND NOT dosen.niy='$niy2'";
 		$sql = $this->eksekusi($query);
 		return $sql;
 	}
 	
-	//Andi
+	//1700018144-M Yulianto Andi S-LianEx
 	public function getDosenPengujibyNIY($niy){
 			$query = "SELECT dosen.nama as nama_dosen,dosen.niy from dosen  WHERE dosen.niy = $niy";
 			$sql = $this->eksekusi($query);
@@ -507,7 +517,7 @@ class Penjadwalan extends Database{
 
 	public function getDosenUji($nim,$id_jadwal) // function untuk menampilkan dosen penguji dengan niy dan menampilkan data mahasiswa  yang akan dia uji 
 	{
-		//Yanti
+		//1700018141-sitiapryanti-sitiapryantii
 		
 		$query = "SELECT dosen.nama as nama_dosen,dosen.niy FROM dosen JOIN penguji on dosen.niy = penguji.niy JOIN penjadwalan on penjadwalan.id_jadwal = penguji.id_jadwal 
 		JOIN mahasiswa_metopen on mahasiswa_metopen.nim = penjadwalan.nim WHERE mahasiswa_metopen.nim=$nim AND penguji.id_jadwal = '$id_jadwal'"; // query mengambil data dosen, data jadwal mahasiswa berdasarkan nim, dan dosen dapat melihat mahasiswa mana yang kan dia uji 
@@ -524,7 +534,7 @@ class Penjadwalan extends Database{
 
 	public function getLamaBimbingan($nim)
 	{
-		//Sandi
+		// 1700018133-Sandy Valentino G-iamsand
 		$query = "SELECT 
 					DATEDIFF(CURDATE(),penjadwalan.tanggal) as lamabimbingan 
 					from penjadwalan WHERE nim = '$nim' AND jenis_ujian = 'SEMPROP'";

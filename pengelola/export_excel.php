@@ -32,6 +32,7 @@
 
           <table border="1">
             <tr align="center">
+              <th>No</th>
               <th>NIM</th>
               <th>Nama</th>
               <th>Semester</th>
@@ -43,9 +44,11 @@
             </tr>
             
             <?php 
+            $i=1;
               foreach ($akses->getMhs() as $key) {
                 echo "
                 <tr>
+                  <td>$i</td>
                   <td>$key[nim]</td>
                   <td>$key[nama]</td>
                   <td>$key[periode]</td>
@@ -56,6 +59,7 @@
                   <td>$key[tanggal_mulai]</td>
                 </tr>
                 ";
+                $i=$i+1;
               }
              ?>
 

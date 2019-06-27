@@ -1,7 +1,5 @@
 <?php 
-    if(isset($_GET['succes'])){
-        echo '<script type="text/javascript">alert("Pendaftaran berhasil")</script>';
-    }
+    include 'kelolaAkun.php';
  ?>
 <!doctype html>
 <html lang="en">
@@ -21,6 +19,12 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   
+     <script type="text/javascript" src="mahassiwa/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="mahasiswa/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="mahasiswa/sweetalert2/dist/sweetalert2.min.css">
+
+
     <style type="text/css">
     .box2{
           border-radius: 7px 7px 0px 0px;
@@ -44,6 +48,32 @@
     </script>
   </head>
   <body>
+    <?php
+      if(isset($_GET['succes'])){
+        echo '<script type="text/javascript">
+              Swal.fire({
+                position: "middle",
+                type: "success",
+                title: "Selamat, Akun anda telah terdaftaf",
+                showConfirmButton: false,
+                timer: 1500
+              })
+        </script>';
+    }
+
+    if(isset($_GET['notwebmail']))
+    {
+       echo '<script type="text/javascript">
+              Swal.fire({
+                position: "middle",
+                type: "error",
+                title: "Maaf anda harus menggunakan akun WebMail UAD",
+                showConfirmButton: false,
+                timer: 3000
+              })
+        </script>';
+    }
+    ?>
 <br>
 <br>
 <br>
@@ -78,6 +108,7 @@
             <label class="form-check-label" for="showpass">Show Password</label>
           </div>
           <button type="submit" class="btn btn-primary">Login</button>
+          <input type="button" onclick="window.location = 'google_acc.php';" value="Log in dengan google" class="btn btn-danger">
          <a href="formInputAkun.php" class="btn btn-warning">Daftar</a>
         </form>
         </div>

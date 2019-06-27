@@ -60,6 +60,19 @@
               })
         </script>';
     }
+
+    if(isset($_GET['notwebmail']))
+    {
+       echo '<script type="text/javascript">
+              Swal.fire({
+                position: "middle",
+                type: "error",
+                title: "Maaf anda harus menggunakan akun WebMail UAD",
+                showConfirmButton: false,
+                timer: 3000
+              })
+        </script>';
+    }
     ?>
 <br>
 <br>

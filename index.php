@@ -54,7 +54,7 @@
               Swal.fire({
                 position: "middle",
                 type: "success",
-                title: "your work has been saved",
+                title: "Selamat, Akun anda telah terdaftaf",
                 showConfirmButton: false,
                 timer: 1500
               })

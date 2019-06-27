@@ -28,11 +28,16 @@
           <a class="nav-item nav-link ml-auto link2 mt-2" href="#"><?php echo $_SESSION['username'] ?><span
               class="sr-only ">(current)</span></a>
               <li class="dropdown"><img class=" w10-1 rounded-circle" src="../img/avatar_Penjadwalan2.jpeg">
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a href="#"><i class="dropdown-item"></i> Pengaturan</a></li>
+              
+                 <!--  <li><a href="#"><i class="dropdown-item"></i> Pengaturan</a></li>
                  <li><a href="#"><i class="dropdown-item"></i> Bantuan</a></li>
-                 <li><a href="../logout.php"><i class="dropdown-item"></i> Logout</a></li>
-             </ul>
+                 <li><a href="../logout.php"><i class="dropdown-item"></i> Logout :></a></li> -->
+                  <div class="dropdown-menu navbox" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item  drop-link" href="#">pengaturan</a>
+                  <a class="dropdown-item  drop-link" href="#">bantuan</a>
+                  <a class="dropdown-item  drop-link" href="../logout.php">logout</a>                
+                </div>
+             
              </li>
           
           <!-- End -->

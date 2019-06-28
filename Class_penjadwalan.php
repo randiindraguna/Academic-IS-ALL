@@ -61,7 +61,7 @@ class Penjadwalan extends Database{
 		$query = "INSERT INTO `penguji` (`id_penguji`, `id_jadwal`, `niy`) VALUES (NULL, '$id_jadwal', '$niy')"; //query ini berfungsi untuk menghubungkan
 		$this->eksekusi($query); //funsi ini untuk mengembalikan hasil eksekusi fungsi ini
 	}
-	public function getDataPenjadwalanByNIM($nim) // fungsi ini berfungsi untuk melihat atau menampilkan jadwal yang diambil dari nim
+	public function getDataPenjadwalanByNIM($nim) // fungsi ini berfungsi untuk melihat atau menampilkan jadwal yang diambil dari nim dan ditampilkan di tabel penjadwalan
 	{
 		// 1700018133-Sandy Valentino G-iamsand
 		$query = "SELECT penjadwalan.id_jadwal,penjadwalan.jenis_ujian,penjadwalan.nim,penjadwalan.tanggal,penjadwalan.jam,penjadwalan.tempat from penjadwalan where nim='$nim'"; // query ini yg berfungsi mengambil data dari table penjadwalan melalui nim

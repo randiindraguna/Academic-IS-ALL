@@ -435,11 +435,11 @@ class Penjadwalan extends Database{
 	}
 	
 	
-	public function cekDosenJamTanggalSamaBedaRuang($niy,$jam,$ruang,$tgl)
+	public function cekDosenJamTanggalSamaBedaRuang($niy,$jam,$ruang,$tgl) //function mengecek bahwa dosen tersebut tidak boleh menguji meskipun pada ruang dan jam yang beda
 	{		
 	//1700018141-siti apryanti-sitiapryantii	
-		$result=$this->getDosenJamTanggalSamaBedaRuang($niy,$jam,$ruang,$tgl);
-		$result=$this->hitung_row($result);
+		$result=$this->getDosenJamTanggalSamaBedaRuang($niy,$jam,$ruang,$tgl); //mengambil data dosen untuk mengecek tanggal dan ruang agar tidak bentrok
+		$result=$this->hitung_row($result);//menghitung row, menampilkan data
 		if ($result>0) {
 			return false;
 		}else{
@@ -504,12 +504,14 @@ class Penjadwalan extends Database{
 	//1700018141-siti apryanti k-sitiapryantii
 	public function getDataJadwalDosenByNiySemua($niy)
 	{
+		
+	//1700018141-siti apryanti k-sitiapryantii
 		$query = "SELECT penjadwalan.id_jadwal, penjadwalan.nim,penjadwalan.jenis_ujian ,mahasiswa_metopen.nama,penjadwalan.tanggal, penjadwalan.jam, penjadwalan.tempat, (SELECT dosen.nama from dosen where penguji.niy = dosen.niy ) as penguji
 			FROM mahasiswa_metopen 
             join penjadwalan on mahasiswa_metopen.nim = penjadwalan.nim
 			join penguji on penjadwalan.id_jadwal = penguji.id_jadwal
 			join dosen on penguji.niy = dosen.niy   
-            WHERE penguji.niy = '$niy' ORDER BY penjadwalan.tanggal ASC";
+            WHERE penguji.niy = '$niy' ORDER BY penjadwalan.tanggal ASC"; // mengambil data dosen berdasarkan niy dan di urutkan berdasarkan waktu terdekat
 
             $sql = $this->eksekusi($query);
 			return $sql;

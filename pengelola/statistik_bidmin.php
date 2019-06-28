@@ -147,14 +147,14 @@ if($_SESSION['status'] == "login"){
                 if (!is_null($_POST['bidmin'])) {
                     $bidang = $_POST['bidmin'];
                 ?>
-               
+               <div class="container">
                     <br><br>
-                    <h2 align="center">Data Mahasiswa <?php echo "$bidang"; ?></h2>
+                    <h2 align="center" class="judul">Data Mahasiswa <?php echo "$bidang"; ?></h2>
                     <br><br>
                     <center>
-                    <table border="1" width="1000px">
+                    <table class="table rounded" border="1" width="1000px">
                         <tr align="center"> 
-                          <th width="300px">Nama Mahasiswa</th>
+                          <th scope="col">Nama Mahasiswa</th>
                         </tr>
                         
                         <?php
@@ -176,7 +176,8 @@ if($_SESSION['status'] == "login"){
                 <!--Grafik--></br>
             </div>
             </table>
-            </center>   
+            </center>
+            </div>   
     </body>
 </html>
         

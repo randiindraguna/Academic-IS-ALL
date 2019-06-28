@@ -79,6 +79,15 @@
 			return $this->result;
 		}
 
+		//fungsi ini dibuat oleh Arifaleo Nurdin (1700018158)
+		//fungsi ntuk mengganti password
+		public function ganti_password($username,$new_password)
+		{
+			$query = "UPDATE login SET password = '$new_password' where user_name = '$username' ";
+			$this->execute($query);
+			return $this->result;
+		}
+
 
 	}
 

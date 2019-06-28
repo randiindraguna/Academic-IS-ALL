@@ -47,7 +47,7 @@ if($_SESSION['status'] == "login"){
       </table>
 <br>
 <table align="center">
-<form name="pencarian" method="POST" action = "hasil_cari_pengunguman_diadmin.php" ">            
+<form name="pencarian" method="POST" action = "hasil_cari_pengunguman_diadmin.php">            
       
                     <tr> <td>
                     <input type="text" placeholder="masukan nim" name="nim" title ="masukan nim" class="form-control">  
@@ -103,6 +103,8 @@ if($_SESSION['status'] == "login"){
       <th height='50'>Nilai Penguji 1</th>
        <th height='50'>Nilai Penguji 2</th>
         <th height='50'>Nilai Pembimbing</th>
+        <th height='50'>Rata-rata</th>
+        <th height='50'>Grade</th>
       <th height='50'>Status</th>
       <th height='50'>Action</th>
     </tr>
@@ -110,39 +112,48 @@ if($_SESSION['status'] == "login"){
 
 <?php
     
+    if(isset($_GET['nim'])){
+      $key=$akses->LihatPengumumanNilaiDanStatusSatuMahasiswaPendadaran($_GET['nim']);
+      echo "
+      <tr>
+        <td align='center'>$key[nim]</td>
+        <td align='center'>$key[nama_mhs]</td>
+        <td align='center'>$key[nilai_penguji_1]</td>
+         <td align='center'>$key[nilai_penguji_2]</td>
+          <td align='center'>$key[nilai_pembimbing]</td>
+        <td align='center'>$key[status]</td>
+        <td align='center'><a href='update_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>UPDATE</a>
+        <a href='delete_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>DELETE</a></td>
+        </tr>
+      ";
+    }
+    else{
+      
  foreach ($akses->LihatPengumumanNilaiDanStatusSemuaMahasiswaPendadaran() as $key) {
-
-
-        
+  //DIBUAT OLEH IBRAHIM 
+  $rata_rata=round(($key['nilai_penguji_1']+$key['nilai_penguji_2']+$key['nilai_pembimbing'])/3,2);
+   if($rata_rata<=20) $grade='E';
+   else if($rata_rata<=40) $grade='D';
+   else if($rata_rata<=660) $grade='C';
+   else if($rata_rata<=80) $grade='B';
+   else $grade='A';
         echo "
-            
-       
-
-
-       
-       
-        
-
         <tr>
           <td align='center'>$key[nim]</td>
           <td align='center'>$key[nama_mhs]</td>
           <td align='center'>$key[nilai_penguji_1]</td>
            <td align='center'>$key[nilai_penguji_2]</td>
             <td align='center'>$key[nilai_pembimbing]</td>
+            <td align='center'>$rata_rata</td>
+            <td align='center'>$grade</td>
           <td align='center'>$key[status]</td>
           <td align='center'><a href='update_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>UPDATE</a>
           <a href='delete_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>DELETE</a></td>
           </tr>
-         
         ";
-
-
-      
     }
-
-
-        
-      ?>
+  }
+  ?>
 
     </table>
 

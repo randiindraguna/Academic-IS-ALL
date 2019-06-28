@@ -104,6 +104,8 @@ if($_SESSION['status'] == "login"){
       <th height='50'>Nilai Proses pembimbing</th>
        <th height='50'>Nilai ujian pembimbing</th>
         <th height='50'>Nilai ujian penguji</th>
+      <th height='50'>Rata-Rata</th>
+      <th height='50'>Grade</th>
       <th height='50'>Status</th>
       <th height='50'>Action</th>
     </tr>
@@ -112,24 +114,22 @@ if($_SESSION['status'] == "login"){
 <?php
     
  foreach ($akses->LihatPengumumanNilaiDanStatusSemuaMahasiswa() as $key) {
-
-
-        
+   #DIBUAT OLHE IBRAHIM
+  $rata_rata=round(($key['nilai_proses_pembimbing']+$key['nilai_ujian_pembimbing']+$key['nilai_ujian_penguji'])/3,2);
+  if($rata_rata<=20) $grade='E';
+  else if($rata_rata<=40) $grade='D';
+  else if($rata_rata<=660) $grade='C';
+  else if($rata_rata<=80) $grade='B';
+  else $grade='A';        
         echo "
-            
-       
-
-
-       
-       
-        
-
         <tr>
           <td align='center'>$key[nim]</td>
           <td align='center'>$key[nama_mhs]</td>
           <td align='center'>$key[nilai_proses_pembimbing]</td>
            <td align='center'>$key[nilai_ujian_pembimbing]</td>
             <td align='center'>$key[nilai_ujian_penguji]</td>
+          <td align='center'>$rata_rata</td>
+          <td align='center'>$grade</td>
           <td align='center'>$key[status]</td>
           <td align='center'><a href='update_semrop_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>UPDATE</a>
           <a href='delete_semprop_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>DELETE</a></td>

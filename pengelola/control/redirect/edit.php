@@ -1,0 +1,1 @@
+<?=$id_jadwal=$_POST['id_jadwal'];?>

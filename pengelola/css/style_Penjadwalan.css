@@ -4,7 +4,7 @@
 /* Navbar Brand */
 .navbar-brand {
     font-family: viga;
-    color: #4B847D !important;
+    color: #fff !important;
     font-size: 32px;
 }
 
@@ -16,7 +16,7 @@
 
 
 .bg-two {
-    background-color: #4B847D;
+    background-color: #EFF3F8;
 }
 
 .bg-tre {
@@ -24,7 +24,11 @@
 }
 
 .bg-four {
-    background-color: #F1EEE9;
+    background-color: #3598DC;
+}
+
+.bg-five {
+    background-color: #0D2127;
 }
 
 /* Color */
@@ -53,15 +57,12 @@
 
 .pone {
     font-family: Roboto;
-    color: #fff !important;
-    text-shadow: 1px 1px 1px #000000;
+    color: #000 !important;
     font-size: 18px;
 }
 
 .ptwo {
-    font-family: viga;
-    color: #FFFFFF !important;
-    text-shadow: 1px 1px 1px #000000;
+    color: #000 !important;
     font-size: 14px;
 }
 
@@ -72,27 +73,39 @@
 
 .judul {
     font-family: viga;
-    color: #FFFFFF !important;
-    text-shadow: 1px 1px 1px #000000;
+    color: #3598DC !important;
+    text-shadow: 1px 1px 1px #fff;
     font-size: 24px;
 }
 
-/* Navbar Primary */
+/* Navbar Primary & Seconndary */
 .nav-link {
     margin-right: 30px;
     font-family: viga;
     color: #4B847D !important;
 }
 
-.nav-link:hover::after {
-    content: "";
-    display: block;
-    border-bottom: 3px solid #4B847D;
-    width: 50%;
-    margin: auto;
-    padding-bottom: 4px;
-    margin-bottom: -7px;
+.link2 {
+    margin-right: 30px;
+    font-family: viga;
     color: #fff !important;
+}
+
+.drop-link {
+    margin-right: 30px;
+    color: #fff !important;
+}
+
+.drop-link:hover {
+    margin-right: 30px;
+    text-shadow: 2px 2px 2px #000000;
+    background-color: #55616F;
+}
+
+.navbox {
+    padding: 2px 2px 2px;
+    text-shadow: 1px 1px 1px #000000;
+    background-color: #55616F;
 }
 
 /* sizes */
@@ -108,6 +121,13 @@
     margin-bottom: 3px;
 }
 
+.w10-1 {
+    width: 50px;
+    height: 50px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
 .w50 {
     width: 400px;
     margin-top: 3px;
@@ -118,8 +138,15 @@
 /* Utility */
 
 .box2 {
-    background-color: #4B847D;
+    background-color: #EFF3F8;
     border-radius: 7px 7px 7px 7px;
+    box-shadow: 1px 1px 12px grey;
+}
+
+.box2-1 {
+    background-color: #EFF3F8;
+    border-radius: 7px 7px 7px 7px;
+    box-shadow: 0px 0px 10px grey;
 }
 
 .under {
@@ -131,18 +158,26 @@
 /* Input type */
 
 input[type=text]:focus {
-    background-color: #DAC2A8;
+    background-color: #3598DC;
     color: #fff;
     border-color: #fff;
 }
 
 /* Table */
+
 .table td {
     background-color: #fff;
     color: black;
 }
 
 .table th {
-    background-color: #DAC2A8;
+    background-color: #3598DC;
+    border-top-color: #3598DC;
     color: #fff;
+}
+
+/* image */
+img .img-circle {
+    background-color: #000000;
+    border-radius: 100%;
 }

@@ -47,7 +47,7 @@ if($_SESSION['status'] == "login"){
             // JIKA TIDAK MEMILIKI JADWAL MAKA DAFTAR JADWAL
             $nama=$_SESSION['nama'];
             $topik=$_SESSION['topik'];
-            $dosen=$_SESSION['dosen'];
+            // $dosen=$_SESSION['dosen'];
             $niy=$_SESSION['niy'];
             $nama_dosen=$_SESSION['nama_dosen'];
             $email_dosen=$_SESSION['email'];

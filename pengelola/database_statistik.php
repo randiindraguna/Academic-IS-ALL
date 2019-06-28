@@ -77,8 +77,6 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 	return $this->result; 
 	}
 	
-
-	//dibuat oleh : LATIFATUL MUJAHIDAH (1700018159)
 	public function getrelata(){
 		$query="SELECT mahasiswa_metopen.nama as nama, mahasiswa_metopen.bidang_minat as bidang_minat, count(mahasiswa_metopen.bidang_minat) as jumlah_bidang_minat2 from mahasiswa_metopen where bidang_minat='relata'";	
 		//query tersebut menjelaskan tentang tampilan jumlah mahasiswa yang mengambil bidang minat relata
@@ -196,7 +194,7 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 	
 	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
 	public function gender_undaran_lk($status){
-		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_gen4, ujian_pendadaran.status  
+		$query = "SELECT COUNT(ujian_pendadaran.nim) AS jumlah_gen4, ujian_pendadaran.status  
 				  FROM mahasiswa_metopen JOIN ujian_pendadaran 
 				  ON mahasiswa_metopen.nim = ujian_pendadaran.nim 
 				  WHERE mahasiswa_metopen.jenis_kelamin = 'Laki-laki' 
@@ -206,7 +204,7 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 	}
 	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
 	public function gender_undaran_pr($status){
-		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_gen3, ujian_pendadaran.status  
+		$query = "SELECT COUNT(ujian_pendadaran.nim) AS jumlah_gen3, ujian_pendadaran.status  
 				  FROM mahasiswa_metopen JOIN ujian_pendadaran 
 				  ON mahasiswa_metopen.nim = ujian_pendadaran.nim 
 				  WHERE mahasiswa_metopen.jenis_kelamin = 'Perempuan' 
@@ -217,7 +215,7 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 
 	//Dibuat oleh : Ervin Fikot M (1700018127)
 	public function jumlah_ampu_bimbingan($bidang){
-		$query="SELECT dosen.nama AS dos_bing, COUNT(mahasiswa_metopen.dosen) 
+		$query="SELECT dosen.nama AS dos_bing, dosen.niy AS niy ,COUNT(mahasiswa_metopen.dosen) 
 				AS jumlah_ampu FROM dosen JOIN mahasiswa_metopen 
 				WHERE dosen.niy = mahasiswa_metopen.dosen 
 				AND mahasiswa_metopen.bidang_minat = '$bidang' 
@@ -295,27 +293,45 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //mengembalikan hasil query diatas
 	}
+	//dibuat oleh : LATIFATUL MUJAHIDAH (1700018159)
 	public function nama_prodi(){
-		$query = "SELECT CASE SUBSTRING(nim, 6, 2)
-							WHEN '18' THEN 'informatika'
-							WHEN '12' THEN 'akutansi'
-							WHEN '19' THEN 'industri'
-							END AS nama
-				  FROM seminar_proposal GROUP BY nama DESC";
+		$query = "SELECT * FROM prodi";
 		$this->eksekusi($query);
 		return $this->result;
 	}
-	public function jml_mhs_lulus_semprop_prodi(){
-		$query = "SELECT COUNT(nim) AS jumlah FROM seminar_proposal WHERE status='lulus' GROUP BY SUBSTRING(nim, 6, 2)";
+	public function lulus_semprop_prodi($id){
+		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_mhs, prodi.nama_prodi 
+				  FROM seminar_proposal JOIN prodi ON prodi.id_prodi = SUBSTRING(seminar_proposal.nim, 6, 2) 
+				  WHERE prodi.id_prodi = '$id' AND seminar_proposal.status = 'lulus'";
 		$this->eksekusi($query);
 		return $this->result;
 	}
 
-	public function jml_mhs_lulus_undaran_prodi(){
-		$query = "SELECT COUNT(nim) AS jumlah FROM ujian_pendadaran WHERE status='lulus' GROUP BY SUBSTRING(nim, 6, 2)";
+	public function getNilai_semprop(){
+		$query = "SELECT nim, nilai_proses_pembimbing AS nilai_1, nilai_ujian_pembimbing AS nilai_2, nilai_ujian_penguji AS nilai_3 FROM seminar_proposal";
 		$this->eksekusi($query);
 		return $this->result;
 	}
-}	
+	//dibuat oleh Ervin FIkot M(1700018127)
+	public function konversi($nilai_1, $nilai_2, $nilai_3){
+		$total = ($nilai_1 + $nilai_2 + $nilai_3);
+		$rerata = ($total/3);
+			if ($rerata >=80){
+				return 'A';
+	        }elseif (($rerata <80) && ($rerata >=60)) {
+	            return 'B';      
+	        }elseif (($rerata <60) && ($rerata >=40)) {
+	            return 'C';      
+	        }elseif (($rerata <40) && ($rerata >=20)) {
+	            return 'D';       
+	        }elseif (($rerata <20) && ($rerata >=0)) {
+	            return 'E';      
+	        }else{
+	           	return 0;
+	       	}
+	}
+
+	
+	}	
 	
  ?>

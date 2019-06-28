@@ -285,12 +285,10 @@ class Penjadwalan extends Database{
 			if ($row = $sql->fetch_assoc()){
 				if(sizeof($row) > 0){
 					return true;
-					// echo $row['nim'];
 				}
 			} 
 			else {
 				return 0;
-				// echo "tidak ditemukan";
 			}
 	   }
 

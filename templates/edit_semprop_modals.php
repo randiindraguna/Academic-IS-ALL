@@ -85,7 +85,7 @@
                     </select>
                 </div>
                 <div class="col-6 mt-2">
-                    <label for="inputState">Ruang</label>
+                    <label for="inputState">Tanggal</label>
                     <input type="date" name="tanggal" class="form-control" id="tanggal">
                 </div>
             </div>

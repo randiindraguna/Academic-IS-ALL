@@ -46,7 +46,7 @@ if($_SESSION['status'] == "login"){
                 <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Kelulusan Berdasarkan : </label>
                         <select name="lulusan" id="inputState" class="form-control" >
-                            <option value="" selected>Pilih Jenis Kelulusan</option>
+                            <option value="0" selected>Pilih Jenis Kelulusan</option>
                             <option value="SEMPROP">Seminar Proposal</option>
                             <option value="UNDARAN">Ujian Pendadaran</option>
                         </select>                   
@@ -62,7 +62,7 @@ if($_SESSION['status'] == "login"){
     </div>
 
     <?php
-        if (empty($_POST['kirim'])) {
+        if (isset($_POST['kirim'])) {
             if (is_null($_POST['lulusan'])) {
                 echo "SILAHKAM PILIH JENIS LULUSAN";
             }
@@ -87,7 +87,8 @@ if($_SESSION['status'] == "login"){
                                         elseif ($kelulusan == "UNDARAN") {
                                             foreach($akses->lulus_UNDARAN() as $key){echo "$key[jml_lulus]";}
                                         }
-                                    
+                                    ?>,
+                                    <?php
                                         if ($kelulusan == "SEMPROP") {
                                             foreach($akses->tidaklulus_SEMPROP() as $key){echo "$key[jml_tdk_lulus]";}
                                         } 

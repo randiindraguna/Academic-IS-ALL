@@ -299,10 +299,18 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
-	public function lulus_semprop_prodi($id){
+	public function lulus_semprop_prodi($id,$stt){
 		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_mhs, prodi.nama_prodi 
 				  FROM seminar_proposal JOIN prodi ON prodi.id_prodi = SUBSTRING(seminar_proposal.nim, 6, 2) 
-				  WHERE prodi.id_prodi = '$id' AND seminar_proposal.status = 'lulus'";
+				  WHERE prodi.id_prodi = '$id' AND seminar_proposal.status = '$stt'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+
+	public function lulus_undaran_prodi($id,$stt){
+		$query = "SELECT COUNT(ujian_pendadaran.nim) AS jumlah_mhs, prodi.nama_prodi 
+				  FROM ujian_pendadaran JOIN prodi ON prodi.id_prodi = SUBSTRING(ujian_pendadaran.nim, 6, 2) 
+				  WHERE prodi.id_prodi = '$id' AND ujian_pendadaran.status = '$stt'";
 		$this->eksekusi($query);
 		return $this->result;
 	}

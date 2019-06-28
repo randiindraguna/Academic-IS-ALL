@@ -473,9 +473,9 @@ class Penjadwalan extends Database{
 	public function getDataDosenPenguji2byIdJadwal($id_jadwal)
 	{
 		//1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
-		$query ="SELECT dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian FROM penguji JOIN dosen ON dosen.niy=penguji.niy WHERE id_jadwal='$id_jadwal' LIMIT 1,1";
-		$result=$this->eksekusi($query);
-		return $result;
+		$query ="SELECT dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian FROM penguji JOIN dosen ON dosen.niy=penguji.niy WHERE id_jadwal='$id_jadwal' LIMIT 1,1"; //mendapatkan data dosen penguji ke 2 dengan id_jadwal
+		$result=$this->eksekusi($query); //mengeksekusi query diatas
+		return $result; //mengembalikan nilai data dosen penguji 2
 	}
 	
 	

@@ -123,7 +123,7 @@ class Penjadwalan extends Database{
 			return $hasil;// Mengembalikan nilai dari hasil eksekusi querry diatas
 			}
 	}
-	public function getDataStatusSemprop($nim) // fungsi ini berfungsi untuk melihat status mahasiswa 
+	public function getDataStatusSemprop($nim) // fungsi ini berfungsi untuk melihat status mahasiswa yang ada di navbar penjadwalan baik itu berstatus lulus atau tidak lulus atau tidak berstatus 
 	{
 		// 1700018133-Sandy Valentino G-iamsand
 		$query = "SELECT seminar_proposal.status as status_sp from seminar_proposal where nim=$nim"; // query ini berfungi untuk mengambil data dari table seminar_proposal dan status lalu kolom status di dirubah nama nya menjadi status_sp yg akan dicek melalui nim

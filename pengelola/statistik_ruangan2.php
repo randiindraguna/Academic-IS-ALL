@@ -22,7 +22,6 @@ if($_SESSION['status'] == "login"){
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
         .previous {
-  background-color: #1E90FF;
   color: white;
 }
     </style>
@@ -126,7 +125,7 @@ if($_SESSION['status'] == "login"){
     </script>
             <!--Grafik--></br>
  <div class="row">
-    <div class="col-sm-4" style=""><a href="statistik_ruangan.php" class="previous">&laquo; Previous</a></div>
+    <div class="col-sm-4" style=""><button class="btn-primary"><a href="statistik_ruangan.php" class="previous">&laquo; Previous</a></div>
     <div class="col-sm-4" style=""></div>
     <div class="col-sm-4" style=""></div>
 </div>

@@ -35,7 +35,6 @@
 
         if(!$cek)
         {
-<<<<<<< HEAD
           echo '
           <script type="text/javascript">
             Swal.fire({
@@ -46,34 +45,8 @@
               timer: 1500 
             })
           </script>';
-          header('Refresh: 0 URL=Bimbingan2.php?first');
-        } 
-        else
-        {
-          echo '
-          <script type="text/javascript">
-            Swal.fire({
-              position: "middle",
-              type: "success",
-              title: "data tersimpan",
-              showConfirmButton: false,
-              timer: 1500 
-            })
-          </script>';
-=======
-          echo
-          "
-          <script type='text/javascript'>
-          	Swal.fire({
-          		position: 'middle',
-          		type: 'warning',
-          		title: 'gagal menyimpan',
-          		showConfirmButton: false,
-          		timer: 1500
-          		})
-          </script>";
           header('Refresh: 1.5 URL=Bimbingan2.php?first');
-        } 
+        }
         else
         {
           echo
@@ -87,8 +60,6 @@
           		timer: 1500
           		})
           </script>";
->>>>>>> bdfd0969acb6707c4e8eb09b1232c870d3df14db
-
           header('Refresh: 1.5 URL=Bimbingan2.php?first');
 
         }

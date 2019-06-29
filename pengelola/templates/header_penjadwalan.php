@@ -15,13 +15,13 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
     <!-- Tambahan CSS -->
-    <link rel="stylesheet" href="../css/style_penjadwalan.css">
-    <link rel="stylesheet" href="../css/switches_Penjadwalan.css">
+    <link rel="stylesheet" href="css/style_Penjadwalan.css">
+    <link rel="stylesheet" href="css/switches_Penjadwalan.css">
 
     <!-- Datepicker -->
-    <link rel="stylesheet" href="../css/Datepicker_Penjadwalan/css/bootstrap-datepicker3.css">
+    <link rel="stylesheet" href="css/Datepicker_Penjadwalan/css/bootstrap-datepicker3.css">
     <title>SIMBIS</title>
 
     <!-- Button Hover -->
-    <link rel="stylesheet" href="../css/tombol_Penjadwalan.css">
+    <link rel="stylesheet" href="css/tombol_Penjadwalan.css">
 

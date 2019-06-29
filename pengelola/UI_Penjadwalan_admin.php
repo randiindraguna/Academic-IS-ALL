@@ -104,9 +104,8 @@
                                                     <?php
                                                     $lb=$P->getLamaBimbingan($ambil['nim']);
                                                     foreach ($lb as $key2) {
-                                                        $dd = $P->displayDate($key2['lamabimbingan'])
                                                         ?>
-                                                        <td class="text-center"><?=$dd?></td>   
+                                                        <td class="text-center"><?=$key2['lamabimbingan']?> hari</td>   
                                                         <?php
                                                     }
                                                     ?>

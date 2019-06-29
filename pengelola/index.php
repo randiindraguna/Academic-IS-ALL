@@ -1,6 +1,24 @@
 <?php 
-    include 'kelolaAkun.php';
+require_once('../database.php');
+  $akses = new Database();
+  $akses->connect();
+ 
+// mengaktifkan session
+session_start();
+ 
+// cek apakah user telah login, jika belum login maka di alihkan ke halaman login
+if($_SESSION['status'] == "login"){
+  // menampilkan pesan selamat datang
+  //echo "Hai, selamat datang ". $_SESSION['username'];
+}else{
+  header("location:../index.php");
+}
+?>
+
+<?php 
+include '../templates/header_penjadwalan.php';
  ?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -8,118 +26,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- sweet alert -->
-<script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
-<!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
-<script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
-
-<script src="sweetalert2/dist/sweetalert2.min.js"></script>
-<link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
-
-
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-   
-     <script type="text/javascript" src="mahassiwa/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <script type="text/javascript" src="mahasiswa/sweetalert2/dist/sweetalert2.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="mahasiswa/sweetalert2/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
+    <!-- /\ambil css penjadwalan -->
+    <!-- Tambahan CSS -->
+    <link rel="stylesheet" href="../css/style_penjadwalan.css">
+    <link rel="stylesheet" href="../css/switches_Penjadwalan.css">
 
+    <style type="text/css" href="../css/tombol_penjadwalan.css"></style>
+    <!--  -->
 
-    <style type="text/css">
-    .box2{
-          border-radius: 7px 7px 0px 0px;
-          box-shadow: 1px 1px 12px grey;
-    }
-    .box{
-          border-radius: 0px 0px 7px 7px;
-          box-shadow: 1px 1px 12px grey;
-    }
-    </style>
-    <title>Login page</title>
-      <script type="text/javascript">
-        function myFunction() {
-  var x = document.getElementById("password");
-  if (x.type === "password") {
-    x.type = "text";
-  } else {
-    x.type = "password";
-  }
-}
-    </script>
+    <title>Selamat Datang Di Website Kami</title>
   </head>
-  <body>
-    <?php
-      if(isset($_GET['succes'])){
-        echo '<script type="text/javascript">
-              Swal.fire({
-                position: "middle",
-                type: "success",
-                title: "Selamat, Akun anda telah terdaftaf",
-                showConfirmButton: false,
-                timer: 1500
-              })
-        </script>';
-    }
+  <body style="background-color= #808080;">
+   <?php include '../templates/navbar_admin.html'?>
+    <table border="0" width="100%" height="100%" align="center">
+      <tr><td colspan="3"><br><br><br><br><br><br></td></tr>
+      <tr>
+        <td width="25%"  rowspan="2"></td>
+        <td width="50%">
+          <table cellpadding="20"width="100%" border="0"  height="100%">
+            <tr>
+              <td bgcolor="#B5B5B5" style="width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px #d1d1d1;">
+                <center><h3>Selamat Datang Admin<br>
+                  PRPL Manajemen Skripsi<br>
+                  Kelas C<br>
+                  Teknik Informatika<br>
+                </h3></center>
 
-    if(isset($_GET['notwebmail']))
-    {
-       echo '<script type="text/javascript">
-              Swal.fire({
-                position: "middle",
-                type: "error",
-                title: "Maaf anda harus menggunakan akun WebMail UAD",
-                showConfirmButton: false,
-                timer: 3000
-              })
-        </script>';
-    }
-    ?>
-<br>
-<br>
-<br>
-<div class="container">
-  <div class="row mb-5 ">
-    <div class="col-3"></div>
-    <div class="col-6 ">
-      <div class="row mt-5 ">
-        <div class="col-12 bg-info p-3 box2">
-          <a href="http://uad.ac.id"><img src="logo_uad.png" height=50px></a><a class="text-light ml-3"> Manajemen Skripsi UAD</a>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12 bg-light p-3 box"> 
-            <?php 
-                            if(isset($_GET['fail'])){
-                                echo"<center><p class=text-danger>Kesalahan saat login, silahkan ulangi lagi</p></center>";
-                            }
-                        ?>
-        <form action="index_login2.php" method="POST">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Username</label>
-            <input type="text" class="form-control" id="username" aria-describedby="emailHelp" placeholder="Masukkan Username" name="username">
-            
+
+              </td>
+            </tr>
+          </table>
+        </td>
+        <td width="25%" rowspan="2"></td>
+      </tr>
+    </table>
+
+    <table cellpadding="27" border="0" width="100%" height="20%">
+      <tr align="center">
+        <td>
+          <br><br><br><br><br><br>
+          <div id="footer" style="height:50px; line-height:50px; background:#333; color:white;border-radius: 30px;">
+            Copyright &copy; 2019
+            Designed by Team Register Metopen
           </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Masukkan Password" name="password">
-          </div>
-          <div class="form-group form-check">
-              <input type="checkbox" class="form-check-input" id="showpass" onclick="myFunction()">
-            <label class="form-check-label" for="showpass">Show Password</label>
-          </div>
-          <button type="submit" class="btn btn-primary">Login</button>
-          <button type="submit" formaction="google_acc.php" class="btn btn-outline-danger"><img src="img/logo_google+.png" height=22px> Login dengan google</button>
-         <a href="formInputAkun.php" class="btn btn-warning">Daftar</a>
-        </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+        </td>
+      </tr> 
+    </table>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
 </html>
+<?php 
+include '../templates/footer_penjadwalan.php';
+ ?>

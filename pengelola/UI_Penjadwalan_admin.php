@@ -8,6 +8,13 @@
     $P->connect();
     $data=$P->getDataJadwal();
     include '../templates/header_penjadwalan.php';
+        
+          // echo $user;
+          if(!$_SESSION['username']){
+            //$_POST['user'];
+            $user = $_POST['user'];
+            $_SESSION['username']=$user;
+            }
 ?>
 
 </head>
@@ -104,8 +111,9 @@
                                                     <?php
                                                     $lb=$P->getLamaBimbingan($ambil['nim']);
                                                     foreach ($lb as $key2) {
+                                                        $dd = $P->displayDate($key2['lamabimbingan'])
                                                         ?>
-                                                        <td class="text-center"><?=$key2['lamabimbingan']?> hari</td>   
+                                                        <td class="text-center"><?=$dd?></td>   
                                                         <?php
                                                     }
                                                     ?>

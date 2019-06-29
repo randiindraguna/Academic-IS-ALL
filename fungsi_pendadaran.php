@@ -1,7 +1,6 @@
 <?php 
 
 
-
 	//class untuk data-data yang diperlukan pada fitur ujian pendadaran
 	class ujian_pendadaran{
 
@@ -30,8 +29,8 @@
 		public function eksekusi($query){
 			$this->hasil = mysqli_query($this->konek, $query);
 		}
-		public function lihatstatusmahasiswapendadaran(){
-			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, ujian_pendadaran.status from mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim where dosen.niy='60160863'";
+		public function lihatstatusmahasiswapendadaran($nim){
+			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, ujian_pendadaran.status from mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim where dosen.niy='$nim'";
 
 			$this->eksekusi($query);
 			return $this->hasil;
@@ -47,10 +46,10 @@
 
 		}
 
-		public function lihatnilaipendadaran1(){
+		public function lihatnilaipendadaran1($nim){
 			//dikerjakan muhammad adi rezky
 			$query = " SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, dosen.nama  as nama_dsn, penjadwalan.tanggal, ujian_pendadaran.nilai_penguji_1, ujian_pendadaran.nilai_penguji_2, ujian_pendadaran.nilai_pembimbing, ujian_pendadaran.status,
-			penjadwalan.id_jadwal FROM mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim where mahasiswa_metopen.nim='1700018086' LIMIT 1";
+			penjadwalan.id_jadwal FROM mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim where mahasiswa_metopen.nim='$nim' LIMIT 1";
 
 			$this->eksekusi($query);
 			return $this->hasil;
@@ -194,7 +193,14 @@
 			return $this->hasil;
 
 		}
+public function updatestatusmetopen($status,$nim){
 
+			$query = "UPDATE mahasiswa_metopen SET status='$status' WHERE mahasiswa_metopen.nim=$nim  ";
+			
+			$this->eksekusi($query);
+			return $this->hasil;
+
+		}
 
 
 		

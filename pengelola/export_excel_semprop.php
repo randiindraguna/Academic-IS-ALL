@@ -19,7 +19,7 @@
          <tr><td>
           <h2 align="center">DATA SEMINAR PROPOSAL</h2>
             <?php
-              require_once('fungsi_semprop.php');
+              require_once('../fungsi_semprop.php');
               $akses = new Seminar_Proposal();
               $akses->koneksi();
               $sql=$akses->HitungJumlahMahasiswaLulusSemprop();

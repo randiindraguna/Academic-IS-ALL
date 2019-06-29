@@ -19,7 +19,7 @@
          <tr><td>
           <h2 align="center">DATA UJIAN PENDADARAN</h2>
             <?php
-              require_once('fungsi_pendadaran.php');
+              require_once('../fungsi_pendadaran.php');
               $akses = new ujian_pendadaran();
               $akses->koneksi();
               $sql=$akses->HitungJumlahMahasiswaLuluspendadaran();

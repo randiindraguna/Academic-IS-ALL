@@ -72,7 +72,7 @@ if(isset($_SESSION['username'])){
 
     <title>MANAJEMEN SKRISPSI</title>
   </head>
-<body >
+<body style="background-color= #808080;">
 
   <?php
 include '../header_bimbingan_biarngga_hilang/navbar_mhs2_bimbingan.php';

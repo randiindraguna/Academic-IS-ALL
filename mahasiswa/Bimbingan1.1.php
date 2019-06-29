@@ -17,7 +17,7 @@
 
 
 
-  <body>
+  <body style="background-color= #808080;">
 
 <?php
     if (isset($_POST['nma'])) {

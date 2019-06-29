@@ -70,11 +70,7 @@ $nim=$_GET['nim'];
         <label for='formGroupExampleInput'>NILAI PENGUJI 1 </label><input type='text' name='nilai_penguji_1' class='form-control' aria-label='Text input with checkbox'>
          <label for='formGroupExampleInput'>NILAI PENGUJI 2 </label><input type='text' name='nilai_penguji_2' class='form-control' aria-label='Text input with checkbox'>
           <label for='formGroupExampleInput'>NILAI PEMBIMBING </label><input type='text' name='nilai_pembimbing' class='form-control' aria-label='Text input with checkbox'>
-       <label for='formGroupExampleInput'>STATUS </label><select name='status' class='form-control' aria-label='Text input with checkbox' >
-                                         <option>- PILIH -</option> 
-                                        <option value='lulus'> lulus </option> 
-                                        <option value='tidak_lulus'> tidak lulus </option>
-                                   </select> 
+      
         
         <br>   <input type='submit' name='kirim1' value='kirim' class='btn btn-outline-primary''>    
         

@@ -43,10 +43,39 @@ if(isset($_POST['simpan'])){
 
     $id = $_POST['nim'];
     $nilai_pb = $_POST['nilai_proses_pembimbing'];
-    $status = $_POST['status'];
+    // $status = $_POST['status'];
     $nilai_ub = $_POST['nilai_ujian_pembimbing'];
     $nilai_up = $_POST['nilai_ujian_penguji'];
 
+$rata_rata=round(($nilai_pb+$nilai_ub+$nilai_up)/3,2);
+ if($rata_rata>-1 && $rata_rata<=1) $grade='E';
+  else if($rata_rata>0 && $rata_rata<=40) $grade='D';
+  else if($rata_rata>40 && $rata_rata<=43.75) $grade='D+';
+  else if($rata_rata>43.75 && $rata_rata<=51.25) $grade='C-';
+  else if($rata_rata>51.25 && $rata_rata<=55) $grade='C';
+  else if($rata_rata>55 && $rata_rata<=57.5) $grade='C+';
+  else if($rata_rata>57.5 && $rata_rata<=62.5) $grade='B-';
+  else if($rata_rata>62.5 && $rata_rata<=65) $grade='B';
+  else if($rata_rata>65 && $rata_rata<=68.75) $grade='B+';
+  else if($rata_rata>68.75 && $rata_rata<=76.25) $grade='A-';
+  else if($rata_rata>76.25 && $rata_rata<=100) $grade='A';
+  else $grade='nilai tidak tersedia'; 
+
+  if($rata_rata>51.25) $status='lulus';
+  else($status='tidak_lulus')  ;  
+
+
+
+$stnew = 'skripsi';
+
+if($status=='lulus'){
+
+$akses->updatestatusmetopen($stnew,$id);
+
+}
+
+
+    
 
       $akses->InputNilaiDanStatusSemprop($id,$nilai_pb,$status,$id,$nilai_ub,$nilai_up);
 

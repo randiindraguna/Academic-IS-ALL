@@ -61,21 +61,17 @@ $nim=$_GET['nim'];
   </div>
  
         
+
         
         ";
 
 
                     
         echo "
-        <label for='formGroupExampleInput'>NILAI PROSES PEMBIMBING </label><input type='text' name='nilai_proses_pembimbing' class='form-control' aria-label='Text input with checkbox'>
-         <label for='formGroupExampleInput'>NILAI UJIAN PEMBIMBING </label><input type='text' name='nilai_ujian_pembimbing' class='form-control' aria-label='Text input with checkbox'>
-          <label for='formGroupExampleInput'>NILAI UJIAN PENGUJI </label><input type='text' name='nilai_ujian_penguji' class='form-control' aria-label='Text input with checkbox'>
-       <label for='formGroupExampleInput'>STATUS </label><select name='status' class='form-control' aria-label='Text input with checkbox' >
-                                         <option>- PILIH -</option> 
-                                        <option value='lulus'> lulus </option> 
-                                        <option value='tidak_lulus'> tidak lulus </option>
-                                   </select> 
-        
+        <label for='formGroupExampleInput'>NILAI PROSES PEMBIMBING </label><input type='text' name='nilai_proses_pembimbing' class='form-control' aria-label='Text input with checkbox' value='$key[nilai_proses_pembimbing]'>
+         <label for='formGroupExampleInput'>NILAI UJIAN PEMBIMBING </label><input type='text' name='nilai_ujian_pembimbing' class='form-control' aria-label='Text input with checkbox' value='$key[nilai_ujian_pembimbing]'>
+          <label for='formGroupExampleInput'>NILAI UJIAN PENGUJI </label><input type='text' name='nilai_ujian_penguji' class='form-control' aria-label='Text input with checkbox' value='$key[nilai_ujian_penguji]'>
+               
         <br>   <input type='submit' name='kirim1' value='kirim' class='btn btn-outline-primary''>    
         
 

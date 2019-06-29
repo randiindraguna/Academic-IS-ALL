@@ -43,11 +43,38 @@ if(isset($_POST['simpan1'])){
     $nilai_1 = $_POST['nilai_penguji_1'];
     $nilai_2 = $_POST['nilai_penguji_2'];
     $nilai_3 = $_POST['nilai_pembimbing'];
-    $status1 = $_POST['status'];
+   ;
     $nim1 = $_POST['nim'];
 
+    $rata_rata=round(($nilai_1+$nilai_2+$nilai_3)/3,2);
+ if($rata_rata>-1 && $rata_rata<=1) $grade='E';
+  else if($rata_rata>0 && $rata_rata<=40) $grade='D';
+  else if($rata_rata>40 && $rata_rata<=43.75) $grade='D+';
+  else if($rata_rata>43.75 && $rata_rata<=51.25) $grade='C-';
+  else if($rata_rata>51.25 && $rata_rata<=55) $grade='C';
+  else if($rata_rata>55 && $rata_rata<=57.5) $grade='C+';
+  else if($rata_rata>57.5 && $rata_rata<=62.5) $grade='B-';
+  else if($rata_rata>62.5 && $rata_rata<=65) $grade='B';
+  else if($rata_rata>65 && $rata_rata<=68.75) $grade='B+';
+  else if($rata_rata>68.75 && $rata_rata<=76.25) $grade='A-';
+  else if($rata_rata>76.25 && $rata_rata<=100) $grade='A';
+  else $grade='nilai tidak tersedia'; 
 
-      $akses->InputNilaiDanStatusPendadaran($id_pd, $nim1, $status1, $nilai_1, $nilai_2, $nilai_3);
+  if($rata_rata>51.25) $status='lulus';
+  else($status='tidak_lulus')  ;  
+
+
+
+$stnew = 'lulus';
+
+if($status=='lulus'){
+
+$akses->updatestatusmetopen($stnew,$id_pd);
+
+}
+
+
+      $akses->InputNilaiDanStatusPendadaran($id_pd, $nim1, $status, $nilai_1, $nilai_2, $nilai_3);
 
      
 

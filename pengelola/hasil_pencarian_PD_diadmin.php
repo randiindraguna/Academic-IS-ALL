@@ -1,3 +1,4 @@
+
 <?php include '../templates/header_Penjadwalan.php' ?>
 <?php
 
@@ -101,12 +102,6 @@ if($_SESSION['status'] == "login"){
         <label for='formGroupExampleInput'>NILAI PENGUJI 1 </label><input type='text' name='nilai_penguji_1' class='form-control' aria-label='Text input with checkbox'>
          <label for='formGroupExampleInput'>NILAI PENGUJI 2 </label><input type='text' name='nilai_penguji_2' class='form-control' aria-label='Text input with checkbox'>
           <label for='formGroupExampleInput'>NILAI PEMBIMBING </label><input type='text' name='nilai_pembimbing' class='form-control' aria-label='Text input with checkbox'>
-       <label for='formGroupExampleInput'>STATUS </label><select name='status' class='form-control' aria-label='Text input with checkbox' >
-                                         <option>- PILIH -</option> 
-                                        <option value='lulus'> lulus </option> 
-                                        <option value='tidak_lulus'> tidak lulus </option>
-                                   </select> 
-        
         <br>   <input type='submit' name='simpan1' value='simpan' class='btn btn-outline-success my-2 my-sm-0'>    
          </div>
 

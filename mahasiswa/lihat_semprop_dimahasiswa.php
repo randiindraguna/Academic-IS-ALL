@@ -1,4 +1,3 @@
-
 <?php
 
   //membutuhkan file fungsi_semprop
@@ -23,6 +22,14 @@ if($_SESSION['status'] == "login"){
 <!doctype html>
 <html lang="en">
   <head>
+
+    <title></title>
+    <script type="text/javascript">
+        function displaymessage()
+        {
+            window.print();
+        }
+    </script>
     <!-- Required meta tags -->
      <?php include '../templates/navbar_mhs.html' ?>
 <meta charset="utf-8">
@@ -56,8 +63,13 @@ if($_SESSION['status'] == "login"){
                 <table class="table table-striped">
                   <?php
                
-                       
-      foreach ($akses->lihatsempropmahasiswa() as $data) {
+            $usr=$_SESSION['username'];
+
+
+
+
+
+      foreach ($akses->lihatsempropmahasiswa($usr) as $data) {
                       
                       echo "
                       <tr>
@@ -100,9 +112,14 @@ if($_SESSION['status'] == "login"){
                   ?>
                 </table>  
               </td>
-              <tr align="center"><td>
-                      <a href='cetak.php?nim=$data[nim]' class='btn btn-outline-primary' role='button aria-pressed' = "true">CETAK</a></td></tr>
+              <tr align="center">
+    <form>
+        <td><input type="button" value="cetak" class='btn btn-outline-primary' role='button' onclick="displaymessage()"></td>
+    </form>
+    </tr>
             </tr>
+
+
             
           </table>
         </td>
@@ -114,5 +131,8 @@ if($_SESSION['status'] == "login"){
 
   </body>
 </html>
+
+
+
 
 <?php include '../templates/footer_Penjadwalan.php' ?>

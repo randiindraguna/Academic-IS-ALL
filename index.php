@@ -54,7 +54,7 @@
               Swal.fire({
                 position: "middle",
                 type: "success",
-                title: "Selamat, Akun anda telah terdaftaf",
+                title: "Selamat, Akun anda telah terdaftar",
                 showConfirmButton: false,
                 timer: 1500
               })

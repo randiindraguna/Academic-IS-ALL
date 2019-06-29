@@ -65,8 +65,8 @@ if($_SESSION['status'] == "login"){
     </tr>
 
 <?php
-
-      foreach ($akses->lihatstatusmahasiswapembimbing() as $key) {
+$usr=$_SESSION['username'];
+      foreach ($akses->lihatstatusmahasiswapembimbing($usr) as $key) {
         
 
 

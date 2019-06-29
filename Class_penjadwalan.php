@@ -429,8 +429,8 @@ class Penjadwalan extends Database{
 	public function getDosenJamTanggalSamaBedaRuang($niy,$jam,$ruang,$tgl)
 	{
 		//1700018118-Adil Baihaqi-adilbaihaqi
-		$querry_penguji ="SELECT * FROM `penguji` JOIN penjadwalan ON penjadwalan.id_jadwal=penguji.id_jadwal WHERE Penjadwalan.tanggal='$tgl' AND penguji.niy='$niy' AND penjadwalan.jam='$jam'";	
-		$result=$this->eksekusi($querry_penguji);
+		$querry_penguji ="SELECT * FROM `penguji` JOIN penjadwalan ON penjadwalan.id_jadwal=penguji.id_jadwal WHERE Penjadwalan.tanggal='$tgl' AND penguji.niy='$niy' AND penjadwalan.jam='$jam'"; // query untuk mengambil data dosen yang sedang menguji untuk mengecek dosen tersebut bentrok jadwal ata tidak	
+		$result=$this->eksekusi($querry_penguji); // mengeksekusi query yang telah dibuat
 		return $result;
 	}
 	

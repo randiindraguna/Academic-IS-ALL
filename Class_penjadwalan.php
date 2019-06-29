@@ -521,7 +521,7 @@ class Penjadwalan extends Database{
 	public function getNamaMhs($nim)
 	{
 		$query = "SELECT mahasiswa_metopen.nama from mahasiswa_metopen where mahasiswa_metopen.nim = '$nim'"; // menampilkan data mahasiswa
-		$sql = $this->eksekusi($query);
+		$sql = $this->eksekusi($query); // mengeksekusi query yang telah di buat
 			return $sql;
 	}
 

@@ -70,7 +70,7 @@ include '../templates/header_penjadwalan.php';
                         <td>Nama</td><td colspan=2>:</td><td>".$data['nama']."</td>
                       </tr>
                       <tr>
-                        <td>Nama</td><td colspan=2>:</td><td>".$data['jenis_kelamin']."</td>
+                        <td>Jenis Kelamin</td><td colspan=2>:</td><td>".$data['jenis_kelamin']."</td>
                       </tr>
                       <tr>
                         <td>Topik</td><td colspan=2>:</td><td>".$data['topik']."</td>

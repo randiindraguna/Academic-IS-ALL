@@ -24,6 +24,13 @@ if($_SESSION['status'] == "login"){
 <!doctype html>
 <html lang="en">
   <head>
+
+    <script type="text/javascript">
+        function displaymessage()
+        {
+            window.print();
+        }
+    </script>
     <?php include '../templates/navbar_mhs.html' ?>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -56,9 +63,9 @@ if($_SESSION['status'] == "login"){
                 <center><h3>Hasil Mahasiswa</h3></center>
                 <table class="table table-striped">
                   <?php
-                
+                $usr=$_SESSION['username'];
                       
-      foreach ($akses->lihatnilaipendadaran1() as $data) {
+      foreach ($akses->lihatnilaipendadaran1($usr) as $data) {
                       
                       echo "
                       <tr>
@@ -72,7 +79,7 @@ if($_SESSION['status'] == "login"){
                       </tr>
                      ";
 
-                        foreach($akses->getDosenPenguji1() as $data1){
+                        foreach($akses->getDosenPenguji1($usr) as $data1){
                           echo "
                           <tr>
                           <td>Penguji 1</td><td colspan=2>:</td><td>".$data1['nama_dosen']."</td>
@@ -80,7 +87,7 @@ if($_SESSION['status'] == "login"){
                           
                           ";
                         }
-                        foreach($akses->getDosenPenguji2() as $data1){
+                        foreach($akses->getDosenPenguji2($usr) as $data1){
                           echo "
                           <tr>
                           <td>Penguji 2</td><td colspan=2>:</td><td>".$data1['nama_dosen']."</td>
@@ -128,8 +135,11 @@ if($_SESSION['status'] == "login"){
                   </html>
                 </table>  
               </td>
-               <tr align="center"><td>
-                      <a href='cetak.php?nim=$data[nim]' class='btn btn-outline-primary' role='button aria-pressed' = "true">CETAK</a></td></tr>
+               <tr align="center">
+    <form>
+        <td><input type="button" value="cetak" class='btn btn-outline-primary' role='button' onclick="displaymessage()"></td>
+    </form>
+    </tr>
             </tr>
             </tr>
           </table>

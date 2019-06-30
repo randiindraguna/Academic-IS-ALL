@@ -81,9 +81,9 @@
 
 		//fungsi ini dibuat oleh Arifaleo Nurdin (1700018158)
 		//fungsi ntuk mengganti password
-		public function ganti_password($username,$new_password)
+		public function ganti_password($username,$new_password,$status_akun)
 		{
-			$query = "UPDATE login SET password = '$new_password' where user_name = '$username' ";
+			$query = "UPDATE login SET password = '$new_password',status_akun='$status_akun' where user_name = '$username' ";
 			$this->execute($query);
 			return $this->result;
 		}

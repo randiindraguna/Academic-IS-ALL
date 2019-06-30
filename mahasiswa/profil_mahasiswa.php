@@ -92,7 +92,9 @@ include '../templates/header_penjadwalan.php';
                   <center>
               <font color='black'><h3>Profil Mahasiswa</h3></font>
             </center>
-              <?php
+                              
+               <?php          
+
                 $data=mysqli_fetch_array($akses->CariDataMahasiswa($_SESSION['username']));
                 $jumlahrow=mysqli_num_rows($akses->CariDataMahasiswa($_SESSION['username']));
                   if($jumlahrow>0){
@@ -121,7 +123,7 @@ include '../templates/header_penjadwalan.php';
                         <td>Tanggal Mulai</td><td colspan=2>:</td><td>".$data['tanggal_mulai']."</td>
                       </tr>  
                       <tr>
-                        <td>Password</td><td colspan=2>:</td><td>"." <button type='button' class='btn btn-outline-primary' data-toggle='modal' data-target='#myModal'  margin: 20px; '>
+                        <td>Password</td><td colspan=2>:</td><td>"." <button type='button' id='ButtonPass' class='btn btn-outline-primary' data-toggle='modal' data-target='#myModal'  margin: 20px; '>
                          Ubah password
                         </button>"."</td>
                       </tr>   
@@ -138,21 +140,25 @@ include '../templates/header_penjadwalan.php';
                        <tr>
                         <td>Status</td><td colspan=2>:</td><td class=text-danger>Belum mendaftar metopen</td>
                       </tr> 
-                         <td>Password</td><td colspan=2>:</td><td>"." <button type='button' class='btn btn-outline-primary' data-toggle='modal' data-target='#myModal'  margin: 20px; '>
+                         <td>Password</td><td colspan=2>:</td><td>"." <button type='button' id='ButtonPass' class='btn btn-outline-primary' data-toggle='modal' data-target='#myModal'  margin: 20px; '>
                          Ubah password
                         </button>"."</td>
                         <br><br><br><br>
-                              <script type='text/javascript'>
-                                 Swal.fire(
-                                    'Data Mahasiswa tidak ditemukan',
-                                    'apakah anda sudah melakukan pendaftaran metopen? jika belum, silahkan mendaftar terlebih dahulu',
-                                    'warning'
-                                  )
-                       </script>
+                             
                         ";
                       }
                        ?>
-
+             
+                <?php
+                $userRow=mysqli_num_rows($akses2->searchUser($_SESSION['username']));
+                if($userRow<=0){
+                       echo"
+                             <script type='text/javascript'>
+                              var button = document.getElementById('ButtonPass');
+                              button.disabled = true;
+                             </script>
+                           ";} 
+                             ?>
                     </table>
                     <!-- POPUP -->
 
@@ -176,9 +182,9 @@ include '../templates/header_penjadwalan.php';
                                       <form action="ubah_sandi.php" method="POST"  class="form-signin">       
                                           <h3 class="form-signin-heading">Silahkan Mengisi Data</h3>
                                           <hr class="colorgraph"><br>
-                                          
-                                          <input type="text" class="form-control" name="newpass" placeholder="Isi Password" required="" autofocus="" /><br>
-                                          <input type="text" class="form-control" name="ulangpass" placeholder="Ulang Password" required=""/> <br>         
+                                          <input type="password" class="form-control" name="oldpass" placeholder="Password lama" required="" autofocus="" /><br>
+                                          <input type="password" class="form-control" name="newpass" placeholder="Password baru" required="" autofocus="" /><br>
+                                          <input type="password" class="form-control" name="ulangpass" placeholder="Konfirmasi password baru" required=""/> <br>         
                                          
                                           <button class="btn btn-lg btn-primary btn-block"  name="submit" value="kirim" type="Submit">Send</button>        
                                       </form>     

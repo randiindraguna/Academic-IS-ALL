@@ -3,13 +3,19 @@
 	$akses = new Login();
  	$akses->connect();
  	session_start();
- 	$user = $_SESSION['username'];
+ 	
  	if(isset($_POST['submit'])){
  		$newpass = $_POST['newpass'];
  		$ulangpass = $_POST['ulangpass'];
+ 		$oldpass = $_POST['oldpass'];
  	}
+ 	$user = $_SESSION['username'];
+ 	$akunRow = mysqli_num_rows($akses->searchAkun($user,$oldpass));
 
- 	if($newpass!=$ulangpass){
+ 	if($akunRow<=0){
+ 		 header("location:profil_mahasiswa.php?fail_chg");
+ 	}
+ 	else if($newpass!=$ulangpass){
  		 header("location:profil_mahasiswa.php?fail_chg");
  	}
  	else{

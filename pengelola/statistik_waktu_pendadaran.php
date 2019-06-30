@@ -81,7 +81,7 @@ if($_SESSION['status'] == "login"){
             </form>
             </center>
         <br>
-       <div style="width: 1000px;margin: 0px auto;">
+       <div style="width: 700px;margin: 0px auto;">
         <canvas id="myChart"></canvas>
     </div>
 

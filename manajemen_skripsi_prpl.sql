@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 25, 2019 at 05:02 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 5.6.40
+-- Generation Time: Jun 29, 2019 at 08:47 AM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -111,7 +111,17 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (18, 'konsultasi evaluasi proyek metopen', '1700018158', '2019-05-28', '09:08:27', 'metopen'),
 (19, 'membuat perencanaan dalam penyusunan laporan berik', '1700018158', '2019-05-28', '09:08:43', 'metopen'),
 (20, 'evaluasi hasil laporan', '1700018158', '2019-05-28', '09:08:58', 'metopen'),
-(21, 'menambah referensi', '1700018165', '2019-05-29', '11:41:54', 'metopen');
+(21, 'menambah referensi', '1700018165', '2019-05-29', '11:41:54', 'metopen'),
+(22, 'tes 1', '1700018066', '2019-06-29', '08:29:08', 'skripsi'),
+(23, 'tes2', '1700018066', '2019-06-29', '08:29:16', 'skripsi'),
+(24, 'tes3', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
+(25, 'tes4', '1700018066', '2019-06-29', '08:29:45', 'skripsi'),
+(26, 'tes5', '1700018066', '2019-06-29', '08:30:00', 'skripsi'),
+(27, 'tes6', '1700018066', '2019-06-29', '08:30:13', 'skripsi'),
+(28, 'tes7', '1700018066', '2019-06-29', '08:30:25', 'skripsi'),
+(29, 'tes8', '1700018066', '2019-06-29', '08:30:34', 'skripsi'),
+(30, 'tes9', '1700018066', '2019-06-29', '08:30:45', 'skripsi'),
+(31, 'tes10', '1700018066', '2019-06-29', '08:30:57', 'skripsi');
 
 -- --------------------------------------------------------
 
@@ -241,7 +251,8 @@ INSERT INTO `login` (`user_name`, `password`, `level`, `status_akun`) VALUES
 ('60160980', 'lcqT4kIX', 'dosen', 'baru'),
 ('60910095', '3cxURbfK', 'dosen', 'baru'),
 ('60960147', '9q2MkXpx', 'dosen', 'baru'),
-('60980174', 'nYJxtCI5', 'dosen', 'baru');
+('60980174', 'nYJxtCI5', 'dosen', 'baru'),
+('admin', 'admin', 'admin', 'baru');
 
 -- --------------------------------------------------------
 
@@ -265,7 +276,7 @@ CREATE TABLE `mahasiswa_metopen` (
 --
 
 INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen`, `bidang_minat`, `status`, `tanggal_mulai`) VALUES
-('1700018066', 'Pratomo Adi', 'Laki-laki', 'Implementasi Teknologi Cloud Computing Pada Pemasaran Oleh-Oleh Berbasis Web', '60160863', 'Sistem Cerdas', 'metopen', '0000-00-00'),
+('1700018066', 'Pratomo Adi', 'Laki-laki', 'Implementasi Teknologi Cloud Computing Pada Pemasaran Oleh-Oleh Berbasis Web', '60160863', 'Sistem Cerdas', 'skripsi', '0000-00-00'),
 ('1700018067', 'Via Wahyuningtyas', 'Laki-laki', 'Pembuatan Iklan Bencana Banjir Berbasis Multimedia', '60910095', 'Sistem Informasi', 'metopen', '0000-00-00'),
 ('1700018068', 'Diky Syahrul', 'Laki-laki', 'Manajemen Bandwidth Dan Optimalisasi Sistem Keamanan Pada Jaringan Komputer Dengan Winbox Menggunaka', '60160960', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
 ('1700018069', 'Wahyu Amin Mahmud', 'Laki-laki', 'Pengamanan Account Sistem Informasi Akademik Online Sekolah Menengah Atas Dengan Menggunakan Metode ', '060150842', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
@@ -363,11 +374,16 @@ CREATE TABLE `penguji` (
 --
 
 INSERT INTO `penguji` (`id_penguji`, `id_jadwal`, `niy`) VALUES
-(60822141, 'SP1298563860', '60030475'),
-(60822142, 'SP2938475610', '60010314'),
-(60822143, 'SP4765984246', '60090586'),
-(60822144, 'SP5729587195', '60030479'),
-(60822145, 'SP8589365937', '60030475');
+(60822146, 'SP0010000111', '0006027001'),
+(60822147, 'SP3010000121', '0014107301'),
+(60822148, 'SP0010000131', '0015118001'),
+(60822149, 'SP6010000112', '0019087601'),
+(60822150, 'SP8420000122', '060150842'),
+(60822151, 'SP8410000132', '060150841'),
+(60822152, 'SP8420000113', '060150842'),
+(60822153, 'SP3080000123', '60010308'),
+(60822154, 'SP3140000133', '60010314'),
+(60822156, 'SP3880000221', '60020388');
 
 -- --------------------------------------------------------
 
@@ -389,16 +405,16 @@ CREATE TABLE `penjadwalan` (
 --
 
 INSERT INTO `penjadwalan` (`id_jadwal`, `jenis_ujian`, `nim`, `tanggal`, `jam`, `tempat`) VALUES
-('SP1298563860', 'SEMPROP', '1700018086', '2019-04-10', '1', '1'),
-('SP2938475610', 'SEMPROP', '1700018090', '2019-04-10', '1', '3'),
-('SP4765984246', 'SEMPROP', '1700018067', '2019-04-10', '2', '1'),
-('SP5729587195', 'SEMPROP', '1700018080', '2019-04-10', '3', '3'),
-('SP8589365937', 'SEMPROP', '1700018066', '2019-04-10', '2', '2'),
-('UP3083142021', 'UNDARAN', '1700018123', '2019-03-20', '2', '1'),
-('UP3083142031', 'UNDARAN', '1700018137', '2019-03-20', '3', '1'),
-('UP3883142021', 'UNDARAN', '1700018122', '2019-03-20', '2', '1'),
-('UP4754792022', 'UNDARAN', '1700018141', '2019-03-20', '2', '2'),
-('UP5864792012', 'UNDARAN', '1700018148', '2019-03-20', '1', '2');
+('SP0010000111', 'SEMPROP', '1700018066', '2019-03-01', '1', '1'),
+('SP0010000131', 'SEMPROP', '1700018068', '2019-04-01', '3', '1'),
+('SP3010000121', 'SEMPROP', '1700018067', '2019-04-01', '2', '1'),
+('SP3080000123', 'SEMPROP', '1700018074', '2019-04-01', '2', '3'),
+('SP3140000133', 'SEMPROP', '1700018075', '2019-04-01', '3', '3'),
+('SP3880000221', 'SEMPROP', '1700018076', '2019-04-02', '2', '1'),
+('SP6010000112', 'SEMPROP', '1700018069', '2019-04-01', '1', '2'),
+('SP8410000132', 'SEMPROP', '1700018071', '2019-04-01', '3', '2'),
+('SP8420000113', 'SEMPROP', '1700018073', '2019-04-01', '1', '3'),
+('SP8420000122', 'SEMPROP', '1700018070', '2019-04-01', '2', '2');
 
 -- --------------------------------------------------------
 
@@ -462,7 +478,9 @@ CREATE TABLE `seminar_proposal` (
 --
 
 INSERT INTO `seminar_proposal` (`id_seminar`, `nilai_proses_pembimbing`, `status`, `nim`, `nilai_ujian_pembimbing`, `nilai_ujian_penguji`) VALUES
+(1700018066, '100', 'lulus', '1700018066', '100', '100'),
 (1700018067, '90', 'lulus', '1700018067', '99', '88'),
+(1700018068, '20', 'tidak_lulus', '1700018068', '10', '10'),
 (1700018086, '90', 'lulus', '1700018086', '90', '80'),
 (1700018090, '45', 'tidak_lulus', '1700018090', '55', '30');
 
@@ -569,13 +587,13 @@ ALTER TABLE `ujian_pendadaran`
 -- AUTO_INCREMENT for table `logbook_bimbingan`
 --
 ALTER TABLE `logbook_bimbingan`
-  MODIFY `id_logbook` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id_logbook` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `penguji`
 --
 ALTER TABLE `penguji`
-  MODIFY `id_penguji` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60822146;
+  MODIFY `id_penguji` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60822157;
 
 --
 -- AUTO_INCREMENT for table `semester`

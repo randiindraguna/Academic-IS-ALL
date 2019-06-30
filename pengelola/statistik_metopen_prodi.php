@@ -36,37 +36,39 @@ if($_SESSION['status'] == "login"){
 <body>
     <!-- Content -->
         <div class="container"> 
-            <!-- Box -->
-           <!--  <div class="row mt-5 ">
-                <div class="col-2">
-                </div>
-                <div class="col-8 box2 bg-two">
-                    <div class="row">
-                        <div class="col-10 mt-3 mb-3">
-                            <p class="judul">Ujian Pendadaran</p>
-                        </div>
-                    </div>
-                    <form action="hasil_pencarian_PD_diadmin.php" method="POST">
-                        <div class="row">
-                            <div class="col-2 ml-3 pt-1">
-                                <p class="pone">NIM :</p>
-                            </div>
-                            <div class="col-6">
-                                <input type="text" name='nim' placeholder='Masukkan NIM' class="form-control in-box" name="nim">
-                            </div>
-                            <div class="col-2 mb-5">
-                                <button type="submit" name="submit11" value="Submit" class="butn butn2 ml-2" >Search</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-2 ">
-            </div> -->
-            <!--Grafik-->
         </br>.
             <h2 class="judul"><center>-- Statistik Kelulusan Seminar Proposal -- </center></h2>
             <h2 class="judul"><center>-- Pada Tiap Prodi Terdaftar -- </center></h2>
+
+            <center>
+            <form method="POST" action="statistik_metopen_prodi.php">
+            <!-- <div class="row"> -->
+                <div class="col-6 mt-2">
+                    <label for="inputState"> Pilihan Kelulusan </label>
+                        <select name="status" id="inputState" class="form-control" >
+                            <option selected value="0">Pilih kelulusan</option>
+                            <option value="lulus">Lulus</option>
+                            <option value="tidak_lulus">Gagal</option>
+                        </select>                   
+                </div>
+            <!-- </div> --> <br>
+                <button type="submit" class="btn btn-primary" name="save" >Simpan</button>
+            </div>
+            </form>
+            </center>
+        <br>
+        <div style="width: 800px;margin: 0px auto;">
+        <canvas id="myChart"></canvas>
+        </div>
+
+        <?php
+        if (isset($_POST['save'])) {
+            if(is_null($_POST['status'])){
+                echo "Silahkan pilih Kelulusan";
+        }else{
+             $sta = $_POST['status'];
+              
+        ?>
             
     <script>
     var i;
@@ -80,7 +82,7 @@ if($_SESSION['status'] == "login"){
                     data: [
                        <?php 
                          foreach($akses->nama_prodi() as $key){
-                            foreach($akses->lulus_semprop_prodi($key['id_prodi']) as $keyi){
+                            foreach($akses->lulus_semprop_prodi($key['id_prodi'],$sta) as $keyi){
                                 echo '"'.$keyi['jumlah_mhs'].'",';
                             }
                          }
@@ -88,14 +90,28 @@ if($_SESSION['status'] == "login"){
                     ],
                     
                     backgroundColor: [
-                        'rgba(22, 160, 133,1.0)',
-                        'rgba(241, 196, 15,1.0)',
-                        'rgba(241, 196, 15,1.0)'      
+                        'rgba(217, 128, 250,1.0)',
+                        'rgba(253, 167, 223,1.0)',
+                        'rgba(6, 82, 221,1.0)',
+                        'rgba(24, 220, 255,1.0)',
+                        'rgba(197, 108, 240,1.0)',
+                        'rgba(255, 184, 184,1.0)',
+                        'rgba(61, 61, 61,1.0)',
+                        'rgba(170, 166, 157,1.0)',
+                        'rgba(255, 121, 63,1.0)',
+                        'rgba(0, 148, 50,1.0)'
                     ],
                     borderColor: [                
-                        'rgba(22, 160, 133,1.0)',
-                        'rgba(241, 196, 15,1.0)',
-                        'rgba(241, 196, 15,1.0)'
+                        'rgba(217, 128, 250,1.0)',
+                        'rgba(253, 167, 223,1.0)',
+                        'rgba(6, 82, 221,1.0)',
+                        'rgba(24, 220, 255,1.0)',
+                        'rgba(197, 108, 240,1.0)',
+                        'rgba(255, 184, 184,1.0)',
+                        'rgba(61, 61, 61,1.0)',
+                        'rgba(170, 166, 157,1.0)',
+                        'rgba(255, 121, 63,1.0)',
+                        'rgba(0, 148, 50,1.0)'
                     ],
                     borderWidth: 1
                 }]
@@ -111,6 +127,10 @@ if($_SESSION['status'] == "login"){
             }
         });
     </script>
+        <?php 
+            }
+        }
+        ?>
             <!--Grafik-->
         </div>
     

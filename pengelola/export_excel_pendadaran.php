@@ -40,11 +40,30 @@
           <th>Nilai Penguji 1</th>
           <th>Nilai Penguji 2</th>
           <th>Nilai Nilai Penguji Pembimbing</th>
+          <th>Rata-rata</th>
+          <th>Grade</th>
           <th>Status</th>
     </tr>
 
     <?php     
       foreach ($akses->LihatPengumumanNilaiDanStatusSemuaMahasiswaPendadaran() as $key) {
+        #DIBUAT OLHE IBRAHIM
+  $rata_rata=round(($key['nilai_penguji_1']+$key['nilai_penguji_2']+$key['nilai_pembimbing'])/3,2);
+    if($rata_rata>-1 && $rata_rata<=1) $grade='E';
+  else if($rata_rata>0 && $rata_rata<=40) $grade='D';
+  else if($rata_rata>40 && $rata_rata<=43.75) $grade='D+';
+  else if($rata_rata>43.75 && $rata_rata<=51.25) $grade='C-';
+  else if($rata_rata>51.25 && $rata_rata<=55) $grade='C';
+  else if($rata_rata>55 && $rata_rata<=57.5) $grade='C+';
+  else if($rata_rata>57.5 && $rata_rata<=62.5) $grade='B-';
+  else if($rata_rata>62.5 && $rata_rata<=65) $grade='B';
+  else if($rata_rata>65 && $rata_rata<=68.75) $grade='B+';
+  else if($rata_rata>68.75 && $rata_rata<=76.25) $grade='A-';
+  else if($rata_rata>76.25 && $rata_rata<=100) $grade='A';
+  else $grade='nilai tidak tersedia'; 
+
+  if($rata_rata>51.25) $status='lulus';
+  else($status='tidak_lulus')  ;  
         echo"
         <tr>
           <td align='center'>$key[nim]</td>
@@ -53,6 +72,8 @@
           <td align='center'>$key[nilai_penguji_1]</td>
           <td align='center'>$key[nilai_penguji_2]</td>
           <td align='center'>$key[nilai_pembimbing]</td>
+<td align='center'>$rata_rata</td>
+          <td align='center'>$grade</td>
           <td align='center'>$key[status]</td>
           </tr>    
         ";

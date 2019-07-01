@@ -31,6 +31,12 @@
 			$this->execute($query);
 			return $this->result;
 		}
+		//nurzaitunsafitri1700018140
+		public function search_data_dosen_byEmail($email){
+			$query = "SELECT * FROM dosen WHERE email = '$email'";
+			$this->execute($query);
+			return $this->result;
+			}
 		// public function searchAkunDosen($username){
 		// 	$query = "SELECT niy from dosen where niy='$username'";
 		// 	$this->execute($query);

@@ -1,5 +1,6 @@
 <?php 
 require_once('../database.php');
+
   $akses = new Database();
   $akses->connect();
  
@@ -69,10 +70,12 @@ include '../templates/header_penjadwalan.php';
               <th>Topik</th>
               <th>Dosen</th>
               <th>Bidang Minat</th>
+              <th>Status</th>
               <th>Tanggal Daftar</th>
-              <th colspan="2">Aksi</th>
+              <th colspan="3">Aksi</th>
             </tr>
             <?php 
+           
               $i=1;
               foreach ($akses->getMhs() as $key) {
                 echo "
@@ -85,6 +88,7 @@ include '../templates/header_penjadwalan.php';
                   <td>$key[topik]</td>
                   <td>$key[namados]</td>
                   <td>$key[bidang_minat]</td>
+                  <td>$key[status]</td>
                   <td>$key[tanggal_mulai]</td>
                   <td><a href='update.php?nim=$key[nim]'>Update</a></td>
                   <td><a href='delete.php?nim=$key[nim]'>delete</a></td>

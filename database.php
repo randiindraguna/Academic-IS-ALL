@@ -56,7 +56,7 @@ class Database
 	}
 	//Dibuat oleh ihsan fadhilah
 	public function getMhs(){  //fungsi untuk menampilkan data mahasiswa
-		$query="SELECT mahasiswa_metopen.nama as nama,mahasiswa_metopen.nim as nim,semester.periode as periode,mahasiswa_metopen.jenis_kelamin as jenis_kelamin,mahasiswa_metopen.topik as topik,dosen.nama as namados,mahasiswa_metopen.bidang_minat as bidang_minat, mahasiswa_metopen.tanggal_mulai as tanggal_mulai FROM mahasiswa_metopen JOIN dosen JOIN semester WHERE mahasiswa_metopen.dosen=dosen.niy and semester.status='terbuka'"; //query untuk menampilkan nama,nim,semester,jenis kelamin, topik, nama dosen, bidang minat, dan tanggal mulai mahasiswa itu
+		$query="SELECT mahasiswa_metopen.nama as nama,mahasiswa_metopen.nim as nim,semester.periode as periode,mahasiswa_metopen.jenis_kelamin as jenis_kelamin,mahasiswa_metopen.topik as topik,dosen.nama as namados,mahasiswa_metopen.bidang_minat as bidang_minat, mahasiswa_metopen.status as status,mahasiswa_metopen.tanggal_mulai as tanggal_mulai FROM mahasiswa_metopen JOIN dosen JOIN semester WHERE mahasiswa_metopen.dosen=dosen.niy and semester.status='terbuka'"; //query untuk menampilkan nama,nim,semester,jenis kelamin, topik, nama dosen, bidang minat, dan tanggal mulai mahasiswa itu
 		$this->eksekusi($query);	//mengeksekusi query diatas
 		return $this->result;		//untuk mengembalikan hasil eksekusi fungsi
 	}

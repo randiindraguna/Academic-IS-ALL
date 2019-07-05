@@ -114,6 +114,9 @@ include '../templates/header_penjadwalan.php';
                         <td>Topik</td><td colspan=2>:</td><td>".$data['topik']."</td>
                       </tr>
                       <tr>
+                        <td>Status</td><td colspan=2>:</td><td>".$data['status']."</td>
+                      </tr>  
+                      <tr>
                         <td>Dosen Pembimbing</td><td colspan=2>:</td><td>".$data['namados']."</td>
                       </tr>
                       <tr>

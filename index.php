@@ -110,15 +110,11 @@
             <label class="form-check-label" for="showpass">Show Password</label>
           </div>
           <button type="submit" class="btn btn-primary">Login</button>
-          <button type="submit" formaction="google_acc.php" class="btn btn-outline-danger" data-toggle="tooltip" data-placement="top" title="Login hanya dapat dilakukan dengan akun google dari UAD, dan akses hanya ditujukan kepada mahasiswa">
+          <button type="submit" formaction="google_acc.php" class="btn btn-outline-danger">
               <img src="img/logo_google+.png" height=22px> Login dengan google
           </button>
           
-          <script>
-$(document).ready(function(){
-    $('[data-toggle="tooltip"']).tooltip();   
-});
-</script>
+         
          <a href="formInputAkun.php" class="btn btn-warning">Daftar</a>
 
         </form>

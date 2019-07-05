@@ -26,7 +26,7 @@
 				+ dendi pradana [1600018224] => 1 FUNCTION
 
 			- sisa function :
-
+0
 				+ function __construct()
 				+ function connect()
 				+ function eksekusi()
@@ -53,7 +53,7 @@
 			$this->result=mysqli_query($this->conn,$query); // fungsi untuk mengeksekusi query query yang diberikan
 		}
 
-		// 1 ancas
+		// ancas
 		public function show_data($jey) // menampilkan data skripsi mahasiswa, yang nanti ingin melakukan bimbingan
 		{
 			$query = "SELECT mahasiswa_metopen.status as model,mahasiswa_metopen.nim as idsk, dosen.nama as namdos ,mahasiswa_metopen.topik as judul , mahasiswa_metopen.nama as name , mahasiswa_metopen.nim as nim from dosen join mahasiswa_metopen on dosen.niy = mahasiswa_metopen.dosen and mahasiswa_metopen.nim = $jey ";
@@ -62,8 +62,15 @@
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
 
-		
-		// 3 ancas
+		// ancas
+		public function masuk_ke_log($id,$materi,$id_skripsi,$tanggal,$jam,$jenis) // input data ke tabel logbook_bimbingan 
+		{
+			$query = "INSERT INTO logbook_bimbingan values ('','$materi','$id_skripsi','$tanggal','$jam','$jenis')";
+			// sql untuk memasukan niali value dari variabel yang ada di parameter fungsi ini sebagai data di tabel log bimbingan
+			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
+			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
+		}
+		// ancas
 		public function select_one_mahasiswa($key)  // di gunakan ketika ingin melihat log bimbingan satu mahasiswa
 		{
 			$query = "SELECT *,logbook_bimbingan.jenis as model,logbook_bimbingan.id_logbook as id,mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm, dosen.nama as namdis from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and mahasiswa_metopen.nim = $key";
@@ -72,7 +79,7 @@
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
 
-		// 4  ancas 1700018164 
+		// ancas 1700018164 
 		public function select_one_mahasiswa_by_id_log($key)  
 		{
 			$query = "SELECT *,logbook_bimbingan.jenis as model,logbook_bimbingan.id_logbook as id,mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm, dosen.nama as namdis from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and logbook_bimbingan.id_logbook = $key";
@@ -81,7 +88,14 @@
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
 
-		// 5 fungsi buat rizki 1700018120
+		public function jumlah_data()
+		{
+			$query = "SELECT * from mahasiswa_metopen";
+			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
+			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
+		}
+
+		// fungsi buat rizki 1700018120
 		// fungsi di bawah ini untuk melihat total jumlah bimbingan satu mahasiswa
 
 		public function jumlah_bimbingan_satu_mahasiswa($dosen)    
@@ -91,8 +105,6 @@
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
-
-		// 6 riski
 		public function jumlah_bimbingan_satu_mahasiswa_untuk_ubah_warna($nim)
 		{
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,logbook_bimbingan.jenis as jenis_bimbingan, COUNT(logbook_bimbingan.jenis) AS jumlah FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and mahasiswa_metopen.nim = $nim GROUP BY logbook_bimbingan.jenis HAVING COUNT(mahasiswa_metopen.nim)>=0";
@@ -105,20 +117,20 @@
 		//			   (siapa saja yang dibimbing oleh dosen "A") yang ditampilkan adalah Nama, Nim, Judul, 
 		//			   Materi dan Tanggal dari Logbook bimbingannya. dengan mengirimkan nama dosennya.
 
-		// public function mencari_mhs_dgn_dos_yg_sama($key)
-		// {
-		// 	$query = "SELECT mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm,mahasiswa_metopen.topik as judul, logbook_bimbingan.materi_bimbingan as materi, logbook_bimbingan.tanggal_bimbingan as tanggal from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.nama = '$key' "; 
-		// 	//Query untuk menapilkan Nama, Nim, Judul, Materi dan Tanggal dari Logbook bimbingannya dengan men join tabel
-		// 	//logbimbingan_skripsi ke skripsi dengan id_skripsi pada logbimbingan sama dengan id_skripsi pada skripsi lalu di joinkan
-		// 	//ke mahasiswa_metopen dengan nim pada mahasiswa_metopen sama dengan nim pada skripsi lalu dijoinkan lagi dengan dosen
-		// 	//dengan niy pada dosen sama dengan Dosen pada mahasiswa_metopen dan dengan syarat yang dicari adalah nama dosennya sebagai 
-		// 	//key (nama yang dicari)
-		// 	$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
-		// 	return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
+		public function mencari_mhs_dgn_dos_yg_sama($key)
+		{
+			$query = "SELECT mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm,mahasiswa_metopen.topik as judul, logbook_bimbingan.materi_bimbingan as materi, logbook_bimbingan.tanggal_bimbingan as tanggal from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.nama = '$key' "; 
+			//Query untuk menapilkan Nama, Nim, Judul, Materi dan Tanggal dari Logbook bimbingannya dengan men join tabel
+			//logbimbingan_skripsi ke skripsi dengan id_skripsi pada logbimbingan sama dengan id_skripsi pada skripsi lalu di joinkan
+			//ke mahasiswa_metopen dengan nim pada mahasiswa_metopen sama dengan nim pada skripsi lalu dijoinkan lagi dengan dosen
+			//dengan niy pada dosen sama dengan Dosen pada mahasiswa_metopen dan dengan syarat yang dicari adalah nama dosennya sebagai 
+			//key (nama yang dicari)
+			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
+			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 			
-		// }
+		}
 
-		// 7 fungsi intan
+		//fungsi intan
 		public function mengurutkan_judul($dosen) // tambah parameter jika diperlukan
 		{
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as  judul, mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy = $dosen GROUP BY  mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0  ORDER BY mahasiswa_metopen.topik  desc";
@@ -126,9 +138,9 @@
 				//dengan sedikit modif tambahan padakode sql "order by mahasiswa_metopen.nama " sebagai pengrut
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
-		}
+		} 
 
-		// 8 Nur 1700018140
+		//Nur 1700018140
 		//fungsi dibawah ini untuk mengupdate data jika ada yang salah pada materi atau jam atau tanggal pada tabel logbook_bimbingan
 		
 		public function update_data($materi_bimbingan,$tanggal_bimbingan,$jam,$id_logbook)
@@ -141,7 +153,6 @@
 	     return $this->result; // untuk mengembalikan hasil eksekusi fungsi ini.
 		}
 		
-		// 9 nur
 		public function mengurutkan_jumlah_konsultasi($dosen) // tambah parameter jika di perlukan
 		{
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ORDER BY COUNT(logbook_bimbingan.id_skripsi) desc";
@@ -172,9 +183,7 @@
 		// 	return $this->result; // menembalikan nilai dari hasil eksekusi fungsi eksekusi(); yang di taruh di variabel $result
 		// }
 
-
-
-		// 10 nofand 1700018152
+		// nofand 1700018152
 		// fungsi ini menampilkan data nama, nim, dan nama dosen pembimbing di header log bimbingan 
 		public function getHeaderLogbimbingan($nim)
 		{
@@ -185,7 +194,6 @@
 			return $this->result; // menembalikan nilai dari hasil eksekusi fungsi eksekusi(); yang di taruh di variabel $result
 		}
 
-		// 11
 		public function getHeaderDosen($niy)
 		{
 			$query = "SELECT * from dosen where dosen.niy = $niy";
@@ -208,7 +216,7 @@
 		// 	return $this->result; // menembalikan nilai dari hasil eksekusi fungsi eksekusi(); yang di taruh di variabel $result
 		// }
 
-		// 12 dibuat oleh Arifaleo Nurdin (1700018158)
+		//dibuat oleh Arifaleo Nurdin (1700018158)
 		//KETERANGAN : Fungsi ini digunakan untuk mencari data atau riwayat logbook bimbingan dari
 		//			   mahasiswa tertentu, dengan dengan menampilkan model, id, nama, nim, dan nama dosennya 
 		//			   dengan mengirimkan kata-kata yang ingin dicari dan setiap data logbook bimbingan yang 
@@ -225,7 +233,6 @@
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
 
-		// 13 ????
 		public function getNimFromId_log($nim)
 		{
 			$query="SELECT mahasiswa_metopen.nim as nim from mahasiswa_metopen join logbook_bimbingan on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi and logbook_bimbingan.id_logbook = $nim";
@@ -234,7 +241,7 @@
 
 		}
 		
-		// 14 Dendi Pradana (1600018224)
+		// Dendi Pradana (1600018224)
 		public function mengurutkan_nama_A_ke_Z($dosen) // tambah parameter jika di perlukan
 		{
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ORDER BY mahasiswa_metopen.nama desc";
@@ -244,14 +251,7 @@
 		}
 
 
-		// 2 dendi
-		public function masuk_ke_log($id,$materi,$id_skripsi,$tanggal,$jam,$jenis) // input data ke tabel logbook_bimbingan 
-		{
-			$query = "INSERT INTO logbook_bimbingan values ('','$materi','$id_skripsi','$tanggal','$jam','$jenis')";
-			// sql untuk memasukan niali value dari variabel yang ada di parameter fungsi ini sebagai data di tabel log bimbingan
-			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
-			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
-		}
+
 
 	}
 

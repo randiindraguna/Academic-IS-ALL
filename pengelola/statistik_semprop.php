@@ -87,53 +87,63 @@ if($_SESSION['status'] == "login"){
 
     <?php
     if (isset($_POST['save'])) {
-        if(is_null($_POST['tgl'])){
-            echo "Silahkan pilih Tanggal Penggunaan Ruang";
+        $tgla = $_POST['tgl'];
+        $search1 = $akses->tanggal_seminar($tgla);
+        $hsl = mysqli_num_rows($search1);
+        if($hsl > 0){
+            ?>
+                <script>
+                    var ctx = document.getElementById("myChart").getContext('2d');
+                        var myChart = new Chart(ctx, {
+                            type: 'pie',
+                            data: {
+                                labels: ['Ruang 1','Ruang 2','Ruang 3'],
+                                datasets: [{
+                                    label: '',
+                                    data: [
+                                    <?php foreach($akses->tanggal_seminar_R1($tgla) as $key){echo '"'.$key['jumlah1'].'",';} ?>,
+                                    <?php foreach($akses->tanggal_seminar_R2($tgla) as $key){echo '"'.$key['jumlah2'].'",';} ?>,
+                                    <?php foreach($akses->tanggal_seminar_R3($tgla) as $key){echo '"'.$key['jumlah3'].'",';} ?>,
+                                    ],
+                                    backgroundColor: [
+                                        'rgba(241, 196, 15,1.0)',
+                                        'rgba(52, 73, 94,1.0)',
+                                        'rgba(46, 204, 113,1.0)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(241, 196, 15,1.0)',
+                                        'rgba(52, 73, 94,1.0)',
+                                        'rgba(46, 204, 113,1.0)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    yAxes: [{
+                                        ticks: {
+                                            beginAtZero:true
+                                        }
+                                    }]
+                                }
+                            }
+                        });
+                    </script>
+                            <!--Grafik-->
+                        </div>
+            <?php
         }else{
-             $tgla = $_POST['tgl'];
+            ?>
+                <script type="text/javascript">
+                    alert('Data Tidak Ditemukan');
+                    history.back(self);
+                </script>
+             <?php
         }
     }
      ?>
 
-    <script>
-    var ctx = document.getElementById("myChart").getContext('2d');
-        var myChart = new Chart(ctx, {
-            type: 'pie',
-            data: {
-                labels: ['Ruang 1','Ruang 2','Ruang 3'],
-                datasets: [{
-                    label: '',
-                    data: [
-                    <?php foreach($akses->tanggal_seminar_R1($tgla) as $key){echo '"'.$key['jumlah1'].'",';} ?>,
-                    <?php foreach($akses->tanggal_seminar_R2($tgla) as $key){echo '"'.$key['jumlah2'].'",';} ?>,
-                    <?php foreach($akses->tanggal_seminar_R3($tgla) as $key){echo '"'.$key['jumlah3'].'",';} ?>,
-                    ],
-                    backgroundColor: [
-                        'rgba(241, 196, 15,1.0)',
-                        'rgba(52, 73, 94,1.0)',
-                        'rgba(46, 204, 113,1.0)'
-                    ],
-                    borderColor: [
-                        'rgba(241, 196, 15,1.0)',
-                        'rgba(52, 73, 94,1.0)',
-                        'rgba(46, 204, 113,1.0)'
-                    ],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero:true
-                        }
-                    }]
-                }
-            }
-        });
-    </script>
-            <!--Grafik-->
-        </div>
+    
     
     </body>
 </html>

@@ -148,6 +148,13 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		return $this->result; //untuk hasil query diatas
 	}
 	//dibuat oleh : Rifka Riyani Radilla (1700018171)
+	public function tanggal_seminar($tgl){
+		$query="SELECT tanggal AS tgl, tempat FROM penjadwalan 
+				WHERE jenis_ujian = 'SEMPROP' AND tanggal = '$tgl'"; //untuk menampilkan tanggal dari tabel penjadwalan
+		$this->eksekusi($query); //untuk mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
+	}
+	//dibuat oleh : Rifka Riyani Radilla (1700018171)
 	public function tanggal_seminar_R1($tgl){
 		$query="SELECT COUNT(nim) AS jumlah1, tanggal AS tgl, tempat FROM penjadwalan 
 				WHERE jenis_ujian = 'SEMPROP' AND tanggal = '$tgl' 

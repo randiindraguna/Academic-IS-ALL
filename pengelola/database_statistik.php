@@ -116,7 +116,14 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
-	  //dibuat oleh : Tiara Anggraini Gaib (1700018175)
+	//dibuat oleh : Tiara Anggraini Gaib (1700018175)
+	public function tanggal_undaran($tgl){
+		$query="SELECT tanggal AS tgl, tempat FROM penjadwalan 
+				WHERE jenis_ujian = 'UNDARAN' AND tanggal = '$tgl'"; //untuk menampilkan tanggal dari tabel penjadwalan
+		$this->eksekusi($query); //untuk mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
+	}
+	//dibuat oleh : Tiara Anggraini Gaib (1700018175)
 	public function tanggal_undaran_R1($tgl){
 		$query="SELECT COUNT(nim) AS jumlah1, tanggal AS tgl, tempat FROM penjadwalan 
 				WHERE jenis_ujian = 'UNDARAN' AND tanggal = '$tgl' 

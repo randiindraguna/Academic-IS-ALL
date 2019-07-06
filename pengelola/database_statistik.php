@@ -233,7 +233,7 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 				AS jumlah_ampu FROM dosen JOIN mahasiswa_metopen 
 				WHERE dosen.niy = mahasiswa_metopen.dosen 
 				AND mahasiswa_metopen.bidang_minat = '$bidang' 
-				GROUP BY dosen.niy"; //untuk menampilkan Jumlah Mahasiswa Bimbingan Masing - Masing Dosen    dan direpresentasikan dalam Grafik 
+				GROUP BY dosen.niy ORDER BY jumlah_ampu ASC"; //untuk menampilkan Jumlah Mahasiswa Bimbingan Masing - Masing Dosen    dan direpresentasikan dalam Grafik 
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}

@@ -133,7 +133,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               if(!isset($_GET['nama']))
               {
               echo '
-              <td rowspan="2"> 
+              <td rowspan="3"> 
                 <form>
                   <input type="text" name="nama" hidden="">
                   <input type="submit" name="asc" class="btn btn-primary" value="NAMA MAHASISWA">
@@ -143,7 +143,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               else
               {
               echo '
-              <td rowspan="2"> 
+              <td rowspan="3"> 
                 <form>
                   <input type="text" name="normal" hidden="">
                   <input type="submit" class="btn btn-primary" value="NAMA MAHASISWA">
@@ -154,7 +154,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               if(!isset($_GET['nim']))
               {
               echo '
-              <td rowspan="2">
+              <td rowspan="3">
                 <form>
                   <input type="text" name="nim" hidden="">
                   <input type="submit" name="asc" class="btn btn-primary" value="Nim">
@@ -164,7 +164,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               else
               {
                 echo '
-              <td rowspan="2">
+              <td rowspan="3">
                 <form>
                   <input type="text" name="normal" hidden="">
                   <input type="submit" class="btn btn-primary" value="Nim">
@@ -174,7 +174,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               if(!isset($_GET['judul']))
               {
               echo '
-              <td rowspan="2">
+              <td rowspan="3">
                 <form>
                   <input type="text" name="judul" hidden="">
                   <input type="submit" name="asc" class="btn btn-primary" value="judul skripsi/metopen">
@@ -185,7 +185,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               {
  
               echo '
-              <td rowspan="2">
+              <td rowspan="3">
                 <form>
                   <input type="text" name="normal" hidden="">
                   <input type="submit" class="btn btn-primary" value="judul skripsi/metopen">
@@ -215,8 +215,19 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               </td>';
               }
             ?>
+          </tr>
           <tr>
-          <tr></tr>
+            <tr class="bg-primary" align="center">
+              <td>
+                <div class="btn btn-primary" value="">METOPEN</div>
+              </td>
+              <td>
+                <div class="btn btn-primary" value="">SKRIPSI</div>
+              </td>
+
+
+            </tr>
+          </tr>
             <?php
            
             {

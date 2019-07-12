@@ -47,6 +47,13 @@
 		// 	$this->execute($query);
 		// 	return $this->result;
 		// }
+
+		//nofand1700018152 (mengambil data dari tabel login berdasarkan level dan status akun)
+		public function get_data_akun($level,$status_akun){
+			$query = "SELECT * FROM login where level='$level' and status_akun='$status_akun'";
+			$this->execute($query);
+			return $this->result;
+		}
 		
 		public function getLevelAkun($username){
 			$query = "SELECT level from login where user_name='$username'";

@@ -128,7 +128,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
           ?>
 
         <table class="container border mt-3" bgcolor="white" cellpadding="8">
-          <tr class="bg-primary">
+          <tr class="bg-primary" align="center">
             <?php 
               if(!isset($_GET['nama']))
               {

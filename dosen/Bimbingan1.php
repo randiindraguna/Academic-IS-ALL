@@ -263,7 +263,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                     if($ke['jenis_bimbingan'] == "metopen" || $ke['jenis_bimbingan'] == NULL)
                     {
                       echo "
-                    <tr>
+                    <tr align='center'>
                     <td>".$key['name']."</td>
                     <td>".$key['nim']."</td>
                     <td>".$key['judul']."</td>
@@ -277,7 +277,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                 {
                   echo 
                       "
-                        <tr>
+                        <tr align='center'>
                         <td>".$key['name']."</td>
                         <td>".$key['nim']."</td>
                         <td>".$key['judul']."</td>

@@ -239,7 +239,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                 }
                 else if(isset($_GET['nim']))
                 {
-                  $tampilan_awal = $car->mengurutkan_nim($_SESSION['username']);
+                  $tampilan_awal = $car->mengurutkan_mahasiswa_berdasarkan_nim($_SESSION['username']);
                 }
                 else if(isset($_GET['judul']))
                 {

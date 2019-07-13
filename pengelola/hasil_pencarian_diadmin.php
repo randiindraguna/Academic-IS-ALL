@@ -81,9 +81,9 @@ if($_SESSION['status'] == "login"){
                         }
 
                         echo "
-        <label for='formGroupExampleInput'>NILAI PROSES PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_proses_pembimbing' class='form-control' aria-label='Text input with checkbox' required='nilai_proses_pembimbing' pattern='[0-9]+' placeholder='Masukkan Angka'> 
-         <label for='formGroupExampleInput'>NILAI UJIAN PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_ujian_pembimbing' class='form-control' aria-label='Text input with checkbox'  required='nilai_ujian_pembimbing' pattern='[0-9]+' placeholder='Masukkan Angka'>
-          <label for='formGroupExampleInput'>NILAI UJIAN PENGUJI </label><input type='number' min='0' max='100' name='nilai_ujian_penguji' class='form-control' aria-label='Text input with checkbox' required='nilai_ujian_penguji' pattern='[0-9]+' placeholder='Masukkan Angka'>
+        <label for='formGroupExampleInput'>NILAI PROSES PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_proses_pembimbing' class='form-control' aria-label='Text input with checkbox' required='nilai_proses_pembimbing' pattern='[0-9]+' placeholder='Masukkan Nilai Angka'> 
+         <label for='formGroupExampleInput'>NILAI UJIAN PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_ujian_pembimbing' class='form-control' aria-label='Text input with checkbox'  required='nilai_ujian_pembimbing' pattern='[0-9]+' placeholder='Masukkan Nilai Angka'>
+          <label for='formGroupExampleInput'>NILAI UJIAN PENGUJI </label><input type='number' min='0' max='100' name='nilai_ujian_penguji' class='form-control' aria-label='Text input with checkbox' required='nilai_ujian_penguji' pattern='[0-9]+' placeholder='Masukkan Nilai Angka'>
        
         
         <br>   <input type='submit' name='simpan' value='simpan' class='btn btn-outline-success my-2 my-sm-0'>    

@@ -122,7 +122,7 @@ if($_SESSION['status'] == "login"){
          <td align='center'>$key[nilai_penguji_2]</td>
           <td align='center'>$key[nilai_pembimbing]</td>
         <td align='center'>$key[status]</td>
-        <td align='center'><a href='update_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>UPDATE</a>
+        <td align='center'><a href='update_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>EDIT</a>
         <a href='delete_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>DELETE</a></td>
         </tr>
       ";
@@ -147,7 +147,7 @@ if($_SESSION['status'] == "login"){
             <td align='center'>$rata_rata</td>
             <td align='center'>$grade</td>
           <td align='center'>$key[status]</td>
-          <td align='center'><a href='update_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>UPDATE</a>
+          <td align='center'><a href='update_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>EDIT</a>
           <a href='delete_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>DELETE</a></td>
           </tr>
         ";

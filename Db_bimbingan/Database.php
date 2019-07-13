@@ -260,6 +260,31 @@
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
 
+		public function confert_hari($day){
+
+		$tahun = $day / 365;
+		$tahun = floor($tahun);
+
+		$t_day = $tahun * 365;
+		$day = $day - $t_day;
+
+		$bulan = $day / 30;
+		$bulan = floor($bulan);
+
+		$t_day = $bulan * 30;
+		$day = $day - $t_day;
+
+		if ($tahun >= 1) {
+			return $tahun.' tahun '.$bulan.' bulan '.$day.' hari ';
+		}elseif ($bulan >= 1) {
+			return $bulan.' bulan '.$day.' hari ';
+		}else {
+			return $day.' hari ';
+		}
+
+
+	}
+
 
 	}
 

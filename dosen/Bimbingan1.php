@@ -127,7 +127,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
           }
           ?>
 
-        <table class="container border mt-3" bgcolor="white" cellpadding="8">
+        <table class="container border mt-3" bgcolor="white" cellpadding="8" border="2">
           <tr class="bg-primary" align="center">
             <?php 
               if(!isset($_GET['nama']))
@@ -217,8 +217,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               echo '
               <td rowspan="3"> 
                 <form>
-                  <input type="text" name="nama" hidden="">
-                  <input type="submit" name="asc" class="btn btn-primary" value="LAMA BIMBINGAN MAHASISWA">
+                  <input type="button" name="asc" class="btn btn-primary" value="LAMA BIMBINGAN MAHASISWA">
                 </form>
               </td>';
             ?>
@@ -275,7 +274,8 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                     <td>".$key['nim']."</td>
                     <td>".$key['judul']."</td>
                     <td><div class='btn btn-primary hover_metopen disabled'>".$ke['jumlah']."</div></td>
-                    <td>".$key['lamabimbingan']."</td>
+                    <td></td> <!-kolom untuk jumlah bimbingan skripsi, kosong karena pada saat status bimbingan masih metopen mahasiswa tersebut tidak mempunyai bimbingan skripsi samasekali-!>
+                    <td>".$car->confert_hari($key['lamabimbingan'])."</td>
                     </tr>
                     ";
                     }
@@ -300,17 +300,20 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                       }
                       else if($ke['jenis_bimbingan']=="skripsi")
                       {
-                        echo "<td><div class='btn btn-primary hover_not disabled'>".$ke['jumlah']."</div></td>";
+                        echo "<td><div class='btn btn-primary hover_not disabled'>".$ke['jumlah']." skripsi</div></td>";
                       }
                       else // metopen
                       {
-                        echo "<td><div class='btn btn-primary hover_metopen disabled'>".$ke['jumlah']."</div></td>";
+                        echo "<td><div class='btn btn-primary hover_metopen disabled'>".$ke['jumlah']." </div></td>";
                       }
 
 
                   }
+
+                  
+
                   echo "
-                  <td>".$key['lamabimbingan']."</td>
+                  <td>".$car->confert_hari($key['lamabimbingan'])."</td>
                   </tr>";
                 }
               }

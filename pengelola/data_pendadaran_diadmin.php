@@ -50,7 +50,7 @@ if($_SESSION['status'] == "login"){
 <form name="pencarian" method="POST" action = "hasil_cari_pengunguman_diadmin.php" ">            
       
                     <tr> <td>
-                    <input type="text" placeholder="masukan nim" name="nim" title ="masukan nim" class="form-control">  
+                    <input type="text" placeholder="masukan nim" name="nim" pattern="[0-9]+" title ="masukan nim" class="form-control" required>  
                     </td>
                     <td>
                     <button id="submit2" name="submit2" class='butn butn2 ml-2'>cari</button></td>

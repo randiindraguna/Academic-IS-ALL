@@ -1,16 +1,16 @@
-<?php include 'templates/header_Penjadwalan.php' ?>
+<?php include '../templates/header_Penjadwalan.php' ?>
 
 <?php
 
 	//membutuhkan file fungsi_semprop
-	require('fungsi_semprop.php');
+	require('../fungsi_semprop.php');
 
 	//instansiasi objek class Seminar_Proposal
 	$akses = new Seminar_Proposal();
 	$akses->koneksi();
 
 ?>
-<?php include 'templates/navbar_dosen.html' ?>
+<?php include '../templates/navbar_dosen.html' ?>
 
 <?php
   
@@ -21,7 +21,8 @@
                 
                 
 
-      foreach ($akses->CariMahasiswaBerdasarkanNimPadaPengumumanHasilSemprop($nim) as $key) {
+      foreach (
+        $akses->CariMahasiswaBerdasarkanNimPadaPengumumanHasilSemprop($nim) as $key) {
           # code...
         
         
@@ -60,6 +61,6 @@
       }
     }
       ?>
-<?php include 'templates/footer_Penjadwalan.php' ?>
+<?php include '../templates/footer_Penjadwalan.php' ?>
 
 

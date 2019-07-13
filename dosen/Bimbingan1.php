@@ -214,6 +214,13 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                 </form>
               </td>';
               }
+              echo '
+              <td rowspan="3"> 
+                <form>
+                  <input type="text" name="nama" hidden="">
+                  <input type="submit" name="asc" class="btn btn-primary" value="LAMA BIMBINGAN MAHASISWA">
+                </form>
+              </td>';
             ?>
           </tr>
           <tr>
@@ -268,6 +275,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                     <td>".$key['nim']."</td>
                     <td>".$key['judul']."</td>
                     <td><div class='btn btn-primary hover_metopen disabled'>".$ke['jumlah']."</div></td>
+                    <td>".$key['lamabimbingan']."</td>
                     </tr>
                     ";
                     }
@@ -301,7 +309,9 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
 
 
                   }
-                  echo "</tr>";
+                  echo "
+                  <td>".$key['lamabimbingan']."</td>
+                  </tr>";
                 }
               }
             }

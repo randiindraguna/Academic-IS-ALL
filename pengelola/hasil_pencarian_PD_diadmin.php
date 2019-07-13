@@ -70,7 +70,7 @@ if($_SESSION['status'] == "login"){
     <input name='pembimbing' value='$key[nama_dsn]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
 
   
-         <label for='formGroupExampleInput'>PENGUJI 1 </label>
+         
   ";
   # code...
 

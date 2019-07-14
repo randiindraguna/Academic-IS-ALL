@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.4.14
--- http://www.phpmyadmin.net
+-- version 4.8.4
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2019 at 01:32 PM
--- Server version: 5.6.26
--- PHP Version: 5.6.12
+-- Generation Time: Jul 14, 2019 at 01:43 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 5.6.40
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -26,7 +28,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `dosen`
 --
 
-CREATE TABLE IF NOT EXISTS `dosen` (
+CREATE TABLE `dosen` (
   `niy` varchar(50) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -75,14 +77,14 @@ INSERT INTO `dosen` (`niy`, `nama`, `email`, `bidang_keahlian`) VALUES
 -- Table structure for table `logbook_bimbingan`
 --
 
-CREATE TABLE IF NOT EXISTS `logbook_bimbingan` (
+CREATE TABLE `logbook_bimbingan` (
   `id_logbook` int(10) NOT NULL,
   `materi_bimbingan` varchar(50) NOT NULL,
   `id_skripsi` varchar(15) NOT NULL,
   `tanggal_bimbingan` date NOT NULL,
   `jam` time NOT NULL,
   `jenis` enum('metopen','skripsi') NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=32 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `logbook_bimbingan`
@@ -127,7 +129,7 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 -- Table structure for table `login`
 --
 
-CREATE TABLE IF NOT EXISTS `login` (
+CREATE TABLE `login` (
   `user_name` varchar(50) NOT NULL,
   `password` varchar(50) NOT NULL,
   `level` enum('admin','dosen','mahasiswa') NOT NULL,
@@ -258,7 +260,7 @@ INSERT INTO `login` (`user_name`, `password`, `level`, `status_akun`) VALUES
 -- Table structure for table `mahasiswa_metopen`
 --
 
-CREATE TABLE IF NOT EXISTS `mahasiswa_metopen` (
+CREATE TABLE `mahasiswa_metopen` (
   `nim` varchar(15) NOT NULL,
   `nama` varchar(50) NOT NULL,
   `jenis_kelamin` enum('Laki-laki','Perempuan') NOT NULL,
@@ -295,7 +297,7 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 ('1700018092', 'Iqbal Amanulloh', 'Laki-laki', 'Pemilihan Template Website Pada Lumonata Webdesign And Design Graphis Menggunakan Metode Clustering', '60960147', 'Multimedia', 'metopen', '2019-02-22'),
 ('1700018093', 'Fadel Syahbana Tamran Putra', 'Laki-laki', 'Membangun Aplikasi Multimedia Pembelajaran Bahasa Inggris Untuk Anak-Anak', '60160978', 'Multimedia', 'metopen', '2019-02-04'),
 ('1700018094', 'Panji Ragil Wibisono', 'Laki-laki', 'Implementasi Keamanan Replikasi Site Active Directory Pada Windows Server 2008', '60150773', 'Rekayasa Perangkat Lunak', 'metopen', '2019-01-01'),
-('1700018095', 'Adrianto Setyo Nugroho G.', 'Laki-laki', 'Pengembangan Sistem Informasi Pemasaran Product Tour Dan Travel Berbasis Cloud Computing', '60010314', 'Sistem Informasi', 'metopen', '0000-00-00'),
+('1700018095', 'Adrianto Setyo Nugroho G.', 'Laki-laki', 'Pengembangan Sistem Informasi Pemasaran Product Tour Dan Travel Berbasis Cloud Computing', '60010314', 'Sistem Informasi', 'metopen', '2019-07-03'),
 ('1700018096', 'Bayu Tudo Prasetyo', 'Laki-laki', 'Perancangan Perangkat Lunak Belajar Bahasa Mandarin', '60040496', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
 ('1700018101', 'M.Iqbal Hadiwibowo', 'Laki-laki', 'Perancangan Perangkat Lunak Untuk Kompresi Data Dengan Menggunakan Metode Wavelet', '60040497', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
 ('1700018102', 'Teguh Pangestu', 'Laki-laki', 'Perancangan Aplikasi Pengelola Keuangan Pada Komputer Menggunakan Java', '60030480', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
@@ -361,11 +363,11 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 -- Table structure for table `penguji`
 --
 
-CREATE TABLE IF NOT EXISTS `penguji` (
+CREATE TABLE `penguji` (
   `id_penguji` int(5) NOT NULL,
   `id_jadwal` varchar(50) NOT NULL,
   `niy` varchar(15) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=60822157 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `penguji`
@@ -389,7 +391,7 @@ INSERT INTO `penguji` (`id_penguji`, `id_jadwal`, `niy`) VALUES
 -- Table structure for table `penjadwalan`
 --
 
-CREATE TABLE IF NOT EXISTS `penjadwalan` (
+CREATE TABLE `penjadwalan` (
   `id_jadwal` varchar(50) NOT NULL,
   `jenis_ujian` enum('SEMPROP','UNDARAN') NOT NULL,
   `nim` varchar(15) NOT NULL,
@@ -420,7 +422,7 @@ INSERT INTO `penjadwalan` (`id_jadwal`, `jenis_ujian`, `nim`, `tanggal`, `jam`, 
 -- Table structure for table `prodi`
 --
 
-CREATE TABLE IF NOT EXISTS `prodi` (
+CREATE TABLE `prodi` (
   `id_prodi` varchar(10) NOT NULL,
   `nama_prodi` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -438,11 +440,11 @@ INSERT INTO `prodi` (`id_prodi`, `nama_prodi`) VALUES
 -- Table structure for table `semester`
 --
 
-CREATE TABLE IF NOT EXISTS `semester` (
+CREATE TABLE `semester` (
   `id_semester` int(11) NOT NULL,
   `periode` varchar(20) NOT NULL,
   `status` enum('terbuka','tertutup','','') NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `semester`
@@ -462,14 +464,14 @@ INSERT INTO `semester` (`id_semester`, `periode`, `status`) VALUES
 -- Table structure for table `seminar_proposal`
 --
 
-CREATE TABLE IF NOT EXISTS `seminar_proposal` (
+CREATE TABLE `seminar_proposal` (
   `id_seminar` int(5) NOT NULL,
   `nilai_proses_pembimbing` char(3) NOT NULL,
   `status` enum('lulus','tidak_lulus') NOT NULL,
   `nim` varchar(15) NOT NULL,
   `nilai_ujian_pembimbing` char(3) NOT NULL,
   `nilai_ujian_penguji` char(3) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=1700018091 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `seminar_proposal`
@@ -488,7 +490,7 @@ INSERT INTO `seminar_proposal` (`id_seminar`, `nilai_proses_pembimbing`, `status
 -- Table structure for table `ujian_pendadaran`
 --
 
-CREATE TABLE IF NOT EXISTS `ujian_pendadaran` (
+CREATE TABLE `ujian_pendadaran` (
   `nim` varchar(15) NOT NULL,
   `id_pendadaran` varchar(15) NOT NULL,
   `status` enum('lulus','tidak_lulus') NOT NULL,
@@ -585,22 +587,26 @@ ALTER TABLE `ujian_pendadaran`
 -- AUTO_INCREMENT for table `logbook_bimbingan`
 --
 ALTER TABLE `logbook_bimbingan`
-  MODIFY `id_logbook` int(10) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=32;
+  MODIFY `id_logbook` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+
 --
 -- AUTO_INCREMENT for table `penguji`
 --
 ALTER TABLE `penguji`
-  MODIFY `id_penguji` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=60822157;
+  MODIFY `id_penguji` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60822157;
+
 --
 -- AUTO_INCREMENT for table `semester`
 --
 ALTER TABLE `semester`
-  MODIFY `id_semester` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;
+  MODIFY `id_semester` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
 -- AUTO_INCREMENT for table `seminar_proposal`
 --
 ALTER TABLE `seminar_proposal`
-  MODIFY `id_seminar` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1700018091;
+  MODIFY `id_seminar` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1700018091;
+
 --
 -- Constraints for dumped tables
 --
@@ -641,6 +647,7 @@ ALTER TABLE `seminar_proposal`
 --
 ALTER TABLE `ujian_pendadaran`
   ADD CONSTRAINT `ujian_pendadaran_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa_metopen` (`nim`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

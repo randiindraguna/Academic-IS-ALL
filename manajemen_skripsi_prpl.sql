@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2019 at 01:17 PM
+-- Generation Time: Jul 14, 2019 at 01:23 PM
 -- Server version: 5.6.26
 -- PHP Version: 5.6.12
 
@@ -289,8 +289,8 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 ('1700018082', 'Tri Wahyuni', 'Perempuan', 'Pembuatan Aplikasi Sms Kriptografi Rsa Dengan Android', '60910095', 'Rekayasa Perangkat Lunak', 'metopen', '2019-03-01'),
 ('1700018086', 'M.Alif Rahmat Novian', 'Laki-laki', 'Implementasi Supply Chain Management Untuk Stock Dan Pendistribusian Barang Berbasis Web', '60160863', 'Rekayasa Perangkat Lunak', 'metopen', '2019-03-14'),
 ('1700018087', 'Yunus Fajri', 'Laki-laki', 'Pemanfaatan Aplikasi Mobile Android Oleh Asisten Laboratorium Dalam Aktivitas Praktikum', '60160979', 'Rekayasa Perangkat Lunak', 'metopen', '2019-01-12'),
-('1700018089', 'Primadi Apriyanto', 'Laki-laki', 'Pembangunan Sistem Informasi Manajemen Inventory Dengan Menggunakan Teknologi Webbase', '60160980', 'Sistem Informasi', 'metopen', '0000-00-00'),
-('1700018090', 'Nicky Dwi Rizky', 'Laki-laki', 'Implementasi Windows Presentation Foundation (Wpf) Pada Sistem Informasi Penjualan Handycraft', '60160951', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
+('1700018089', 'Primadi Apriyanto', 'Laki-laki', 'Pembangunan Sistem Informasi Manajemen Inventory Dengan Menggunakan Teknologi Webbase', '60160980', 'Sistem Informasi', 'metopen', '2019-02-13'),
+('1700018090', 'Nicky Dwi Rizky', 'Perempuan', 'Implementasi Windows Presentation Foundation (Wpf) Pada Sistem Informasi Penjualan Handycraft', '60160951', 'Rekayasa Perangkat Lunak', 'metopen', '2019-02-10'),
 ('1700018091', 'Iqbal Kurnia Dama', 'Laki-laki', 'Implementasi Konsep E-Commerce Terhadap Rancang Bangun E-Mall System', '60150773', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
 ('1700018092', 'Iqbal Amanulloh', 'Laki-laki', 'Pemilihan Template Website Pada Lumonata Webdesign And Design Graphis Menggunakan Metode Clustering', '60960147', 'Multimedia', 'metopen', '0000-00-00'),
 ('1700018093', 'Fadel Syahbana Tamran Putra', 'Laki-laki', 'Membangun Aplikasi Multimedia Pembelajaran Bahasa Inggris Untuk Anak-Anak', '60160978', 'Multimedia', 'metopen', '0000-00-00'),

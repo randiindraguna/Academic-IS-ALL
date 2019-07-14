@@ -5,7 +5,13 @@ require_once('../database.php');
  
 // mengaktifkan session
 session_start();
- 
+  $cek=$_POST['nim'];
+  $tes=$akses->ceknim($cek);
+  $data=mysqli_fetch_array($tes);
+  if($data['jum']==0){
+  echo '<script type="text/javascript">alert("NIM belum terdaftar mahasiswa metopen !")</script>';
+  echo '<script>window.location="caridata.php"</script>';//header("location:index.php");
+}
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
 if($_SESSION['status'] == "login"){
   // menampilkan pesan selamat datang

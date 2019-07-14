@@ -58,7 +58,7 @@ include '../templates/header_penjadwalan.php';
                 <center><h3>Cari Data Mahasiswa</h3>
                 <br>
                 <form class="form-inline my-2 my-lg-0" action="search.php" method="POST">
-                <input class="form-control mr-sm-2" type="text" name="nim" placeholder="Masukkan NIM">
+                <input type="text" name="nim" class="form-control" id="nim" placeholder="Masukkan Nim">
                 <button class="btn btn-outline-danger" type="submit">Search</button>
               </form>
               <br><br>

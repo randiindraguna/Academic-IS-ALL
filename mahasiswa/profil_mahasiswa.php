@@ -114,7 +114,14 @@ include '../templates/header_penjadwalan.php';
                         <td>Topik</td><td colspan=2>:</td><td>".$data['topik']."</td>
                       </tr>
                       <tr>
-                        <td>Status</td><td colspan=2>:</td><td>".$data['status']."</td>
+                        <td>Status</td><td colspan=2>:</td><td>"; ?>
+                          <?php 
+                           if($data['status']=='gagal'){echo"<p class=text-danger>Gagal</p>";}
+                           else if($data['status']=='metopen'){echo"<p class=text-primary>Metopen</p>";}
+                           else if($data['status']=='skripsi'){echo"<p class=text-primary>Skripsi</p>";}
+                           else if($data['status']=='lulus'){echo"<p class=text-success>Lulus</p>";}
+
+                        echo "</td>
                       </tr>  
                       <tr>
                         <td>Dosen Pembimbing</td><td colspan=2>:</td><td>".$data['namados']."</td>

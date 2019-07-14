@@ -126,7 +126,7 @@
 		//fungsi intan
 		public function mengurutkan_judul($dosen) // tambah parameter jika diperlukan
 		{
-			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as  judul, mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy = $dosen GROUP BY  mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0  ORDER BY mahasiswa_metopen.topik  asc";
+			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as  judul, DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) as lamabimbingan, mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy = $dosen GROUP BY  mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0  ORDER BY mahasiswa_metopen.topik  asc";
 			// query untuk mengurutkan daftar nama mahasiswa berdsarkan abjad a - z dari fungsi yang sama yang di kerjakan rizki
 				//dengan sedikit modif tambahan padakode sql "order by mahasiswa_metopen.nama " sebagai pengrut
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
@@ -254,7 +254,7 @@
 
 		public function mengurutkan_mahasiswa_berdasarkan_nim($dosen) // tambah parameter jika di perlukan
 		{
-			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ORDER BY mahasiswa_metopen.nim asc";
+			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as status_mahasiswa,DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) as lamabimbingan, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ORDER BY mahasiswa_metopen.nim asc";
 			// query untuk mengurutkan daftar nama mahasiswa berdasarkan abjad a - z dari fungsi yang sama yang di kerjakan rizki dengan sedikit modif tambahan pada kode sql " order by mahasiswa_metopen.nama " sebagai pengrut  
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini

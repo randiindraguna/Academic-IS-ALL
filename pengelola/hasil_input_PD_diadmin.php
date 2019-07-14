@@ -91,6 +91,8 @@ $akses->updatestatusmetopen($stnew,$id_pd);
         alert('Data Berhasil Disimpan')
  
         </script>";
+ 
+        </script>";
 </head> 
 <body onload="pesan()">
   

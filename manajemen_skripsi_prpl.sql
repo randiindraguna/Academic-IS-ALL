@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2019 at 12:12 PM
+-- Generation Time: Jul 14, 2019 at 12:21 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -280,8 +280,8 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 ('1700018067', 'Via Wahyuningtyas', 'Perempuan', 'Pembuatan Iklan Bencana Banjir Berbasis Multimedia', '60910095', 'Sistem Informasi', 'metopen', '2019-01-09'),
 ('1700018068', 'Diky Syahrul', 'Laki-laki', 'Manajemen Bandwidth Dan Optimalisasi Sistem Keamanan Pada Jaringan Komputer Dengan Winbox Menggunaka', '60160960', 'Rekayasa Perangkat Lunak', 'metopen', '2019-03-04'),
 ('1700018069', 'Wahyu Amin Mahmud', 'Laki-laki', 'Pengamanan Account Sistem Informasi Akademik Online Sekolah Menengah Atas Dengan Menggunakan Metode ', '060150842', 'Rekayasa Perangkat Lunak', 'metopen', '2019-03-01'),
-('1700018070', 'Zulfan Khaidir', 'Laki-laki', 'Penerapan Seo (Search Engine Optimization) Pada Website Wedding Menggunakan Semantik Web', '060150841', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018071', 'Iis Sudianto', 'Laki-laki', 'Pembuatan Media Pembelajaran Ilmu Tajwid Berbasis Audio Visual Menggunakan Macromedia Flash', '60960147', 'Media Pembelajaran', 'metopen', '0000-00-00'),
+('1700018070', 'Zulfan Khaidir', 'Laki-laki', 'Penerapan Seo (Search Engine Optimization) Pada Website Wedding Menggunakan Semantik Web', '060150841', 'Sistem Cerdas', 'metopen', '2019-03-04'),
+('1700018071', 'Iis Sudianto', 'Perempuan', 'Pembuatan Media Pembelajaran Ilmu Tajwid Berbasis Audio Visual Menggunakan Macromedia Flash', '60960147', 'Media Pembelajaran', 'metopen', '2019-03-05'),
 ('1700018073', 'Murdheny', 'Laki-laki', 'Media Pembelajaran Iqro Sebagai Sarana Mempelajari Huruf Al-Quran', '60160960', 'Media Pembelajaran', 'metopen', '0000-00-00'),
 ('1700018074', 'Yusuf Mahdiansyah', 'Laki-laki', 'Penentuan Pemberian Obat Penderita Penyakit Pernapasan Pada Anak Menggunakan Puzzy Smart', '60980174', 'Sistem Cerdas', 'metopen', '0000-00-00'),
 ('1700018075', 'Rizki Akbari', 'Laki-laki', 'Pengembangan Sistem Pakar Diagnosa Penyakit Gigi Berbasis Android', '60020388', 'Sistem Cerdas', 'metopen', '0000-00-00'),

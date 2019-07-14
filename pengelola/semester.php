@@ -86,8 +86,8 @@ include '../templates/header_penjadwalan.php';
               </div>
               <div class="form-group">
                 <label for="status">Status</label><br>
-                <input type="radio" name="status" value="Terbuka" required> Terbuka 
-                <input type="radio" name="status" value="Tertutup" required> Tertutup
+                <input type="radio" name="status" value="Terbuka"> Terbuka 
+                <input type="radio" name="status" value="Tertutup"> Tertutup
               </div>
                <?php
                ?>    

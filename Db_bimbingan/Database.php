@@ -81,12 +81,12 @@
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
 
-		public function jumlah_data()
-		{
-			$query = "SELECT * from mahasiswa_metopen";
-			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
-			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
-		}
+		// public function jumlah_data()
+		// {
+		// 	$query = "SELECT * from mahasiswa_metopen";
+		// 	$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
+		// 	return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
+		// }
 
 		// fungsi buat rizki 1700018120 & rifal 1700018158
 		// fungsi di bawah ini untuk melihat total jumlah bimbingan satu mahasiswa
@@ -110,18 +110,18 @@
 		//			   (siapa saja yang dibimbing oleh dosen "A") yang ditampilkan adalah Nama, Nim, Judul, 
 		//			   Materi dan Tanggal dari Logbook bimbingannya. dengan mengirimkan nama dosennya.
 
-		public function mencari_mhs_dgn_dos_yg_sama($key)
-		{
-			$query = "SELECT mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm,mahasiswa_metopen.topik as judul, logbook_bimbingan.materi_bimbingan as materi, logbook_bimbingan.tanggal_bimbingan as tanggal from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.nama = '$key' "; 
-			//Query untuk menapilkan Nama, Nim, Judul, Materi dan Tanggal dari Logbook bimbingannya dengan men join tabel
-			//logbimbingan_skripsi ke skripsi dengan id_skripsi pada logbimbingan sama dengan id_skripsi pada skripsi lalu di joinkan
-			//ke mahasiswa_metopen dengan nim pada mahasiswa_metopen sama dengan nim pada skripsi lalu dijoinkan lagi dengan dosen
-			//dengan niy pada dosen sama dengan Dosen pada mahasiswa_metopen dan dengan syarat yang dicari adalah nama dosennya sebagai 
-			//key (nama yang dicari)
-			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
-			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
+		// public function mencari_mhs_dgn_dos_yg_sama($key)
+		// {
+		// 	$query = "SELECT mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm,mahasiswa_metopen.topik as judul, logbook_bimbingan.materi_bimbingan as materi, logbook_bimbingan.tanggal_bimbingan as tanggal from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.nama = '$key' "; 
+		// 	//Query untuk menapilkan Nama, Nim, Judul, Materi dan Tanggal dari Logbook bimbingannya dengan men join tabel
+		// 	//logbimbingan_skripsi ke skripsi dengan id_skripsi pada logbimbingan sama dengan id_skripsi pada skripsi lalu di joinkan
+		// 	//ke mahasiswa_metopen dengan nim pada mahasiswa_metopen sama dengan nim pada skripsi lalu dijoinkan lagi dengan dosen
+		// 	//dengan niy pada dosen sama dengan Dosen pada mahasiswa_metopen dan dengan syarat yang dicari adalah nama dosennya sebagai 
+		// 	//key (nama yang dicari)
+		// 	$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
+		// 	return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 			
-		}
+		// }
 
 		//fungsi intan
 		public function mengurutkan_judul($dosen) // tambah parameter jika diperlukan
@@ -262,28 +262,27 @@
 
 		public function confert_hari($day){
 
-		$tahun = $day / 365;
-		$tahun = floor($tahun);
+			$tahun = $day / 365;
+			$tahun = floor($tahun);
 
-		$t_day = $tahun * 365;
-		$day = $day - $t_day;
+			$t_day = $tahun * 365;
+			$day = $day - $t_day;
 
-		$bulan = $day / 30;
-		$bulan = floor($bulan);
+			$bulan = $day / 30;
+			$bulan = floor($bulan);
 
-		$t_day = $bulan * 30;
-		$day = $day - $t_day;
+			$t_day = $bulan * 30;
+			$day = $day - $t_day;
 
-		if ($tahun >= 1) {
-			return $tahun.' tahun '.$bulan.' bulan '.$day.' hari ';
-		}elseif ($bulan >= 1) {
-			return $bulan.' bulan '.$day.' hari ';
-		}else {
-			return $day.' hari ';
+			if ($tahun >= 1) {
+				return $tahun.' tahun '.$bulan.' bulan '.$day.' hari ';
+			}elseif ($bulan >= 1) {
+				return $bulan.' bulan '.$day.' hari ';
+			}else {
+				return $day.' hari ';
+			}
+
 		}
-
-
-	}
 
 
 	}

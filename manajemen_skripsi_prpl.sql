@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 14, 2019 at 01:43 PM
+-- Generation Time: Jul 14, 2019 at 02:03 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 5.6.40
 
@@ -298,8 +298,8 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 ('1700018093', 'Fadel Syahbana Tamran Putra', 'Laki-laki', 'Membangun Aplikasi Multimedia Pembelajaran Bahasa Inggris Untuk Anak-Anak', '60160978', 'Multimedia', 'metopen', '2019-02-04'),
 ('1700018094', 'Panji Ragil Wibisono', 'Laki-laki', 'Implementasi Keamanan Replikasi Site Active Directory Pada Windows Server 2008', '60150773', 'Rekayasa Perangkat Lunak', 'metopen', '2019-01-01'),
 ('1700018095', 'Adrianto Setyo Nugroho G.', 'Laki-laki', 'Pengembangan Sistem Informasi Pemasaran Product Tour Dan Travel Berbasis Cloud Computing', '60010314', 'Sistem Informasi', 'metopen', '2019-07-03'),
-('1700018096', 'Bayu Tudo Prasetyo', 'Laki-laki', 'Perancangan Perangkat Lunak Belajar Bahasa Mandarin', '60040496', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018101', 'M.Iqbal Hadiwibowo', 'Laki-laki', 'Perancangan Perangkat Lunak Untuk Kompresi Data Dengan Menggunakan Metode Wavelet', '60040497', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
+('1700018096', 'Bayu Tudo Prasetyo', 'Laki-laki', 'Perancangan Perangkat Lunak Belajar Bahasa Mandarin', '60040496', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-03'),
+('1700018101', 'M.Iqbal Hadiwibowo', 'Laki-laki', 'Perancangan Perangkat Lunak Untuk Kompresi Data Dengan Menggunakan Metode Wavelet', '60040497', 'Rekayasa Perangkat Lunak', 'metopen', '2019-07-08'),
 ('1700018102', 'Teguh Pangestu', 'Laki-laki', 'Perancangan Aplikasi Pengelola Keuangan Pada Komputer Menggunakan Java', '60030480', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
 ('1700018103', 'Rio Subandi', 'Laki-laki', 'Perangkat Pemberi Pakan Ikan Pada Akuarium Dengan Menggunakan Mikrokontroler At328p-Au', '60090586', 'Sistem Cerdas', 'metopen', '0000-00-00'),
 ('1700018104', 'Agam Panuntas', 'Laki-laki', 'Penggunaan Gps Dan Mac Address Sebagai Location Based Service Untuk Aplikasi Mobile', '60030476', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),

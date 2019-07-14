@@ -142,17 +142,6 @@ class Penjadwalan extends Database{
 	public function getDataBanyakRuangDalamSehari($tanggal){
 			//1700018174-M Andika Riski-Andikariski
 			//Fungsi untuk menghitung banyaknya ruang dalam sehari atau setiap tanggal akan di hitung jumlah ruangan yang terpakai  
-   //         $query="SELECT SUBSTRING(id_jadwal, 12, 1)AS id_jadwal, COUNT(*)as hitung,penjadwalan.tempat FROM penjadwalan WHERE 
-		 //   SUBSTRING(id_jadwal, 9, 2) GROUP BY SUBSTRING(id_jadwal, 12, 1)";
-			// $sql = $this->eksekusi($query);
-			// while ($row = $sql->fetch_assoc()){
-			// 	// echo $row['id_jadwal'];
-			// 	// echo $row['hitung'];
-			// 	// echo"<br>";
-			// } 
-			// if(!$sql) {
-			// 	// echo "tidak ditemukan";
-			// }
 			$query = "SELECT COUNT(*)as hitung,penjadwalan.tempat FROM penjadwalan WHERE penjadwalan.tanggal = '$tanggal'";
 			$sql=$this->eksekusi($query);
 			return $sql;   

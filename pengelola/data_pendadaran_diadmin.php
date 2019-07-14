@@ -50,7 +50,7 @@ if($_SESSION['status'] == "login"){
 <form name="pencarian" method="POST" action = "hasil_cari_pengunguman_diadmin.php" ">            
       
                     <tr> <td>
-                    <input type="text" placeholder="masukan nim" name="nim" title ="masukan nim" class="form-control">  
+                    <input type="text" placeholder="masukan nim" name="nim" pattern="[0-9]+" title ="masukan nim" class="form-control" required>  
                     </td>
                     <td>
                     <button id="submit2" name="submit2" class='butn butn2 ml-2'>cari</button></td>
@@ -150,7 +150,7 @@ if($_SESSION['status'] == "login"){
             <td align='center'>$rata_rata</td>
           <td align='center'>$grade</td>
           <td align='center'>$key[status]</td>
-          <td align='center'><a href='update_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>UPDATE</a>
+          <td align='center'><a href='update_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>EDIT</a>
           <a href='delete_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>DELETE</a></td>
           </tr>
          

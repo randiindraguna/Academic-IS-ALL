@@ -175,7 +175,7 @@ $rata_rata=round(($key['nilai_proses_pembimbing']+$key['nilai_ujian_pembimbing']
           <td align='center'>$rata_rata</td>
           <td align='center'>$grade</td>
           <td align='center'>$key[status]</td>
-          <td align='center'><a href='update_semrop_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>UPDATE</a>
+          <td align='center'><a href='update_semrop_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>EDIT</a>
           <a href='delete_semprop_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>DELETE</a></td>
           </tr>
          

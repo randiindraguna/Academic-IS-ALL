@@ -23,10 +23,10 @@ if ($gClient->getAccessToken()) {
     
 
         $_SESSION['user_id'] = $gpUserProfile['id'];
-        $_SESSION['full_name'] = $gpUserProfile['given_name']." ".$gpUserProfile['family_name'];
+     //   $_SESSION['full_name'] = $gpUserProfile['given_name']." ".$gpUserProfile['family_name'];
         $_SESSION['email'] = $gpUserProfile['email'];
-        $_SESSION['unique_link_user'] = $gpUserProfile['link'];
-        $_SESSION['user_picture'] = $gpUserProfile['picture'];
+       // $_SESSION['unique_link_user'] = $gpUserProfile['link'];
+       // $_SESSION['user_picture'] = $gpUserProfile['picture'];
 
     header("location: saring_akun_google.php");
   

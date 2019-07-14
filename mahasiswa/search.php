@@ -88,6 +88,9 @@ include '../templates/header_penjadwalan.php';
                         <td>Bidang Minat</td><td colspan=2>:</td><td>".$data['bidang_minat']."</td>
                       </tr>
                       <tr>
+                        <td>Status</td><td colspan=2>:</td><td>".$data['status']."</td>
+                      </tr>
+                      <tr>
                         <td>Tanggal Mulai</td><td colspan=2>:</td><td>".$data['tanggal_mulai']."</td>
                       </tr>
                       ";

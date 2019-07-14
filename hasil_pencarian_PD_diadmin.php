@@ -1,24 +1,23 @@
+
 <?php include '../templates/header_Penjadwalan.php' ?>
 <?php
 
     //membutuhkan file fungsi_semprop
-    require('../fungsi_semprop.php');
-
+    require('../fungsi_pendadaran.php');
     //instansiasi objek class Seminar_Proposal
-    $akses = new Seminar_Proposal();
+    $akses = new ujian_pendadaran();
     $akses->koneksi();
-
-     session_start();
+session_start();
 if($_SESSION['status'] == "login"){
   // menampilkan pesan selamat datang
   //echo "Hai, selamat datang ". $_SESSION['username'];
 }else{
   header("location:../index.php");
+
 }
 
 ?>
-   <?php include '../templates/header_Penjadwalan.php' ?>
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <?php include '../templates/navbar_admin.html' ?>
@@ -38,7 +37,7 @@ if($_SESSION['status'] == "login"){
 <body>
     <?php
   
-  if(isset($_POST['submit'])){
+  if(isset($_POST['submit11'])){
 
 
       $nim = $_POST['nim'];
@@ -46,11 +45,14 @@ if($_SESSION['status'] == "login"){
                  
 
                  
-        <form action='hasil_input_semprop_diadmin.php' method='POST'>
+        <form action='hasil_input_PD_diadmin.php' method='POST'>
 
         
                   ";
-      foreach ($akses->CariDataMahasiswaBerdasarkanNim($nim) as $key) {
+              
+$datanya=$akses->CariDataMahasiswaBerdasarkanNimpd($nim);
+if($datanya->num_rows>0){
+      foreach ($datanya as $key) {
           # code...
         
         
@@ -67,39 +69,63 @@ if($_SESSION['status'] == "login"){
     <input name='nama' value='$key[nama_mhs]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
     <label for='formGroupExampleInput'>PEMBIMBING </label>
     <input name='pembimbing' value='$key[nama_dsn]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
-   <label for='formGroupExampleInput'>PENGUJI </label>
 
+  
+         
   ";
   # code...
 
-                        foreach($akses->getDosenPenguji($key['id_jadwal']) as $data1){
+                        foreach($akses->getDosenPenguji1($key['id_jadwal']) as $data1){
                           echo "
-
+                 
+                          <input name='penguji' value='$data1[nama_dosen]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
+                         
+                          ";
+                        }
+                        foreach($akses->getDosenPenguji2($key['id_jadwal']) as $data1){
+                          echo "
+                          <label for='formGroupExampleInput'>PENGUJI 2 </label>
                           <input name='penguji' value='$data1[nama_dosen]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
                          
                           ";
                         }
 
                         echo "
-        <label for='formGroupExampleInput'>NILAI PROSES PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_proses_pembimbing' class='form-control' aria-label='Text input with checkbox' required='nilai_proses_pembimbing' pattern='[0-9]+' placeholder='Masukkan Nilai Angka'> 
-         <label for='formGroupExampleInput'>NILAI UJIAN PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_ujian_pembimbing' class='form-control' aria-label='Text input with checkbox'  required='nilai_ujian_pembimbing' pattern='[0-9]+' placeholder='Masukkan Nilai Angka'>
-          <label for='formGroupExampleInput'>NILAI UJIAN PENGUJI </label><input type='number' min='0' max='100' name='nilai_ujian_penguji' class='form-control' aria-label='Text input with checkbox' required='nilai_ujian_penguji' pattern='[0-9]+' placeholder='Masukkan Nilai Angka'>
+ 
        
-        
-        <br>   <input type='submit' name='simpan' value='simpan' class='btn btn-outline-success my-2 my-sm-0'>    
-        
+       
+         <label for='formGroupExampleInput'>JUDUL SKRIPSI </label>
+    <input name='pembimbing' value='$key[topik]' type='textbox' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
+     <label for='formGroupExampleInput'>TANGGAL UJIAN </label>
+    <input name='pembimbing' value='$key[tanggal]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
+
+
+        <label for='formGroupExampleInput'>NILAI PENGUJI 1 </label><input type='number' min='0' max='100' name='nilai_penguji_1' class='form-control' aria-label='Text input with checkbox' required='nilai_penguji_1' pattern='[0-9]+' placeholder='Masukkan Angka'> 
+         <label for='formGroupExampleInput'>NILAI PENGUJI 2 </label><input type='number' min='0' max='100' name='nilai_penguji_2' class='form-control' aria-label='Text input with checkbox'  required='nilai_ujian_pembimbing' pattern='[0-9]+' placeholder='Masukkan Angka'>
+          <label for='formGroupExampleInput'>NILAI PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_pembimbing' class='form-control' aria-label='Text input with checkbox' required='nilai_pembimbing' pattern='[0-9]+' placeholder='Masukkan Angka'>
+       
+
+        <br>   <input type='submit' name='simpan1' value='simpan' class='btn btn-outline-success my-2 my-sm-0'>    
+         </div>
 
         </form>
+        
         </td>
         </tr>
         </table>
+
         ";
         
 
 
       }
+    }else{
+      echo "<h4><center>NIM tidak ditemukan!</center></h4>";
+    }
     }
       ?>
+      </body>
+      </html>
 
 
 <?php include '../templates/footer_Penjadwalan.php' ?>

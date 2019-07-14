@@ -43,7 +43,7 @@ if(isset($_POST['simpan1'])){
     $nilai_1 = $_POST['nilai_penguji_1'];
     $nilai_2 = $_POST['nilai_penguji_2'];
     $nilai_3 = $_POST['nilai_pembimbing'];
-   ;
+   
     $nim1 = $_POST['nim'];
 
     $rata_rata=round(($nilai_1+$nilai_2+$nilai_3)/3,2);
@@ -87,11 +87,12 @@ $akses->updatestatusmetopen($stnew,$id_pd);
 <html>
 <head>
   <title>javascript-- pesan</title>
-  <script type="text/javascript">
-    function pesan(){
-      alert("DATA ANDA TELAH TERSIMPAN TERIMA KASIH")
-    }
-  </script>
+  <script type='text/javascript'>
+        alert('Data Berhasil Disimpan')
+ 
+        </script>";
+ 
+        </script>";
 </head> 
 <body onload="pesan()">
   

@@ -90,11 +90,10 @@ $akses->updatestatusmetopen($stnew,$id);
 <html>
 <head>
   <title>javascript-- pesan</title>
-  <script type="text/javascript">
-    function pesan(){
-      alert("DATA ANDA TELAH TERSIMPAN TERIMA KASIH")
-    }
-  </script>
+  <script type='text/javascript'>
+        alert('Data Berhasil Disimpan')
+ 
+        </script>";
 </head> 
 <body onload="pesan()">
   

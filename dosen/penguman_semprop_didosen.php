@@ -44,7 +44,7 @@ if($_SESSION['status'] == "login"){
 <form name="pencarian" method="POST" action = "hasil_pencarian_didosen.php" ">            
       
                     <tr> <td>
-                    <input type="text" placeholder="masukan nim" name="nim" title ="masukan nim" class="form-control">  
+                    <input type="text"  pattern="[0-9]+" title="masukkan hanya angka" name='nim' placeholder='Masukkan NIM' class="form-control in-box" name="nim" required> 
                     </td>
                     <td>
                     <button id="submit1" name="submit1" class='butn butn2 ml-2'>cari</button></td>

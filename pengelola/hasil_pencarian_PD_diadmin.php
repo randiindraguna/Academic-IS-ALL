@@ -70,7 +70,7 @@ if($_SESSION['status'] == "login"){
     <input name='pembimbing' value='$key[nama_dsn]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
 
   
-         <label for='formGroupExampleInput'>PENGUJI 1 </label>
+         
   ";
   # code...
 
@@ -99,9 +99,11 @@ if($_SESSION['status'] == "login"){
     <input name='pembimbing' value='$key[tanggal]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
 
 
-        <label for='formGroupExampleInput'>NILAI PENGUJI 1 </label><input type='text' name='nilai_penguji_1' class='form-control' aria-label='Text input with checkbox'>
-         <label for='formGroupExampleInput'>NILAI PENGUJI 2 </label><input type='text' name='nilai_penguji_2' class='form-control' aria-label='Text input with checkbox'>
-          <label for='formGroupExampleInput'>NILAI PEMBIMBING </label><input type='text' name='nilai_pembimbing' class='form-control' aria-label='Text input with checkbox'>
+        <label for='formGroupExampleInput'>NILAI PENGUJI 1 </label><input type='number' min='0' max='100' name='nilai_penguji_1' class='form-control' aria-label='Text input with checkbox' required='nilai_penguji_1' pattern='[0-9]+' placeholder='Masukkan Angka'> 
+         <label for='formGroupExampleInput'>NILAI PENGUJI 2 </label><input type='number' min='0' max='100' name='nilai_penguji_2' class='form-control' aria-label='Text input with checkbox'  required='nilai_ujian_pembimbing' pattern='[0-9]+' placeholder='Masukkan Angka'>
+          <label for='formGroupExampleInput'>NILAI PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_pembimbing' class='form-control' aria-label='Text input with checkbox' required='nilai_pembimbing' pattern='[0-9]+' placeholder='Masukkan Angka'>
+       
+
         <br>   <input type='submit' name='simpan1' value='simpan' class='btn btn-outline-success my-2 my-sm-0'>    
          </div>
 

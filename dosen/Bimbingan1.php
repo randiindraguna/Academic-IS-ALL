@@ -127,13 +127,13 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
           }
           ?>
 
-        <table class="container border mt-3" bgcolor="white" cellpadding="8">
-          <tr class="bg-primary">
+        <table class="container border mt-3" bgcolor="white" cellpadding="8" border="2">
+          <tr class="bg-primary" align="center">
             <?php 
               if(!isset($_GET['nama']))
               {
               echo '
-              <td rowspan="2"> 
+              <td rowspan="3"> 
                 <form>
                   <input type="text" name="nama" hidden="">
                   <input type="submit" name="asc" class="btn btn-primary" value="NAMA MAHASISWA">
@@ -143,7 +143,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               else
               {
               echo '
-              <td rowspan="2"> 
+              <td rowspan="3"> 
                 <form>
                   <input type="text" name="normal" hidden="">
                   <input type="submit" class="btn btn-primary" value="NAMA MAHASISWA">
@@ -154,7 +154,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               if(!isset($_GET['nim']))
               {
               echo '
-              <td rowspan="2">
+              <td rowspan="3">
                 <form>
                   <input type="text" name="nim" hidden="">
                   <input type="submit" name="asc" class="btn btn-primary" value="Nim">
@@ -164,7 +164,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               else
               {
                 echo '
-              <td rowspan="2">
+              <td rowspan="3">
                 <form>
                   <input type="text" name="normal" hidden="">
                   <input type="submit" class="btn btn-primary" value="Nim">
@@ -174,7 +174,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               if(!isset($_GET['judul']))
               {
               echo '
-              <td rowspan="2">
+              <td rowspan="3">
                 <form>
                   <input type="text" name="judul" hidden="">
                   <input type="submit" name="asc" class="btn btn-primary" value="judul skripsi/metopen">
@@ -185,7 +185,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               {
  
               echo '
-              <td rowspan="2">
+              <td rowspan="3">
                 <form>
                   <input type="text" name="normal" hidden="">
                   <input type="submit" class="btn btn-primary" value="judul skripsi/metopen">
@@ -214,9 +214,26 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                 </form>
               </td>';
               }
+              echo '
+              <td rowspan="3"> 
+                <form>
+                  <input type="button" name="asc" class="btn btn-primary" value="LAMA BIMBINGAN MAHASISWA">
+                </form>
+              </td>';
             ?>
+          </tr>
           <tr>
-          <tr></tr>
+            <tr class="bg-primary" align="center">
+              <td>
+                <div class="btn btn-primary" value="">METOPEN</div>
+              </td>
+              <td>
+                <div class="btn btn-primary" value="">SKRIPSI</div>
+              </td>
+
+
+            </tr>
+          </tr>
             <?php
            
             {
@@ -228,7 +245,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                 }
                 else if(isset($_GET['nim']))
                 {
-                  $tampilan_awal = $car->mengurutkan_nim($_SESSION['username']);
+                  $tampilan_awal = $car->mengurutkan_mahasiswa_berdasarkan_nim($_SESSION['username']);
                 }
                 else if(isset($_GET['judul']))
                 {
@@ -252,11 +269,13 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                     if($ke['jenis_bimbingan'] == "metopen" || $ke['jenis_bimbingan'] == NULL)
                     {
                       echo "
-                    <tr>
+                    <tr align='center'>
                     <td>".$key['name']."</td>
                     <td>".$key['nim']."</td>
                     <td>".$key['judul']."</td>
                     <td><div class='btn btn-primary hover_metopen disabled'>".$ke['jumlah']."</div></td>
+                    <td></td> <!-kolom untuk jumlah bimbingan skripsi, kosong karena pada saat status bimbingan masih metopen mahasiswa tersebut tidak mempunyai bimbingan skripsi samasekali-!>
+                    <td>".$car->confert_hari($key['lamabimbingan'])."</td>
                     </tr>
                     ";
                     }
@@ -266,7 +285,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                 {
                   echo 
                       "
-                        <tr>
+                        <tr align='center'>
                         <td>".$key['name']."</td>
                         <td>".$key['nim']."</td>
                         <td>".$key['judul']."</td>
@@ -281,16 +300,21 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                       }
                       else if($ke['jenis_bimbingan']=="skripsi")
                       {
-                        echo "<td><div class='btn btn-primary hover_not disabled'>".$ke['jumlah']."</div></td>";
+                        echo "<td><div class='btn btn-primary hover_not disabled'>".$ke['jumlah']." skripsi</div></td>";
                       }
                       else // metopen
                       {
-                        echo "<td><div class='btn btn-primary hover_metopen disabled'>".$ke['jumlah']."</div></td>";
+                        echo "<td><div class='btn btn-primary hover_metopen disabled'>".$ke['jumlah']." </div></td>";
                       }
 
 
                   }
-                  echo "</tr>";
+
+                  
+
+                  echo "
+                  <td>".$car->confert_hari($key['lamabimbingan'])."</td>
+                  </tr>";
                 }
               }
             }

@@ -31,6 +31,12 @@
 			$this->execute($query);
 			return $this->result;
 		}
+		//nurzaitunsafitri1700018140
+		public function get_data_dosen_byEmail($email){
+			$query = "SELECT * FROM dosen WHERE email = '$email'";
+			$this->execute($query);
+			return $this->result;
+			}
 		// public function searchAkunDosen($username){
 		// 	$query = "SELECT niy from dosen where niy='$username'";
 		// 	$this->execute($query);
@@ -41,6 +47,13 @@
 		// 	$this->execute($query);
 		// 	return $this->result;
 		// }
+
+		//nofand1700018152 (mengambil data dari tabel login berdasarkan level dan status akun)
+		public function get_data_akun($level,$status_akun){
+			$query = "SELECT * FROM login where level='$level' and status_akun='$status_akun'";
+			$this->execute($query);
+			return $this->result;
+		}
 		
 		public function getLevelAkun($username){
 			$query = "SELECT level from login where user_name='$username'";
@@ -81,9 +94,9 @@
 
 		//fungsi ini dibuat oleh Arifaleo Nurdin (1700018158)
 		//fungsi ntuk mengganti password
-		public function ganti_password($username,$new_password)
+		public function ganti_password($username,$new_password,$status_akun)
 		{
-			$query = "UPDATE login SET password = '$new_password' where user_name = '$username' ";
+			$query = "UPDATE login SET password = '$new_password',status_akun='$status_akun' where user_name = '$username' ";
 			$this->execute($query);
 			return $this->result;
 		}

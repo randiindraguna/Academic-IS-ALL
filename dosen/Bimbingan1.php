@@ -214,12 +214,27 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                 </form>
               </td>';
               }
+
+              if(!isset($_GET['lama']))
+              {
               echo '
-              <td rowspan="3"> 
+              <td rowspan="3" >
                 <form>
-                  <input type="button" name="asc" class="btn btn-primary" value="LAMA BIMBINGAN MAHASISWA">
+                  <input type="text" name="lama" hidden="">
+                  <input type="submit" name="asc" class="btn btn-primary" value="Lama bimbingan mahasiswa">
                 </form>
               </td>';
+              }
+              else
+              {
+              echo '
+              <td rowspan="3">
+                <form>
+                  <input type="text" name="normal" hidden="">
+                  <input type="submit" class="btn btn-primary" value="Lama bimbingan mahasiswa">
+                </form>
+              </td>';
+              }
             ?>
           </tr>
           <tr>
@@ -254,7 +269,11 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                 else if(isset($_GET['jumlah']))
                 {
                   $tampilan_awal = $car->mengurutkan_jumlah_konsultasi($_SESSION['username']);
-                }  
+                } 
+                else if(isset($_GET['lama']))
+                {
+                  $tampilan_awal = $car->mengurutkan_lama_bimbingan_dari_yang_terlama($_SESSION['username']);
+                } 
               }
               else if(isset($_GET['normal']) || isset($_SESSION['username']))
               {

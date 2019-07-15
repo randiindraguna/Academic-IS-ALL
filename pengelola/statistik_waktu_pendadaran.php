@@ -66,6 +66,7 @@ if($_SESSION['status'] == "login"){
             <!--Grafik-->
 
             <?php
+                $waktu = date('d-m-Y');
                 if (isset($_POST['save'])) {
                     $waktu = $_POST['tgl'];
                 }

@@ -42,7 +42,7 @@ if($_SESSION['status'] == "login"){
             $tgl_uji=$_SESSION['tanggal'];
             $jam_uji=$_SESSION['jam'];
             $tempat_uji=$_SESSION['tempat'];
-            session_destroy();
+            // session_destroy();
         }else{
             // JIKA TIDAK MEMILIKI JADWAL MAKA DAFTAR JADWAL
             $nama=$_SESSION['nama'];
@@ -53,7 +53,7 @@ if($_SESSION['status'] == "login"){
             $email_dosen=$_SESSION['email'];
             $ahli_dosen=$_SESSION['bidang_keahlian'];
             $jenis_Uji="none";
-            session_destroy();
+            // session_destroy();
         }
     }else{
     header('location:UI_Search_Penjadwalan.php');

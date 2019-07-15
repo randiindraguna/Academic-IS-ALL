@@ -6,6 +6,15 @@
     include '../templates/header_penjadwalan.php';
     $P = new Penjadwalan();
     $P->connect();
+
+    // echo $user;
+    if(!$_SESSION['username']){
+        //$_POST['user'];
+        // $user = $_POST['user'];
+        $user = 'admin';
+        // echo "$user";
+        $_SESSION['username']=$user;
+    }
 ?>
 
 </head>

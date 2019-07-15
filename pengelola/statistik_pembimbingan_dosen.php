@@ -68,13 +68,20 @@ if($_SESSION['status'] == "login"){
             <h2 class="judul"><center>-- Statistik Pembimbingan Dosen -- </center></h2>
             <h2 class="judul"><center>-- Berdasarkan Bidang minat Mahasiswa -- </center></h2>
             
+            <?php
+                $bidang = "Pilih Bidang Minat";
+                if(isset($_POST['save'])){
+                    $bidang = $_POST['bidmin'];
+                }
+            ?>
+
             <center>
             <form method="POST" action="statistik_pembimbingan_dosen.php">
             <!-- <div class="row"> -->
                 <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Bidang Minat </label>
                         <select name="bidmin" id="inputState" class="form-control" >
-                            <option selected>Pilih Bidang Minat</option>
+                            <option selected><?php echo $bidang ; ?></option>
                             <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
                             <option value="Sistem Cerdas">Sistem Cerdas</option>
                             <option value="Multimedia">Multimedia</option>

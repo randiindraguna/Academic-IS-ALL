@@ -44,6 +44,11 @@ if($_SESSION['status'] == "login"){
                 $status = "Pilih Jenis Kelulusan" ;
                 if(isset($_POST['kirim'])){
                     $status = $_POST['lulusan'];
+                    if($status == "SEMPROP"){
+                        $status = "Seminar Proposal";
+                    }else{
+                        $status = "Ujian Pendadaran";
+                    }
                 }
             ?>
 

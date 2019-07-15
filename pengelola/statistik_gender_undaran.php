@@ -36,87 +36,79 @@ if($_SESSION['status'] == "login"){
 <body>
     <!-- Content -->
         <div class="container"> 
-            <!-- Box -->
-           <!--  <div class="row mt-5 ">
-                <div class="col-2">
-                </div>
-                <div class="col-8 box2 bg-two">
-                    <div class="row">
-                        <div class="col-10 mt-3 mb-3">
-                            <p class="judul">Ujian Pendadaran</p>
-                        </div>
-                    </div>
-                    <form action="hasil_pencarian_PD_diadmin.php" method="POST">
-                        <div class="row">
-                            <div class="col-2 ml-3 pt-1">
-                                <p class="pone">NIM :</p>
-                            </div>
-                            <div class="col-6">
-                                <input type="text" name='nim' placeholder='Masukkan NIM' class="form-control in-box" name="nim">
-                            </div>
-                            <div class="col-2 mb-5">
-                                <button type="submit" name="submit11" value="Submit" class="butn butn2 ml-2" >Search</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-2 ">
-            </div> -->
             <!--Grafik-->
         </br>.
             <h2 class="judul"><center>-- Statistik Kelulusan Ujian Pendadaran -- </center></h2>
             <h2 class="judul"><center>-- Berdasarkan Gender Mahasiswa -- </center></h2>
             
-            <?php 
-                $status_undaran = "Pilih kelulusan";
+            <?php
+                $stt_metopen = "Pilih kelulusan";
                 if(isset($_POST['save'])){
-                    $status_undaran = $_POST['status'];
+                    $stt_metopen = $_POST['stt'];             
                 }
             ?>
 
             <center>
-            <form method="POST" action="statistik_gender_undaran.php">
-            <!-- <div class="row"> -->
-                <div class="col-6 mt-2">
+            <br>
+            <!-- <form method="POST" action="statistik_gender_metopen.php">
+                <div class="row"> -->
+                <!-- <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Kelulusan </label>
-                        <select name="status" id="inputState" class="form-control" >
-                            <option selected value="0"><?php echo $status_undaran; ?></option>
+                        <select name="stt" id="inputState" class="form-control" >
+                            <option selected value="0"><?php echo $stt_metopen; ?></option>
                             <option value="lulus">Lulus</option>
                             <option value="tidak_lulus">Gagal</option>
                         </select>                   
-                </div>
-            <!-- </div> --> <br>
-                <button type="submit" class="btn btn-primary" name="save" >Simpan</button>
+                </div> -->
+            <!-- </div>  <br>
+                 <button type="submit" class="btn btn-primary" name="save" >Simpan</button>
             </div>
-            </form>
+            </form> -->
+
+            <tabel>
+                <tr>
+                    <td width = "20px">
+                        <a href = "statistik_gender_metopen.php?gender=Laki-laki">
+                            <img src="img/lanang.png" height="80px" width="80px;">
+                        </a>
+                    </td>
+                    <td width = "200px"></td>
+                    <td>
+                        <a href = "statistik_gender_metopen.php?gender=Perempuan">
+                            <img src="img/wedok.png" height="80px" width="80px;">
+                        </a>
+                    </td>
+                </tr> <br>
+            </tabel>
+
+            <?php 
+                if(isset($_GET['gender'])){
+                    $gender = $_GET['gender'];
+                }
+                
+            ?>
             </center>
         <br>
        <div style="width: 1000px;margin: 0px auto;">
         <canvas id="myChart"></canvas>
     </div>
 
-    <?php
-    if (isset($_POST['save'])) {
-        if(is_null($_POST['status'])){
-            echo "Silahkan pilih Kelulusan";
-        }else{
-             $sta = $_POST['status'];
-              
-        ?>
-
+    
     <script>
     var i;
         var ctx = document.getElementById("myChart").getContext('2d');
         var myChart = new Chart(ctx, {
             type: "pie",
             data: {
-                labels: [<?php foreach($akses->gender() as $k){echo '"'.$k['jenis_kelamin'].'",';}?>],
+                labels: [
+                        
+                        "Lulus", "Tidak Lulus"
+                        ],
                 datasets: [{
                     label: '',
                     data: [
-                       <?php foreach($akses->gender_undaran_pr($sta) as $key){echo '"'.$key['jumlah_gen3'].'",';} ?>,
-                        <?php foreach($akses->gender_undaran_lk($sta) as $key){echo '"'.$key['jumlah_gen4'].'",';} ?>
+                         <?php foreach($akses->undaran_gender($gender) as $stt){echo "$stt[jum_lulus]";}?>,
+                         <?php foreach($akses->undaran_gender_tl($gender) as $stt){echo "$stt[jum_tlulus]";}?>,
                     ],
                     
                     backgroundColor: [
@@ -144,10 +136,6 @@ if($_SESSION['status'] == "login"){
         });
     </script>
 
-    <?php 
-         }
-        }
-     ?>
             <!--Grafik-->
         </div>
     

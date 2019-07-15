@@ -89,6 +89,7 @@ $akses->updatestatusmetopen($stnew,$id_pd);
   <title>javascript-- pesan</title>
   <script type='text/javascript'>
         alert('Data Berhasil Disimpan')
+        
         </script>";
  
        

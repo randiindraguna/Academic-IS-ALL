@@ -76,17 +76,23 @@ if($_SESSION['status'] == "login"){
         var myChart = new Chart(ctx, {
             type: "bar",
             data: {
-                labels: [<?php foreach($akses->nama_prodi() as $key){echo '"'.$key['nama_prodi'].'",'; } ?>],
+                labels: [
+                    <?php
+                        
+                            foreach($akses->nama_prodi() as $keyi){ echo '"'.$keyi['nama_prodi'].'",'; }
+                        
+                    ?>
+                ],
                 datasets: [{
                     label: '',
                     data: [
                        <?php 
-                         foreach($akses->nama_prodi() as $key){
-                            foreach($akses->lulus_semprop_prodi($key['id_prodi'],$sta) as $keyi){
-                                echo '"'.$keyi['jumlah_mhs'].'",';
-                            }
-                         }
-                        ?>
+                            
+                                foreach($akses->lulus_semprop_prodi($sta) as $keyi){
+                                    echo '"'.$keyi['jumlah_mhs'].'",';
+                                }
+                            
+                        ?>,
                     ],
                     
                     backgroundColor: [

@@ -64,6 +64,13 @@ if($_SESSION['status'] == "login"){
             <div class="col-2 ">
             </div> -->
             <!--Grafik-->
+
+            <?php
+                if (isset($_POST['save'])) {
+                    $waktu = $_POST['tgl'];
+                }
+             ?>
+
         </br>.
             <h2 class="judul"><center>-- Statistik Penggunaan Ruang -- </center></h2>
             <h2 class="judul"><center>-- Ujian Pendadaran Mahasiswa -- </center></h2>
@@ -73,7 +80,7 @@ if($_SESSION['status'] == "login"){
             <!-- <div class="row"> -->
                 <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Tanggal </label>
-                        <input type="date" name="tgl" selected>           
+                        <input type="date" name="tgl" value="<?php echo $waktu; ?>">           
                 </div>
             <!-- </div> --> <br>
                 <button type="submit" class="btn btn-primary" name="save" >Simpan</button>

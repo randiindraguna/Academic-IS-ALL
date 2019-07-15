@@ -313,10 +313,11 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
-	public function lulus_semprop_prodi($id,$stt){
+	public function lulus_semprop_prodi($stt){
 		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_mhs, prodi.nama_prodi 
 				  FROM seminar_proposal JOIN prodi ON prodi.id_prodi = SUBSTRING(seminar_proposal.nim, 6, 2) 
-				  WHERE prodi.id_prodi = '$id' AND seminar_proposal.status = '$stt'";
+				  WHERE seminar_proposal.status = '$stt'
+				  GROUP BY prodi.nama_prodi ORDER BY jumlah_mhs ASC";
 		$this->eksekusi($query);
 		return $this->result;
 	}

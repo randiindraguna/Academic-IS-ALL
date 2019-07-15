@@ -68,13 +68,20 @@ if($_SESSION['status'] == "login"){
             <h2 class="judul"><center>-- Statistik Kelulusan Ujian Pendadaran -- </center></h2>
             <h2 class="judul"><center>-- Berdasarkan Gender Mahasiswa -- </center></h2>
             
+            <?php 
+                $status_undaran = "Pilih kelulusan";
+                if(isset($_POST['save'])){
+                    $status_undaran = $_POST['status'];
+                }
+            ?>
+
             <center>
             <form method="POST" action="statistik_gender_undaran.php">
             <!-- <div class="row"> -->
                 <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Kelulusan </label>
                         <select name="status" id="inputState" class="form-control" >
-                            <option selected value="0">Pilih kelulusan</option>
+                            <option selected value="0"><?php echo $status_undaran; ?></option>
                             <option value="lulus">Lulus</option>
                             <option value="tidak_lulus">Gagal</option>
                         </select>                   

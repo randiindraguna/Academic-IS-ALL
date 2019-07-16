@@ -137,7 +137,7 @@ if($_SESSION['status'] == "login"){
               </td>
                <tr align="center">
     <form>
-        <td><input type="button" value="cetak" class='btn btn-outline-primary' role='button' onclick="displaymessage()"></td>
+        <td><input type="button" value="Cetak" class='btn btn-outline-primary' role='button' onclick="displaymessage()"></td>
     </form>
     </tr>
             </tr>

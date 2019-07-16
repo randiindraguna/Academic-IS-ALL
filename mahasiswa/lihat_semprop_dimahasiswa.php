@@ -59,11 +59,15 @@ if($_SESSION['status'] == "login"){
           <table cellpadding="20"width="100%" border="0"  height="100%">
             <tr>
               <td bgcolor="#B5B5B5">
-                <center><h3>Hasil Mahasiswa</h3></center>
+                <center><h3>Data Mahasiswa</h3></center>
                 <table class="table table-striped">
                   <?php
                
             $usr=$_SESSION['username'];
+
+
+
+            
 
 
 
@@ -79,30 +83,30 @@ if($_SESSION['status'] == "login"){
                         <td>Nama</td><td colspan=2>:</td><td>".$data['nama_mhs']."</td>
                       </tr>
                       <tr>
-                        <td>Nama Pembimbing</td><td colspan=2>:</td><td>".$data['nama_dsn']."</td>
+                        <td>Pembimbing</td><td colspan=2>:</td><td>".$data['nama_dsn']."</td>
                       </tr>
                       <tr>
                         ";
 
                         foreach($akses->getDosenPenguji($data['id_jadwal']) as $data1){
                           echo "
-                          <td>penguji</td><td colspan=2>:</td><td>".$data1['nama_dosen']."</td>
+                          <td>Penguji</td><td colspan=2>:</td><td>".$data1['nama_dosen']."</td>
                           ";
                         }
 
                         echo "
                       </tr>
                       <tr>
-                        <td>Nilai proses pembimbing</td><td colspan=2>:</td><td>".$data['nilai_proses_pembimbing']."</td>
+                        <td>Nilai Proses Bimbingan</td><td colspan=2>:</td><td>".$data['nilai_proses_pembimbing']."</td>
                       </tr>
                       <tr>
-                        <td>Nilai ujian pembimbing</td><td colspan=2>:</td><td>".$data['nilai_ujian_pembimbing']."</td>
+                        <td>Nilai Ujian Pembimbing</td><td colspan=2>:</td><td>".$data['nilai_ujian_pembimbing']."</td>
                       </tr>
                       <tr>
-                        <td>Nilai ujian penguji</td><td colspan=2>:</td><td>".$data['nilai_ujian_penguji']."</td>
+                        <td>Nilai Ujian Penguji</td><td colspan=2>:</td><td>".$data['nilai_ujian_penguji']."</td>
                       </tr>
                       <tr>
-                        <td>Status</td><td colspan=2>:</td><td>".$data['status']."</td>
+                        <td>Status Seminar Proposal</td><td colspan=2>:</td><td>".$data['status']."</td>
                       </tr>
 
                       <br>
@@ -114,7 +118,7 @@ if($_SESSION['status'] == "login"){
               </td>
               <tr align="center">
     <form>
-        <td><input type="button" value="cetak" class='btn btn-outline-primary' role='button' onclick="displaymessage()"></td>
+        <td><input type="button" value="Cetak" class='btn btn-outline-primary' role='button' onclick="displaymessage()"></td>
     </form>
     </tr>
             </tr>

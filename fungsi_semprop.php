@@ -303,6 +303,12 @@
 
 		}
 
+		public function seminarproposal($nim){
+			$query = "SELECT * from seminar_proposal where nim=$nim";
+			$this->eksekusi($query);
+			return $this->hasil;
+		}
+
 
 		
 

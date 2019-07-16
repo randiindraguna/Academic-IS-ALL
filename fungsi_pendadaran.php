@@ -30,6 +30,7 @@
 			$this->hasil = mysqli_query($this->konek, $query);
 		}
 		public function lihatstatusmahasiswapendadaran($nim){
+			//Dikerjakan oleh Satria Gradienta
 			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, ujian_pendadaran.status from mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim where dosen.niy='$nim'";
 
 			$this->eksekusi($query);
@@ -38,7 +39,7 @@
 		}
 
 		public function lihatnilaipendadaran($nim){
-			//dikerjakan muhammad adi rezky
+			//dikerjakan Siti issari sabhati
 			$query = " SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, penguji.id_penguji as id_penguji,penjadwalan.tanggal, ujian_pendadaran.nilai_penguji_1, ujian_pendadaran.nilai_penguji_2, ujian_pendadaran.nilai_pembimbing, ujian_pendadaran.status, penjadwalan.id_jadwal FROM mahasiswa_metopen join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim where mahasiswa_metopen.nim=$nim limit 1";
 
 			$this->eksekusi($query);
@@ -56,6 +57,7 @@
 
 		}
 		public function getDosenPenguji1()
+		//Dikerjakan oleh Aditya Angga Ramadhan
 		{
 			$query = "SELECT dosen.nama as nama_dosen, dosen.niy from dosen join penguji on dosen.niy = penguji.niy where penguji.id_jadwal = 'SP1298563860'";
 			$this->eksekusi($query);
@@ -63,6 +65,7 @@
 			
 		}
 		public function getDosenPenguji2()
+		//Dikerjakan oleh Iftitah Dwi Ulumiyah
 		{
 			$query = "SELECT dosen.nama as nama_dosen, dosen.niy from dosen join penguji on dosen.niy = penguji.niy where penguji.id_jadwal = 'UP11111111111'";
 			$this->eksekusi($query);
@@ -194,6 +197,7 @@
 
 		}
 public function updatestatusmetopen($status,$nim){
+	//Dikerjakan oleh Lalu Hendri Bagus Wira S
 
 			$query = "UPDATE mahasiswa_metopen SET status='$status' WHERE mahasiswa_metopen.nim=$nim  ";
 			
@@ -203,6 +207,8 @@ public function updatestatusmetopen($status,$nim){
 		}
 
 public function ujianpendadaran($nim){
+		//Dikerjakan oleh Rafida Kumalasari
+			//Sudah dikerjakan oleh Rafida
 			$query = "SELECT * from ujian_pendadaran where nim=$nim";
 			$this->eksekusi($query);
 			return $this->hasil;

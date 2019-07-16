@@ -39,27 +39,24 @@ if($_SESSION['status'] == "login"){
     <br>
 
     <h2 align="center">DATA SEMINAR PROPOSAL</h2>
-    <table width='90%'>
-        <th>
-          <td align='right' > <a target="_blank" href="export_excel_semprop.php">EXPORT KE EXCEL</a><br></td>
-          
-          </th>
-      </table>
+   
 <br>
 <table align="center">
 <form name="pencarian" method="POST" action = "hasil_cari_pengunguman_diadmin.php" ">            
       
                     <tr> <td>
                     
-                                <input type="text"  pattern="[0-9]+" title="masukkan hanya angka" name='nim' placeholder='Masukkan NIM' class="form-control in-box" name="nim" required>
+                                <input type="text"  pattern="[0-9]+" title="Masukan Nim Dengan Benar" name='nim' placeholder='Masukan NIM' class="form-control in-box" name="nim" required>
                             
                     </td>
                     <td>
-                    <button id="submit2" name="submit2" class='butn butn2 ml-2'>cari</button></td>
+                    <button id="submit2" name="submit2" class='butn butn2 ml-2'>Cari</button></td>
                    </tr>
 
           </form>
         </table>
+
+
     
 
 <?php
@@ -92,10 +89,17 @@ if($_SESSION['status'] == "login"){
 
       
     }
-
-        
       ?>
       <br>
+
+       <table width='90%'>
+        <th>
+          <td align='right' > <a target="_blank" href="export_excel_semprop.php" class='btn btn-outline-success my-2 my-sm-0'>Export Data Ke Excel</a><br></td>
+          
+          </th>
+      </table>
+
+      <br><br>
 
 
         
@@ -151,7 +155,7 @@ if($_SESSION['status'] == "login"){
           <td align='center'>$grade</td>
           <td align='center'>$key[status]</td>
           <td align='center'><a href='update_semrop_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>EDIT</a>
-          <a href='delete_semprop_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary' onclick='if(!confirm(`apakah anda yakin?`)){return false}'>DELETE</a></td>
+          <a href='delete_semprop_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>DELETE</a></td>
           </tr>
          
         ";

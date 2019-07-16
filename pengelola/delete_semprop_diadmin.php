@@ -33,6 +33,29 @@ if($_SESSION['status'] == "login"){
     <link rel="stylesheet" href="../css/switches_Penjadwalan.css">
 
     <style type="text/css" href="../css/tombol_penjadwalan.css"></style>
+
+     <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../mahasiswa/sweetalert2/dist/sweetalert2.min.css">
+
+     <script type='text/javascript'>
+                    Swal.fire({
+                      position: 'middle',
+                      type: 'success',
+                      title: 'Berhasil Dihapus !!!',
+                      showConfirmButton: true,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Kembali'
+
+                    }).then((result) => {
+                      if(result.value){
+                        location.href='data_semprop_diadmin.php'
+                      }
+                      })
+                    </script>";
+  
+
+    
 </head>
 <body>
 <br>
@@ -164,21 +187,6 @@ if($rata_rata>-1 && $rata_rata<=1) $grade='E';
       ?>
 
 
-<!DOCTYPE html>
-<html>
-<head>
-  <title>javascript-- pesan</title>
-  <script type="text/javascript">
-    function pesan(){
-      alert("DATA ANDA TELAH TERSIMPAN TERIMA KASIH")
-    }
-  </script>
-</head> 
-<body onload="pesan()">
-  
-
-</body>
-</html>
 <?php include '../templates/footer_Penjadwalan.php' ?>
 
 

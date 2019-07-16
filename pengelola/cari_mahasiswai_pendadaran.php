@@ -45,10 +45,10 @@ if($_SESSION['status'] == "login"){
                                 <p class="pone">NIM :</p>
                             </div>
                             <div class="col-6">
-                                <input type="number" name='nim' placeholder='Masukkan NIM' class="form-control in-box" id="search_nim">
+                               <input type="text"  pattern="[0-9]+" title="Masukan Nim Dengan Benar" name='nim' placeholder='Masukan NIM' class="form-control in-box" name="nim" required>
                             </div>
                             <div class="col-2 mb-5">
-                                <button type="submit" name="submit11" value="Submit" class="butn butn2 ml-2" onclick="if($('#search_nim').val()==''){swal('Konfirmasi','NIM tidak boleh kosong!','warning'); return false;}">Search</button>
+                                <button type="submit" name="submit11" value="Submit" class="butn butn2 ml-2" >Search</button>
                             </div>
                         </div>
                     </form>

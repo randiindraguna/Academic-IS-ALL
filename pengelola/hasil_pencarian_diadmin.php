@@ -50,6 +50,34 @@ if($_SESSION['status'] == "login"){
 
         
                   ";
+
+$hasil = $akses->CariDataMahasiswaBerdasarkanNim($nim);
+
+                  $kosong = mysqli_num_rows($hasil);
+                  $ada = mysqli_num_rows($akses->seminarproposal($nim));
+                  if(!$kosong)
+                  {
+                    echo "
+                      <script type='text/javascript'>
+                    Swal.fire({
+                      position: 'middle',
+                      type: 'error',
+                      title: 'Nim Tidak Terdaftar !!!',
+                      showConfirmButton: true,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Kembali'
+
+                    }).then((result) => {
+                      if(result.value){
+                        location.href='pencarian_mahasiswa_diadmin.php'
+                      }
+                      })
+                    </script>
+                    ";
+                    
+                  }
+
+                  
       foreach ($akses->CariDataMahasiswaBerdasarkanNim($nim) as $key) {
           # code...
         

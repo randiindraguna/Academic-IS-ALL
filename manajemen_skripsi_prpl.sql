@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2019 at 01:56 PM
+-- Generation Time: Jul 16, 2019 at 02:06 PM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.10
 
@@ -309,8 +309,8 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 ('1700018108', 'Feni Sastriani', 'Perempuan', 'Rancang Bangun Aplikasi Monitoring Service Pada Server Menggunakan Sms Gateway', '60110648', 'Rekayasa Perangkat Lunak', 'metopen', '2019-05-02'),
 ('1700018109', 'Muhammad Firdaus Fahrullah', 'Laki-laki', 'Messanger Berbasis Client-Server Pada Lingkungan Bisnis Menggunakan Triple Transposition Vigenere Ci', '60160979', 'Sistem Cerdas', 'metopen', '2019-01-21'),
 ('1700018110', 'Syaifullah Ihsan', 'Laki-laki', 'Pengembangan Keamanan Jaringan Intranet Dengan Metode Access Control List', '60010308', 'Rekayasa Perangkat Lunak', 'metopen', '2019-03-15'),
-('1700018111', 'Mujahid Islami Primaldi Abdullah', 'Laki-laki', 'Implementasi Kalender Mobile Pada Platform Android', '60130757', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018112', 'Mohammad Fitri Haikal H.S', 'Laki-laki', 'Penerapan Metode Algoritma Genetika Untuk Pnjadwalan Pelatihan Karyawan', '60980174', 'Sistem Cerdas', 'metopen', '0000-00-00'),
+('1700018111', 'Mujahid Islami Primaldi Abdullah', 'Laki-laki', 'Implementasi Kalender Mobile Pada Platform Android', '60130757', 'Rekayasa Perangkat Lunak', 'metopen', '2019-02-22'),
+('1700018112', 'Mohammad Fitri Haikal H.S', 'Laki-laki', 'Penerapan Metode Algoritma Genetika Untuk Pnjadwalan Pelatihan Karyawan', '60980174', 'Sistem Cerdas', 'metopen', '2019-07-17'),
 ('1700018113', 'Lutfi Purba Fitrianto', 'Laki-laki', 'Sistem Pakar Diagnosa Penyakit Sapi Menggunakan Visual Basic 6.0', '60160952', 'Sistem Cerdas', 'metopen', '0000-00-00'),
 ('1700018114', 'Rizqa Tsaqila A.H', 'Laki-laki', 'Implementasi Web Service Untuk Penunjang Sistem Informasi Executive', '60160951', 'Sistem Informasi', 'metopen', '0000-00-00'),
 ('1700018115', 'Tri Subagio', 'Laki-laki', 'Membuat Aplikasi Facebook Client Untuk Windows Phone', '60160978', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),

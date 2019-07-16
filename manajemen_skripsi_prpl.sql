@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2019 at 02:09 PM
--- Server version: 10.1.36-MariaDB
--- PHP Version: 7.2.10
+-- Waktu pembuatan: 16 Jul 2019 pada 16.38
+-- Versi server: 10.1.36-MariaDB
+-- Versi PHP: 5.6.38
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `dosen`
+-- Struktur dari tabel `dosen`
 --
 
 CREATE TABLE `dosen` (
@@ -36,7 +36,7 @@ CREATE TABLE `dosen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `dosen`
+-- Dumping data untuk tabel `dosen`
 --
 
 INSERT INTO `dosen` (`niy`, `nama`, `email`, `bidang_keahlian`) VALUES
@@ -74,7 +74,7 @@ INSERT INTO `dosen` (`niy`, `nama`, `email`, `bidang_keahlian`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `logbook_bimbingan`
+-- Struktur dari tabel `logbook_bimbingan`
 --
 
 CREATE TABLE `logbook_bimbingan` (
@@ -87,7 +87,7 @@ CREATE TABLE `logbook_bimbingan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `logbook_bimbingan`
+-- Dumping data untuk tabel `logbook_bimbingan`
 --
 
 INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`, `tanggal_bimbingan`, `jam`, `jenis`) VALUES
@@ -126,7 +126,7 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `login`
+-- Struktur dari tabel `login`
 --
 
 CREATE TABLE `login` (
@@ -137,7 +137,7 @@ CREATE TABLE `login` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `login`
+-- Dumping data untuk tabel `login`
 --
 
 INSERT INTO `login` (`user_name`, `password`, `level`, `status_akun`) VALUES
@@ -257,7 +257,7 @@ INSERT INTO `login` (`user_name`, `password`, `level`, `status_akun`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `mahasiswa_metopen`
+-- Struktur dari tabel `mahasiswa_metopen`
 --
 
 CREATE TABLE `mahasiswa_metopen` (
@@ -272,18 +272,18 @@ CREATE TABLE `mahasiswa_metopen` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `mahasiswa_metopen`
+-- Dumping data untuk tabel `mahasiswa_metopen`
 --
 
 INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen`, `bidang_minat`, `status`, `tanggal_mulai`) VALUES
-('1700018066', 'Pratomo Adi', 'Laki-laki', 'Implementasi Teknologi Cloud Computing Pada Pemasaran Oleh-Oleh Berbasis Web', '60160863', 'Sistem Cerdas', 'skripsi', '2019-01-07'),
-('1700018067', 'Via Wahyuningtyas', 'Perempuan', 'Pembuatan Iklan Bencana Banjir Berbasis Multimedia', '60910095', 'Sistem Informasi', 'metopen', '2019-01-09'),
-('1700018068', 'Diky Syahrul', 'Laki-laki', 'Manajemen Bandwidth Dan Optimalisasi Sistem Keamanan Pada Jaringan Komputer Dengan Winbox Menggunaka', '60160960', 'Rekayasa Perangkat Lunak', 'metopen', '2019-03-04'),
+('1700018066', 'Pratomo Adi', 'Laki-laki', 'Implementasi Teknologi Cloud Computing Pada Pemasaran Oleh-Oleh Berbasis Web', '60160863', 'Sistem Cerdas', 'lulus', '2019-01-07'),
+('1700018067', 'Via Wahyuningtyas', 'Perempuan', 'Pembuatan Iklan Bencana Banjir Berbasis Multimedia', '60910095', 'Sistem Informasi', 'skripsi', '2019-01-09'),
+('1700018068', 'Diky Syahrul', 'Laki-laki', 'Manajemen Bandwidth Dan Optimalisasi Sistem Keamanan Pada Jaringan Komputer Dengan Winbox Menggunaka', '60160960', 'Rekayasa Perangkat Lunak', 'skripsi', '2019-03-04'),
 ('1700018069', 'Wahyu Amin Mahmud', 'Laki-laki', 'Pengamanan Account Sistem Informasi Akademik Online Sekolah Menengah Atas Dengan Menggunakan Metode ', '060150842', 'Rekayasa Perangkat Lunak', 'metopen', '2019-03-01'),
 ('1700018070', 'Zulfan Khaidir', 'Laki-laki', 'Penerapan Seo (Search Engine Optimization) Pada Website Wedding Menggunakan Semantik Web', '060150841', 'Sistem Cerdas', 'metopen', '2019-03-04'),
 ('1700018071', 'Iis Sudianto', 'Perempuan', 'Pembuatan Media Pembelajaran Ilmu Tajwid Berbasis Audio Visual Menggunakan Macromedia Flash', '60960147', 'Media Pembelajaran', 'metopen', '2019-03-05'),
 ('1700018073', 'Murdheny', 'Laki-laki', 'Media Pembelajaran Iqro Sebagai Sarana Mempelajari Huruf Al-Quran', '60160960', 'Media Pembelajaran', 'metopen', '2019-03-07'),
-('1700018074', 'Yusuf Mahdiansyah', 'Laki-laki', 'Penentuan Pemberian Obat Penderita Penyakit Pernapasan Pada Anak Menggunakan Puzzy Smart', '60980174', 'Sistem Cerdas', 'metopen', '2019-03-13'),
+('1700018074', 'Yusuf Mahdiansyah', 'Laki-laki', 'Penentuan Pemberian Obat Penderita Penyakit Pernapasan Pada Anak Menggunakan Puzzy Smart', '60980174', 'Sistem Cerdas', 'skripsi', '2019-03-13'),
 ('1700018075', 'Rizki Akbari', 'Laki-laki', 'Pengembangan Sistem Pakar Diagnosa Penyakit Gigi Berbasis Android', '60020388', 'Sistem Cerdas', 'metopen', '2019-03-12'),
 ('1700018076', 'Muhammad Rangga A.Z', 'Laki-laki', 'Implementasi Algoritma Perangkingan Untuk Pencarian Kata Didalam Kamus Komputer Berbasis Android', '60130757', 'Rekayasa Perangkat Lunak', 'metopen', '2019-03-23'),
 ('1700018079', 'Syahrani Lonang', 'Laki-laki', 'Pengembangan Sistem Pakar Diagnosa Penyakit Kulit Berbasis Mobile Web Pada Smartphone', '60030475', 'Sistem Cerdas', 'metopen', '2019-06-14'),
@@ -305,12 +305,12 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 ('1700018104', 'Agam Panuntas', 'Laki-laki', 'Penggunaan Gps Dan Mac Address Sebagai Location Based Service Untuk Aplikasi Mobile', '60030476', 'Rekayasa Perangkat Lunak', 'metopen', '2019-04-15'),
 ('1700018105', 'Ainin Maftukhah', 'Perempuan', 'Rancang Bangun Aplikasi E-Voting Berbasis Web Service', '60110647', 'Sistem Informasi', 'metopen', '2019-06-28'),
 ('1700018106', 'Brilian Anugra', 'Laki-laki', 'Pembuatan Aplikasi Pembelajaran Interaktif Tembang Macapat Berbasis Adobe Flash', '60160980', 'Media Pembelajaran', 'metopen', '2019-05-05'),
-('1700018107', 'Okky Alwi Dwi R.', 'Laki-laki', 'Komputerisasi Sistem Persediaan Obat Pada Apotik Kimia Parma', '60160952', 'Sistem Cerdas', 'metopen', '2019-02-18'),
-('1700018108', 'Feni Sastriani', 'Perempuan', 'Rancang Bangun Aplikasi Monitoring Service Pada Server Menggunakan Sms Gateway', '60110648', 'Rekayasa Perangkat Lunak', 'metopen', '2019-05-02'),
-('1700018109', 'Muhammad Firdaus Fahrullah', 'Laki-laki', 'Messanger Berbasis Client-Server Pada Lingkungan Bisnis Menggunakan Triple Transposition Vigenere Ci', '60160979', 'Sistem Cerdas', 'metopen', '2019-01-21'),
-('1700018110', 'Syaifullah Ihsan', 'Laki-laki', 'Pengembangan Keamanan Jaringan Intranet Dengan Metode Access Control List', '60010308', 'Rekayasa Perangkat Lunak', 'metopen', '2019-03-15'),
-('1700018111', 'Mujahid Islami Primaldi Abdullah', 'Laki-laki', 'Implementasi Kalender Mobile Pada Platform Android', '60130757', 'Rekayasa Perangkat Lunak', 'metopen', '2019-02-22'),
-('1700018112', 'Mohammad Fitri Haikal H.S', 'Laki-laki', 'Penerapan Metode Algoritma Genetika Untuk Pnjadwalan Pelatihan Karyawan', '60980174', 'Sistem Cerdas', 'metopen', '2019-07-17'),
+('1700018107', 'Okky Alwi Dwi R.', 'Perempuan', 'Komputerisasi Sistem Persediaan Obat Pada Apotik Kimia Parma', '60160952', 'Sistem Cerdas', 'metopen', '0000-00-00'),
+('1700018108', 'Feni Sastriani', 'Perempuan', 'Rancang Bangun Aplikasi Monitoring Service Pada Server Menggunakan Sms Gateway', '60110648', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
+('1700018109', 'Muhammad Firdaus Fahrullah', 'Laki-laki', 'Messanger Berbasis Client-Server Pada Lingkungan Bisnis Menggunakan Triple Transposition Vigenere Ci', '60160979', 'Sistem Cerdas', 'metopen', '0000-00-00'),
+('1700018110', 'Syaifullah Ihsan', 'Laki-laki', 'Pengembangan Keamanan Jaringan Intranet Dengan Metode Access Control List', '60010308', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
+('1700018111', 'Mujahid Islami Primaldi Abdullah', 'Laki-laki', 'Implementasi Kalender Mobile Pada Platform Android', '60130757', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
+('1700018112', 'Mohammad Fitri Haikal H.S', 'Laki-laki', 'Penerapan Metode Algoritma Genetika Untuk Pnjadwalan Pelatihan Karyawan', '60980174', 'Sistem Cerdas', 'metopen', '0000-00-00'),
 ('1700018113', 'Lutfi Purba Fitrianto', 'Laki-laki', 'Sistem Pakar Diagnosa Penyakit Sapi Menggunakan Visual Basic 6.0', '60160952', 'Sistem Cerdas', 'metopen', '0000-00-00'),
 ('1700018114', 'Rizqa Tsaqila A.H', 'Laki-laki', 'Implementasi Web Service Untuk Penunjang Sistem Informasi Executive', '60160951', 'Sistem Informasi', 'metopen', '0000-00-00'),
 ('1700018115', 'Tri Subagio', 'Laki-laki', 'Membuat Aplikasi Facebook Client Untuk Windows Phone', '60160978', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
@@ -360,7 +360,7 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penguji`
+-- Struktur dari tabel `penguji`
 --
 
 CREATE TABLE `penguji` (
@@ -370,7 +370,7 @@ CREATE TABLE `penguji` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penguji`
+-- Dumping data untuk tabel `penguji`
 --
 
 INSERT INTO `penguji` (`id_penguji`, `id_jadwal`, `niy`) VALUES
@@ -383,15 +383,12 @@ INSERT INTO `penguji` (`id_penguji`, `id_jadwal`, `niy`) VALUES
 (60822152, 'SP8420000113', '060150842'),
 (60822153, 'SP3080000123', '60010308'),
 (60822154, 'SP3140000133', '60010314'),
-(60822156, 'SP3880000221', '60020388'),
-(60822157, 'SP4760000322', '60030476'),
-(60822158, 'SP0010000311', '0006027001'),
-(60822159, 'SP4800000333', '60030480');
+(60822156, 'SP3880000221', '60020388');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penjadwalan`
+-- Struktur dari tabel `penjadwalan`
 --
 
 CREATE TABLE `penjadwalan` (
@@ -404,19 +401,16 @@ CREATE TABLE `penjadwalan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penjadwalan`
+-- Dumping data untuk tabel `penjadwalan`
 --
 
 INSERT INTO `penjadwalan` (`id_jadwal`, `jenis_ujian`, `nim`, `tanggal`, `jam`, `tempat`) VALUES
 ('SP0010000111', 'SEMPROP', '1700018066', '2019-03-01', '1', '1'),
 ('SP0010000131', 'SEMPROP', '1700018068', '2019-04-01', '3', '1'),
-('SP0010000311', 'SEMPROP', '1700018082', '2019-04-03', '1', '1'),
 ('SP3010000121', 'SEMPROP', '1700018067', '2019-04-01', '2', '1'),
 ('SP3080000123', 'SEMPROP', '1700018074', '2019-04-01', '2', '3'),
 ('SP3140000133', 'SEMPROP', '1700018075', '2019-04-01', '3', '3'),
 ('SP3880000221', 'SEMPROP', '1700018076', '2019-04-02', '2', '1'),
-('SP4760000322', 'SEMPROP', '1700018079', '2019-04-03', '2', '2'),
-('SP4800000333', 'SEMPROP', '1700018087', '2019-04-03', '3', '3'),
 ('SP6010000112', 'SEMPROP', '1700018069', '2019-04-01', '1', '2'),
 ('SP8410000132', 'SEMPROP', '1700018071', '2019-04-01', '3', '2'),
 ('SP8420000113', 'SEMPROP', '1700018073', '2019-04-01', '1', '3'),
@@ -425,7 +419,7 @@ INSERT INTO `penjadwalan` (`id_jadwal`, `jenis_ujian`, `nim`, `tanggal`, `jam`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `prodi`
+-- Struktur dari tabel `prodi`
 --
 
 CREATE TABLE `prodi` (
@@ -434,7 +428,7 @@ CREATE TABLE `prodi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `prodi`
+-- Dumping data untuk tabel `prodi`
 --
 
 INSERT INTO `prodi` (`id_prodi`, `nama_prodi`) VALUES
@@ -443,7 +437,7 @@ INSERT INTO `prodi` (`id_prodi`, `nama_prodi`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `semester`
+-- Struktur dari tabel `semester`
 --
 
 CREATE TABLE `semester` (
@@ -453,7 +447,7 @@ CREATE TABLE `semester` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `semester`
+-- Dumping data untuk tabel `semester`
 --
 
 INSERT INTO `semester` (`id_semester`, `periode`, `status`) VALUES
@@ -467,7 +461,7 @@ INSERT INTO `semester` (`id_semester`, `periode`, `status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `seminar_proposal`
+-- Struktur dari tabel `seminar_proposal`
 --
 
 CREATE TABLE `seminar_proposal` (
@@ -480,20 +474,19 @@ CREATE TABLE `seminar_proposal` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `seminar_proposal`
+-- Dumping data untuk tabel `seminar_proposal`
 --
 
 INSERT INTO `seminar_proposal` (`id_seminar`, `nilai_proses_pembimbing`, `status`, `nim`, `nilai_ujian_pembimbing`, `nilai_ujian_penguji`) VALUES
-(1700018066, '100', 'lulus', '1700018066', '100', '100'),
-(1700018067, '90', 'lulus', '1700018067', '99', '88'),
-(1700018068, '20', 'tidak_lulus', '1700018068', '10', '10'),
-(1700018086, '90', 'lulus', '1700018086', '90', '80'),
-(1700018090, '45', 'tidak_lulus', '1700018090', '55', '30');
+(1700018066, '90', 'lulus', '1700018066', '90', '90'),
+(1700018067, '90', 'lulus', '1700018067', '88', '77'),
+(1700018068, '66', 'lulus', '1700018068', '40', '70'),
+(1700018074, '80', 'lulus', '1700018074', '78', '10');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `ujian_pendadaran`
+-- Struktur dari tabel `ujian_pendadaran`
 --
 
 CREATE TABLE `ujian_pendadaran` (
@@ -506,24 +499,25 @@ CREATE TABLE `ujian_pendadaran` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `ujian_pendadaran`
+-- Dumping data untuk tabel `ujian_pendadaran`
 --
 
 INSERT INTO `ujian_pendadaran` (`nim`, `id_pendadaran`, `status`, `nilai_penguji_1`, `nilai_penguji_2`, `nilai_pembimbing`) VALUES
-('1700018086', '1700018086', 'lulus', '90', '90', '80');
+('1700018066', '1700018066', 'lulus', '77', '89', '77'),
+('1700018067', '1700018067', 'tidak_lulus', '11', '60', '77');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `dosen`
+-- Indeks untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`niy`);
 
 --
--- Indexes for table `logbook_bimbingan`
+-- Indeks untuk tabel `logbook_bimbingan`
 --
 ALTER TABLE `logbook_bimbingan`
   ADD PRIMARY KEY (`id_logbook`),
@@ -531,13 +525,13 @@ ALTER TABLE `logbook_bimbingan`
   ADD KEY `id_skripsi_2` (`id_skripsi`);
 
 --
--- Indexes for table `login`
+-- Indeks untuk tabel `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`user_name`);
 
 --
--- Indexes for table `mahasiswa_metopen`
+-- Indeks untuk tabel `mahasiswa_metopen`
 --
 ALTER TABLE `mahasiswa_metopen`
   ADD PRIMARY KEY (`nim`),
@@ -545,7 +539,7 @@ ALTER TABLE `mahasiswa_metopen`
   ADD KEY `Dosen_2` (`dosen`);
 
 --
--- Indexes for table `penguji`
+-- Indeks untuk tabel `penguji`
 --
 ALTER TABLE `penguji`
   ADD PRIMARY KEY (`id_penguji`),
@@ -553,103 +547,103 @@ ALTER TABLE `penguji`
   ADD KEY `id_jadwal` (`id_jadwal`);
 
 --
--- Indexes for table `penjadwalan`
+-- Indeks untuk tabel `penjadwalan`
 --
 ALTER TABLE `penjadwalan`
   ADD PRIMARY KEY (`id_jadwal`),
   ADD KEY `NIM` (`nim`);
 
 --
--- Indexes for table `prodi`
+-- Indeks untuk tabel `prodi`
 --
 ALTER TABLE `prodi`
   ADD PRIMARY KEY (`id_prodi`);
 
 --
--- Indexes for table `semester`
+-- Indeks untuk tabel `semester`
 --
 ALTER TABLE `semester`
   ADD PRIMARY KEY (`id_semester`);
 
 --
--- Indexes for table `seminar_proposal`
+-- Indeks untuk tabel `seminar_proposal`
 --
 ALTER TABLE `seminar_proposal`
   ADD PRIMARY KEY (`id_seminar`),
   ADD KEY `NIM` (`nim`);
 
 --
--- Indexes for table `ujian_pendadaran`
+-- Indeks untuk tabel `ujian_pendadaran`
 --
 ALTER TABLE `ujian_pendadaran`
   ADD PRIMARY KEY (`id_pendadaran`),
   ADD KEY `nim` (`nim`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `logbook_bimbingan`
+-- AUTO_INCREMENT untuk tabel `logbook_bimbingan`
 --
 ALTER TABLE `logbook_bimbingan`
   MODIFY `id_logbook` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `penguji`
+-- AUTO_INCREMENT untuk tabel `penguji`
 --
 ALTER TABLE `penguji`
-  MODIFY `id_penguji` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60822160;
+  MODIFY `id_penguji` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60822157;
 
 --
--- AUTO_INCREMENT for table `semester`
+-- AUTO_INCREMENT untuk tabel `semester`
 --
 ALTER TABLE `semester`
   MODIFY `id_semester` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `seminar_proposal`
+-- AUTO_INCREMENT untuk tabel `seminar_proposal`
 --
 ALTER TABLE `seminar_proposal`
   MODIFY `id_seminar` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1700018091;
 
 --
--- Constraints for dumped tables
+-- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
 
 --
--- Constraints for table `logbook_bimbingan`
+-- Ketidakleluasaan untuk tabel `logbook_bimbingan`
 --
 ALTER TABLE `logbook_bimbingan`
   ADD CONSTRAINT `logbook_bimbingan_ibfk_1` FOREIGN KEY (`id_skripsi`) REFERENCES `mahasiswa_metopen` (`nim`);
 
 --
--- Constraints for table `mahasiswa_metopen`
+-- Ketidakleluasaan untuk tabel `mahasiswa_metopen`
 --
 ALTER TABLE `mahasiswa_metopen`
   ADD CONSTRAINT `mahasiswa_metopen_ibfk_1` FOREIGN KEY (`dosen`) REFERENCES `dosen` (`niy`),
   ADD CONSTRAINT `mahasiswa_metopen_ibfk_2` FOREIGN KEY (`dosen`) REFERENCES `dosen` (`niy`);
 
 --
--- Constraints for table `penguji`
+-- Ketidakleluasaan untuk tabel `penguji`
 --
 ALTER TABLE `penguji`
   ADD CONSTRAINT `penguji_ibfk_1` FOREIGN KEY (`niy`) REFERENCES `dosen` (`niy`);
 
 --
--- Constraints for table `penjadwalan`
+-- Ketidakleluasaan untuk tabel `penjadwalan`
 --
 ALTER TABLE `penjadwalan`
   ADD CONSTRAINT `penjadwalan_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa_metopen` (`nim`);
 
 --
--- Constraints for table `seminar_proposal`
+-- Ketidakleluasaan untuk tabel `seminar_proposal`
 --
 ALTER TABLE `seminar_proposal`
   ADD CONSTRAINT `seminar_proposal_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa_metopen` (`nim`);
 
 --
--- Constraints for table `ujian_pendadaran`
+-- Ketidakleluasaan untuk tabel `ujian_pendadaran`
 --
 ALTER TABLE `ujian_pendadaran`
   ADD CONSTRAINT `ujian_pendadaran_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa_metopen` (`nim`);

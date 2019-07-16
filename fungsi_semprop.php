@@ -110,6 +110,13 @@
 			
 			
 		}
+
+		public function seminarproposal($nim){
+			$query = "SELECT * from seminar_proposal where nim=$nim";
+			$this->eksekusi($query);
+			return $this->hasil;
+		}
+
 		public function login($username){
 			$query = "SELECT * from login where user_name=$username";
 			$this->eksekusi($query);
@@ -301,12 +308,6 @@
 			$this->eksekusi($query);
 			return $this->hasil;
 
-		}
-
-		public function seminarproposal($nim){
-			$query = "SELECT * from seminar_proposal where nim=$nim";
-			$this->eksekusi($query);
-			return $this->hasil;
 		}
 
 

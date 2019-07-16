@@ -2,12 +2,12 @@
 
 <?php
 
-  //membutuhkan file fungsi_semprop
-  require('../fungsi_semprop.php');
+	//membutuhkan file fungsi_semprop
+	require('../fungsi_semprop.php');
 
-  //instansiasi objek class Seminar_Proposal
-  $akses = new Seminar_Proposal();
-  $akses->koneksi();
+	//instansiasi objek class Seminar_Proposal
+	$akses = new Seminar_Proposal();
+	$akses->koneksi();
 
    session_start();
 if($_SESSION['status'] == "login"){
@@ -116,4 +116,4 @@ $akses->updatestatusmetopen($stnew,$id);
 </body>
 </html>
 
-<?php include '../templates/footer_Penjadwalan.php' ?>  
+<?php include '../templates/footer_Penjadwalan.php' ?>

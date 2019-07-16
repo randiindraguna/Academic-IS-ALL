@@ -34,6 +34,11 @@ if($_SESSION['status'] == "login"){
     <link rel="stylesheet" href="../css/switches_Penjadwalan.css">
 
     <style type="text/css" href="../css/tombol_penjadwalan.css"></style>
+
+
+     <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../mahasiswa/sweetalert2/dist/sweetalert2.min.css">
 </head>
 
 <?php
@@ -88,11 +93,22 @@ $akses->updatestatusmetopen($stnew,$id_pd);
 <head>
   <title>javascript-- pesan</title>
   <script type='text/javascript'>
-        alert('Data Berhasil Disimpan')
-        
-        </script>";
+                    Swal.fire({
+                      position: 'middle',
+                      type: 'success',
+                      title: 'Berhasil Disimpan',
+                      showConfirmButton: true,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'OKE'
+
+                    }).then((result) => {
+                      if(result.value){
+                        location.href='data_pendadaran_diadmin.php'
+                      }
+                      })
+                    </script>
  
-       
+        ";
 </head> 
 <body onload="pesan()">
   

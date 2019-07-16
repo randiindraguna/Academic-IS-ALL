@@ -1,3 +1,4 @@
+
 <?php include '../templates/header_Penjadwalan.php' ?>
 <?php
 
@@ -67,12 +68,12 @@ $nim=$_GET['nim'];
 
                     
         echo "
-        <label for='formGroupExampleInput'>NILAI PENGUJI 1 </label><input type='text' name='nilai_penguji_1' class='form-control' aria-label='Text input with checkbox'>
-         <label for='formGroupExampleInput'>NILAI PENGUJI 2 </label><input type='text' name='nilai_penguji_2' class='form-control' aria-label='Text input with checkbox'>
-          <label for='formGroupExampleInput'>NILAI PEMBIMBING </label><input type='text' name='nilai_pembimbing' class='form-control' aria-label='Text input with checkbox'>
+         <label for='formGroupExampleInput'>NILAI PENGUJI 1 </label><input type='number' pattern='[0-9]+' title='Hanya inputan angka' name='nilai_penguji_1' placeholder='Masukkan Nilai' class='form-control in-box' aria-label='Text input with checkbox' value='$key[nilai_penguji_1]' min='0' max='100' required />
+         <label for='formGroupExampleInput'>NILAI PENGUJI 2 </label><input type='number' pattern='[0-9]+' title='Hanya inputan angka' name='nilai_penguji_2' placeholder='Masukkan Nilai' class='form-control in-box' aria-label='Text input with checkbox' value='$key[nilai_penguji_2]' min='0' max='100' required />
+          <label for='formGroupExampleInput'>NILAI PEMBIMBING </label><input type='number' pattern='[0-9]+' title='Hanya inputan angka' name='nilai_proses_pembimbing' placeholder='Masukkan Nilai' class='form-control in-box' aria-label='Text input with checkbox' value='$key[nilai_pembimbing]' min='0' max='100' required />
       
         
-        <br>   <input type='submit' name='kirim1' value='kirim' class='btn btn-outline-primary''>    
+        <br>   <input type='submit' name='kirim1' value='Update' class='btn btn-outline-primary''>    
         
 
         </form>

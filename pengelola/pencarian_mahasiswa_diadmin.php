@@ -52,8 +52,10 @@ if($_SESSION['status'] == "login"){
                                 <p class="pone">NIM :</p>
                             </div>
                             <div class="col-6">
-                                <input type="text"  pattern="[0-9]+" title="Masukan hanya angka" name='nim' placeholder='Masukan NIM' class="form-control in-box" name="nim" required>
+                                <input type="text"  pattern="[0-9]+" title="Masukan Nim Dengan Benar" name='nim' placeholder='Masukan NIM' class="form-control in-box" name="nim" required>
                             </div>
+
+
                             <div class="col-2 mb-5">
                                 <button type="submit" name="submit" value="Submit" class="butn butn2 ml-2" >Search
                             </div>

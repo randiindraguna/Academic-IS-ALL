@@ -1,13 +1,12 @@
 <?php include '../templates/header_Penjadwalan.php' ?>
-
 <?php
 
-  //membutuhkan file fungsi_semprop
-  require('../fungsi_semprop.php');
+	//membutuhkan file fungsi_semprop
+	require('../fungsi_semprop.php');
 
-  //instansiasi objek class Seminar_Proposal
-  $akses = new Seminar_Proposal();
-  $akses->koneksi();
+	//instansiasi objek class Seminar_Proposal
+	$akses = new Seminar_Proposal();
+	$akses->koneksi();
 
    session_start();
 if($_SESSION['status'] == "login"){
@@ -18,7 +17,8 @@ if($_SESSION['status'] == "login"){
 }
 
 ?>
-<?php include '../templates/header_Penjadwalan.php' ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,18 +40,13 @@ if($_SESSION['status'] == "login"){
     <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../mahasiswa/sweetalert2/dist/sweetalert2.min.css">
 </head>
-
 <?php
-  
-if(isset($_POST['simpan'])){
-
-    $id = $_POST['nim'];
+ $id_s = $_POST['nim'];
     $nilai_pb = $_POST['nilai_proses_pembimbing'];
-    // $status = $_POST['status'];
     $nilai_ub = $_POST['nilai_ujian_pembimbing'];
     $nilai_up = $_POST['nilai_ujian_penguji'];
 
-$rata_rata=round(($nilai_pb+$nilai_ub+$nilai_up)/3,2);
+    $rata_rata=round(($nilai_pb+$nilai_ub+$nilai_up)/3,2);
  if($rata_rata>-1 && $rata_rata<=1) $grade='E';
   else if($rata_rata>0 && $rata_rata<=40) $grade='D';
   else if($rata_rata>40 && $rata_rata<=43.75) $grade='D+';
@@ -66,51 +61,36 @@ $rata_rata=round(($nilai_pb+$nilai_ub+$nilai_up)/3,2);
   else $grade='nilai tidak tersedia'; 
 
   if($rata_rata>51.25) $status='lulus';
-  else($status='tidak_lulus')  ;
-  $stnew = 'skripsi';
+  else($status='tidak_lulus')  ;  
 
-if($status=='lulus'){
-
-$akses->updatestatusmetopen($stnew,$id);
-
-}
-
-
-    
-
-      $akses->InputNilaiDanStatusSemprop($id,$nilai_pb,$status,$id,$nilai_ub,$nilai_up);
-
-     
-
-      }
-    
-      ?>
+      $akses->UpdateNilaiDanStatusSemprop1($nilai_pb,$status,$id_s,$nilai_ub,$nilai_up);
+?>
 
 
 <!DOCTYPE html>
 <html>
 <head>
   <title>javascript-- pesan</title>
-   <script type='text/javascript'>
+  <script type='text/javascript'>
                     Swal.fire({
                       position: 'middle',
                       type: 'success',
-                      title: 'Berhasil Disimpan',
+                      title: 'Berhasil Di Edit !!!',
                       showConfirmButton: true,
                       confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'OKE'
+                      confirmButtonText: 'Kembali'
 
                     }).then((result) => {
                       if(result.value){
                         location.href='data_semprop_diadmin.php'
                       }
                       })
-                    </script>";
+                    </script>
 </head> 
 <body onload="pesan()">
   
 
 </body>
 </html>
-
+ 
 <?php include '../templates/footer_Penjadwalan.php' ?>

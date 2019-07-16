@@ -38,20 +38,8 @@ if($_SESSION['status'] == "login"){
 <body>
     <br>
 
-    <h2 align="center">PENGUNGUMAN PENDADARAN</h2>
+    <h2 align="center">Daftar Mahasiswa Bimbingan</h2>
 <br>
-<table align="center">
-<form name="pencarian" method="POST" action = "hasil_pencarian_didosen.php" ">            
-      
-                    <tr> <td>
-                    <input type="text" placeholder="masukan nim" name="nim" title ="masukan nim" class="form-control">  
-                    </td>
-                    <td>
-                    <button id="submit1" name="submit1" class='butn butn2 ml-2'>cari</button></td>
-                   </tr>
-
-          </form>
-        </table>
     
 <br><br>
 
@@ -78,7 +66,7 @@ $usr=$_SESSION['username'];
           <td align='center'>$key[nim]</td>
           <td align='center'>$key[nama_mhs]</td>
           <td align='center'>$key[status]</td>
-          <td align='center'><a href='lihat_nilai_pendadaran_didosen.php?nim=$key[nim]' class='btn btn-outline-primary' role='button' aria-pressed='true'>lihat</a></td>
+          <td align='center'><a href='lihat_nilai_pendadaran_didosen.php?nim=$key[nim]' class='btn btn-outline-primary' role='button' aria-pressed='true'>Lihat</a></td>
           </tr>
           
         ";

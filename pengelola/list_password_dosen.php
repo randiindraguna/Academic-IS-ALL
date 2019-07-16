@@ -1,4 +1,5 @@
 <?php 
+require_once('../kelolaAkun.php');
 require_once('../class_login.php');
 
   $akses = new Login();

@@ -214,12 +214,27 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                 </form>
               </td>';
               }
+
+              if(!isset($_GET['lama']))
+              {
               echo '
-              <td rowspan="3"> 
+              <td rowspan="3" >
                 <form>
-                  <input type="button" name="asc" class="btn btn-primary" value="LAMA BIMBINGAN MAHASISWA">
+                  <input type="text" name="lama" hidden="">
+                  <input type="submit" name="asc" class="btn btn-primary" value="Lama bimbingan mahasiswa">
                 </form>
               </td>';
+              }
+              else
+              {
+              echo '
+              <td rowspan="3">
+                <form>
+                  <input type="text" name="normal" hidden="">
+                  <input type="submit" class="btn btn-primary" value="Lama bimbingan mahasiswa">
+                </form>
+              </td>';
+              }
             ?>
           </tr>
           <tr>
@@ -254,7 +269,11 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                 else if(isset($_GET['jumlah']))
                 {
                   $tampilan_awal = $car->mengurutkan_jumlah_konsultasi($_SESSION['username']);
-                }  
+                } 
+                else if(isset($_GET['lama']))
+                {
+                  $tampilan_awal = $car->mengurutkan_lama_bimbingan_dari_yang_terlama($_SESSION['username']);
+                } 
               }
               else if(isset($_GET['normal']) || isset($_SESSION['username']))
               {
@@ -280,6 +299,41 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                     ";
                     }
                   }
+                }
+                else if($key['status_mahasiswa'] == "skripsi" && $car->confert_hari($key['lamabimbingan']) > 8)
+                {
+                  echo 
+                      "
+                        <tr align='center' class='bg-danger'>
+                        <td>".$key['name']."</td>
+                        <td>".$key['nim']."</td>
+                        <td>".$key['judul']."</td>
+                      ";
+
+                  foreach ($car->jumlah_bimbingan_satu_mahasiswa_untuk_ubah_warna($key['nim']) as $ke){
+                      
+
+                      if($ke['jenis_bimbingan']=="skripsi" && $ke['jumlah'] >= 10)
+                      {
+                        echo "<td><div class='btn btn-success hover disabled'>".$ke['jumlah']."</div></td>";
+                      }
+                      else if($ke['jenis_bimbingan']=="skripsi")
+                      {
+                        echo "<td><div class='btn btn-primary hover_not disabled'>".$ke['jumlah']." skripsi</div></td>";
+                      }
+                      else // metopen
+                      {
+                        echo "<td><div class='btn btn-primary hover_metopen disabled'>".$ke['jumlah']." </div></td>";
+                      }
+
+
+                  }
+
+                  
+
+                  echo "
+                  <td>".$car->confert_hari($key['lamabimbingan'])."</td>
+                  </tr>";
                 }
                 else if($key['status_mahasiswa'] == "skripsi")
                 {
@@ -316,6 +370,8 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                   <td>".$car->confert_hari($key['lamabimbingan'])."</td>
                   </tr>";
                 }
+
+
               }
             }
             ?>

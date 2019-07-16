@@ -40,13 +40,25 @@ if($_SESSION['status'] == "login"){
         </br>
             <h2 class="judul"><center>Statistik kelulusan</center></h2>
 
+            <?php
+                $status = "Pilih Jenis Kelulusan" ;
+                if(isset($_POST['kirim'])){
+                    $status = $_POST['lulusan'];
+                    if($status == "SEMPROP"){
+                        $status = "Seminar Proposal";
+                    }else{
+                        $status = "Ujian Pendadaran";
+                    }
+                }
+            ?>
+
             <center>
             <form method="POST" action="statistik_kelulusan.php">
             <!-- <div class="row"> -->
                 <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Kelulusan Berdasarkan : </label>
-                        <select name="lulusan" id="inputState" class="form-control" >
-                            <option value="0" selected>Pilih Jenis Kelulusan</option>
+                        <select name="lulusan" id="inputState" class="form-control">
+                            <option value="Pilih Jenis Kelulusan" selected> <?php echo $status; ?> </option>
                             <option value="SEMPROP">Seminar Proposal</option>
                             <option value="UNDARAN">Ujian Pendadaran</option>
                         </select>                   

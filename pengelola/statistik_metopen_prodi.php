@@ -40,13 +40,20 @@ if($_SESSION['status'] == "login"){
             <h2 class="judul"><center>-- Statistik Kelulusan Seminar Proposal -- </center></h2>
             <h2 class="judul"><center>-- Pada Tiap Prodi Terdaftar -- </center></h2>
 
+            <?php
+                $status = "Pilih Status Kelulusan";
+                if (isset($_POST['save'])) {
+                    $status = $_POST['status'];
+                }
+             ?>
+
             <center>
             <form method="POST" action="statistik_metopen_prodi.php">
             <!-- <div class="row"> -->
                 <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Kelulusan </label>
                         <select name="status" id="inputState" class="form-control" >
-                            <option selected value="0">Pilih kelulusan</option>
+                            <option selected ><?php echo $status; ?></option>
                             <option value="lulus">Lulus</option>
                             <option value="tidak_lulus">Gagal</option>
                         </select>                   
@@ -76,17 +83,23 @@ if($_SESSION['status'] == "login"){
         var myChart = new Chart(ctx, {
             type: "bar",
             data: {
-                labels: [<?php foreach($akses->nama_prodi() as $key){echo '"'.$key['nama_prodi'].'",'; } ?>],
+                labels: [
+                    <?php
+                        
+                            foreach($akses->nama_prodi() as $keyi){ echo '"'.$keyi['nama_prodi'].'",'; }
+                        
+                    ?>
+                ],
                 datasets: [{
                     label: '',
                     data: [
                        <?php 
-                         foreach($akses->nama_prodi() as $key){
-                            foreach($akses->lulus_semprop_prodi($key['id_prodi'],$sta) as $keyi){
-                                echo '"'.$keyi['jumlah_mhs'].'",';
-                            }
-                         }
-                        ?>
+                            
+                                foreach($akses->lulus_semprop_prodi($sta) as $keyi){
+                                    echo '"'.$keyi['jumlah_mhs'].'",';
+                                }
+                            
+                        ?>,
                     ],
                     
                     backgroundColor: [

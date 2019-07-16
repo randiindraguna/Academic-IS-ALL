@@ -24,28 +24,41 @@ semprop.addEventListener('click', function () {
                     const lb = $(this).data('lb');
                     const jb = $(this).data('jb');
                     const st = $(this).data('st');
-                    
-                   
+                    const cp = $(this).data('cp');
+                                
                     var ju = id.slice(0, 2);
                     var status = st;
                     var jubim = jb;
                     var labim = lb;
+                    var cpb = cp;
 
+                    console.log(cpb);
                     console.log(id);
                     console.log(jubim);
                     console.log(labim);
+                    console.log(status);
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
-                            console.log(ju);
-                            console.log(status);        
                             isimodals.innerHTML = xhr.responseText;
                             judulmodal.innerHTML = isijudulmodal;
                         }
                     }
-                    if (ju == "UP") {
+                    if (ju == "UP" && status == "lulus") {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit, karena sudah lulus';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "tidak_lulus" ) {
+                        xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
+                        var isijudulmodal = 'Daftar Ulang Ujian Pendadaran';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "---" && cpb == "0" ) {
                         xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
                         var isijudulmodal = 'Edit Ujian Pendadaran';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "---" && cpb == "1" ) {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit Ujian Pendadaran, karena telah lewat massa edit';
                         xhr.send();
                     } else if (ju == "SP" && status == "lulus" && jubim >= 10 && labim >= 60) {
                         xhr.open('GET', '../templates/edit_semprop_ke_pendadaran_modals.php?data=' + id, true)
@@ -53,15 +66,19 @@ semprop.addEventListener('click', function () {
                         xhr.send();
                     } else if (ju == "SP" && status == "lulus" ) {
                         xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
-                        var isijudulmodal = 'Maaf Belum Tidak Bisa Mendaftar';
+                        var isijudulmodal = 'Maaf Belum Bisa Mendaftar, karena belum memenuhi syarat';
                         xhr.send();
-                    } else if (ju == "SP" && status == "tidak_lulus") {
+                    }else if (ju == "SP" && status == "tidak_lulus") {
+                        xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
+                        var isijudulmodal = 'Daftar Ulang Jadwal Seminar Proposal';
+                        xhr.send();
+                    } else if (ju == "SP" && status == "---" && cpb == "0") {
                         xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
                         var isijudulmodal = 'Edit Jadwal Seminar Proposal';
                         xhr.send();
-                    } else if (ju == "SP" && status == "---") {
-                        xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
-                        var isijudulmodal = 'Edit Jadwal Seminar Proposal';
+                    } else if (ju == "SP" && status == "---" && cpb == "1") {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit Jadwal Seminar Proposal, karena telah lewat massa edit';
                         xhr.send();
                     }
                 });
@@ -85,28 +102,41 @@ pendadaran.addEventListener('click', function () {
                     const lb = $(this).data('lb');
                     const jb = $(this).data('jb');
                     const st = $(this).data('st');
-                    
-                   
+                    const cp = $(this).data('cp');
+                                
                     var ju = id.slice(0, 2);
                     var status = st;
                     var jubim = jb;
                     var labim = lb;
+                    var cpb = cp;
 
+                    console.log(cpb);
                     console.log(id);
                     console.log(jubim);
                     console.log(labim);
+                    console.log(status);
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
-                            console.log(ju);
-                            console.log(status);
                             isimodals.innerHTML = xhr.responseText;
                             judulmodal.innerHTML = isijudulmodal;
                         }
                     }
-                    if (ju == "UP") {
+                    if (ju == "UP" && status == "lulus") {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit, karena sudah lulus';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "tidak_lulus" ) {
+                        xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
+                        var isijudulmodal = 'Daftar Ulang Ujian Pendadaran';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "---" && cpb == "0" ) {
                         xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
                         var isijudulmodal = 'Edit Ujian Pendadaran';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "---" && cpb == "1" ) {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit Ujian Pendadaran, karena telah lewat massa edit';
                         xhr.send();
                     } else if (ju == "SP" && status == "lulus" && jubim >= 10 && labim >= 60) {
                         xhr.open('GET', '../templates/edit_semprop_ke_pendadaran_modals.php?data=' + id, true)
@@ -114,15 +144,19 @@ pendadaran.addEventListener('click', function () {
                         xhr.send();
                     } else if (ju == "SP" && status == "lulus" ) {
                         xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
-                        var isijudulmodal = 'Maaf Belum Tidak Bisa Mendaftar';
+                        var isijudulmodal = 'Maaf Belum Bisa Mendaftar, karena belum memenuhi syarat';
                         xhr.send();
-                    } else if (ju == "SP" && status == "tidak_lulus") {
+                    }else if (ju == "SP" && status == "tidak_lulus") {
+                        xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
+                        var isijudulmodal = 'Daftar Ulang Jadwal Seminar Proposal';
+                        xhr.send();
+                    } else if (ju == "SP" && status == "---" && cpb == "0") {
                         xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
                         var isijudulmodal = 'Edit Jadwal Seminar Proposal';
                         xhr.send();
-                    } else if (ju == "SP" && status == "---") {
-                        xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
-                        var isijudulmodal = 'Edit Jadwal Seminar Proposal';
+                    } else if (ju == "SP" && status == "---" && cpb == "1") {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit Jadwal Seminar Proposal, karena telah lewat massa edit';
                         xhr.send();
                     }
                 });
@@ -146,28 +180,41 @@ terdekat.addEventListener('click', function () {
                     const lb = $(this).data('lb');
                     const jb = $(this).data('jb');
                     const st = $(this).data('st');
-                    
-                   
+                    const cp = $(this).data('cp');
+                                
                     var ju = id.slice(0, 2);
                     var status = st;
                     var jubim = jb;
                     var labim = lb;
+                    var cpb = cp;
 
+                    console.log(cpb);
                     console.log(id);
                     console.log(jubim);
                     console.log(labim);
+                    console.log(status);
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
-                            console.log(ju);
-                            console.log(status);
                             isimodals.innerHTML = xhr.responseText;
                             judulmodal.innerHTML = isijudulmodal;
                         }
                     }
-                    if (ju == "UP") {
+                    if (ju == "UP" && status == "lulus") {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit, karena sudah lulus';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "tidak_lulus" ) {
+                        xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
+                        var isijudulmodal = 'Daftar Ulang Ujian Pendadaran';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "---" && cpb == "0" ) {
                         xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
                         var isijudulmodal = 'Edit Ujian Pendadaran';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "---" && cpb == "1" ) {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit Ujian Pendadaran, karena telah lewat massa edit';
                         xhr.send();
                     } else if (ju == "SP" && status == "lulus" && jubim >= 10 && labim >= 60) {
                         xhr.open('GET', '../templates/edit_semprop_ke_pendadaran_modals.php?data=' + id, true)
@@ -175,15 +222,19 @@ terdekat.addEventListener('click', function () {
                         xhr.send();
                     } else if (ju == "SP" && status == "lulus" ) {
                         xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
-                        var isijudulmodal = 'Maaf Belum Tidak Bisa Mendaftar';
+                        var isijudulmodal = 'Maaf Belum Bisa Mendaftar, karena belum memenuhi syarat';
                         xhr.send();
-                    } else if (ju == "SP" && status == "tidak_lulus") {
+                    }else if (ju == "SP" && status == "tidak_lulus") {
+                        xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
+                        var isijudulmodal = 'Daftar Ulang Jadwal Seminar Proposal';
+                        xhr.send();
+                    } else if (ju == "SP" && status == "---" && cpb == "0") {
                         xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
                         var isijudulmodal = 'Edit Jadwal Seminar Proposal';
                         xhr.send();
-                    } else if (ju == "SP" && status == "---") {
-                        xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
-                        var isijudulmodal = 'Edit Jadwal Seminar Proposal';
+                    } else if (ju == "SP" && status == "---" && cpb == "1") {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit Jadwal Seminar Proposal, karena telah lewat massa edit';
                         xhr.send();
                     }
                 });
@@ -208,28 +259,41 @@ all.addEventListener('click', function () {
                     const lb = $(this).data('lb');
                     const jb = $(this).data('jb');
                     const st = $(this).data('st');
-                    
-                   
+                    const cp = $(this).data('cp');
+                                
                     var ju = id.slice(0, 2);
                     var status = st;
                     var jubim = jb;
                     var labim = lb;
+                    var cpb = cp;
 
+                    console.log(cpb);
                     console.log(id);
                     console.log(jubim);
                     console.log(labim);
+                    console.log(status);
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
-                            console.log(ju);
-                            console.log(status);
                             isimodals.innerHTML = xhr.responseText;
                             judulmodal.innerHTML = isijudulmodal;
                         }
                     }
-                    if (ju == "UP") {
+                    if (ju == "UP" && status == "lulus") {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit, karena sudah lulus';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "tidak_lulus" ) {
+                        xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
+                        var isijudulmodal = 'Daftar Ulang Ujian Pendadaran';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "---" && cpb == "0" ) {
                         xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
                         var isijudulmodal = 'Edit Ujian Pendadaran';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "---" && cpb == "1" ) {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit Ujian Pendadaran, karena telah lewat massa edit';
                         xhr.send();
                     } else if (ju == "SP" && status == "lulus" && jubim >= 10 && labim >= 60) {
                         xhr.open('GET', '../templates/edit_semprop_ke_pendadaran_modals.php?data=' + id, true)
@@ -237,15 +301,19 @@ all.addEventListener('click', function () {
                         xhr.send();
                     } else if (ju == "SP" && status == "lulus" ) {
                         xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
-                        var isijudulmodal = 'Maaf Belum Tidak Bisa Mendaftar';
+                        var isijudulmodal = 'Maaf Belum Bisa Mendaftar, karena belum memenuhi syarat';
                         xhr.send();
-                    } else if (ju == "SP" && status == "tidak_lulus") {
+                    }else if (ju == "SP" && status == "tidak_lulus") {
+                        xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
+                        var isijudulmodal = 'Daftar Ulang Jadwal Seminar Proposal';
+                        xhr.send();
+                    } else if (ju == "SP" && status == "---" && cpb == "0") {
                         xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
                         var isijudulmodal = 'Edit Jadwal Seminar Proposal';
                         xhr.send();
-                    } else if (ju == "SP" && status == "---") {
-                        xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
-                        var isijudulmodal = 'Edit Jadwal Seminar Proposal';
+                    } else if (ju == "SP" && status == "---" && cpb == "1") {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit Jadwal Seminar Proposal, karena telah lewat massa edit';
                         xhr.send();
                     }
                 });
@@ -269,28 +337,41 @@ key.addEventListener('keyup', function () {
                     const lb = $(this).data('lb');
                     const jb = $(this).data('jb');
                     const st = $(this).data('st');
-                    
-                   
+                    const cp = $(this).data('cp');
+                                
                     var ju = id.slice(0, 2);
                     var status = st;
                     var jubim = jb;
                     var labim = lb;
+                    var cpb = cp;
 
+                    console.log(cpb);
                     console.log(id);
                     console.log(jubim);
                     console.log(labim);
+                    console.log(status);
                     var xhr = new XMLHttpRequest();
                     xhr.onreadystatechange = function () {
                         if (xhr.readyState == 4 && xhr.status == 200) {
-                            console.log(ju);
-                            console.log(status);
                             isimodals.innerHTML = xhr.responseText;
                             judulmodal.innerHTML = isijudulmodal;
                         }
                     }
-                    if (ju == "UP") {
+                    if (ju == "UP" && status == "lulus") {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit, karena sudah lulus';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "tidak_lulus" ) {
+                        xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
+                        var isijudulmodal = 'Daftar Ulang Ujian Pendadaran';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "---" && cpb == "0" ) {
                         xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
                         var isijudulmodal = 'Edit Ujian Pendadaran';
+                        xhr.send();
+                    } else if (ju == "UP" && status == "---" && cpb == "1" ) {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit Ujian Pendadaran, karena telah lewat massa edit';
                         xhr.send();
                     } else if (ju == "SP" && status == "lulus" && jubim >= 10 && labim >= 60) {
                         xhr.open('GET', '../templates/edit_semprop_ke_pendadaran_modals.php?data=' + id, true)
@@ -298,15 +379,19 @@ key.addEventListener('keyup', function () {
                         xhr.send();
                     } else if (ju == "SP" && status == "lulus" ) {
                         xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
-                        var isijudulmodal = 'Maaf Belum Tidak Bisa Mendaftar';
+                        var isijudulmodal = 'Maaf Belum Bisa Mendaftar, karena belum memenuhi syarat';
                         xhr.send();
-                    } else if (ju == "SP" && status == "tidak_lulus") {
+                    }else if (ju == "SP" && status == "tidak_lulus") {
+                        xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
+                        var isijudulmodal = 'Daftar Ulang Jadwal Seminar Proposal';
+                        xhr.send();
+                    } else if (ju == "SP" && status == "---" && cpb == "0") {
                         xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
                         var isijudulmodal = 'Edit Jadwal Seminar Proposal';
                         xhr.send();
-                    } else if (ju == "SP" && status == "---") {
-                        xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
-                        var isijudulmodal = 'Edit Jadwal Seminar Proposal';
+                    } else if (ju == "SP" && status == "---" && cpb == "1") {
+                        xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
+                        var isijudulmodal = 'Tidak Bisa Mengedit Jadwal Seminar Proposal, karena telah lewat massa edit';
                         xhr.send();
                     }
                 });
@@ -323,12 +408,15 @@ $(function () {
         const lb = $(this).data('lb');
         const jb = $(this).data('jb');
         const st = $(this).data('st');
+        const cp = $(this).data('cp');
                     
         var ju = id.slice(0, 2);
         var status = st;
         var jubim = jb;
         var labim = lb;
+        var cpb = cp;
 
+        console.log(cpb);
         console.log(id);
         console.log(jubim);
         console.log(labim);
@@ -340,9 +428,21 @@ $(function () {
                 judulmodal.innerHTML = isijudulmodal;
             }
         }
-        if (ju == "UP") {
+        if (ju == "UP" && status == "lulus") {
+            xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+            var isijudulmodal = 'Tidak Bisa Mengedit, karena sudah lulus';
+            xhr.send();
+        } else if (ju == "UP" && status == "tidak_lulus" ) {
+            xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
+            var isijudulmodal = 'Daftar Ulang Ujian Pendadaran';
+            xhr.send();
+        } else if (ju == "UP" && status == "---" && cpb == "0" ) {
             xhr.open('GET', '../templates/edit_pendadaran_modals.php?data=' + id, true)
             var isijudulmodal = 'Edit Ujian Pendadaran';
+            xhr.send();
+        } else if (ju == "UP" && status == "---" && cpb == "1" ) {
+            xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' + id, true)
+            var isijudulmodal = 'Tidak Bisa Mengedit Ujian Pendadaran, karena telah lewat massa edit';
             xhr.send();
         } else if (ju == "SP" && status == "lulus" && jubim >= 10 && labim >= 60) {
             xhr.open('GET', '../templates/edit_semprop_ke_pendadaran_modals.php?data=' + id, true)
@@ -350,15 +450,19 @@ $(function () {
             xhr.send();
         } else if (ju == "SP" && status == "lulus" ) {
             xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
-            var isijudulmodal = 'Maaf Belum Tidak Bisa Mendaftar';
+            var isijudulmodal = 'Maaf Belum Bisa Mendaftar, karena belum memenuhi syarat';
             xhr.send();
         }else if (ju == "SP" && status == "tidak_lulus") {
             xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
-            var isijudulmodal = 'Edit Jadwal Seminar Proposal';
+            var isijudulmodal = 'Daftar Ulang Jadwal Seminar Proposal';
             xhr.send();
-        } else if (ju == "SP" && status == "---") {
+        } else if (ju == "SP" && status == "---" && cpb == "0") {
             xhr.open('GET', '../templates/edit_semprop_modals.php?data=' + id, true)
             var isijudulmodal = 'Edit Jadwal Seminar Proposal';
+            xhr.send();
+        } else if (ju == "SP" && status == "---" && cpb == "1") {
+            xhr.open('GET', '../control/redirect/redirect_failed_to_back.php' , true)
+            var isijudulmodal = 'Tidak Bisa Mengedit Jadwal Seminar Proposal, karena telah lewat massa edit';
             xhr.send();
         }
     });

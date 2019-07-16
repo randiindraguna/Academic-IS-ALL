@@ -1,10 +1,13 @@
 <?php 
+include 'database.php';
 include 'class_login.php';
-$login = new Login();
-$login->connect();
+$login1 = new Database();
+$login1->connect();
+$login2 = new Login();
+$login2->connect();
 
-foreach ($login->get_niy_dosen() as $key1) {
-	$password = $login->create_random_password(8);
-	$login->insert_tabel_login($key1['niy'],$password,'dosen','baru');
+foreach ($login1->getDosen() as $key) {
+	$password = $login2->create_random_password(8);
+	$login2->insert_tabel_login($key['niy'],$password,'dosen','baru');
 }
 ?>

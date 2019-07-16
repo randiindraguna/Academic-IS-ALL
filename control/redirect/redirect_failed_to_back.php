@@ -1,8 +1,11 @@
 <?php
 ?>
 <form id="my_form" action="../pengelola/UI_Form_Input_jadwal.php" method="post">
-<input type="hidden" name="nim" value="<?=$nim;?>">
-<input type="hidden" name="a" value="simpan">
+	<input type="hidden" name="user" value="admin">
+	<?php 
+	session_start();
+	$_SESSION['username']=NULL;
+	?>
 </form>
 <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 <script type="text/javascript">

@@ -36,11 +36,10 @@
           <tr align="center">
           <th>Nim</th>
           <th>Nama</th>
-          <th>Tanggal ujian</th>
           <th>Nilai Penguji 1</th>
           <th>Nilai Penguji 2</th>
-          <th>Nilai Nilai Penguji Pembimbing</th>
-          <th>Rata-rata</th>
+          <th>Nilai Pembimbing</th>
+          <th>Rata-Rata</th>
           <th>Grade</th>
           <th>Status</th>
     </tr>
@@ -68,7 +67,6 @@
         <tr>
           <td align='center'>$key[nim]</td>
           <td align='center'>$key[nama_mhs]</td>
-          <td align='center'>$key[tanggal]</td>
           <td align='center'>$key[nilai_penguji_1]</td>
           <td align='center'>$key[nilai_penguji_2]</td>
           <td align='center'>$key[nilai_pembimbing]</td>

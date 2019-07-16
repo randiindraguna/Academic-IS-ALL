@@ -67,13 +67,20 @@ if($_SESSION['status'] == "login"){
         </br>.
             <h2 class="judul"><center>-- Statistik Penggunaan Ruang -- </center></h2>
             <h2 class="judul"><center>-- Seminar Proposal Mahasiswa -- </center></h2>
-            
+
+            <?php
+                $waktu = date('d-m-Y');
+                if (isset($_POST['save'])) {
+                    $waktu = $_POST['tgl'];
+                }
+             ?>
+
             <center>
             <form method="POST" action="statistik_semprop.php">
             <!-- <div class="row"> -->
                 <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Tanggal </label>
-                        <input type="date" name="tgl">           
+                        <input type="date" name="tgl" value="<?php echo $waktu ?>">           
                 </div>
             <!-- </div> --> <br>
                 <button type="submit" class="btn btn-primary" name="save" >Simpan</button>

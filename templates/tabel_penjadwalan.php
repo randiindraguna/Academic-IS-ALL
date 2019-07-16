@@ -145,14 +145,18 @@
                                                         }
                                                         }
                                                     
+                                                    $cpbt = $P->cekPerbedaanTanggal($ambil['tanggal']);
+                                                    
                                                     ?>
-                <!-- Opsi -->
-                <td>
-                    <a class="modalku" href="" id="modalku" data-toggle="modal" data-target="#ModalUbah"
-                        data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-st="<?=$status_p?>">Edit</a> |
-                    <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
-                    <a href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
-                </td>
+                                                    <!-- Opsi -->
+                                                    <td>
+                                                        <a class="modalku" href="" id="modalku" data-toggle="modal"
+                                                            data-target="#ModalUbah"
+                                                            data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-cp="<?=$cpbt?>" data-st="<?=$status_p?>">Edit</a> |
+                                                        <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
+                                                        <a
+                                                            href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
+                                                    </td>
             </tr>
             <?php $i++;}?>
         </tbody>
@@ -296,14 +300,18 @@
                                                         }
                                                         }
                                                     
+                                                    $cpbt = $P->cekPerbedaanTanggal($ambil['tanggal']);
+                                                    
                                                     ?>
-                <!-- Opsi -->
-                <td>
-                    <a class="modalku" href="" id="modalku" data-toggle="modal" data-target="#ModalUbah"
-                        data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-st="<?=$status_p?>">Edit</a> |
-                    <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
-                    <a href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
-                </td>
+                                                    <!-- Opsi -->
+                                                    <td>
+                                                        <a class="modalku" href="" id="modalku" data-toggle="modal"
+                                                            data-target="#ModalUbah"
+                                                            data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-cp="<?=$cpbt?>" data-st="<?=$status_p?>">Edit</a> |
+                                                        <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
+                                                        <a
+                                                            href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
+                                                    </td>
             </tr>
             <?php $i++;}?>
         </tbody>
@@ -448,14 +456,18 @@
                                                         }
                                                         }
                                                     
+                                                    $cpbt = $P->cekPerbedaanTanggal($ambil['tanggal']);
+                                                    
                                                     ?>
-                <!-- Opsi -->
-                <td>
-                    <a class="modalku" href="" id="modalku" data-toggle="modal" data-target="#ModalUbah"
-                        data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-st="<?=$status_p?>">Edit</a> |
-                    <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
-                    <a href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
-                </td>
+                                                    <!-- Opsi -->
+                                                    <td>
+                                                        <a class="modalku" href="" id="modalku" data-toggle="modal"
+                                                            data-target="#ModalUbah"
+                                                            data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-cp="<?=$cpbt?>" data-st="<?=$status_p?>">Edit</a> |
+                                                        <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
+                                                        <a
+                                                            href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
+                                                    </td>
             </tr>
             <?php $i++;}?>
         </tbody>
@@ -600,14 +612,18 @@
                                                         }
                                                     }
                                                     
+                                                    $cpbt = $P->cekPerbedaanTanggal($ambil['tanggal']);
+                                                    
                                                     ?>
-                <!-- Opsi -->
-                <td>
-                    <a class="modalku" href="" id="modalku" data-toggle="modal" data-target="#ModalUbah"
-                        data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-st="<?=$status_p?>">Edit</a> |
-                    <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
-                    <a href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
-                </td>
+                                                    <!-- Opsi -->
+                                                    <td>
+                                                        <a class="modalku" href="" id="modalku" data-toggle="modal"
+                                                            data-target="#ModalUbah"
+                                                            data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-cp="<?=$cpbt?>" data-st="<?=$status_p?>">Edit</a> |
+                                                        <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
+                                                        <a
+                                                            href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
+                                                    </td>
             </tr>
             <?php $i++;}?>
         </tbody>
@@ -754,14 +770,18 @@
                                                         }
                                                         }
                                                     
+                                                    $cpbt = $P->cekPerbedaanTanggal($ambil['tanggal']);
+                                                    
                                                     ?>
-                <!-- Opsi -->
-                <td>
-                    <a class="modalku" href="" id="modalku" data-toggle="modal" data-target="#ModalUbah"
-                        data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-st="<?=$status_p?>">Edit</a> |
-                    <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
-                    <a href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
-                </td>
+                                                    <!-- Opsi -->
+                                                    <td>
+                                                        <a class="modalku" href="" id="modalku" data-toggle="modal"
+                                                            data-target="#ModalUbah"
+                                                            data-id="<?=$ambil['id_jadwal']?>" data-lb="<?=$key2['lamabimbingan']?>"  data-jb="<?=$key1['jb']?>" data-cp="<?=$cpbt?>" data-st="<?=$status_p?>">Edit</a> |
+                                                        <!-- <a href='UI_Form_edit_jadwal.php?id_jadwal=<?=$ambil['id_jadwal']?>'>Edit</a> | -->
+                                                        <a
+                                                            href='UI_Penjadwalan_detail_admin.php?nim=<?=$ambil['nim']?>'>Detail</a>
+                                                    </td>
             </tr>
             <?php $i++;}?>
         </tbody>

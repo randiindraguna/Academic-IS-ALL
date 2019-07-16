@@ -49,7 +49,7 @@ include '../templates/header_penjadwalan.php';
 <script src="sweetalert2/dist/sweetalert2.min.js"></script>
 <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
 
-    <title>Profil Mahasiswa</title>
+    <title>Profil Dosen</title>
    
   </head>
   <body style="background-color= #808080;">
@@ -89,71 +89,50 @@ include '../templates/header_penjadwalan.php';
             <tr>
             
               <td bgcolor="#B5B5B5" style="width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px #d1d1d1;">
-                  <center>
-              <font color='black'><h3>Profil Mahasiswa</h3></font>
-            </center>
+              
                               
                <?php          
 
-                $data=mysqli_fetch_array($akses->CariDataMahasiswa($_SESSION['username']));
-                $jumlahrow=mysqli_num_rows($akses->CariDataMahasiswa($_SESSION['username']));
+                $data=mysqli_fetch_array($akses->getsatuDosen($_SESSION['username']));
+                $jumlahrow=mysqli_num_rows($akses->getsatuDosen($_SESSION['username']));
                   if($jumlahrow>0){
                       echo "
-                      
+                          <center>
+              <font color='black'><h3>Profil Dosen</h3></font>
+            </center>
                 <table class='table table-striped'>
                       <tr>
                         <td >Nama</td><td colspan=2>:</td><td>".$data['nama']."</td>
                       </tr>
                        <tr>
-                        <td>NIM</td><td colspan=2>:</td><td>".$data['nim']."</td>
+                        <td>NIY</td><td colspan=2>:</td><td>".$data['niy']."</td>
                       </tr>
                       <tr>
-                        <td>Jenis kelamin</td><td colspan=2>:</td><td>".$data['jenis_kelamin']."</td>
+                        <td>Email</td><td colspan=2>:</td><td>".$data['email']."</td>
                       </tr>
                       <tr>
-                        <td>Topik</td><td colspan=2>:</td><td>".$data['topik']."</td>
+                        <td>Bidang Keahlian</td><td colspan=2>:</td><td>".$data['bidang_keahlian']."</td>
                       </tr>
-                      <tr>
-                        <td>Status</td><td colspan=2>:</td><td>"; ?>
-                          <?php 
-                           if($data['status']=='gagal'){echo"<p class=text-danger>Gagal</p>";}
-                           else if($data['status']=='metopen'){echo"<p class=text-primary>Metopen</p>";}
-                           else if($data['status']=='skripsi'){echo"<p class=text-primary>Skripsi</p>";}
-                           else if($data['status']=='lulus'){echo"<p class=text-success>Lulus</p>";}
-
-                        echo "</td>
-                      </tr>  
-                      <tr>
-                        <td>Dosen Pembimbing</td><td colspan=2>:</td><td>".$data['namados']."</td>
-                      </tr>
-                      <tr>
-                        <td>Bidang Minat</td><td colspan=2>:</td><td>".$data['bidang_minat']."</td>
-                      </tr>
-                      <tr>
-                        <td>Tanggal Mulai</td><td colspan=2>:</td><td>".$data['tanggal_mulai']."</td>
-                      </tr>  
                       <tr>
                         <td>Password</td><td colspan=2>:</td><td>"." <button type='button' id='ButtonPass' class='btn btn-outline-primary' data-toggle='modal' data-target='#myModal'  margin: 20px; '>
                          Ubah password
                         </button>"."</td>
-                      </tr>   
+                      </tr>  
+                      <br><br> 
                        ";}
                       else{
                         echo"
-
-                         <table class='table table-striped'>
-                         
-                          
-                       <tr>
-                        <td>Username</td><td colspan=2>:</td><td>".$_SESSION['username']."</td>
-                      </tr> 
-                       <tr>
-                        <td>Status</td><td colspan=2>:</td><td class=text-danger>Belum mendaftar metopen</td>
-                      </tr> 
-                         <td>Password</td><td colspan=2>:</td><td>"." <button type='button' id='ButtonPass' class='btn btn-outline-primary' data-toggle='modal' data-target='#myModal'  margin: 20px; '>
-                         Ubah password
-                        </button>"."</td>
+                           <table class='table table-striped'>
+                     <center>
+                     <br><br><br>
                         <br><br><br><br>
+                       
+                         <h1 class='text-danger'>404 not found !!!</h1>
+                         </center>
+                        <br><br><br><br>
+                        <br><br><br>
+                             
+                        
                              
                         ";
                       }

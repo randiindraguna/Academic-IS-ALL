@@ -1,6 +1,4 @@
-<?php 
-    include 'kelolaAkun.php';
- ?>
+
 <!doctype html>
 <html lang="en">
   <head>

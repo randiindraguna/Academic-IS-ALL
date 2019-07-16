@@ -61,18 +61,6 @@
 			return $this->result;
 		}
 
-		public function get_niy_dosen()
-		{
-			$query = "SELECT niy from dosen";
-			$this->execute($query);
-			return $this->result;
-		}
-		public function get_nim_mahasiswa()
-		{
-			$query = "SELECT nim from mahasiswa_metopen";
-				$this->execute($query);
-			return $this->result;
-		}
 		public function create_random_password($jumlah_karakter)
 		{
 			$karakter = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";

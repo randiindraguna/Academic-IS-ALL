@@ -180,52 +180,39 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 	}
 
 	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
-	public function gender(){
-		$query = "SELECT jenis_kelamin FROM mahasiswa_metopen GROUP BY jenis_kelamin";
+	public function Semprop_gender($gender){
+		$query = "SELECT COUNT(mahasiswa_metopen.nim) AS jum_lulus, seminar_proposal.status AS stt
+				  FROM mahasiswa_metopen JOIN seminar_proposal ON mahasiswa_metopen.nim = seminar_proposal.nim 
+				  WHERE seminar_proposal.status = 'lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender' GROUP BY seminar_proposal.status";
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
 	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
-	public function gender_metopen_pr($status){
-		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_gen1,  seminar_proposal.status 
-				  FROM mahasiswa_metopen JOIN seminar_proposal 
-				  ON mahasiswa_metopen.nim = seminar_proposal.nim 
-				  WHERE mahasiswa_metopen.jenis_kelamin = 'Laki-laki' 
-				  AND seminar_proposal.status = '$status'";
-		$this->eksekusi($query); //mengeksekusi query diatas
-		return $this->result; //untuk hasil query diatas
-	}
-	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
-	public function gender_metopen_lk($status){
-		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_gen2,  seminar_proposal.status 
-				  FROM mahasiswa_metopen JOIN seminar_proposal 
-				  ON mahasiswa_metopen.nim = seminar_proposal.nim 
-				  WHERE mahasiswa_metopen.jenis_kelamin = 'Perempuan' 
-				  AND seminar_proposal.status = '$status'";
+	public function Semprop_gender_tl($gender){
+		$query = "SELECT COUNT(mahasiswa_metopen.nim) AS jum_tlulus, seminar_proposal.status AS stt
+				  FROM mahasiswa_metopen JOIN seminar_proposal ON mahasiswa_metopen.nim = seminar_proposal.nim 
+				  WHERE seminar_proposal.status = 'tidak_lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender' GROUP BY seminar_proposal.status";
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
 	
 	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
-	public function gender_undaran_lk($status){
-		$query = "SELECT COUNT(ujian_pendadaran.nim) AS jumlah_gen4, ujian_pendadaran.status  
-				  FROM mahasiswa_metopen JOIN ujian_pendadaran 
-				  ON mahasiswa_metopen.nim = ujian_pendadaran.nim 
-				  WHERE mahasiswa_metopen.jenis_kelamin = 'Laki-laki' 
-				  AND ujian_pendadaran.status = '$status'";
+	public function undaran_gender($gender){
+		$query = "SELECT COUNT(mahasiswa_metopen.nim) AS jum_lulus, ujian_pendadaran.status AS stt
+				  FROM mahasiswa_metopen JOIN ujian_pendadaran ON mahasiswa_metopen.nim = ujian_pendadaran.nim 
+				  WHERE ujian_pendadaran.status = 'lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender'";
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
 	//Dibuat oleh : Heronitah Yanzyah (1700018129) 
-	public function gender_undaran_pr($status){
-		$query = "SELECT COUNT(ujian_pendadaran.nim) AS jumlah_gen3, ujian_pendadaran.status  
-				  FROM mahasiswa_metopen JOIN ujian_pendadaran 
-				  ON mahasiswa_metopen.nim = ujian_pendadaran.nim 
-				  WHERE mahasiswa_metopen.jenis_kelamin = 'Perempuan' 
-				  AND ujian_pendadaran.status = '$status'";
+	public function undaran_gender_tl($gender){
+		$query = "SELECT COUNT(mahasiswa_metopen.nim) AS jum_tlulus, ujian_pendadaran.status AS stt
+				  FROM mahasiswa_metopen JOIN ujian_pendadaran ON mahasiswa_metopen.nim = ujian_pendadaran.nim 
+				  WHERE ujian_pendadaran.status = 'tidak_lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender'";
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
+	
 
 	//Dibuat oleh : Ervin Fikot M (1700018127)
 	public function jumlah_ampu_bimbingan($bidang){
@@ -313,10 +300,11 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
-	public function lulus_semprop_prodi($id,$stt){
+	public function lulus_semprop_prodi($stt){
 		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_mhs, prodi.nama_prodi 
 				  FROM seminar_proposal JOIN prodi ON prodi.id_prodi = SUBSTRING(seminar_proposal.nim, 6, 2) 
-				  WHERE prodi.id_prodi = '$id' AND seminar_proposal.status = '$stt'";
+				  WHERE seminar_proposal.status = '$stt'
+				  GROUP BY prodi.nama_prodi ORDER BY jumlah_mhs ASC";
 		$this->eksekusi($query);
 		return $this->result;
 	}

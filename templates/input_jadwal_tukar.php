@@ -15,7 +15,7 @@
         $email_dosen=$_SESSION['email'];
         $ahli_dosen=$_SESSION['bidang_keahlian'];
         $jenis_Uji="none";
-        session_destroy();
+        // session_destroy();
 ?>
 <form method="POST" action="../control/hasil_semprop.php">
     <input class="form-control" id="nim" type="hidden" name="nim" value="<?=$nim;?>">

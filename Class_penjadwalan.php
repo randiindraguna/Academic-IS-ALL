@@ -265,19 +265,26 @@ class Penjadwalan extends Database{
 
     
 
-	public function cekNimdataYangSama($nim){
+	public function cekNimdataYangSama($nim,$jenis_ujian){
 		   //1700018174-M Andika Riski-Andikariski
 		   //Fungsi untuk mengecek nim dari database dengan nim yang akan di inputkan user
-       		$query="SELECT nim from penjadwalan WHERE nim = $nim";
+       		$query="SELECT nim from penjadwalan WHERE nim = '$nim' AND penjadwalan.jenis_ujian = '$jenis_ujian'";
 			$sql = $this->eksekusi($query);
-			$ketemu = true;
-			if ($row = $sql->fetch_assoc()){
-				if(sizeof($row) > 0){
-					return true;
-				}
-			} 
-			else {
-				return 0;
+			// $ketemu = true;
+			// if ($row = $sql->fetch_assoc()){
+			// 	if(sizeof($row) > 0){
+			// 		return false;
+			// 	}
+			// } 
+			// else {
+			// 	return true;
+			// }
+
+			$jrow = $this->hitung_row($sql);
+			if($jrow > 0){
+				return false;
+			}else{
+				return true;
 			}
 	   }
 
@@ -479,7 +486,7 @@ class Penjadwalan extends Database{
 	//1700018167-Adhymas Fajar Sudrajat-dmonh3h3
 	public function getDataJadwalDosenByNiyTerdekat($niy)
 	{
-		$query = "SELECT penjadwalan.id_jadwal, penjadwalan.nim, mahasiswa_metopen.nama,penjadwalan.tanggal, penjadwalan.jam, penjadwalan.tempat, (SELECT dosen.nama from dosen where penguji.niy = dosen.niy ) as penguji
+		$query = "SELECT penjadwalan.id_jadwal, penjadwalan.nim,penjadwalan.jenis_ujian, mahasiswa_metopen.nama,penjadwalan.tanggal, penjadwalan.jam, penjadwalan.tempat, (SELECT dosen.nama from dosen where penguji.niy = dosen.niy ) as penguji
 			FROM mahasiswa_metopen 
             join penjadwalan on mahasiswa_metopen.nim = penjadwalan.nim
 			join penguji on penjadwalan.id_jadwal = penguji.id_jadwal
@@ -493,8 +500,6 @@ class Penjadwalan extends Database{
 	//1700018141-siti apryanti k-sitiapryantii
 	public function getDataJadwalDosenByNiySemua($niy)
 	{
-		
-	//1700018141-siti apryanti k-sitiapryantii
 		$query = "SELECT penjadwalan.id_jadwal, penjadwalan.nim,penjadwalan.jenis_ujian ,mahasiswa_metopen.nama,penjadwalan.tanggal, penjadwalan.jam, penjadwalan.tempat, (SELECT dosen.nama from dosen where penguji.niy = dosen.niy ) as penguji
 			FROM mahasiswa_metopen 
             join penjadwalan on mahasiswa_metopen.nim = penjadwalan.nim
@@ -569,8 +574,22 @@ class Penjadwalan extends Database{
 		}else {
 			return $day.' hari ';
 		}
+	}
 
+	// 1700018133-Sandy Valentino G-iamsand
+	public function cekPerbedaanTanggal($tgl){
+		$query = "SELECT CURDATE() as tgl_s";
+		$hasil = $this->eksekusi($query);
 
+		foreach ($hasil as $pb ) {
+			$tgl_sekarang = $pb['tgl_s'];
+		}
+
+		if($tgl <= $tgl_sekarang){
+			return '1';
+		}else{
+			return '0';
+		}
 	}
 }
 

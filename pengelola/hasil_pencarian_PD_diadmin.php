@@ -1,3 +1,4 @@
+
 <?php include '../templates/header_Penjadwalan.php' ?>
 <?php
 
@@ -32,10 +33,6 @@ if($_SESSION['status'] == "login"){
     <link rel="stylesheet" href="../css/switches_Penjadwalan.css">
 
     <style type="text/css" href="../css/tombol_penjadwalan.css"></style>
-
-     <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.all.min.js"></script>
-    <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../mahasiswa/sweetalert2/dist/sweetalert2.min.css">
 </head>
 <body>
     <?php
@@ -52,61 +49,10 @@ if($_SESSION['status'] == "login"){
 
         
                   ";
-
-                  $hasil = $akses->CariDataMahasiswaBerdasarkanNimpd($nim);
-
-                  $kosong = mysqli_num_rows($hasil);
-                  $ada = mysqli_num_rows($akses->ujianpendadaran($nim));
-
-
-
-
-
-                  if(!$kosong)
-                  {
-                    echo "
-                      <script type='text/javascript'>
-                    Swal.fire({
-                      position: 'middle',
-                      type: 'error',
-                      title: 'Nim Tidak Terdaftar !!!',
-                      showConfirmButton: true,
-                      confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'Kembali'
-
-                    }).then((result) => {
-                      if(result.value){
-                        location.href='cari_mahasiswai_pendadaran.php'
-                      }
-                      })
-                    </script>
-                    ";
-                    
-                  }
-                  if ($ada){
-                      echo "
-                      <script type='text/javascript'>
-                    Swal.fire({
-                      position: 'middle',
-                      type: 'error',
-                      title: 'Nilai Sudah Diinputkan !!!',
-                      showConfirmButton: true,
-                      confirmButtonColor: '#3085d6',
-                      confirmButtonText: 'Kembali'
-
-                    }).then((result) => {
-                      if(result.value){
-                        location.href='cari_mahasiswai_pendadaran.php'
-                      }
-                      })
-                    </script>
-                    ";
-                    }
-                    else {
-
               
-
-      foreach ($akses->CariDataMahasiswaBerdasarkanNimpd($nim) as $key) {
+$datanya=$akses->CariDataMahasiswaBerdasarkanNimpd($nim);
+if($datanya->num_rows>0){
+      foreach ($datanya as $key) {
           # code...
         
         
@@ -159,7 +105,7 @@ if($_SESSION['status'] == "login"){
           <label for='formGroupExampleInput'>NILAI PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_pembimbing' class='form-control' aria-label='Text input with checkbox' required='nilai_pembimbing' pattern='[0-9]+' placeholder='Masukkan Angka'>
        
 
-        <br>   <input type='submit' name='simpan1' value='Simpan' class='btn btn-outline-success my-2 my-sm-0'>    
+        <br>   <input type='submit' name='simpan1' value='simpan' class='btn btn-outline-success my-2 my-sm-0'>    
          </div>
 
         </form>
@@ -173,8 +119,10 @@ if($_SESSION['status'] == "login"){
 
 
       }
+    }else{
+      echo "<h4><center>NIM tidak ditemukan!</center></h4>";
     }
-  }
+    }
       ?>
       </body>
       </html>

@@ -34,8 +34,14 @@ if($_SESSION['status'] == "login"){
     <link rel="stylesheet" href="../css/switches_Penjadwalan.css">
 
     <style type="text/css" href="../css/tombol_penjadwalan.css"></style>
+
+
+     <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../mahasiswa/sweetalert2/dist/sweetalert2.min.css">
 </head>
 <body>
+
     <?php
   
   if(isset($_POST['submit'])){
@@ -50,8 +56,7 @@ if($_SESSION['status'] == "login"){
 
         
                   ";
-
-$hasil = $akses->CariDataMahasiswaBerdasarkanNim($nim);
+                  $hasil = $akses->CariDataMahasiswaBerdasarkanNim($nim);
 
                   $kosong = mysqli_num_rows($hasil);
                   $ada = mysqli_num_rows($akses->seminarproposal($nim));
@@ -76,8 +81,28 @@ $hasil = $akses->CariDataMahasiswaBerdasarkanNim($nim);
                     ";
                     
                   }
+                  if ($ada){
+                      echo "
+                      <script type='text/javascript'>
+                    Swal.fire({
+                      position: 'middle',
+                      type: 'error',
+                      title: 'Nilai Sudah Diinputkan !!!',
+                      showConfirmButton: true,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'Kembali'
 
-                  
+                    }).then((result) => {
+                      if(result.value){
+                        location.href='pencarian_mahasiswa_diadmin.php'
+                      }
+                      })
+                    </script>
+                    ";
+                    }
+                    else {
+
+                    
       foreach ($akses->CariDataMahasiswaBerdasarkanNim($nim) as $key) {
           # code...
         
@@ -109,12 +134,12 @@ $hasil = $akses->CariDataMahasiswaBerdasarkanNim($nim);
                         }
 
                         echo "
-        <label for='formGroupExampleInput'>NILAI PROSES PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_proses_pembimbing' class='form-control' aria-label='Text input with checkbox' required='nilai_proses_pembimbing' pattern='[0-9]+' placeholder='Masukkan Nilai Angka'> 
-         <label for='formGroupExampleInput'>NILAI UJIAN PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_ujian_pembimbing' class='form-control' aria-label='Text input with checkbox'  required='nilai_ujian_pembimbing' pattern='[0-9]+' placeholder='Masukkan Nilai Angka'>
-          <label for='formGroupExampleInput'>NILAI UJIAN PENGUJI </label><input type='number' min='0' max='100' name='nilai_ujian_penguji' class='form-control' aria-label='Text input with checkbox' required='nilai_ujian_penguji' pattern='[0-9]+' placeholder='Masukkan Nilai Angka'>
+        <label for='formGroupExampleInput'>NILAI PROSES BIMBINGAN </label><input type='number' min='0' max='100' name='nilai_proses_pembimbing' class='form-control' aria-label='Text input with checkbox' required='nilai_proses_pembimbing' pattern='[0-9]+' placeholder='Masukan Nilai Angka'> 
+         <label for='formGroupExampleInput'>NILAI UJIAN PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_ujian_pembimbing' class='form-control' aria-label='Text input with checkbox'  required='nilai_ujian_pembimbing' pattern='[0-9]+' placeholder='Masukan Nilai Angka'>
+          <label for='formGroupExampleInput'>NILAI UJIAN PENGUJI </label><input type='number' min='0' max='100' name='nilai_ujian_penguji' class='form-control' aria-label='Text input with checkbox' required='nilai_ujian_penguji' pattern='[0-9]+' placeholder='Masukan Nilai Angka'>
        
         
-        <br>   <input type='submit' name='simpan' value='simpan' class='btn btn-outline-success my-2 my-sm-0'>    
+        <br>   <input type='submit' name='simpan' value='Simpan' class='btn btn-outline-success my-2 my-sm-0'>    
         
 
         </form>
@@ -127,6 +152,7 @@ $hasil = $akses->CariDataMahasiswaBerdasarkanNim($nim);
 
       }
     }
+  }
       ?>
 
 

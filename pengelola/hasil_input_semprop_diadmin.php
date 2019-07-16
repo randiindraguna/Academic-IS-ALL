@@ -2,12 +2,12 @@
 
 <?php
 
-	//membutuhkan file fungsi_semprop
-	require('../fungsi_semprop.php');
+  //membutuhkan file fungsi_semprop
+  require('../fungsi_semprop.php');
 
-	//instansiasi objek class Seminar_Proposal
-	$akses = new Seminar_Proposal();
-	$akses->koneksi();
+  //instansiasi objek class Seminar_Proposal
+  $akses = new Seminar_Proposal();
+  $akses->koneksi();
 
    session_start();
 if($_SESSION['status'] == "login"){
@@ -35,6 +35,10 @@ if($_SESSION['status'] == "login"){
     <link rel="stylesheet" href="../css/switches_Penjadwalan.css">
 
     <style type="text/css" href="../css/tombol_penjadwalan.css"></style>
+
+      <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script type="text/javascript" src="../mahasiswa/sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../mahasiswa/sweetalert2/dist/sweetalert2.min.css">
 </head>
 
 <?php
@@ -90,10 +94,21 @@ $akses->updatestatusmetopen($stnew,$id);
 <html>
 <head>
   <title>javascript-- pesan</title>
-  <script type='text/javascript'>
-        alert('Data Berhasil Disimpan')
- 
-        </script>";
+   <script type='text/javascript'>
+                    Swal.fire({
+                      position: 'middle',
+                      type: 'success',
+                      title: 'Berhasil Disimpan',
+                      showConfirmButton: true,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'OKE'
+
+                    }).then((result) => {
+                      if(result.value){
+                        location.href='data_semprop_diadmin.php'
+                      }
+                      })
+                    </script>";
 </head> 
 <body onload="pesan()">
   
@@ -101,4 +116,4 @@ $akses->updatestatusmetopen($stnew,$id);
 </body>
 </html>
 
-<?php include '../templates/footer_Penjadwalan.php' ?>
+<?php include '../templates/footer_Penjadwalan.php' ?>  

@@ -300,7 +300,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
                     }
                   }
                 }
-                else if($key['status_mahasiswa'] == "skripsi" && $key['lamabimbingan'] > 8)
+                else if($key['status_mahasiswa'] == "skripsi" && $car->confert_hari($key['lamabimbingan']) > 8)
                 {
                   echo 
                       "

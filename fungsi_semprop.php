@@ -77,6 +77,17 @@
 			return $this->hasil;
 		}
 
+
+
+
+
+
+
+
+
+
+//FUNGSI ADITYA ANGGA RAMADHAN
+
 		
 		public function CariDataMahasiswaBerdasarkanNim($nim){ //sudah
 			//Dikerjakan oleh Aditya Angga Ramadhan (1700018131)
@@ -86,9 +97,7 @@
 				// fungsi ini bernama CariMahasiswaBerdasarkanNim , digunakan untuk searching atau pencarian data mahasiswa pada level admin yang akan menginputkan nilai seminar proposal, yang meliputi data : nim, nama mahasiswa, nama dosen pembimbing, id dosen penguji.
 				// fungsi ini menjoinkan 4 tabel yaitu tabel mahasiswa_metopen, dosen, penjadwalan dan penguji dengan primary key tabel mahasiswa metopen yaitu nim, tabel dosen yaitu niy, tabel penjadwalan yaitu id_jadwal,tabel penguji yaitu id_penguji
 
-				// tabel mahasiswa_metopen yang terfapat FK dosen join dengan tabel dosen pada PK niy, kemudian mahasiswa_metopen pada PK nim join dengan penjadwalan pada FK nim , kemudian tabel penjadwalan pada PK id jadwal join dengan tabel penguji pada FK id_jadwal, dan $nim sebagai parameter untuk mengirim mahasiswa_metopen.nim pada variabel $nim di function  CariDataMahasiswaBerdasarkanNim($nim) 
-
-			
+				// tabel mahasiswa_metopen yang terfapat FK dosen join dengan tabel dosen pada PK niy, kemudian mahasiswa_metopen pada PK nim join dengan penjadwalan pada FK nim , kemudian tabel penjadwalan pada PK id jadwal join dengan tabel penguji pada FK id_jadwal, dan $nim sebagai parameter untuk mengirim mahasiswa_metopen.nim pada variabel $nim di function  CariDataMahasiswaBerdasarkanNim($nim) 		
 			
 			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, dosen.nama as nama_dsn, penguji.id_penguji as id_penguji, penjadwalan.id_jadwal FROM mahasiswa_metopen JOIN dosen ON mahasiswa_metopen.dosen=dosen.niy join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal and mahasiswa_metopen.nim=$nim LIMIT 1";
 
@@ -100,84 +109,17 @@
 
 
 		public function lihatsempropmahasiswa($nim){  // sudah
-			
-			
-			
+			//dikerjakan aditya angga ramadhan
 			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, dosen.nama as nama_dsn, penguji.id_penguji as id_penguji, seminar_proposal.nilai_proses_pembimbing, seminar_proposal.nilai_ujian_pembimbing, seminar_proposal.nilai_ujian_penguji, seminar_proposal.status,penjadwalan.id_jadwal FROM mahasiswa_metopen JOIN dosen ON mahasiswa_metopen.dosen=dosen.niy join penjadwalan on 					mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal join seminar_proposal on mahasiswa_metopen.nim=seminar_proposal.nim where seminar_proposal.nim=$nim LIMIT 1";
 
 			$this->eksekusi($query);
 			return $this->hasil;
-			
-			
+				
 		}
 
-		public function seminarproposal($nim){
-			$query = "SELECT * from seminar_proposal where nim=$nim";
-			$this->eksekusi($query);
-			return $this->hasil;
-		}
 
-		public function login($username){
-			$query = "SELECT * from login where user_name=$username";
-			$this->eksekusi($query);
-			return $this->hasil;
-		}
 
-		public function getDosenPenguji($id_jadwal)
-		{
-			$query = "SELECT dosen.nama as nama_dosen, dosen.niy from dosen join penguji on dosen.niy = penguji.niy where penguji.id_jadwal = '$id_jadwal'";
-			$this->eksekusi($query);
-			return $this->hasil;
-			
-		}
-		public function lihatsempropmahasiswa1($nim){  // sudah
-			
-			
-			
-			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, penguji.id_penguji as id_penguji,penjadwalan.tanggal, seminar_proposal.nilai_proses_pembimbing, seminar_proposal.nilai_ujian_pembimbing, seminar_proposal.nilai_ujian_penguji, seminar_proposal.status, penjadwalan.id_jadwal FROM mahasiswa_metopen join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal join seminar_proposal on mahasiswa_metopen.nim=seminar_proposal.nim where mahasiswa_metopen.nim='$nim' limit 1";
-
-			$this->eksekusi($query);
-			return $this->hasil;
-			
-			
-		}
-
-		public function LihatTanggalUjianSemprop(){ //sudah
-			//Dikerjakan oleh Satria Gradienta (1700018125)
-				//Jawaban nomer 2 . Penjelasan Function
-
-				//Fungsi untuk melihat Tanggal Ujian Seminar Proposal
-				//Fungsi ini akan menampilkan Nim, Nama mahasiswa, Nama dosen, Penguji, Dan Tanggal
-				//Dari tabel mahasiswa metopen dijoinkan pada tabel dosen disatukan premery key di dosen, kemudian dijoinkan dengan tabel penjadwalan disatukan premery key di nim, kemudian dijoinkan dengan Penguji di satukan premery key di id_penjadwalan
-				//Untuk mengeksekusi query dengan menggunakan $this->eksekusi($query);
-				//Untuk pengembalian fungsi query dengan menggunakan return $this->hasil;
-
-				$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama AS nama_mhs, dosen.nama AS nama_dsn, penguji.id_penguji AS penguji, penjadwalan.tanggal FROM mahasiswa_metopen JOIN dosen ON mahasiswa_metopen.dosen=dosen.niy JOIN penjadwalan ON mahasiswa_metopen.nim=penjadwalan.nim JOIN penguji ON penjadwalan.id_jadwal=penguji.id_jadwal";
-			
-			$this->eksekusi($query);
-			return $this->hasil;
-			
-			
-		}
-
-		public function LihatDataHasilInputanNilaiDanStatusSemprop($nim){ //sudah
-			//Dikerjakan oleh Iftitah Dwi Ulumiyah (1700018124)
-			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as nama_mhs, seminar_proposal.nilai_proses_pembimbing, seminar_proposal.status, seminar_proposal.nilai_ujian_pembimbing, seminar_proposal.nilai_ujian_penguji FROM mahasiswa_metopen JOIN seminar_proposal ON mahasiswa_metopen.nim=seminar_proposal.nim and mahasiswa_metopen.nim=$nim";
-			$this->eksekusi($query);
-			return $this->hasil;
-			//pada query ini menampilkan data hasil inputan nilai dan status semprop.Pertama kita melakukan join tabel mahasiswa_metopen  dan seminar_proposal
-			//pada kondi si nim pada tabel mahasiswa_metopen dan nim pada tabel  seminar_proposal sama  untuk mendapatkan nilai_proses_pembimbing,status,nilai_ujian_pembimbing,nilai_ujian_penguji  
-			
-		}
-
-		public function DeleteDataSemprop($nim){ //sudah
-			//Dikerjakan oleh Rafida Kumalasari
-			$query="DELETE FROM seminar_proposal WHERE nim=$nim";
-			// query ini diperuntukkan untuk menghapus data dari tabel seminar proposal berdasarkan nim mana yang mau dihapus 
-			$this->eksekusi($query); //untuk mengeksekusi query diatas
-			return $this->hasil; //menampilkan hasil query
-
-		}
+//FUNGSI M. ADI RIZKY
 
 		public function InputNilaiDanStatusSemprop($id_seminar,$nilai_proses_pembimbing,$status,$nim,$nilai_ujian_pembimbing,$nilai_ujian_penguji){ //sudah
 			//Dikerjakan oleh Muhammad Adi Rezky (1700018142)   
@@ -196,8 +138,15 @@
 			
 		}
 
-		
+		public function seminarproposal($nim){
+			//dikerjakan oleh m. adi rezky
+			$query = "SELECT * from seminar_proposal where nim=$nim";
+			$this->eksekusi($query);
+			return $this->hasil;
+		}
 
+
+//FUNGSI Rizal Adijisman
 
 		public function UpdateNilaiDanStatusSemprop1($nilai_proses_pembimbing,$status,$nim,$nilai_ujian_pembimbing,$nilai_ujian_penguji){ 
 			//Dikerjakan oleh Rizal Adijisman (1700018135)
@@ -220,6 +169,38 @@
 			return $this->hasil; //menampilkan hasil query
 		}
 
+
+//FUNGSI Satria Gradienta
+
+		public function LihatTanggalUjianSemprop(){ //sudah
+			//Dikerjakan oleh Satria Gradienta (1700018125)
+				//Jawaban nomer 2 . Penjelasan Function
+
+				//Fungsi untuk melihat Tanggal Ujian Seminar Proposal
+				//Fungsi ini akan menampilkan Nim, Nama mahasiswa, Nama dosen, Penguji, Dan Tanggal
+				//Dari tabel mahasiswa metopen dijoinkan pada tabel dosen disatukan premery key di dosen, kemudian dijoinkan dengan tabel penjadwalan disatukan premery key di nim, kemudian dijoinkan dengan Penguji di satukan premery key di id_penjadwalan
+				//Untuk mengeksekusi query dengan menggunakan $this->eksekusi($query);
+				//Untuk pengembalian fungsi query dengan menggunakan return $this->hasil;
+
+				$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama AS nama_mhs, dosen.nama AS nama_dsn, penguji.id_penguji AS penguji, penjadwalan.tanggal FROM mahasiswa_metopen JOIN dosen ON mahasiswa_metopen.dosen=dosen.niy JOIN penjadwalan ON mahasiswa_metopen.nim=penjadwalan.nim JOIN penguji ON penjadwalan.id_jadwal=penguji.id_jadwal";
+			
+			$this->eksekusi($query);
+			return $this->hasil;
+						
+		}
+
+
+		public function login($username){
+			//dikerjakan oleh satria gradienta
+			$query = "SELECT * from login where user_name=$username";
+			$this->eksekusi($query);
+			return $this->hasil;
+		}
+
+
+//FUNGSI Siti Issari Sabhati
+
+
 		public function LihatPengumumanNilaiDanStatusSemuaMahasiswa(){ //sudah
 			//Dikerjakan oleh Siti Ishari Sabhati (1700018137)
 			//UTS NO.2
@@ -236,6 +217,64 @@
 			
 		}
 
+		public function getDosenPenguji($id_jadwal)
+		//dikerjakan siti ishari
+		{
+			$query = "SELECT dosen.nama as nama_dosen, dosen.niy from dosen join penguji on dosen.niy = penguji.niy where penguji.id_jadwal = '$id_jadwal'";
+			$this->eksekusi($query);
+			return $this->hasil;
+			
+		}
+
+
+//FUNGSI Rafida Kumalasari
+
+
+		public function DeleteDataSemprop($nim){ //sudah
+			//Dikerjakan oleh Rafida Kumalasari
+			$query="DELETE FROM seminar_proposal WHERE nim=$nim";
+			// query ini diperuntukkan untuk menghapus data dari tabel seminar proposal berdasarkan nim mana yang mau dihapus 
+			$this->eksekusi($query); //untuk mengeksekusi query diatas
+			return $this->hasil; //menampilkan hasil query
+
+		}
+
+		public function lihatsempropmahasiswa1($nim){  // sudah
+			//dikerjakan rafida kumalasari
+			
+			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, penguji.id_penguji as id_penguji,penjadwalan.tanggal, seminar_proposal.nilai_proses_pembimbing, seminar_proposal.nilai_ujian_pembimbing, seminar_proposal.nilai_ujian_penguji, seminar_proposal.status, penjadwalan.id_jadwal FROM mahasiswa_metopen join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal join seminar_proposal on mahasiswa_metopen.nim=seminar_proposal.nim where mahasiswa_metopen.nim='$nim' limit 1";
+
+			$this->eksekusi($query);
+			return $this->hasil;
+			
+			
+		}
+
+
+//FUNGSI Iftitah Dwi Ulumiyah
+
+		public function LihatDataHasilInputanNilaiDanStatusSemprop($nim){ //sudah
+			//Dikerjakan oleh Iftitah Dwi Ulumiyah (1700018124)
+			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as nama_mhs, seminar_proposal.nilai_proses_pembimbing, seminar_proposal.status, seminar_proposal.nilai_ujian_pembimbing, seminar_proposal.nilai_ujian_penguji FROM mahasiswa_metopen JOIN seminar_proposal ON mahasiswa_metopen.nim=seminar_proposal.nim and mahasiswa_metopen.nim=$nim";
+			$this->eksekusi($query);
+			return $this->hasil;
+			//pada query ini menampilkan data hasil inputan nilai dan status semprop.Pertama kita melakukan join tabel mahasiswa_metopen  dan seminar_proposal
+			//pada kondi si nim pada tabel mahasiswa_metopen dan nim pada tabel  seminar_proposal sama  untuk mendapatkan nilai_proses_pembimbing,status,nilai_ujian_pembimbing,nilai_ujian_penguji  
+			
+		}
+
+		public function cetak($nim){
+			//dikerjakan iftitah dwi ulumiyah
+			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, dosen.nama as nama_dsn, seminar_proposal.nilai_proses_pembimbing, seminar_proposal.nilai_ujian_pembimbing, seminar_proposal.nilai_ujian_penguji from mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join seminar_proposal on mahasiswa_metopen.nim=seminar_proposal.nim where mahasiswa_metopen.nim=$nim";
+			
+			$this->eksekusi($query);
+			return $this->hasil;
+
+		}
+
+//FUNGSI Lalu Hendri
+
+
 		public function CariMahasiswaBerdasarkanNimPadaPengumumanHasilSemprop($nim){ //sudah
 			//Dikerjakan oleh Lalu Hendri Bagus Wira S (1700018146)
 			//fungsi ini bernama CariMahasiswaBerdasarkanNimPadaPengumumanHasilSemprop
@@ -247,9 +286,19 @@
 			$this->eksekusi($query); //untuk mengeksekusi query diatas
 			return $this->hasil; //menampilkan hasil query
 			
-			
-			
 		}
+
+		public function updatestatusmetopen($status,$nim){
+			//Dikerjakan oleh Lalu Hendri
+			$query = "UPDATE mahasiswa_metopen SET status='$status' WHERE mahasiswa_metopen.nim=$nim  ";
+			
+			$this->eksekusi($query);
+			return $this->hasil;
+
+		}
+
+
+//FUNGSI Firman Cahyono
 
 		public function UrutkanPengumumanSempropBerdasarkanNilai(){ 
 			//Dikerjakan oleh Firman Cahyono
@@ -260,6 +309,9 @@
 			return $this->hasil;
 				
 		}
+
+
+//FUNGSI Febri Ramadhan
 
 		public function HitungJumlahMahasiswaLulusSemprop(){
 			//Dikerjakan oleh Febri Ramadhan
@@ -272,9 +324,10 @@
 			
 			$this->eksekusi($query);
 			return $this->hasil;
-
 			
 		}
+
+//FUNGSI M. Ibrahim
 
 		public function HitungJumlahMahasiswaTidakLulusSemprop(){
 			//Dikerjakan oleh Mohammad Ibrahim
@@ -290,25 +343,10 @@
 			return $this->hasil;
 
 		}
-		public function cetak($nim){
 
-
-			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, dosen.nama as nama_dsn, seminar_proposal.nilai_proses_pembimbing, seminar_proposal.nilai_ujian_pembimbing, seminar_proposal.nilai_ujian_penguji from mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join seminar_proposal on mahasiswa_metopen.nim=seminar_proposal.nim where mahasiswa_metopen.nim=$nim";
-			
-			$this->eksekusi($query);
-			return $this->hasil;
-
-		}
 		
 
-		public function updatestatusmetopen($status,$nim){
 
-			$query = "UPDATE mahasiswa_metopen SET status='$status' WHERE mahasiswa_metopen.nim=$nim  ";
-			
-			$this->eksekusi($query);
-			return $this->hasil;
-
-		}
 
 
 		

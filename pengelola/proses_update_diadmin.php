@@ -67,3 +67,50 @@ $rata_rata=round(($nilai_pb+$nilai_ub+$nilai_up)/3,2);
 
   if($rata_rata>51.25) $status='lulus';
   else($status='tidak_lulus')  ;
+  $stnew = 'skripsi';
+
+if($status=='lulus'){
+
+$akses->updatestatusmetopen($stnew,$id);
+
+}
+
+
+    
+
+      $akses->InputNilaiDanStatusSemprop($id,$nilai_pb,$status,$id,$nilai_ub,$nilai_up);
+
+     
+
+      }
+    
+      ?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>javascript-- pesan</title>
+   <script type='text/javascript'>
+                    Swal.fire({
+                      position: 'middle',
+                      type: 'success',
+                      title: 'Berhasil Disimpan',
+                      showConfirmButton: true,
+                      confirmButtonColor: '#3085d6',
+                      confirmButtonText: 'OKE'
+
+                    }).then((result) => {
+                      if(result.value){
+                        location.href='data_semprop_diadmin.php'
+                      }
+                      })
+                    </script>";
+</head> 
+<body onload="pesan()">
+  
+
+</body>
+</html>
+
+<?php include '../templates/footer_Penjadwalan.php' ?>

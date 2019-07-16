@@ -69,7 +69,7 @@ $nim=$_GET['nim'];
                         }
 
                         echo "
-    <label for='formGroupExampleInput'>Nilai Proses Pembimbing </label>
+    <label for='formGroupExampleInput'>Nilai Proses Bimbingan </label>
     <input name='nama' value='$key[nilai_proses_pembimbing]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
     <label for='formGroupExampleInput'>Nilai Ujian Pembimbing </label>
     <input name='nama' value='$key[nilai_ujian_pembimbing]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>

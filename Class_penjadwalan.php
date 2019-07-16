@@ -486,7 +486,7 @@ class Penjadwalan extends Database{
 	//1700018167-Adhymas Fajar Sudrajat-dmonh3h3
 	public function getDataJadwalDosenByNiyTerdekat($niy)
 	{
-		$query = "SELECT penjadwalan.id_jadwal, penjadwalan.nim, mahasiswa_metopen.nama,penjadwalan.tanggal, penjadwalan.jam, penjadwalan.tempat, (SELECT dosen.nama from dosen where penguji.niy = dosen.niy ) as penguji
+		$query = "SELECT penjadwalan.id_jadwal, penjadwalan.nim,penjadwalan.jenis_ujian, mahasiswa_metopen.nama,penjadwalan.tanggal, penjadwalan.jam, penjadwalan.tempat, (SELECT dosen.nama from dosen where penguji.niy = dosen.niy ) as penguji
 			FROM mahasiswa_metopen 
             join penjadwalan on mahasiswa_metopen.nim = penjadwalan.nim
 			join penguji on penjadwalan.id_jadwal = penguji.id_jadwal

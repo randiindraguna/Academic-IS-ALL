@@ -1,0 +1,72 @@
+body {
+	background-color: #f5f6fa;
+	position: relative;
+}
+
+.gaya{
+	position: relative;
+ 	padding: 0.75rem 1.25rem;
+	margin-bottom: 1rem;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+	font-variant: bold;
+}
+
+.gaya-avatar{
+	padding-right: 20px;
+	position: relative;
+ 	padding: 0.85rem 1.45rem;
+	margin-bottom: 0rem;
+	border: 1px solid transparent;
+	border-radius: 0.25rem;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";;
+	font-variant: bold;
+	color: white;
+	background-color: #273c75;
+	border-color: #273c75;
+
+
+}
+
+.gaya-v1{
+	color: white;
+	background-color: #273c75;
+	border-color: #273c75;
+}
+
+.gaya-v2{
+	color: white;
+	background-color: #7ed6df;
+	border-color: #7ed6df;
+}
+
+.gaya-v3{
+	color: white;
+	background-color: #686de0;
+	border-color: #686de0;
+}
+
+.gaya-v4{
+	color: white;
+	background-color: #f6e58d;
+	border-color: #f6e58d;
+}
+
+.gaya-v5{
+	color: white;
+	background-color: #ff7979;
+	border-color: #ff7979;
+}
+
+.gaya-v6{
+	color: white;
+	background-color: #badc58;
+	border-color: #badc58;
+}
+
+.gaya-v7{
+	color: white;
+	background-color: #e056fd;
+	border-color: #e056fd;
+}

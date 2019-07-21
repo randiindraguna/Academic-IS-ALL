@@ -3,6 +3,10 @@ require_once('../database.php');
   $akses = new Database();
   $akses->connect();
  
+
+  include "database_statistik.php";
+  $cal = new Analitik();
+  $cal->connect();
 // mengaktifkan session
 session_start();
  
@@ -27,10 +31,14 @@ include '../templates/header_penjadwalan.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <script type="text/javascript" src="css/js/jquery.js"></script>
+    <script type="text/javascript" src="css/js/bootstrap.js"></script>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
     
     <!-- /\ambil css penjadwalan -->
     <!-- Tambahan CSS -->
+    <link rel="stylesheet" type="text/css" href="css/style_dashboard.css">
     <link rel="stylesheet" href="../css/style_penjadwalan.css">
     <link rel="stylesheet" href="../css/switches_Penjadwalan.css">
 
@@ -41,7 +49,16 @@ include '../templates/header_penjadwalan.php';
   </head>
   <body style="background-color= #808080;">
    <?php include '../templates/navbar_admin.html'?>
-    <table border="0" width="100%" height="100%" align="center">
+        <center>
+          <ul style="width:30%;">
+            <div class="alert alert-warning">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    Selamat datang <?php echo $_SESSION['username']; ?>
+            </div>
+          </ul>
+        </center>
+
+    <!-- <table border="0" width="100%" height="100%" align="center">
       <tr><td colspan="3"><br><br><br><br><br><br></td></tr>
       <tr>
         <td width="25%"  rowspan="2"></td>
@@ -60,6 +77,112 @@ include '../templates/header_penjadwalan.php';
             </tr>
           </table>
         </td>
+        <td width="25%" rowspan="2"></td>
+      </tr>
+    </table> -->
+
+    <table border="0" width="100%" height="100%" align="center">
+      <tr><td colspan="3"><br><br>
+      <tr>
+        <td width="25%"  rowspan="2"></td>
+        <br>
+
+        <div class="container">
+            <div class="alert alert-success fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              Selamat Datang <?php echo $_SESSION['username']; ?> 
+            </div>
+          <table border="0" width="70%" align="center">
+            <tr>
+              <td rowspan="2" width="30%">
+                <ul class="gaya-avatar">
+                  <center><img src="img/AV1.png" width="100px"></center>
+                  <center>
+                    <?php 
+                        //Profil Akun login 
+                        $usr = $_SESSION['username'];
+                        foreach ($cal->get_Profil($usr) as $Profil) { ?>
+                          <br><br>
+                          <h2><?php echo $Profil['user_name'] ?></h2>
+                          <h5><?php echo $Profil['level'] ?></h5>
+                    <?php  }
+                    ?>
+                  </center>
+                </ul>
+              </td>
+              <td rowspan="2"></td>
+              <td>
+                  <ul class="gaya gaya-v2">
+                   <?php 
+                      foreach ($cal->getData_jumlah() as $juml) { ?>
+                          <h2><?php echo $juml['jumlah'];  ?></h2>
+                          <h5>Mahasiswa </h5>
+                    <?php }
+                   ?>
+                  </ul>
+              </td>
+              <td rowspan="2"></td>
+              <td>
+                  <ul class="gaya gaya-v3">
+                    <?php 
+                      foreach ($cal->getData_dosen() as $dsn){ ?>
+                        <h2><?php echo $dsn['jml_dosen'];  ?></h2>
+                        <h5>Dosen</h5>
+                    <?php  }
+                    ?>
+                  </ul>
+              </td>
+              <td rowspan="2"></td>
+              <td>
+                  <ul class="gaya gaya-v4">
+                   <?php 
+                      foreach ($cal->getData_semester() as $smt){ 
+                          $temp = substr($smt['periode'],0,9) ?>
+                          <h2><?php echo $temp;  ?></h2>
+                          <h5>Periode</h5>
+                    <?php }
+                   ?>
+                  </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <ul class="gaya gaya-v5">
+                   <?php 
+                      //jumlah mahasiswa terdaftar
+                        foreach ($cal->getData_metopen() as $mtpn){ ?>
+                          <h2><?php echo $mtpn['jml_metopen'] ; ?></h2>
+                        <h5>Metopen</h5>
+                    <?php  }
+                   ?>
+                  </ul>
+              </td>
+              <td>
+                  <ul class="gaya gaya-v6">
+                   <?php 
+                      foreach ($cal->getData_skripsi() as $skrp){ ?>
+                        <h2><?php echo $skrp['jml_skripsi'] ; ?></h2>
+                        <h5>Skripsi</h5>
+                    <?php  }
+                   ?>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                  <ul class="gaya gaya-v7">
+                    <?php 
+                      foreach ($cal->getData_semester() as $smt){ 
+                          $temp = substr($smt['periode'],10,6) ?>
+                          <h2><?php echo $temp;  ?></h2>
+                          <h5>Semester</h5>
+                    <?php }
+                   ?>
+                  </ul>
+              </td>
+            </tr>
+          </table>
+        </div>
+           <br><br><br><br><br>
         <td width="25%" rowspan="2"></td>
       </tr>
     </table>

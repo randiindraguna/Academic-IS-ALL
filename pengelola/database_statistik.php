@@ -23,6 +23,50 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->result=mysqli_query($this->conn,$query);  //mengembalikan hasil dari query yang dieksekusi
 	}
 
+	// ====================== Bagian Pengelola ====================================== //
+
+	public function get_Profil($usr){
+		$query = "SELECT * FROM `login` WHERE user_name = '$usr'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+
+	public function getData_jumlah(){
+		$query = "SELECT COUNT(nim) AS jumlah FROM mahasiswa_metopen";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+
+	public function getData_semester(){
+		$query = "SELECT * FROM semester WHERE status = 'terbuka'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+
+	public function getData_metopen(){
+		$query = "SELECT COUNT(nim) AS jml_metopen FROM mahasiswa_metopen WHERE status = 'metopen'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+
+	public function getData_skripsi(){
+		$query = "SELECT COUNT(nim) AS jml_skripsi FROM mahasiswa_metopen WHERE status = 'skripsi'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+
+	public function getLulus(){
+		$query = "SELECT COUNT(nim) AS jml_lulus FROM ujian_pendadaran WHERE status = 'lulus'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+
+	public function getData_dosen(){
+		$query = "SELECT COUNT(niy) AS jml_dosen FROM dosen";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+
 	//Di buat oleh Muhammad Nashir A (1700018117)
 	public function getruang1(){
 		$query="SELECT count(tempat)as jumlah1 from penjadwalan where tempat='1' and jenis_ujian='SEMPROP'";  //Query menampilkan jumlah pemakai ruangan di ruang 1, karena ini pakai jenis enum

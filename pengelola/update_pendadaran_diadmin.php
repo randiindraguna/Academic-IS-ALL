@@ -39,6 +39,16 @@ if($_SESSION['status'] == "login"){
 <?php
   
 $nim=$_GET['nim'];
+
+echo "
+ <br>
+ <table align='center' cellpadding='20' width='65%' border='0'  height='10%'>
+                                    <tr>
+                                        <td bgcolor='#B5B5B5' style='width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px lightblue'>
+                                   
+                                             <center><h3>Edit Nilai Pendadaran</h3></center>
+
+";
      
       foreach ($akses->UpdateNilaiDanStatusPendadaran2($nim) as $key) {
         
@@ -46,8 +56,7 @@ $nim=$_GET['nim'];
 
 
         echo"
-        <br>
-        <h2 align='center'>Data mahasiswa</h2>
+        
         <br>
         <table align='center'>
         <tr>

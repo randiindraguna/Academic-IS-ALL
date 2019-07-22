@@ -44,7 +44,14 @@ $nim=$_GET['nim'];
         
         
         echo"
-        <br>
+
+         <br>
+
+          <table align='center' cellpadding='10' width='60%' border='0'  height='10%''>
+                                    <tr>
+                                        <td bgcolor='#B5B5B5' style='width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px lightblue'>
+                                   
+        
         <h2 align='center'>Data Mahasiswa</h2>
         <br><br>
         <table align='center'>

@@ -75,7 +75,7 @@ if($_SESSION['status'] == "login"){
                     Swal.fire({
                       position: 'middle',
                       type: 'success',
-                      title: 'Berhasil Di Edit !!!',
+                      title: 'Berhasil Di Edit',
                       showConfirmButton: true,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Kembali'

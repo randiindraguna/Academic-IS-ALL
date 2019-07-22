@@ -36,14 +36,17 @@ if($_SESSION['status'] == "login"){
     <style type="text/css" href="../css/tombol_penjadwalan.css"></style>
 </head>
 <body>
-    <br>
-
-    <h2 align="center">DATA UJIAN PENDADARAN</h2>
-    <br>
+  <br>
+  
+                              <table align="center" cellpadding="10" width="95%" border="0"  height="10%">
+                                    <tr>
+                                        <td bgcolor="#B5B5B5" style="width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px lightblue">
+                                   
+                                             <center><h3>Data Pendadaran</h3></center>
    
 <table align="center">
 <form name="pencarian" method="POST" action = "hasil_cari_pengungumanPD_diadmin.php">            
-      
+      <br>
                     <tr> <td>
                     <input type="text" placeholder="Masukan NIM" name="nim" pattern="[0-9]+" title ="Masukan NIM" class="form-control" required>  
                     </td>
@@ -101,7 +104,7 @@ if($_SESSION['status'] == "login"){
       <br><br>
 
 
-         <table border='1' align='center' width='80%'' height='30%'>
+         <table align='center' width='80%'' height='30%'  class='table table-striped'>
     <tr align='center' bgcolor='#D3D3D3'>
       <th height='50'>Nim</th>
       <th height='50' >Nama</th>

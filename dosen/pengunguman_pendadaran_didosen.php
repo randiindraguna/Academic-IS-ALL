@@ -38,12 +38,20 @@ if($_SESSION['status'] == "login"){
 <body>
     <br>
 
+    <table align="center" cellpadding="10" width="80%" border="0"  height="10%">
+                                    <tr>
+                                        <td bgcolor="#B5B5B5" style="width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px lightblue">
+                                   
+
+
+
+
     <h2 align="center">Daftar Mahasiswa Bimbingan</h2>
 <br>
     
 <br><br>
 
-        <table border='1' align='center' width='80%'' height='30%'>
+        <table align='center' width='60%'' height='30%' class='table table-striped'>
     <tr align='center' bgcolor="#D3D3D3">
       <th height="50">Nim</th>
       <th height="50" >Nama</th>

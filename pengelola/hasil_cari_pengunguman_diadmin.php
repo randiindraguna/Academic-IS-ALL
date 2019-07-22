@@ -41,8 +41,11 @@ if($_SESSION['status'] == "login"){
     <link rel="stylesheet" type="text/css" href="../mahasiswa/sweetalert2/dist/sweetalert2.min.css">
 </head>
 
+<body>
+
 <?php
   
+
   
   if(isset($_POST['submit2'])){
 
@@ -58,7 +61,7 @@ if($_SESSION['status'] == "login"){
                     Swal.fire({
                       position: 'middle',
                       type: 'error',
-                      title: 'Data Tidak Ditemukan !!!',
+                      title: 'Data Tidak Ditemukan',
                       showConfirmButton: true,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Kembali'
@@ -78,9 +81,16 @@ if($_SESSION['status'] == "login"){
         
         
         echo"
-        <br>
-        <h2 align='center'>Data Mahasiswa</h2>
-        <br>
+
+
+          <br>
+           <table align='center' cellpadding='10' width='65%' border='0'  height='10%''>
+                                    <tr>
+                                        <td bgcolor='#B5B5B5' style='width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px lightblue'>
+                                   
+                                             <center><h3>Data Mahasiswa</h3></center>
+
+      
         <table align='center'>
         <tr>
         <td width='700px'>
@@ -114,6 +124,14 @@ if($_SESSION['status'] == "login"){
         </td>
         </tr>
         </table>
+
+
+        </td>
+                                    </tr>
+                            </table>
+
+    
+
         ";
         
 

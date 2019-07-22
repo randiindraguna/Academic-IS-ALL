@@ -100,7 +100,7 @@
 		}
 		public function jumlah_bimbingan_satu_mahasiswa_untuk_ubah_warna($nim)
 		{
-			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,logbook_bimbingan.jenis as jenis_bimbingan, COUNT(logbook_bimbingan.jenis) AS jumlah FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and mahasiswa_metopen.nim = $nim GROUP BY logbook_bimbingan.jenis HAVING COUNT(mahasiswa_metopen.nim)>=0";
+			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,logbook_bimbingan.jenis as jenis_bimbingan, COUNT(logbook_bimbingan.jenis) AS jumlah FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and mahasiswa_metopen.nim = $nim GROUP BY logbook_bimbingan.jenis HAVING COUNT(mahasiswa_metopen.nim)>=0"; // fungsi ini merupakan fingsi yang di gunakan untuk menghitung jumlah bimbingan metopen dan skmripsi
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
@@ -160,7 +160,7 @@
 		public function mengurutkan_jumlah_konsultasi($dosen) // tambah parameter jika di perlukan
 		{
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan, DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) as lamabimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ORDER BY COUNT(logbook_bimbingan.id_skripsi) desc";
-			// query untuk mengurutkan daftar nama mahasiswa berdasarkan abjad a - z dari fungsi yang sama yang di kerjakan rizki dengan sedikit modif tambahan pada kode sql " order by mahasiswa_metopen.nama " sebagai pengrut  
+			// query untuk mengurutkan daftar mahasiswa yang di bimbing oleh satu dosen dengan pengurutan berdasarkan jumlah keseluruhan konsultasi / bimbingan satu mahasiswa dengan format pengurutan bertipe " desc " yang berarti mengurutkan dari (terbesar -> terkecil)
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}

@@ -38,10 +38,20 @@ if($_SESSION['status'] == "login"){
     
     <br>
 
-    <h2 align="center">DATA SEMINAR PROPOSAL</h2>
-   
-<br>
-<table align="center">
+    
+
+
+
+      
+                              <table align="center" cellpadding="10" width="95%" border="0"  height="10%">
+                                    <tr>
+                                        <td bgcolor="#B5B5B5" style="width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px lightblue">
+                                   
+                                             <center><h3>Data Seminar Proposal</h3></center>
+
+
+<br>                                             
+<table align="center" >
 <form name="pencarian" method="POST" action = "hasil_cari_pengunguman_diadmin.php" ">            
       
                     <tr> <td>
@@ -103,14 +113,14 @@ if($_SESSION['status'] == "login"){
 
 
         
-             <table border='1' align='center' width='95%'' height='30%'>
+             <table align='center' width='70%'' height='30%' class='table table-striped'>
     <tr align='center' bgcolor='#D3D3D3'>
       <th height='50'>Nim</th>
       <th height='50' >Nama</th>
-      <th height='50'>Nilai Proses pembimbing</th>
-       <th height='50'>Nilai ujian pembimbing</th>
-        <th height='50'>Nilai ujian penguji</th>
-         <th height='50'>Rata-rata</th>
+      <th height='50'>Nilai Proses Bimbingan</th>
+       <th height='50'>Nilai Ujian Pembimbing</th>
+        <th height='50'>Nilai Ujian Penguji</th>
+         <th height='50'>Rata-Rata</th>
           <th height='50'>Grade</th>
 
       <th height='50'>Status</th>
@@ -166,6 +176,14 @@ if($_SESSION['status'] == "login"){
 
         
       ?>
+
+
+
+
+
+      </td>
+                                    </tr>
+                            </table>
 
     </table>
 

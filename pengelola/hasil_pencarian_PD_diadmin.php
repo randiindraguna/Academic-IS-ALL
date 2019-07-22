@@ -46,8 +46,12 @@ if($_SESSION['status'] == "login"){
 
       $nim = $_POST['nim'];
                   echo "
-                 
-
+                 <br>
+ <table align='center' cellpadding='20' width='65%' border='0'  height='10%'>
+                                    <tr>
+                                        <td bgcolor='#B5B5B5' style='width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px lightblue'>
+                                   
+                                             <center><h3>Form Input Nilai Pendadaran</h3></center>
                  
         <form action='hasil_input_PD_diadmin.php' method='POST'>
 
@@ -70,7 +74,7 @@ if($_SESSION['status'] == "login"){
                     Swal.fire({
                       position: 'middle',
                       type: 'error',
-                      title: 'Nim Tidak Terdaftar !!!',
+                      title: 'Nim Tidak Terdaftar',
                       showConfirmButton: true,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Kembali'
@@ -90,7 +94,7 @@ if($_SESSION['status'] == "login"){
                     Swal.fire({
                       position: 'middle',
                       type: 'error',
-                      title: 'Nilai Sudah Diinputkan !!!',
+                      title: 'Nilai Sudah Diinputkan',
                       showConfirmButton: true,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Kembali'
@@ -160,7 +164,7 @@ if($_SESSION['status'] == "login"){
           <label for='formGroupExampleInput'>NILAI PEMBIMBING </label><input type='number' min='0' max='100' name='nilai_pembimbing' class='form-control' aria-label='Text input with checkbox' required='nilai_pembimbing' pattern='[0-9]+' placeholder='Masukkan Angka'>
        
 
-        <br>   <input type='submit' name='simpan1' value='Simpan' class='btn btn-outline-success my-2 my-sm-0'>    
+        <br>   <input type='submit' name='simpan1' value='Simpan' class='btn btn-outline-primary my-2 my-sm-0'>    
          </div>
 
         </form>

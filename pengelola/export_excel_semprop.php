@@ -37,9 +37,9 @@
           <th>Nim</th>
           <th>Nama</th>
           <th>Tanggal ujian</th>
-          <th>Nilai Proses pembimbing</th>
-          <th>Nilai ujian pembimbing</th>
-          <th>Nilai ujian penguji</th>
+          <th>Nilai Proses Bimbingan</th>
+          <th>Nilai Ujian Pembimbing</th>
+          <th>Nilai Ujian Penguji</th>
            <th>Rata-Rata</th>
       <th>Grade</th>
           <th>Status</th>

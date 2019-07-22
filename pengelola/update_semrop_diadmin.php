@@ -36,6 +36,21 @@ if($_SESSION['status'] == "login"){
     <style type="text/css" href="../css/tombol_penjadwalan.css"></style>
 </head>
 <body>
+
+
+<br>
+<table align="center" cellpadding="20" width="75%" border="0"  height="10%">
+                                    <tr>
+                                        <td bgcolor="#B5B5B5" style="width: 1%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px lightblue">
+                                   
+                                             <center><h3>Edit Data Seminar Proposal</h3></center>
+
+
+
+
+
+
+
 <?php
   
 $nim=$_GET['nim'];
@@ -45,9 +60,7 @@ $nim=$_GET['nim'];
 
 
         echo"
-        <br>
-        <h2 align='center'>Data mahasiswa</h2>
-        <br>
+       
         <table align='center'>
         <tr>
         <td width='700px'>
@@ -68,7 +81,7 @@ $nim=$_GET['nim'];
 
                     
         echo "
-        <label for='formGroupExampleInput'>NILAI PROSES PEMBIMBING </label><input type='number' pattern='[0-9]+' title='Hanya inputan angka' name='nilai_proses_pembimbing' placeholder='Masukkan Nilai' class='form-control in-box' aria-label='Text input with checkbox' value='$key[nilai_proses_pembimbing]' min='0' max='100' required />
+        <label for='formGroupExampleInput'>NILAI PROSES BIMBINGAN </label><input type='number' pattern='[0-9]+' title='Hanya inputan angka' name='nilai_proses_pembimbing' placeholder='Masukkan Nilai' class='form-control in-box' aria-label='Text input with checkbox' value='$key[nilai_proses_pembimbing]' min='0' max='100' required />
          <label for='formGroupExampleInput'>NILAI UJIAN PEMBIMBING </label><input type='number' pattern='[0-9]+' title='Hanya inputan angka' name='nilai_ujian_pembimbing' placeholder='Masukkan Nilai' class='form-control in-box' aria-label='Text input with checkbox' value='$key[nilai_ujian_pembimbing]' min='0' max='100' required />
           <label for='formGroupExampleInput'>NILAI UJIAN PENGUJI </label><input type='number' pattern='[0-9]+' title='Hanya inputan angka' name='nilai_ujian_penguji' placeholder='Masukkan Nilai' class='form-control in-box' aria-label='Text input with checkbox' value='$key[nilai_ujian_penguji]' min='0' max='100' required />
                

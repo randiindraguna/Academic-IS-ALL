@@ -60,7 +60,7 @@ if($_SESSION['status'] == "login"){
           <table cellpadding="20"width="100%" border="0"  height="100%">
             <tr>
               <td bgcolor="#B5B5B5">
-                <center><h3>Hasil Mahasiswa</h3></center>
+                <center><h3>Data Mahasiswa</h3></center>
                 <table class="table table-striped">
                   <?php
                 $usr=$_SESSION['username'];
@@ -100,13 +100,13 @@ if($_SESSION['status'] == "login"){
 
                         echo "
                       <tr>
-                        <td>Nilai penguji 1</td><td colspan=2>:</td><td>".$data['nilai_penguji_1']."</td>
+                        <td>Nilai Penguji 1</td><td colspan=2>:</td><td>".$data['nilai_penguji_1']."</td>
                       </tr>
                       <tr>
-                        <td>Nilai penguji 2</td><td colspan=2>:</td><td>".$data['nilai_penguji_2']."</td>
+                        <td>Nilai Penguji 2</td><td colspan=2>:</td><td>".$data['nilai_penguji_2']."</td>
                       </tr>
                       <tr>
-                        <td>Nilai pembimbing</td><td colspan=2>:</td><td>".$data['nilai_pembimbing']."</td>
+                        <td>Nilai Pembimbing</td><td colspan=2>:</td><td>".$data['nilai_pembimbing']."</td>
                       </tr>
                       <tr>
                         <td>Status</td><td colspan=2>:</td><td>".$data['status']."</td>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 22 Jul 2019 pada 03.56
+-- Waktu pembuatan: 22 Jul 2019 pada 07.25
 -- Versi server: 10.1.35-MariaDB
 -- Versi PHP: 7.2.9
 
@@ -101,7 +101,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (8, 'perbaikan program pada fitur search', '1700018164', '2019-05-24', '05:53:22', 'metopen'),
 (9, 'penambahan fitur sorting ', '1700018164', '2019-05-24', '05:54:52', 'metopen'),
 (10, 'penambahan beberapa materi ', '1700018164', '2019-05-25', '08:02:51', 'metopen'),
-
 (11, 'pengarahan format laporan skripsi', '1700018164', '2019-05-25', '08:15:13', 'skripsi'),
 (12, 'konsultasi masalah lapangan', '1700018164', '2019-05-26', '07:45:39', 'skripsi'),
 (13, 'bimbingan awal kuliah', '1700018158', '2019-05-26', '07:47:58', 'metopen'),
@@ -112,12 +111,10 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (18, 'konsultasi evaluasi proyek metopen', '1700018158', '2019-05-28', '09:08:27', 'metopen'),
 (19, 'membuat perencanaan dalam penyusunan laporan berik', '1700018158', '2019-05-28', '09:08:43', 'metopen'),
 (20, 'evaluasi hasil laporan', '1700018158', '2019-05-28', '09:08:58', 'metopen'),
-
 (21, 'menambah referensi', '1700018165', '2019-05-29', '11:41:54', 'metopen'),
 (22, 'bimbingan bab 4\r\n', '1700018066', '2019-06-29', '08:29:08', 'skripsi'),
 (23, 'bimbingan bab 2', '1700018066', '2019-06-29', '08:29:16', 'skripsi'),
 (24, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
-
 (31, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018067', '2019-05-10', '20:08:00', 'metopen'),
 (32, 'bimbingan bab 1\r\n', '1700018067', '2019-05-01', '16:44:00', 'metopen'),
 (33, 'bimbingan awal pengenalan masalah', '1700018067', '2019-05-10', '20:08:00', 'metopen'),
@@ -128,7 +125,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (38, 'perbaikan program pada fitur search', '1700018067', '2019-05-24', '05:53:22', 'metopen'),
 (39, 'penambahan fitur sorting ', '1700018067', '2019-05-24', '05:54:52', 'metopen'),
 (40, 'penambahan beberapa materi ', '1700018067', '2019-05-25', '08:02:51', 'metopen'),
-
 (41, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018068', '2019-05-10', '20:08:00', 'metopen'),
 (42, 'bimbingan bab 1\r\n', '1700018068', '2019-05-01', '16:44:00', 'metopen'),
 (43, 'bimbingan awal pengenalan masalah', '1700018068', '2019-05-10', '20:08:00', 'metopen'),
@@ -139,7 +135,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (48, 'perbaikan program pada fitur search', '1700018068', '2019-05-24', '05:53:22', 'metopen'),
 (49, 'penambahan fitur sorting ', '1700018068', '2019-05-24', '05:54:52', 'metopen'),
 (50, 'penambahan beberapa materi ', '1700018068', '2019-05-25', '08:02:51', 'metopen'),
-
 (51, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018069', '2019-05-10', '20:08:00', 'metopen'),
 (52, 'bimbingan bab 1\r\n', '1700018069', '2019-05-01', '16:44:00', 'metopen'),
 (53, 'bimbingan awal pengenalan masalah', '1700018069', '2019-05-10', '20:08:00', 'metopen'),
@@ -150,7 +145,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (58, 'perbaikan program pada fitur search', '1700018069', '2019-05-24', '05:53:22', 'metopen'),
 (59, 'penambahan fitur sorting ', '1700018069', '2019-05-24', '05:54:52', 'metopen'),
 (60, 'penambahan beberapa materi ', '1700018069', '2019-05-25', '08:02:51', 'metopen'),
-
 (61, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018070', '2019-05-10', '20:08:00', 'metopen'),
 (62, 'bimbingan bab 1\r\n', '1700018070', '2019-05-01', '16:44:00', 'metopen'),
 (63, 'bimbingan awal pengenalan masalah', '1700018070', '2019-05-10', '20:08:00', 'metopen'),
@@ -161,18 +155,16 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (68, 'perbaikan program pada fitur search', '1700018070', '2019-05-24', '05:53:22', 'metopen'),
 (69, 'penambahan fitur sorting ', '1700018070', '2019-05-24', '05:54:52', 'metopen'),
 (70, 'penambahan beberapa materi ', '1700018070', '2019-05-25', '08:02:51', 'metopen'),
-
 (71, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018071', '2019-05-10', '20:08:00', 'metopen'),
 (72, 'bimbingan bab 1\r\n', '1700018071', '2019-05-01', '16:44:00', 'metopen'),
 (73, 'bimbingan awal pengenalan masalah', '1700018071', '2019-05-10', '20:08:00', 'metopen'),
 (74, 'perbaikan materi bab 2', '1700018071', '2019-05-23', '15:00:00', 'metopen'),
 (75, 'kehangatan yang nyata', '1700018071', '2019-05-24', '05:06:25', 'metopen'),
 (76, 'perbaikan kata yang kurang tepat pada latar belaka', '1700018071', '2019-05-24', '05:07:45', 'metopen'),
-(77, 'terserah', '1700018071', '2019-05-24', '05:22:42', 'metopen'),
+(77, 'perbaikan sistem keamanan', '1700018071', '2019-05-24', '05:22:42', 'metopen'),
 (78, 'perbaikan program pada fitur search', '1700018071', '2019-05-24', '05:53:22', 'metopen'),
 (79, 'penambahan fitur sorting ', '1700018071', '2019-05-24', '05:54:52', 'metopen'),
 (80, 'penambahan beberapa materi ', '1700018071', '2019-05-25', '08:02:51', 'metopen'),
-
 (81, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018071', '2019-05-10', '20:08:00', 'metopen'),
 (82, 'bimbingan bab 1\r\n', '1700018071', '2019-05-01', '16:44:00', 'metopen'),
 (83, 'bimbingan awal pengenalan masalah', '1700018071', '2019-05-10', '20:08:00', 'metopen'),
@@ -183,7 +175,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (88, 'perbaikan program pada fitur search', '1700018071', '2019-05-24', '05:53:22', 'metopen'),
 (89, 'penambahan fitur sorting ', '1700018071', '2019-05-24', '05:54:52', 'metopen'),
 (90, 'penambahan beberapa materi ', '1700018071', '2019-05-25', '08:02:51', 'metopen'),
-
 (91, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018073', '2019-05-10', '20:08:00', 'metopen'),
 (92, 'bimbingan bab 1\r\n', '1700018073', '2019-05-01', '16:44:00', 'metopen'),
 (93, 'bimbingan awal pengenalan masalah', '1700018073', '2019-05-10', '20:08:00', 'metopen'),
@@ -194,7 +185,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (98, 'perbaikan program pada fitur search', '1700018073', '2019-05-24', '05:53:22', 'metopen'),
 (99, 'penambahan fitur sorting ', '1700018073', '2019-05-24', '05:54:52', 'metopen'),
 (100, 'penambahan beberapa materi ', '1700018073', '2019-05-25', '08:02:51', 'metopen'),
-
 (101, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018074', '2019-05-10', '20:08:00', 'metopen'),
 (102, 'bimbingan bab 1\r\n', '1700018074', '2019-05-01', '16:44:00', 'metopen'),
 (103, 'bimbingan awal pengenalan masalah', '1700018074', '2019-05-10', '20:08:00', 'metopen'),
@@ -205,7 +195,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (108, 'perbaikan program pada fitur search', '1700018074', '2019-05-24', '05:53:22', 'metopen'),
 (109, 'penambahan fitur sorting ', '1700018074', '2019-05-24', '05:54:52', 'metopen'),
 (100, 'penambahan beberapa materi ', '1700018074', '2019-05-25', '08:02:51', 'metopen'),
-
 (111, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018075', '2019-05-10', '20:08:00', 'metopen'),
 (112, 'bimbingan bab 1\r\n', '1700018075', '2019-05-01', '16:44:00', 'metopen'),
 (113, 'bimbingan awal pengenalan masalah', '1700018075', '2019-05-10', '20:08:00', 'metopen'),
@@ -216,7 +205,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (118, 'perbaikan program pada fitur search', '1700018075', '2019-05-24', '05:53:22', 'metopen'),
 (119, 'penambahan fitur sorting ', '1700018075', '2019-05-24', '05:54:52', 'metopen'),
 (120, 'penambahan beberapa materi ', '1700018075', '2019-05-25', '08:02:51', 'metopen'),
-
 (121, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018076', '2019-05-10', '20:08:00', 'metopen'),
 (122, 'bimbingan bab 1\r\n', '1700018076', '2019-05-01', '16:44:00', 'metopen'),
 (123, 'bimbingan awal pengenalan masalah', '1700018076', '2019-05-10', '20:08:00', 'metopen'),
@@ -227,7 +215,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (128, 'perbaikan program pada fitur search', '1700018076', '2019-05-24', '05:53:22', 'metopen'),
 (129, 'penambahan fitur sorting ', '1700018076', '2019-05-24', '05:54:52', 'metopen'),
 (130, 'penambahan beberapa materi ', '1700018076', '2019-05-25', '08:02:51', 'metopen'),
-
 (131, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018079', '2019-05-10', '20:08:00', 'metopen'),
 (132, 'bimbingan bab 1\r\n', '1700018079', '2019-05-01', '16:44:00', 'metopen'),
 (133, 'bimbingan awal pengenalan masalah', '1700018079', '2019-05-10', '20:08:00', 'metopen'),
@@ -238,7 +225,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (138, 'perbaikan program pada fitur search', '1700018079', '2019-05-24', '05:53:22', 'metopen'),
 (139, 'penambahan fitur sorting ', '1700018079', '2019-05-24', '05:54:52', 'metopen'),
 (140, 'penambahan beberapa materi ', '1700018079', '2019-05-25', '08:02:51', 'metopen'),
-
 (141, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018080', '2019-05-10', '20:08:00', 'metopen'),
 (142, 'bimbingan bab 1\r\n', '1700018080', '2019-05-01', '16:44:00', 'metopen'),
 (143, 'bimbingan awal pengenalan masalah', '1700018080', '2019-05-10', '20:08:00', 'metopen'),
@@ -249,7 +235,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (148, 'perbaikan program pada fitur search', '1700018080', '2019-05-24', '05:53:22', 'metopen'),
 (149, 'penambahan fitur sorting ', '1700018080', '2019-05-24', '05:54:52', 'metopen'),
 (150, 'penambahan beberapa materi ', '1700018080', '2019-05-25', '08:02:51', 'metopen'),
-
 (151, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018082', '2019-05-10', '20:08:00', 'metopen'),
 (152, 'bimbingan bab 1\r\n', '1700018082', '2019-05-01', '16:44:00', 'metopen'),
 (153, 'bimbingan awal pengenalan masalah', '1700018082', '2019-05-10', '20:08:00', 'metopen'),
@@ -260,7 +245,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (158, 'perbaikan program pada fitur search', '1700018082', '2019-05-24', '05:53:22', 'metopen'),
 (159, 'penambahan fitur sorting ', '1700018082', '2019-05-24', '05:54:52', 'metopen'),
 (160, 'penambahan beberapa materi ', '1700018082', '2019-05-25', '08:02:51', 'metopen'),
-
 (161, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018086', '2019-05-10', '20:08:00', 'metopen'),
 (162, 'bimbingan bab 1\r\n', '1700018086', '2019-05-01', '16:44:00', 'metopen'),
 (163, 'bimbingan awal pengenalan masalah', '1700018086', '2019-05-10', '20:08:00', 'metopen'),
@@ -270,10 +254,11 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (167, 'terserah', '1700018086', '2019-05-24', '05:22:42', 'metopen'),
 (168, 'perbaikan program pada fitur search', '1700018086', '2019-05-24', '05:53:22', 'metopen'),
 (169, 'penambahan fitur sorting ', '1700018086', '2019-05-24', '05:54:52', 'metopen'),
-(170, 'penambahan beberapa materi ', '1700018086', '2019-05-25', '08:02:51', 'metopen')
-;
+(170, 'penambahan beberapa materi ', '1700018086', '2019-05-25', '08:02:51', 'metopen'),
+(0, 'bimbingan awal ', '1700018105', '2019-07-22', '06:58:22', 'metopen'),
+(0, 'bimbingan bab 1', '1700018105', '2019-07-22', '07:01:43', 'metopen');
 
-----------------------------------------------------------
+-- --------------------------------------------------------
 
 --
 -- Struktur dari tabel `login`
@@ -324,7 +309,7 @@ INSERT INTO `login` (`user_name`, `password`, `level`, `status_akun`) VALUES
 ('1700018102', 'jIjQCCOR', 'mahasiswa', 'baru'),
 ('1700018103', 'MhYtYFgh', 'mahasiswa', 'baru'),
 ('1700018104', '0LHoYPI9', 'mahasiswa', 'baru'),
-('1700018105', 'SEd8daMI', 'mahasiswa', 'baru'),
+('1700018105', '105', 'mahasiswa', 'baru'),
 ('1700018106', 'EH7cPi2F', 'mahasiswa', 'baru'),
 ('1700018107', 'xYTmhfNU', 'mahasiswa', 'baru'),
 ('1700018108', 'gGamH3Cn', 'mahasiswa', 'baru'),
@@ -670,9 +655,7 @@ ALTER TABLE `dosen`
 -- Indeks untuk tabel `logbook_bimbingan`
 --
 ALTER TABLE `logbook_bimbingan`
-  ADD PRIMARY KEY (`id_logbook`),
-  ADD KEY `id_skripsi` (`id_skripsi`),
-  ADD KEY `id_skripsi_2` (`id_skripsi`);
+  ADD KEY `logbook_bimbingan_ibfk_1` (`id_skripsi`);
 
 --
 -- Indeks untuk tabel `login`
@@ -732,12 +715,6 @@ ALTER TABLE `ujian_pendadaran`
 --
 -- AUTO_INCREMENT untuk tabel yang dibuang
 --
-
---
--- AUTO_INCREMENT untuk tabel `logbook_bimbingan`
---
-ALTER TABLE `logbook_bimbingan`
-  MODIFY `id_logbook` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT untuk tabel `penguji`

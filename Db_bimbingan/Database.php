@@ -100,7 +100,7 @@
 		}
 		public function jumlah_bimbingan_satu_mahasiswa_untuk_ubah_warna($nim)
 		{
-			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,logbook_bimbingan.jenis as jenis_bimbingan, COUNT(logbook_bimbingan.jenis) AS jumlah FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and mahasiswa_metopen.nim = $nim GROUP BY logbook_bimbingan.jenis HAVING COUNT(mahasiswa_metopen.nim)>=0";
+			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,logbook_bimbingan.jenis as jenis_bimbingan, COUNT(logbook_bimbingan.jenis) AS jumlah FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and mahasiswa_metopen.nim = $nim GROUP BY logbook_bimbingan.jenis HAVING COUNT(mahasiswa_metopen.nim)>=0"; // fungsi ini merupakan fingsi yang di gunakan untuk menghitung jumlah bimbingan metopen dan skmripsi
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}

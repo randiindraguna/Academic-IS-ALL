@@ -31,11 +31,14 @@
 			$this->execute($query);
 			return $this->result;
 		}
+
 		//nurzaitunsafitri1700018140
+		//fungsi digunakan untuk mengambil data dosen berdasarkan email dengan kondisi jika email benar atau email pengguna cocok dengan email yang ada di database
+		//fungsi ini digunakan ketika dosen login menggunakan google API
 		public function get_data_dosen_byEmail($email){
-			$query = "SELECT * FROM dosen WHERE email = '$email'";
-			$this->execute($query);
-			return $this->result;
+			$query = "SELECT * FROM dosen WHERE email = '$email'"; //sebagai query database untuk SELECT data berdasarkan email
+			$this->execute($query); //untuk mengeksekusi query
+			return $this->result; //sebagai return hasil
 			}
 		// public function searchAkunDosen($username){
 		// 	$query = "SELECT niy from dosen where niy='$username'";

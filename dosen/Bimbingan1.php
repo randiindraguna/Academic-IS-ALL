@@ -205,7 +205,6 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               }
               else
               {
-             
               echo '
               <td rowspan="2" colspan="2">
                 <form>

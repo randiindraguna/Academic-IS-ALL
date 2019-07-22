@@ -278,7 +278,7 @@ include '../header_bimbingan_biarngga_hilang/navbar_mhs_bimbingan.php';
               {
                 $tampilan_awal = $car->jumlah_bimbingan_satu_mahasiswa($_SESSION['username']);
               }
-
+              
               foreach ($tampilan_awal as $key) {
                 if($key['status_mahasiswa'] == "metopen")
                 {

@@ -43,7 +43,7 @@ if($_SESSION['status'] == "login"){
                     Swal.fire({
                       position: 'middle',
                       type: 'success',
-                      title: 'Berhasil Dihapus !!!',
+                      title: 'Berhasil Dihapus',
                       showConfirmButton: true,
                       confirmButtonColor: '#3085d6',
                       confirmButtonText: 'Kembali'

@@ -44,12 +44,7 @@ if($_SESSION['status'] == "login"){
 
   
                                
-                              <br>
-                              <table align="center" cellpadding="20" width="65%" border="0"  height="10%">
-                                    <tr>
-                                        <td bgcolor="#B5B5B5" style="width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px lightblue">
-                                   
-                                             <center><h3>Form Input Nilai Seminar Proposal</h3></center>
+                             
 
     <?php
   
@@ -59,7 +54,12 @@ if($_SESSION['status'] == "login"){
       $nim = $_POST['nim'];
                   echo "
                  
-
+ <br>
+                              <table align='center' cellpadding='20' width='65%' border='0'  height='10%'>
+                                    <tr>
+                                        <td bgcolor='#B5B5B5' style='width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px lightblue'>
+                                   
+                                             <center><h3>Form Input Nilai Seminar Proposal</h3></center>
                  
         <form action='hasil_input_semprop_diadmin.php' method='POST'>
 

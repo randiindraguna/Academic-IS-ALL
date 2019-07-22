@@ -24,10 +24,12 @@ if(isset($_POST['username'])){
 					$_SESSION['username']=$username;
 					$_SESSION['status']="login";
 
-					foreach ($login->getLevelAkun($username) as $who) 
-
+					foreach ($login->getLevelAkun($username) as $who)
+					$_SESSION['level']=$who['level'];
+				
 				if($who['level']=="admin")
 				{
+
 					header("location:pengelola/index.php");
 				}
 				else if($who['level']=="dosen")

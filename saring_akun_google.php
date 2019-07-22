@@ -21,7 +21,7 @@
 								 		if(strlen($usernameMhs)==10){
 								 			$_SESSION['username']=$usernameMhs;
 								 			$_SESSION['status']="login";
-								 			
+								 			$_SESSION['level']='mahasiswa';
 								 			header("location:mahasiswa/index.php");
 								 			//echo $_SESSION['username'];
 								 		}
@@ -49,6 +49,7 @@
 		 				$data=mysqli_fetch_array($dataFunc);
 		 						$_SESSION['username']=$data['niy'];
 								 $_SESSION['status']="login";
+								 $_SESSION['level']='dosen';
 								// echo $data['niy'];
 								 header("location:dosen/index.php");
 				 }

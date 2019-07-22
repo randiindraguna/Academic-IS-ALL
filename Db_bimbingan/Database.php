@@ -127,7 +127,10 @@
 		{
 			// dibuat oleh rifal
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan, DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) as lamabimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ORDER BY DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) desc";
-			// fungsi dari query ini untuk menghitung lama bimbingan dari mahasiswa tergantung dari status mahasiswa itu, jika status mahasiswa METOPEN, maka akan dihitung muai dari awal mahasiswa tersebut daftar metopen hingga hari ini, namun jika status mahasiswa SKRIPSI, maka akan 8dihitung muai dari lulus metopen hingga hari ini.
+			// fungsi dari query ini untuk menghitung lama bimbingan dari mahasiswa tergantung dari status mahasiswa itu,
+			// jika status mahasiswa METOPEN, maka akan dihitung muai dari awal mahasiswa tersebut daftar metopen hingga hari
+			// ini, namun jika status mahasiswa SKRIPSI, maka akan dihitung muai dari lulus metopen hingga hari ini. dan 
+			// diurutkan mulai dari yang terbesar ke yang terkecil.
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}

@@ -298,8 +298,9 @@ class Penjadwalan extends Database{
 
 	// edit
 	public function getAllDosenKecualiSatuDosen($niy){
-		//1700018174-m Andika Riski-Andikariski
-		//Fungsi untuk menampilkan nama dosen penguji tanpa menampilkan nama dosen sebelumnya saat mau di edit
+		//1700018174-M Andika Riski-Andikariski
+		//Fungsi untuk menampilkan nama dosen penguji tanpa menampilkan nama dosen sebelumnya saat mau di edit pada saat edit dari metopen ke semprop
+		
 		$query ="SELECT dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian FROM dosen  
 		WHERE NOT dosen.niy='$niy'";
 		$sql = $this->eksekusi($query);

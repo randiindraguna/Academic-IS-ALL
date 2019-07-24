@@ -31,6 +31,14 @@ if($_SESSION['status'] == "login"){
     <link rel="stylesheet" href="../css/style_penjadwalan.css">
     <link rel="stylesheet" href="../css/switches_Penjadwalan.css">
 
+    <!-- sweet alert -->
+    <script src="sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 and Android browser -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
+
+    <script src="sweetalert2/dist/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="sweetalert2/dist/sweetalert2.min.css">
+
     <style type="text/css" href="../css/tombol_penjadwalan.css"></style>
 </head>
 <body>
@@ -49,6 +57,18 @@ if($_SESSION['status'] == "login"){
                         }
                         else if($status == "UNDARAN"){
                             $status = "Ujian Pendadaran";
+                        }
+                        else if($status == NULL){
+                            echo '<script type="text/javascript">
+                                    Swal.fire({
+                                        position: "middle",
+                                        type: "error",
+                                        title: "Pilihan Kosong",
+                                        text: "Silahkan Pilih Berdasarkan Jenis Kelulusan",
+                                        showConfirmButton: false,
+                                        timer: 3000
+                                    });
+                                  </script>';
                         }
                     }
                 }else{

@@ -6,7 +6,7 @@
 	// UTS-1700018141-Siti apryanti k -sitiapryantii
 	// UTS-1700018174-M Andika Riski-Andikariski
 	// UTS-1700018144-M Yulianto Andi S-LianEx
-	// UTS-1700018116-Nanda Suci -nandasuci
+	// UTS-1700018116-Nanda Suci Pratiwi -nandasuci
 	// UTS-1700018118-Adil Baihaqi-adilbaihaqi
 	// UTS-1700018133-Sandy Valentino G-iamsand
 	// UTS-1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)

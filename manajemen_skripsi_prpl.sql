@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Jul 2019 pada 12.19
+-- Waktu pembuatan: 24 Jul 2019 pada 12.31
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.10
 
@@ -442,14 +442,14 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 ('1700018106', 'Brilian Anugra', 'Laki-laki', 'Pembuatan Aplikasi Pembelajaran Interaktif Tembang Macapat Berbasis Adobe Flash', '60160980', 'Media Pembelajaran', 'metopen', '2019-05-05'),
 ('1700018107', 'Okky Alwi Dwi R.', 'Perempuan', 'Komputerisasi Sistem Persediaan Obat Pada Apotik Kimia Parma', '60160952', 'Sistem Cerdas', 'metopen', '2019-01-05'),
 ('1700018108', 'Feni Sastriani', 'Perempuan', 'Rancang Bangun Aplikasi Monitoring Service Pada Server Menggunakan Sms Gateway', '60110648', 'Rekayasa Perangkat Lunak', 'metopen', '2019-02-05'),
-('1700018109', 'Muhammad Firdaus Fahrullah', 'Laki-laki', 'Messanger Berbasis Client-Server Pada Lingkungan Bisnis Menggunakan Triple Transposition Vigenere Ci', '60160979', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018110', 'Syaifullah Ihsan', 'Laki-laki', 'Pengembangan Keamanan Jaringan Intranet Dengan Metode Access Control List', '60010308', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018111', 'Mujahid Islami Primaldi Abdullah', 'Laki-laki', 'Implementasi Kalender Mobile Pada Platform Android', '60130757', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018112', 'Mohammad Fitri Haikal H.S', 'Laki-laki', 'Penerapan Metode Algoritma Genetika Untuk Pnjadwalan Pelatihan Karyawan', '60980174', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018113', 'Lutfi Purba Fitrianto', 'Laki-laki', 'Sistem Pakar Diagnosa Penyakit Sapi Menggunakan Visual Basic 6.0', '60160952', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018114', 'Rizqa Tsaqila A.H', 'Laki-laki', 'Implementasi Web Service Untuk Penunjang Sistem Informasi Executive', '60160951', 'Sistem Informasi', 'metopen', '0000-00-00'),
-('1700018115', 'Tri Subagio', 'Laki-laki', 'Membuat Aplikasi Facebook Client Untuk Windows Phone', '60160978', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018116', 'Nanda Suci Pratiwi', 'Laki-laki', 'Aplikasi Sistem Pemesanan Barang Pada The Code Manufacture Of Shoes And Bag Company Berbasis Android', '60020388', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
+('1700018109', 'Muhammad Firdaus Fahrullah', 'Laki-laki', 'Messanger Berbasis Client-Server Pada Lingkungan Bisnis Menggunakan Triple Transposition Vigenere Ci', '60160979', 'Sistem Cerdas', 'metopen', '2019-01-17'),
+('1700018110', 'Syaifullah Ihsan', 'Laki-laki', 'Pengembangan Keamanan Jaringan Intranet Dengan Metode Access Control List', '60010308', 'Rekayasa Perangkat Lunak', 'metopen', '2019-03-17'),
+('1700018111', 'Mujahid Islami Primaldi Abdullah', 'Laki-laki', 'Implementasi Kalender Mobile Pada Platform Android', '60130757', 'Rekayasa Perangkat Lunak', 'metopen', '2019-07-17'),
+('1700018112', 'Mohammad Fitri Haikal H.S', 'Laki-laki', 'Penerapan Metode Algoritma Genetika Untuk Pnjadwalan Pelatihan Karyawan', '60980174', 'Sistem Cerdas', 'metopen', '2019-02-18'),
+('1700018113', 'Lutfi Purba Fitrianto', 'Laki-laki', 'Sistem Pakar Diagnosa Penyakit Sapi Menggunakan Visual Basic 6.0', '60160952', 'Sistem Cerdas', 'metopen', '2019-04-17'),
+('1700018114', 'Rizqa Tsaqila A.H', 'Perempuan', 'Implementasi Web Service Untuk Penunjang Sistem Informasi Executive', '60160951', 'Sistem Informasi', 'metopen', '2019-06-24'),
+('1700018115', 'Tri Subagio', 'Laki-laki', 'Membuat Aplikasi Facebook Client Untuk Windows Phone', '60160978', 'Rekayasa Perangkat Lunak', 'metopen', '2019-07-25'),
+('1700018116', 'Nanda Suci Pratiwi', 'Perempuan', 'Aplikasi Sistem Pemesanan Barang Pada The Code Manufacture Of Shoes And Bag Company Berbasis Android', '60020388', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-25'),
 ('1700018117', 'Muhammad Nashir A', 'Laki-laki', 'Aplikasi Untuk Tempat Penimbunan Sementara Peti Kemas Berbasis Php', '60030480', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
 ('1700018118', 'Adil Baihaqi', 'Laki-laki', 'Aplikasi Sistem Informasi Peta Digital Untuk Sekolah Menengah Atas', '60010314', 'Sistem Informasi', 'metopen', '0000-00-00'),
 ('1700018120', 'Rizky Muhamad Hasan', 'Laki-laki', 'Aplikasi Smart Card Untuk Kebutuhan Pelayanan Kesehatan', '60030476', 'Sistem Cerdas', 'metopen', '0000-00-00'),

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Jul 2019 pada 12.52
+-- Generation Time: 24 Jul 2019 pada 12.57
 -- Versi Server: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -481,14 +481,14 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 ('1700018159', 'Latifatul Mujahidah', 'Perempuan', 'Identifikasi Kerusakan Gangguan Sambungan Telephone Pada Pt.Telkom Menggunakan Rumus Euclidean Dista', '60110648', 'Sistem Cerdas', 'metopen', '0000-00-00'),
 ('1700018161', 'Isnan Arif Cahyadi', 'Laki-laki', 'Rancangan Sistem Informasi Arsip Induk Langganan Berbasis Web', '60090586', 'Sistem Informasi', 'metopen', '0000-00-00'),
 ('1700018162', 'Puspa Nutari', 'Perempuan', 'Rancang Bangun Sistem Informasi Perhitungan Zakat Berbasis Web', '60090586', 'Sistem Informasi', 'metopen', '0000-00-00'),
-('1700018163', 'Shindi Sri Wahyuni Pawah', 'Perempuan', 'Implementasi Algoritma K-Means Clustering Dalam Sistem Pemilihan Jurusan Di Smk', '60110648', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018164', 'Ancas Wasita Budi Cahya', 'Laki-laki', 'Sistem Informasi Pendistribusian Obat Pada Dinas Kesehatan Berbasis Web', '60110647', 'Sistem Informasi', 'skripsi', '0000-00-00'),
-('1700018165', 'Ihsan Fadhilah', 'Laki-laki', 'Enkripsi-Dekripsi Data Dengan Menggunakan Metode Kriptografi Advanced Encryption Standard', '60110647', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018167', 'Adhymas Fajar Sudrajat', 'Laki-laki', 'Aplikasi Sistem Siaran Stasiun Radio Dengan Live Streaming Client Berbasis Android', '60030476', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018168', 'Abdun Fattah Yolandanu', 'Laki-laki', 'Aplikasi Travel Berbasis Web Dan Sms Gateway Menggunakan Metode Model View Controller', '60030480', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018169', 'Mariam Ulfa', 'Perempuan', 'Rancang Bangun Aplikasi Sistem Informasi Geografis Jalur Rawan Kemacetan Berbasis Web', '60040497', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018171', 'Rifka Riyani Radilla', 'Perempuan', 'Implementasi Web Service Pada Sistem Informasi Penjualan Menggunakan Asp.Net Dan Xml', '60040496', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018174', 'M.Andika Riski', 'Laki-laki', 'Aplikasi Sistem Pencegahan Penanggulangan Dan Tanggap Darurat Terhadap Kebakaran Di Perpustakaan Pus', '60020388', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00');
+('1700018163', 'Shindi Sri Wahyuni Pawah', 'Perempuan', 'Implementasi Algoritma K-Means Clustering Dalam Sistem Pemilihan Jurusan Di Smk', '60110648', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-21'),
+('1700018164', 'Ancas Wasita Budi Cahya', 'Laki-laki', 'Sistem Informasi Pendistribusian Obat Pada Dinas Kesehatan Berbasis Web', '60110647', 'Sistem Informasi', 'skripsi', '2019-05-25'),
+('1700018165', 'Ihsan Fadhilah', 'Laki-laki', 'Enkripsi-Dekripsi Data Dengan Menggunakan Metode Kriptografi Advanced Encryption Standard', '60110647', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-28'),
+('1700018167', 'Adhymas Fajar Sudrajat', 'Laki-laki', 'Aplikasi Sistem Siaran Stasiun Radio Dengan Live Streaming Client Berbasis Android', '60030476', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-26'),
+('1700018168', 'Abdun Fattah Yolandanu', 'Laki-laki', 'Aplikasi Travel Berbasis Web Dan Sms Gateway Menggunakan Metode Model View Controller', '60030480', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-06'),
+('1700018169', 'Mariam Ulfa', 'Perempuan', 'Rancang Bangun Aplikasi Sistem Informasi Geografis Jalur Rawan Kemacetan Berbasis Web', '60040497', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-25'),
+('1700018171', 'Rifka Riyani Radilla', 'Perempuan', 'Implementasi Web Service Pada Sistem Informasi Penjualan Menggunakan Asp.Net Dan Xml', '60040496', 'Rekayasa Perangkat Lunak', 'metopen', '2019-07-03'),
+('1700018174', 'M.Andika Riski', 'Laki-laki', 'Aplikasi Sistem Pencegahan Penanggulangan Dan Tanggap Darurat Terhadap Kebakaran Di Perpustakaan Pus', '60020388', 'Rekayasa Perangkat Lunak', 'metopen', '2019-07-02');
 
 -- --------------------------------------------------------
 

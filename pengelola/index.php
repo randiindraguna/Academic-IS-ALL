@@ -193,7 +193,7 @@ include '../templates/header_penjadwalan.php';
           <br><br><br><br><br><br>
           <div id="footer" style="height:50px; line-height:50px; background:#333; color:white;border-radius: 30px;">
             Copyright &copy; 2019
-            Designed by Team Register Metopen
+            Designed by Team Analitik
           </div>
         </td>
       </tr> 

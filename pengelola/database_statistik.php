@@ -367,12 +367,7 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		return $this->result;
 	}
 
-	public function getData_dosen(){
-		$query = "SELECT COUNT(niy) AS jml_dosen FROM dosen";
-		$this->eksekusi($query);
-		return $this->result;
-	}
-
+	
 	public function getDosentakpenguji(){
 		foreach ($this->getData_dosen as $dsn1) {
 			foreach ($this->getDosenPenguji as $dsn2) {
@@ -402,37 +397,10 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 	       	}
 	}
 	// bagian pengelola
-	public function get_Profil($usr){
-		$query = "SELECT * FROM `login` WHERE user_name = '$usr'";
-		$this->eksekusi($query);
-		return $this->result;
-	}
 
-	public function getData_jumlah(){
-		$query = "SELECT COUNT(nim) AS jumlah FROM mahasiswa_metopen";
-		$this->eksekusi($query);
-		return $this->result;
-	}
-	public function getData_semester(){
-		$query = "SELECT * FROM semester WHERE status = 'terbuka'";
-		$this->eksekusi($query);
-		return $this->result;
-	}
-	public function getData_metopen(){
-		$query = "SELECT COUNT(nim) AS jml_metopen FROM mahasiswa_metopen WHERE status = 'metopen'";
-		$this->eksekusi($query);
-		return $this->result;
-	}
-	public function getData_skripsi(){
-		$query = "SELECT COUNT(nim) AS jml_skripsi FROM mahasiswa_metopen WHERE status = 'skripsi'";
-		$this->eksekusi($query);
-		return $this->result;
-	}
-	public function getLulus(){
-		$query = "SELECT COUNT(nim) AS jml_lulus FROM ujian_pendadaran WHERE status = 'lulus'";
-		$this->eksekusi($query);
-		return $this->result;
-	}
+	
+	
+	
 
 	// bagian mahasiswa
 	public function getDataMhs($nim){

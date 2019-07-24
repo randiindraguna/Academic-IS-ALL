@@ -12,7 +12,8 @@ if($_SESSION['status'] == "login"){
 }else{
   header("location:../index.php");
 
-}
+}   
+   
 ?>
    <!DOCTYPE html>
 <html lang="en">
@@ -41,12 +42,6 @@ if($_SESSION['status'] == "login"){
             <h2 class="judul"><center>-- Statistik Pembimbingan Dosen -- </center></h2>
             <h2 class="judul"><center>-- Berdasarkan Bidang minat Mahasiswa -- </center></h2>
             
-            <?php
-                $bidang = "Pilih Bidang Minat";
-                if(isset($_POST['save'])){
-                    $bidang = $_POST['bidmin'];
-                }
-            ?>
 
             <center>
             <form method="POST" action="statistik_pembimbingan_dosen.php">
@@ -54,12 +49,12 @@ if($_SESSION['status'] == "login"){
                 <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Bidang Minat </label>
                         <select name="bidmin" id="inputState" class="form-control" >
-                            <option selected><?php echo $bidang ; ?></option>
-                            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
-                            <option value="Sistem Cerdas">Sistem Cerdas</option>
-                            <option value="Multimedia">Multimedia</option>
-                            <option value="Sistem Informasi">Sistem Informasi</option>
-                            <option value="Media Pembelajaran">Media Pembelajaran</option>
+                            <option value="">- Pilihan -</option>
+                            <option value="Rekayasa Perangkat Lunak" <?=$bidang == "Rekayasa Perangkat Lunak" ? 'selected' : 0 ?> >Rekayasa Perangkat Lunak</option>
+                            <option value="Sistem Cerdas" <?=$bidang == "Sistem Cerdas" ? 'selected' : 0 ?> >Sistem Cerdas</option>
+                            <option value="Multimedia" <?=$bidang == "Multimedia" ? 'selected' : 0 ?>>Multimedia</option>
+                            <option value="Sistem Informasi" <?=$bidang == "Sistem Informasi" ? 'selected' : 0 ?> >Sistem Informasi</option>
+                            <option value="Media Pembelajaran" <?=$bidang == "Media Pembelajaran" ? 'selected' : 0 ?> >Media Pembelajaran</option>
                         </select>                   
                 </div>
             <!-- </div> --> <br>
@@ -68,21 +63,22 @@ if($_SESSION['status'] == "login"){
             </form>
             </center>
         <br>
-       <div style="width: 1000px;margin: 0px auto;">
-        <canvas id="myChart"></canvas>
-    </div>
-
     <?php
-    if (isset($_POST['save'])) {
-        if(is_null($_POST['bidmin'])){
-            echo "Silahkan pilih bidang minat";
-        }else{
-             $bidang = $_POST['bidmin'];
+        if (isset($_POST['save'])) {
+            if(is_null($_POST['bidmin'])){
+                echo "Silahkan pilih bidang minat";
+            }else{
+                 $bidang = $_POST['bidmin']; 
+            }
         }
-    }
      ?>
 
-    <?php if(isset($_POST['save'])){ ?>
+     <div style="width: 1000px;margin: 0px auto;">
+        <canvas id="<?=$bidang == null ? null : 'myChart' ?>"></canvas>
+     </div> 
+
+    <?php if(isset($_POST['save'])){ 
+        if(!is_null($bidang)){?>
     <script>
         var i;
         var ctx = document.getElementById("myChart").getContext('2d');
@@ -179,8 +175,12 @@ if($_SESSION['status'] == "login"){
         });
     </script>
     <?php
+        }
     }else{ ?>
-            <center><h2>Silahkan Memilih Bidang Minat Untuk Menampilkan</h2></center>
+            <!-- <center><h2>Silahkan Memilih Bidang Minat Untuk Menampilkan</h2></center> -->
+            <script type="text/javascript">
+                alert('Silahkan Pilih Bidang Minat !');
+            </script>
         <br><br>
     <?php } ?>
     

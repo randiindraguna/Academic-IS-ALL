@@ -483,8 +483,8 @@ class Penjadwalan extends Database{
 		return $sql;
 	}
 
-	//1700018167-Adhymas Fajar Sudrajat-dmonh3h3
-	public function getDataJadwalDosenByNiyTerdekat($niy)
+	//UAS-1700018167-Adhymas Fajar Sudrajat-dmonh3h3
+	public function getDataJadwalDosenByNiyTerdekat($niy)// (UAS) function mengambil data jadwal dosen sesuai niy dan mengurutkan dari tanggal terdekat
 	{
 		$query = "SELECT penjadwalan.id_jadwal, penjadwalan.nim,penjadwalan.jenis_ujian, mahasiswa_metopen.nama,penjadwalan.tanggal, penjadwalan.jam, penjadwalan.tempat, (SELECT dosen.nama from dosen where penguji.niy = dosen.niy ) as penguji
 			FROM mahasiswa_metopen 
@@ -492,10 +492,10 @@ class Penjadwalan extends Database{
 			join penguji on penjadwalan.id_jadwal = penguji.id_jadwal
 			join dosen on penguji.niy = dosen.niy   
             WHERE penguji.niy = '$niy' AND penjadwalan.tanggal >= curdate() ORDER BY penjadwalan.tanggal ASC";
-	// Query ini mengambil data(record) dari tabel mahasiswa_metopen,penjadwalan,penguji dan dosen, dengan niy penguji sesuai dengan $niy
-	// dan mengurutkan dari tanggal terdekat (penjadwalan.tanggal >= curdate() ORDER BY penjadwalan.tanggal ASC)
-            $sql = $this->eksekusi($query); // mengeksekusi query diatas
-			return $sql; // mengembalikan hasil eksekusi dari query diatas
+	// (UAS) Query ini mengambil data(record) dari tabel mahasiswa_metopen,penjadwalan,penguji dan dosen, dengan niy penguji sesuai dengan $niy
+	// (UAS)dan mengurutkan dari tanggal terdekat (penjadwalan.tanggal >= curdate() ORDER BY penjadwalan.tanggal ASC)
+            $sql = $this->eksekusi($query); // (UAS) mengeksekusi query diatas
+			return $sql; // (UAS) mengembalikan hasil eksekusi dari query diatas
 	}
 
 	//1700018141-siti apryanti k-sitiapryantii

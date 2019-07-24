@@ -454,7 +454,14 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
+
+	// bagian dosen
+	public function getDataDsn($niy){
+		$query = "SELECT * FROM dosen WHERE niy = '$niy'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
 	
-	}	
+}	
 	
  ?>

@@ -507,8 +507,8 @@ class Penjadwalan extends Database{
 			join dosen on penguji.niy = dosen.niy   
             WHERE penguji.niy = '$niy' ORDER BY penjadwalan.tanggal ASC"; // mengambil data dosen berdasarkan niy dan di urutkan berdasarkan waktu terdekat
 
-            $sql = $this->eksekusi($query);
-			return $sql;
+            $sql = $this->eksekusi($query); // mengekeksekusi query yang telah di buat
+			return $sql; 
 	}
 
 	//1700018118-Adil Baihaqi-adilbaihaqi

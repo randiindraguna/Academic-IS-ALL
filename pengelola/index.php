@@ -4,7 +4,7 @@ require_once('../database.php');
   $akses->connect();
  
 
-  include "database_statistik.php";
+  include "Class_analitik.php";
   $cal = new Analitik();
   $cal->connect();
 // mengaktifkan session

@@ -61,7 +61,7 @@ class Penjadwalan extends Database{
 		$query = "INSERT INTO `penguji` (`id_penguji`, `id_jadwal`, `niy`) VALUES (NULL, '$id_jadwal', '$niy')"; //query ini berfungsi untuk menghubungkan
 		$this->eksekusi($query); //funsi ini untuk mengembalikan hasil eksekusi fungsi ini
 	}
-	public function getDataPenjadwalanByNIM($nim) // fungsi ini berfungsi untuk melihat atau menampilkan jadwal yang diambil dari nim dan ditampilkan di tabel penjadwalan
+	public function getDataPenjadwalanByNIM($nim) // fungsi ini berfungsi untuk melihat atau menampilkan jadwal yang diambil dari nim dan ditampilkan di tabel penjadwalan lalu di tampillkan dikolom penjadwaln agar user bisa melihat jadwal by nim
 	{
 		// 1700018133-Sandy Valentino G-iamsand
 		$query = "SELECT penjadwalan.id_jadwal,penjadwalan.jenis_ujian,penjadwalan.nim,penjadwalan.tanggal,penjadwalan.jam,penjadwalan.tempat from penjadwalan where nim='$nim'"; // query ini yg berfungsi mengambil data dari table penjadwalan melalui nim
@@ -123,7 +123,7 @@ class Penjadwalan extends Database{
 			return $hasil;// Mengembalikan nilai dari hasil eksekusi querry diatas
 			}
 	}
-	public function getDataStatusSemprop($nim) // fungsi ini berfungsi untuk melihat status mahasiswa yang ada di navbar penjadwalan baik itu berstatus lulus atau tidak lulus atau tidak berstatus 
+	public function getDataStatusSemprop($nim) // fungsi ini berfungsi untuk melihat status mahasiswa yang ada di navbar penjadwalan baik itu berstatus lulus atau tidak lulus atau tidak berstatus lalu agar bisa di tampilkan di tabel UI
 	{
 		// 1700018133-Sandy Valentino G-iamsand
 		$query = "SELECT seminar_proposal.status as status_sp from seminar_proposal where nim=$nim"; // query ini berfungi untuk mengambil data dari table seminar_proposal dan status lalu kolom status di dirubah nama nya menjadi status_sp yg akan dicek melalui nim
@@ -444,7 +444,7 @@ class Penjadwalan extends Database{
 	}
 	
 	
-	public function getDataDosenPenguji1byIdJadwal($id_jadwal)
+	public function getDataDosenPenguji1byIdJadwal($id_jadwal) // fungsi ini berfungsi untuk dosen yang dimna agar dosen bisa melihat jadwal dosen yang mana yang sedang mempunyai jadwal dan agar bisa dosen tau kapan jadwal nya agar bisa di tampilkan di tabel penjadwalan
 	{
 		// 1700018133-Sandy Valentino G-iamsand
 		$query ="SELECT dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian FROM penguji JOIN dosen ON dosen.niy=penguji.niy WHERE id_jadwal='$id_jadwal' LIMIT 1";
@@ -538,7 +538,7 @@ class Penjadwalan extends Database{
 		return $hasil; // pengembalian queri yang di panggil 
 	}
 
-	public function getLamaBimbingan($nim)
+	public function getLamaBimbingan($nim) // fungsi ini adalah fungsi untuk memunculkan seberapa lama meraka bimbingan dengan dosen tersebut dan agar bisa ditampilkan di tabel penjadwalan
 	{
 		// 1700018133-Sandy Valentino G-iamsand
 		$query = "SELECT 
@@ -578,7 +578,8 @@ class Penjadwalan extends Database{
 	}
 
 	// 1700018133-Sandy Valentino G-iamsand
-	public function cekPerbedaanTanggal($tgl){
+	public function cekPerbedaanTanggal($tgl) // fungsi ini untuk berfungsi mengcek tanggal mahsiswa yang mengikuti semprop dan pendadaran agar tidak bentrok
+	{
 		$query = "SELECT CURDATE() as tgl_s";
 		$hasil = $this->eksekusi($query);
 

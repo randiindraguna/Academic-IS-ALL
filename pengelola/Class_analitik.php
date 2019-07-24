@@ -1,6 +1,20 @@
 <?php 
 
-//Class analitik digunakan untuk merepresentasikan data hasil analisis dengan output berupa berbagai bentuk diagram (pie, bar), agar data yang ditampilkan lebih menarik
+	// Fitur    :	Analitik / Statistik
+	// Ketua	:	Ervin Fikot M - 1700018127
+	// Anggota	:	1. Isnan Arif Cahyadi - 1700018161
+	// 				2. Ricco Yhandy Fernando - 1700018154
+	// 				3. Muhammad Nashir Al Latif - 1700018117
+	// 				4. Tiara Anggraini Ghaib - 1700018175
+	// 				5. Rifka Riyani Radilla - 1700018171
+	// 				6. Laifatul Mujahidah - 1700018159
+	// 				7. Heronitah Yhanzyah - 1700018129
+
+	//Class_Analitik => Berfungsi untuk menghimpun semua proses yang berjalan di User interface (UI) 
+	//				 	dan menghubungkan dengan Database, Selain itu Class_Analitik juga berfungsi sebagai
+	//				 	Permodelan Instansiasi Objek dari database agar dapat di implementasikan dalam pemanggilan
+	//				 	dengan bantuan function - function yang berisikan query serta bantuan method eksekusi 
+	//				 	sebagai result/pengeksekusian query - query di dalam function.
 
 class Analitik
 {	

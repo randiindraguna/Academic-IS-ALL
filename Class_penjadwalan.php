@@ -494,8 +494,8 @@ class Penjadwalan extends Database{
             WHERE penguji.niy = '$niy' AND penjadwalan.tanggal >= curdate() ORDER BY penjadwalan.tanggal ASC";
 	// Query ini mengambil data(record) dari tabel mahasiswa_metopen,penjadwalan,penguji dan dosen, dengan niy penguji sesuai dengan $niy
 	// dan mengurutkan dari tanggal terdekat (penjadwalan.tanggal >= curdate() ORDER BY penjadwalan.tanggal ASC)
-            $sql = $this->eksekusi($query);
-			return $sql;
+            $sql = $this->eksekusi($query); // mengeksekusi query diatas
+			return $sql; 
 	}
 
 	//1700018141-siti apryanti k-sitiapryantii

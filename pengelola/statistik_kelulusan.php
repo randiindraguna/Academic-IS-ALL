@@ -41,14 +41,18 @@ if($_SESSION['status'] == "login"){
             <h2 class="judul"><center>Statistik kelulusan</center></h2>
 
             <?php
-                $status = "Pilih Jenis Kelulusan" ;
                 if(isset($_POST['kirim'])){
-                    $status = $_POST['lulusan'];
-                    if($status == "SEMPROP"){
-                        $status = "Seminar Proposal";
-                    }else{
-                        $status = "Ujian Pendadaran";
+                    if (!is_null($_POST['lulusan'])) {
+                        $status = $_POST['lulusan'];
+                        if($status == "SEMPROP"){
+                            $status = "Seminar Proposal";
+                        }
+                        else if($status == "UNDARAN"){
+                            $status = "Ujian Pendadaran";
+                        }
                     }
+                }else{
+                    $status = NULL;
                 }
             ?>
 
@@ -58,9 +62,9 @@ if($_SESSION['status'] == "login"){
                 <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Kelulusan Berdasarkan : </label>
                         <select name="lulusan" id="inputState" class="form-control">
-                            <option value="Pilih Jenis Kelulusan" selected> <?php echo $status; ?> </option>
-                            <option value="SEMPROP">Seminar Proposal</option>
-                            <option value="UNDARAN">Ujian Pendadaran</option>
+                            <option value="">-Pilih Jenis Kelulusan-</option>
+                            <option value="SEMPROP" <?=$status == "Seminar Proposal" ? 'selected' : 0 ?>>Seminar Proposal</option>
+                            <option value="UNDARAN" <?=$status == "Ujian Pendadaran" ? 'selected' : 0 ?>>Ujian Pendadaran</option>
                         </select>                   
                 </div>
             <!-- </div> --> <br>

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Jul 2019 pada 12.57
+-- Generation Time: 24 Jul 2019 pada 13.21
 -- Versi Server: 10.1.9-MariaDB
 -- PHP Version: 5.6.15
 
@@ -452,35 +452,35 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 ('1700018118', 'Adil Baihaqi', 'Laki-laki', 'Aplikasi Sistem Informasi Peta Digital Untuk Sekolah Menengah Atas', '60010314', 'Sistem Informasi', 'metopen', '2019-06-27'),
 ('1700018120', 'Rizky Muhamad Hasan', 'Laki-laki', 'Aplikasi Smart Card Untuk Kebutuhan Pelayanan Kesehatan', '60030476', 'Sistem Cerdas', 'metopen', '2019-06-28'),
 ('1700018121', 'Amir Fauzi Ansharif', 'Laki-laki', 'Aplikasi Sistem Komputerisasi Modul Pembelajaran Berbasis Web', '60010314', 'Sistem Informasi', 'metopen', '2019-06-29'),
-('1700018122', 'Rafida Kumalasari', 'Laki-laki', 'Rancang Bangun Sistem Informasi Kompetisi Bela Diri Berbasis Web', '0015118001', 'Sistem Informasi', 'metopen', '2019-06-30'),
+('1700018122', 'Rafida Kumalasari', 'Perempuan', 'Rancang Bangun Sistem Informasi Kompetisi Bela Diri Berbasis Web', '0015118001', 'Sistem Informasi', 'metopen', '2019-06-30'),
 ('1700018123', 'Nurfadhilah Alfianty F', 'Perempuan', 'Rancang Bangun Sistem Informasi Pemesanan Tiket Bus Berbasis Windows Mobile', '0019087601', 'Rekayasa Perangkat Lunak', 'metopen', '2019-07-01'),
-('1700018124', 'Iftitah Dwi Ulumiyah', 'Perempuan', 'Aplikasi Sistem Penjualan Barang Berbasis Web', '60030475', 'Sistem Informasi', 'metopen', '0000-00-00'),
-('1700018125', 'Muhammad Satria Gradienta', 'Laki-laki', 'Analisa Dan Perancangan Sistem Digital Watermarking Pada Citra Digital Dengan Metode Dct', '0006027001', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018126', 'Ennu Intan Iksan', 'Perempuan', 'Analisis Dan Implementasi Sistem Pemantau Ruangan Dengan Menggunakan Ip Camera Pada Sistem Operasi A', '0006027001', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018127', 'Ervin Fikot M', 'Laki-laki', 'Analisis Dan Perancangan Akses Jarak Jauh Dengan Teknologi Vpn Pada Kantor Suku Dinas Kependudukan D', '0006027001', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018129', 'Heronitah Yanzyah', 'Laki-laki', 'Analisis Troubleshooting Jaringan Komputer Lan Pada Pt Agna Preperindo Abadi Dengan Menggunakan Pake', '0014107301', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018130', 'Eef Mekeliano', 'Laki-laki', 'Aplikasi Bimbingan Konseling Dalam Kesulitan Belajar Siswa Menggunakan Backward Chainning Berbasis W', '0014107301', 'Media Pembelajaran', 'metopen', '0000-00-00'),
-('1700018131', 'Aditya Angga Ramadhan', 'Laki-laki', 'Aplikasi Enkripsi Pesan Singkat Menggunakan Metode Triple Des Berbasis Android', '0015118001', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018133', 'Sandy Valentino Gerani', 'Laki-laki', 'Aplikasi Game 3d Dengan Pemanfaatan Shiva Game Engine', '0015118001', 'Multimedia', 'metopen', '0000-00-00'),
-('1700018135', 'Rizal Adijisman', 'Laki-laki', 'Aplikasi Lowongan Pekerjaan Berbasis Mobile', '0019087601', 'Sistem Informasi', 'metopen', '0000-00-00'),
-('1700018137', 'Siti Issari  Sabhati', 'Perempuan', 'Sistem Informasi Pengelolaan Tanah Wakaf', '0014107301', 'Sistem Informasi', 'metopen', '0000-00-00'),
-('1700018139', 'Iqbal Manaf', 'Laki-laki', 'Perancangan Dan Pembuatan Sistem Pendukung Keputusan Untuk Kenaikan Jabatan Dan Perencanaan Karir', '60040497', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018140', 'Nurzaitun Safitri', 'Laki-laki', 'Aplikasi Mobile Banking Bri Berbasis Android', '0019087601', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018141', 'Siti Apryanti K', 'Perempuan', 'Sistem Informasi Berbasis Komputer di FISIPOL UAD', '0006027001', 'Sistem Informasi', 'metopen', '0000-00-00'),
-('1700018142', 'Muhammad Adi Rezky', 'Laki-laki', 'Aplikasi Mobile Commerce Bookstore Online System Berbasis Wireless Application Protocol Dengan Mengg', '060150841', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018143', 'Agung Parmono', 'Laki-laki', 'Aplikasi Pemetaan Daerah Tempat Penimbunan Sampah Berbasis Android', '060150841', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018144', 'Mochammad Yulianto Andi Saputro', 'Laki-laki', 'Aplikasi Pengolahan Data Penentuan Jurusan Pada Sekolah Menengah Umum Menggunakan Metode Clustering', '060150842', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018146', 'Lalu Hendri Bagus Wira Setiawan', 'Laki-laki', 'Aplikasi Penjualan Handphone Berbasis Web', '060150842', 'Sistem Informasi', 'metopen', '0000-00-00'),
-('1700018147', 'Ali Usman', 'Laki-laki', 'Aplikasi Remote Desktop System Menggunakan Spyware Untuk Memonitoring Kegiatan Siswa Di Laboratorium', '60010308', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018148', 'Abima Nugraha', 'Laki-laki', 'Aplikasi Pengamanan Data Menggunakan Algoritma Kriptografi Blowfish Dan Algoritma Steganografi Lsb P', '0015118001', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018152', 'Nofand Adlil Mukhollad', 'Laki-laki', 'Aplikasi Sistem Administrasi Pembayaran Spp Pada Sekolah Menengah Kejuruan', '60010308', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018154', 'Ricco Yhandy Fernando', 'Laki-laki', 'Aplikasi Untuk Mendiagnosa Penyakit Ayam Menggunakan Metode Fuzzy Logic', '60030479', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018155', 'Fitri Andini', 'Perempuan', 'Implementasi Web Service Untuk Sistem Informasi Akademik', '60040496', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018156', 'Randi Indraguna', 'Laki-laki', 'Aplikasi Sistem Penunjang Keputusan Bagi Penentuan Ras Manusia Dengan Metode Forward Chaining', '60030475', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018158', 'Arifaleo Nurdin', 'Laki-laki', 'Aplikasi Sms Gateway Untuk Sistem Informasi Pemesanan Tiket Pesawat', '60030479', 'Rekayasa Perangkat Lunak', 'metopen', '0000-00-00'),
-('1700018159', 'Latifatul Mujahidah', 'Perempuan', 'Identifikasi Kerusakan Gangguan Sambungan Telephone Pada Pt.Telkom Menggunakan Rumus Euclidean Dista', '60110648', 'Sistem Cerdas', 'metopen', '0000-00-00'),
-('1700018161', 'Isnan Arif Cahyadi', 'Laki-laki', 'Rancangan Sistem Informasi Arsip Induk Langganan Berbasis Web', '60090586', 'Sistem Informasi', 'metopen', '0000-00-00'),
-('1700018162', 'Puspa Nutari', 'Perempuan', 'Rancang Bangun Sistem Informasi Perhitungan Zakat Berbasis Web', '60090586', 'Sistem Informasi', 'metopen', '0000-00-00'),
+('1700018124', 'Iftitah Dwi Ulumiyah', 'Perempuan', 'Aplikasi Sistem Penjualan Barang Berbasis Web', '60030475', 'Sistem Informasi', 'metopen', '2019-07-08'),
+('1700018125', 'Muhammad Satria Gradienta', 'Laki-laki', 'Analisa Dan Perancangan Sistem Digital Watermarking Pada Citra Digital Dengan Metode Dct', '0006027001', 'Sistem Cerdas', 'metopen', '2019-06-20'),
+('1700018126', 'Ennu Intan Iksan', 'Perempuan', 'Analisis Dan Implementasi Sistem Pemantau Ruangan Dengan Menggunakan Ip Camera Pada Sistem Operasi A', '0006027001', 'Sistem Cerdas', 'metopen', '2019-06-21'),
+('1700018127', 'Ervin Fikot M', 'Laki-laki', 'Analisis Dan Perancangan Akses Jarak Jauh Dengan Teknologi Vpn Pada Kantor Suku Dinas Kependudukan D', '0006027001', 'Sistem Cerdas', 'metopen', '2019-06-15'),
+('1700018129', 'Heronitah Yanzyah', 'Laki-laki', 'Analisis Troubleshooting Jaringan Komputer Lan Pada Pt Agna Preperindo Abadi Dengan Menggunakan Pake', '0014107301', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-23'),
+('1700018130', 'Eef Mekeliano', 'Laki-laki', 'Aplikasi Bimbingan Konseling Dalam Kesulitan Belajar Siswa Menggunakan Backward Chainning Berbasis W', '0014107301', 'Media Pembelajaran', 'metopen', '2019-06-24'),
+('1700018131', 'Aditya Angga Ramadhan', 'Laki-laki', 'Aplikasi Enkripsi Pesan Singkat Menggunakan Metode Triple Des Berbasis Android', '0015118001', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-24'),
+('1700018133', 'Sandy Valentino Gerani', 'Laki-laki', 'Aplikasi Game 3d Dengan Pemanfaatan Shiva Game Engine', '0015118001', 'Multimedia', 'metopen', '2019-06-25'),
+('1700018135', 'Rizal Adijisman', 'Laki-laki', 'Aplikasi Lowongan Pekerjaan Berbasis Mobile', '0019087601', 'Sistem Informasi', 'metopen', '2019-06-27'),
+('1700018137', 'Siti Issari  Sabhati', 'Perempuan', 'Sistem Informasi Pengelolaan Tanah Wakaf', '0014107301', 'Sistem Informasi', 'metopen', '2019-07-01'),
+('1700018139', 'Iqbal Manaf', 'Laki-laki', 'Perancangan Dan Pembuatan Sistem Pendukung Keputusan Untuk Kenaikan Jabatan Dan Perencanaan Karir', '60040497', 'Sistem Cerdas', 'metopen', '2019-06-23'),
+('1700018140', 'Nurzaitun Safitri', 'Perempuan', 'Aplikasi Mobile Banking Bri Berbasis Android', '0019087601', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-15'),
+('1700018141', 'Siti Apryanti K', 'Perempuan', 'Sistem Informasi Berbasis Komputer di FISIPOL UAD', '0006027001', 'Sistem Informasi', 'metopen', '2019-06-16'),
+('1700018142', 'Muhammad Adi Rezky', 'Laki-laki', 'Aplikasi Mobile Commerce Bookstore Online System Berbasis Wireless Application Protocol Dengan Mengg', '060150841', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-17'),
+('1700018143', 'Agung Parmono', 'Laki-laki', 'Aplikasi Pemetaan Daerah Tempat Penimbunan Sampah Berbasis Android', '060150841', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-17'),
+('1700018144', 'Mochammad Yulianto Andi Saputro', 'Laki-laki', 'Aplikasi Pengolahan Data Penentuan Jurusan Pada Sekolah Menengah Umum Menggunakan Metode Clustering', '060150842', 'Sistem Cerdas', 'metopen', '2019-06-17'),
+('1700018146', 'Lalu Hendri Bagus Wira Setiawan', 'Laki-laki', 'Aplikasi Penjualan Handphone Berbasis Web', '060150842', 'Sistem Informasi', 'metopen', '2019-06-20'),
+('1700018147', 'Ali Usman', 'Laki-laki', 'Aplikasi Remote Desktop System Menggunakan Spyware Untuk Memonitoring Kegiatan Siswa Di Laboratorium', '60010308', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-21'),
+('1700018148', 'Abima Nugraha', 'Laki-laki', 'Aplikasi Pengamanan Data Menggunakan Algoritma Kriptografi Blowfish Dan Algoritma Steganografi Lsb P', '0015118001', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-22'),
+('1700018152', 'Nofand Adlil Mukhollad', 'Laki-laki', 'Aplikasi Sistem Administrasi Pembayaran Spp Pada Sekolah Menengah Kejuruan', '60010308', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-23'),
+('1700018154', 'Ricco Yhandy Fernando', 'Laki-laki', 'Aplikasi Untuk Mendiagnosa Penyakit Ayam Menggunakan Metode Fuzzy Logic', '60030479', 'Sistem Cerdas', 'metopen', '2019-06-23'),
+('1700018155', 'Fitri Andini', 'Perempuan', 'Implementasi Web Service Untuk Sistem Informasi Akademik', '60040496', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-24'),
+('1700018156', 'Randi Indraguna', 'Laki-laki', 'Aplikasi Sistem Penunjang Keputusan Bagi Penentuan Ras Manusia Dengan Metode Forward Chaining', '60030475', 'Sistem Cerdas', 'metopen', '2019-06-17'),
+('1700018158', 'Arifaleo Nurdin', 'Laki-laki', 'Aplikasi Sms Gateway Untuk Sistem Informasi Pemesanan Tiket Pesawat', '60030479', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-17'),
+('1700018159', 'Latifatul Mujahidah', 'Perempuan', 'Identifikasi Kerusakan Gangguan Sambungan Telephone Pada Pt.Telkom Menggunakan Rumus Euclidean Dista', '60110648', 'Sistem Cerdas', 'metopen', '2019-06-28'),
+('1700018161', 'Isnan Arif Cahyadi', 'Laki-laki', 'Rancangan Sistem Informasi Arsip Induk Langganan Berbasis Web', '60090586', 'Sistem Informasi', 'metopen', '2019-07-03'),
+('1700018162', 'Puspa Nutari', 'Perempuan', 'Rancang Bangun Sistem Informasi Perhitungan Zakat Berbasis Web', '60090586', 'Sistem Informasi', 'metopen', '2019-06-26'),
 ('1700018163', 'Shindi Sri Wahyuni Pawah', 'Perempuan', 'Implementasi Algoritma K-Means Clustering Dalam Sistem Pemilihan Jurusan Di Smk', '60110648', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-21'),
 ('1700018164', 'Ancas Wasita Budi Cahya', 'Laki-laki', 'Sistem Informasi Pendistribusian Obat Pada Dinas Kesehatan Berbasis Web', '60110647', 'Sistem Informasi', 'skripsi', '2019-05-25'),
 ('1700018165', 'Ihsan Fadhilah', 'Laki-laki', 'Enkripsi-Dekripsi Data Dengan Menggunakan Metode Kriptografi Advanced Encryption Standard', '60110647', 'Rekayasa Perangkat Lunak', 'metopen', '2019-06-28'),
@@ -731,7 +731,7 @@ ALTER TABLE `semester`
 -- AUTO_INCREMENT for table `seminar_proposal`
 --
 ALTER TABLE `seminar_proposal`
-  MODIFY `id_seminar` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1700018091;
+  MODIFY `id_seminar` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1700018075;
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --

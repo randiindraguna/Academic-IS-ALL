@@ -385,6 +385,25 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 	       	}
 	}
 
+	public function getDataMhs($nim){
+		$query = "SELECT * FROM mahasiswa_metopen WHERE nim = '$nim'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+ 
+	public function getMhs_dosen($nim){
+		$query = "SELECT mahasiswa_metopen.nim, dosen.nama AS nama_dos FROM mahasiswa_metopen JOIN dosen 
+				  ON mahasiswa_metopen.dosen = dosen.niy WHERE mahasiswa_metopen.nim = '$nim'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+	
+  	public function getJum_bbg($nim){
+		$query = "SELECT COUNT(logbook_bimbingan.id_logbook) AS jml_bbg FROM logbook_bimbingan JOIN mahasiswa_metopen 
+				  ON logbook_bimbingan.id_skripsi = mahasiswa_metopen.nim WHERE mahasiswa_metopen.nim = '$nim'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
 	
 	}	
 	

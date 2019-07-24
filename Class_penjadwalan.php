@@ -492,7 +492,8 @@ class Penjadwalan extends Database{
 			join penguji on penjadwalan.id_jadwal = penguji.id_jadwal
 			join dosen on penguji.niy = dosen.niy   
             WHERE penguji.niy = '$niy' AND penjadwalan.tanggal >= curdate() ORDER BY penjadwalan.tanggal ASC";
-
+	// Query ini mengambil data(record) dari tabel mahasiswa_metopen,penjadwalan,penguji dan dosen, dengan niy penguji sesuai dengan $niy
+	// dan mengurutkan dari tanggal terdekat (penjadwalan.tanggal >= curdate() ORDER BY penjadwalan.tanggal ASC)
             $sql = $this->eksekusi($query);
 			return $sql;
 	}

@@ -113,6 +113,15 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (22, 'bimbingan bab 4\r\n', '1700018066', '2019-06-29', '08:29:08', 'skripsi'),
 (23, 'bimbingan bab 2', '1700018066', '2019-06-29', '08:29:16', 'skripsi'),
 (24, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
+
+(23, 'bimbingan bab 2', '1700018066', '2019-06-29', '08:29:16', 'skripsi'),
+(24, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
+(25, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
+(26, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
+(27, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
+(28, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
+(29, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
+(30, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
 (31, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018067', '2019-05-10', '20:08:00', 'metopen'),
 (32, 'bimbingan bab 1\r\n', '1700018067', '2019-05-01', '16:44:00', 'metopen'),
 (33, 'bimbingan awal pengenalan masalah', '1700018067', '2019-05-10', '20:08:00', 'metopen'),
@@ -253,8 +262,8 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (168, 'perbaikan program pada fitur search', '1700018086', '2019-05-24', '05:53:22', 'metopen'),
 (169, 'penambahan fitur sorting ', '1700018086', '2019-05-24', '05:54:52', 'metopen'),
 (170, 'penambahan beberapa materi ', '1700018086', '2019-05-25', '08:02:51', 'metopen'),
-(0, 'bimbingan awal ', '1700018105', '2019-07-22', '06:58:22', 'metopen'),
-(0, 'bimbingan bab 1', '1700018105', '2019-07-22', '07:01:43', 'metopen');
+(171, 'bimbingan awal ', '1700018105', '2019-07-22', '06:58:22', 'metopen'),
+(172, 'bimbingan bab 1', '1700018105', '2019-07-22', '07:01:43', 'metopen');
 
 -- --------------------------------------------------------
 

@@ -422,6 +422,11 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
+	public function getData_skripsi(){
+		$query = "SELECT COUNT(nim) AS jml_skripsi FROM mahasiswa_metopen WHERE status = 'skripsi'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
 
 	// bagian mahasiswa
 	public function getDataMhs($nim){

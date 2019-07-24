@@ -3,7 +3,7 @@ require_once('../database.php');
   $akses = new Database();
   $akses->connect();
  
-include "../pengelola/database_statistik.php";
+include "../pengelola/Class_analitik.php";
   $cal = new Analitik();
   $cal->connect();
 

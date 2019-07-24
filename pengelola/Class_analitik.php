@@ -219,11 +219,6 @@ class Analitik
 		return $this->result;
 	}
 
-	public function getData_dosen(){
-		$query = "SELECT COUNT(niy) AS jml_dosen FROM dosen";
-		$this->eksekusi($query);
-		return $this->result;
-	}
 	// ===================== Pengerjaan oleh Rifka Riyani Radilla - 1700018171 =============================//
 
 	public function tanggal_seminar($tgl){
@@ -372,5 +367,5 @@ class Analitik
 	// =============================================================================================================
 	
 }	
-	
+
  ?>

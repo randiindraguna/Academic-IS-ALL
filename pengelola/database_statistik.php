@@ -372,6 +372,15 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
+
+	public function getDosentakpenguji(){
+		foreach ($this->getData_dosen as $dsn1) {
+			foreach ($this->getDosenPenguji as $dsn2) {
+				$temp = $dsn1['jml_dosen'] - $dsn2['total'];
+				return $temp;
+			}
+		}
+	}
 	
 	//dibuat oleh Ervin FIkot M(1700018127)
 	public function konversi($nilai_1, $nilai_2, $nilai_3){

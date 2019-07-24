@@ -515,7 +515,7 @@ class Penjadwalan extends Database{
 	//1700018118-Adil Baihaqi-adilbaihaqi
 	public function getNamaMhs($nim)
 	{ // function mengambil data mahasiswa berdasarkan nim
-		$query = "SELECT mahasiswa_metopen.nama from mahasiswa_metopen where mahasiswa_metopen.nim = '$nim'"; // menampilkan data mahasiswa
+		$query = "SELECT mahasiswa_metopen.nama from mahasiswa_metopen where mahasiswa_metopen.nim = '$nim'"; //query untuk mengambil data mahasiswa berdasarkan nim
 		$sql = $this->eksekusi($query); // mengeksekusi query yang telah di buat
 			return $sql;
 	}

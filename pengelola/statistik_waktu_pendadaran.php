@@ -1,6 +1,6 @@
 <?php include '../templates/header_Penjadwalan.php' ?>
 <?php 
-include "database_statistik.php";
+include "Class_analitik.php";
     $akses = new Analitik();
     $akses->connect();
  ?>

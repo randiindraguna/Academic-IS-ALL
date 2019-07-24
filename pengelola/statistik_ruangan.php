@@ -1,6 +1,6 @@
 <?php include '../templates/header_Penjadwalan.php' ?>
 <?php 
-include "database_statistik.php";
+include "Class_analitik.php";
     $akses = new Analitik();
     $akses->connect();
  ?>
@@ -87,15 +87,15 @@ if($_SESSION['status'] == "login"){
                     label: '',
                     data: [
                     <?php 
-                    foreach($akses->getruang1() as $k){
+                    foreach($akses->getruang1_semprop() as $k){
                     echo" $k[jumlah1]"; 
                     }?>,
                     <?php 
-                    foreach($akses->getruang2() as $k){
+                    foreach($akses->getruang2_semprop() as $k){
                     echo" $k[jumlah2]"; 
                     }?>,
                     <?php 
-                    foreach($akses->getruang3() as $k){
+                    foreach($akses->getruang3_semprop() as $k){
                     echo" $k[jumlah3]"; 
                     }?>,
                     ],

@@ -162,34 +162,34 @@ class Analitik
 	}
 	// ===================== Pengerjaan oleh Muhammad Nashir Al Latif - 1700018117 =============================//
 
-	public function getruang1(){
+	public function getruang1_semprop(){
 		$query="SELECT count(tempat)as jumlah1 from penjadwalan where tempat='1' and jenis_ujian='SEMPROP'";  //Query menampilkan jumlah pemakai ruangan di ruang 1, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
 
-	public function getruang2(){
+	public function getruang2_semprop(){
 		$query="SELECT count(tempat)as jumlah2 from penjadwalan where tempat='2' and jenis_ujian='SEMPROP'";   //Query menampilkan jumlah pemakai ruangan di ruang 2, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
 
-	public function getruang3(){
+	public function getruang3_semprop(){
 		$query="SELECT count(tempat)as jumlah3 from penjadwalan where tempat='3'  and jenis_ujian='SEMPROP'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
-	public function getruang21(){
+	public function getruang1_undaran(){
 		$query="SELECT count(tempat)as jumlah21 from penjadwalan where tempat='1'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
-	public function getruang22(){
+	public function getruang2_undaran(){
 		$query="SELECT count(tempat)as jumlah22 from penjadwalan where tempat='2'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
-	public function getruang23(){
+	public function getruang3_undaran(){
 		$query="SELECT count(tempat)as jumlah23 from penjadwalan where tempat='3'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas

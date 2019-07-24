@@ -275,6 +275,7 @@
 
 		public function confert_hari($day){
 			// punya dendi
+			// penjelasan : fungsi yang mengubah format dari bentuk hari ke bentuk tahun-bulan-hari , contoh 390 hari -> 1 tahun - 1 bulan - 0 hari
 			$tahun = $day / 365;
 			$tahun = floor($tahun);
 

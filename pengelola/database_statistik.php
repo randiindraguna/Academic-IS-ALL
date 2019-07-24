@@ -461,6 +461,12 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
+	public function getJumMhs($niy){
+		$query = "SELECT dosen.nama, COUNT(mahasiswa_metopen.nim) AS jum_mhs 
+				  FROM dosen JOIN mahasiswa_metopen ON dosen.niy = mahasiswa_metopen.dosen AND dosen.niy = '$niy'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
 	
 }	
 	

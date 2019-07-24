@@ -130,35 +130,35 @@ class Analitik
 
 	public function getbidangminatall($bidang){
 		$query="SELECT nama as nama, bidang_minat as bidang_minat 
-				from mahasiswa_metopen WHERE bidang_minat = '$bidang'"; 
+				from mahasiswa_metopen WHERE bidang_minat = '$bidang'"; //query tersebut tentang menampilkan seluruh bidang minat yang di ambil oleh mahasiswa
 		$this->eksekusi($query);// mengeksekusi query diatas
-		return $this->result; 
+		return $this->result;//mengembalikan hasil dari query diatas 
 	}
 
 	public function getall(){
-		$query="SELECT * from penjadwalan";
-		$this->eksekusi($query);
-		return $this->result;
+		$query="SELECT * from penjadwalan";//query yang berguna untuk mengambil semua data dari penjadwalan
+		$this->eksekusi($query);//mengeksekusi query diatas
+		return $this->result;//mengembalikan hasil dari query diatas
 	}
 	
 	public function getrelata(){
 		$query="SELECT mahasiswa_metopen.nama as nama, mahasiswa_metopen.bidang_minat as bidang_minat, count(mahasiswa_metopen.bidang_minat) as jumlah_bidang_minat2 from mahasiswa_metopen where bidang_minat='relata'";	
 		//query tersebut menjelaskan tentang tampilan jumlah mahasiswa yang mengambil bidang minat relata
 		$this->eksekusi($query); //mengeksekusi query diatas
-		return $this->result; //mengembalikan hasil query diatas
+		return $this->result; //mengembalikan hasil dari query diatas
 	}
 
 	public function getData_semester(){
-		$query = "SELECT * FROM semester WHERE status = 'terbuka'";
-		$this->eksekusi($query);
-		return $this->result;
+		$query = "SELECT * FROM semester WHERE status = 'terbuka'";// query tersebut berguna untuk mengambil semua data dari semester yang dimana statusnya terbuka
+		$this->eksekusi($query);// mengeksekusi query diatas
+		return $this->result;//mengembalikan hasil dari query diatas
 	}
 
 	public function getMhs_dosen($nim){
 		$query = "SELECT mahasiswa_metopen.nim, dosen.nama AS nama_dos FROM mahasiswa_metopen JOIN dosen 
-				  ON mahasiswa_metopen.dosen = dosen.niy WHERE mahasiswa_metopen.nim = '$nim'";
-		$this->eksekusi($query);
-		return $this->result;
+				  ON mahasiswa_metopen.dosen = dosen.niy WHERE mahasiswa_metopen.nim = '$nim'";// query tersebut berguna untuk menampilkan dosen pembimbing berdasar nim yang dicari
+		$this->eksekusi($query);//mengeksekusi query diatas
+		return $this->result;//mengembalikan hasil dari query diatas 
 	}
 	// ===================== Pengerjaan oleh Muhammad Nashir Al Latif - 1700018117 =============================//
 

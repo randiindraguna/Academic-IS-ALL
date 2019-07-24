@@ -412,6 +412,11 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
+	public function getData_semester(){
+		$query = "SELECT * FROM semester WHERE status = 'terbuka'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
 
 	// bagian mahasiswa
 	public function getDataMhs($nim){

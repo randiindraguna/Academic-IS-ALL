@@ -458,9 +458,9 @@ class Penjadwalan extends Database{
 	{
 	//-1700018116-Nanda Suci Pratwi-nandasuci
 
-		$query ="SELECT * FROM `penjadwalan` ORDER BY `penjadwalan`.`tanggal` ASC, `penjadwalan`.`jam` ASC, `penjadwalan`.`tempat` ASC"; // mengambil data berdasarkan jadwal yang terdekat terdekat	
+		$query ="SELECT * FROM `penjadwalan` ORDER BY `penjadwalan`.`tanggal` ASC, `penjadwalan`.`jam` ASC, `penjadwalan`.`tempat` ASC"; // mengambil data berdasarkan jadwal yang terdekat 	
 		$result=$this->eksekusi($query); // mengeksekusi query yang di atas
-		return $result; // mengembalikan nilai
+		return $result; // mengembalikan nilai dari result
 	}
 	
 	

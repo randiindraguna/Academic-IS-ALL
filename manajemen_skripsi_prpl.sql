@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.3
+-- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 24 Jul 2019 pada 13.21
--- Versi Server: 10.1.9-MariaDB
--- PHP Version: 5.6.15
+-- Waktu pembuatan: 24 Jul 2019 pada 17.37
+-- Versi server: 10.1.35-MariaDB
+-- Versi PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -113,9 +115,6 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (22, 'bimbingan bab 4\r\n', '1700018066', '2019-06-29', '08:29:08', 'skripsi'),
 (23, 'bimbingan bab 2', '1700018066', '2019-06-29', '08:29:16', 'skripsi'),
 (24, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
-
-(23, 'bimbingan bab 2', '1700018066', '2019-06-29', '08:29:16', 'skripsi'),
-(24, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
 (25, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
 (26, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
 (27, 'bimbingan bab 5', '1700018066', '2019-06-29', '08:29:27', 'skripsi'),
@@ -201,7 +200,7 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (107, 'terserah', '1700018074', '2019-05-24', '05:22:42', 'metopen'),
 (108, 'perbaikan program pada fitur search', '1700018074', '2019-05-24', '05:53:22', 'metopen'),
 (109, 'penambahan fitur sorting ', '1700018074', '2019-05-24', '05:54:52', 'metopen'),
-(100, 'penambahan beberapa materi ', '1700018074', '2019-05-25', '08:02:51', 'metopen'),
+(110, 'penambahan beberapa materi ', '1700018074', '2019-05-25', '08:02:51', 'metopen'),
 (111, 'monitoring evaluasi sebelum pelaksanaan semprop', '1700018075', '2019-05-10', '20:08:00', 'metopen'),
 (112, 'bimbingan bab 1\r\n', '1700018075', '2019-05-01', '16:44:00', 'metopen'),
 (113, 'bimbingan awal pengenalan masalah', '1700018075', '2019-05-10', '20:08:00', 'metopen'),
@@ -263,7 +262,9 @@ INSERT INTO `logbook_bimbingan` (`id_logbook`, `materi_bimbingan`, `id_skripsi`,
 (169, 'penambahan fitur sorting ', '1700018086', '2019-05-24', '05:54:52', 'metopen'),
 (170, 'penambahan beberapa materi ', '1700018086', '2019-05-25', '08:02:51', 'metopen'),
 (171, 'bimbingan awal ', '1700018105', '2019-07-22', '06:58:22', 'metopen'),
-(172, 'bimbingan bab 1', '1700018105', '2019-07-22', '07:01:43', 'metopen');
+(172, 'bimbingan bab 1', '1700018105', '2019-07-22', '07:01:43', 'metopen'),
+(173, 'bimbingan bab 2', '1700018105', '2019-07-24', '05:37:01', 'metopen'),
+(174, 'bimbingan bab 3', '1700018105', '2019-07-24', '05:37:13', 'metopen');
 
 -- --------------------------------------------------------
 
@@ -656,25 +657,26 @@ INSERT INTO `ujian_pendadaran` (`nim`, `id_pendadaran`, `status`, `nilai_penguji
 --
 
 --
--- Indexes for table `dosen`
+-- Indeks untuk tabel `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`niy`);
 
 --
--- Indexes for table `logbook_bimbingan`
+-- Indeks untuk tabel `logbook_bimbingan`
 --
 ALTER TABLE `logbook_bimbingan`
+  ADD PRIMARY KEY (`id_logbook`),
   ADD KEY `logbook_bimbingan_ibfk_1` (`id_skripsi`);
 
 --
--- Indexes for table `login`
+-- Indeks untuk tabel `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`user_name`);
 
 --
--- Indexes for table `mahasiswa_metopen`
+-- Indeks untuk tabel `mahasiswa_metopen`
 --
 ALTER TABLE `mahasiswa_metopen`
   ADD PRIMARY KEY (`nim`),
@@ -682,7 +684,7 @@ ALTER TABLE `mahasiswa_metopen`
   ADD KEY `Dosen_2` (`dosen`);
 
 --
--- Indexes for table `penguji`
+-- Indeks untuk tabel `penguji`
 --
 ALTER TABLE `penguji`
   ADD PRIMARY KEY (`id_penguji`),
@@ -690,57 +692,66 @@ ALTER TABLE `penguji`
   ADD KEY `id_jadwal` (`id_jadwal`);
 
 --
--- Indexes for table `penjadwalan`
+-- Indeks untuk tabel `penjadwalan`
 --
 ALTER TABLE `penjadwalan`
   ADD PRIMARY KEY (`id_jadwal`),
   ADD KEY `NIM` (`nim`);
 
 --
--- Indexes for table `prodi`
+-- Indeks untuk tabel `prodi`
 --
 ALTER TABLE `prodi`
   ADD PRIMARY KEY (`id_prodi`);
 
 --
--- Indexes for table `semester`
+-- Indeks untuk tabel `semester`
 --
 ALTER TABLE `semester`
   ADD PRIMARY KEY (`id_semester`);
 
 --
--- Indexes for table `seminar_proposal`
+-- Indeks untuk tabel `seminar_proposal`
 --
 ALTER TABLE `seminar_proposal`
   ADD PRIMARY KEY (`id_seminar`),
   ADD KEY `NIM` (`nim`);
 
 --
--- Indexes for table `ujian_pendadaran`
+-- Indeks untuk tabel `ujian_pendadaran`
 --
 ALTER TABLE `ujian_pendadaran`
   ADD PRIMARY KEY (`id_pendadaran`),
   ADD KEY `nim` (`nim`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `penguji`
+-- AUTO_INCREMENT untuk tabel `logbook_bimbingan`
+--
+ALTER TABLE `logbook_bimbingan`
+  MODIFY `id_logbook` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
+
+--
+-- AUTO_INCREMENT untuk tabel `penguji`
 --
 ALTER TABLE `penguji`
   MODIFY `id_penguji` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60822157;
+
 --
--- AUTO_INCREMENT for table `semester`
+-- AUTO_INCREMENT untuk tabel `semester`
 --
 ALTER TABLE `semester`
   MODIFY `id_semester` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT for table `seminar_proposal`
+-- AUTO_INCREMENT untuk tabel `seminar_proposal`
 --
 ALTER TABLE `seminar_proposal`
   MODIFY `id_seminar` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1700018075;
+
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
@@ -781,6 +792,7 @@ ALTER TABLE `seminar_proposal`
 --
 ALTER TABLE `ujian_pendadaran`
   ADD CONSTRAINT `ujian_pendadaran_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa_metopen` (`nim`);
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

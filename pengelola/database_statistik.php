@@ -366,6 +366,13 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
+
+	public function getData_dosen(){
+		$query = "SELECT COUNT(niy) AS jml_dosen FROM dosen";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+	
 	//dibuat oleh Ervin FIkot M(1700018127)
 	public function konversi($nilai_1, $nilai_2, $nilai_3){
 		$total = ($nilai_1 + $nilai_2 + $nilai_3);

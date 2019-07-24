@@ -382,6 +382,7 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		}
 	}
 
+
 	//dibuat oleh Ervin FIkot M(1700018127)
 	public function konversi($nilai_1, $nilai_2, $nilai_3){
 		$total = ($nilai_1 + $nilai_2 + $nilai_3);
@@ -424,6 +425,11 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 	}
 	public function getData_skripsi(){
 		$query = "SELECT COUNT(nim) AS jml_skripsi FROM mahasiswa_metopen WHERE status = 'skripsi'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+	public function getLulus(){
+		$query = "SELECT COUNT(nim) AS jml_lulus FROM ujian_pendadaran WHERE status = 'lulus'";
 		$this->eksekusi($query);
 		return $this->result;
 	}

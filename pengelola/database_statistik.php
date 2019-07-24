@@ -467,6 +467,15 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
+
+	public function getJadwalTerdekat($niy){
+		$query = "SELECT dosen.niy, penjadwalan.tanggal AS tgl_dekat, penjadwalan.jam AS jam_dekat, penjadwalan.tempat AS tmp_dekat  
+			 	  FROM dosen JOIN penguji ON dosen.niy = penguji.niy JOIN penjadwalan 
+				  ON penguji.id_jadwal = penjadwalan.id_jadwal  WHERE dosen.niy = '$niy' 
+				  ORDER BY penjadwalan.tanggal DESC LIMIT 1";
+	    $this->eksekusi($query);
+		return $this->result;
+	}
 	
 }	
 	

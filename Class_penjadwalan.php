@@ -556,7 +556,7 @@ class Penjadwalan extends Database{
 
 	//1700018144-M Yulianto Andi S-LianEx
 	public function displayDate($day){
-
+	//fungsi ini untuk mengconvert dari jumlah hari menjadi tahun bulan dan hari
 		$tahun = $day / 365;
 		$tahun = floor($tahun);
 

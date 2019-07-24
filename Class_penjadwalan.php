@@ -9,7 +9,7 @@
 	// UTS-1700018116-Nanda Suci Pratiwi -nandasuci
 	// UTS-1700018118-Adil Baihaqi-adilbaihaqi
 	// UTS-1700018133-Sandy Valentino G-iamsand
-	// UTS-1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
+	// UTS-1700018148-Abiema Febrian Nugraha-aimfn(abima febrian nugraha)
 
 
 	// class penjadwalan ini berguna untuk menampung semua fungsi fungsi yang berkaitan dengan fitur penjadwalan
@@ -32,16 +32,16 @@ class Penjadwalan extends Database{
 	}
 	
 	
-	//1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
+	// UAS-1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
 	public function createIdJadwal($id, $penguji1, $penguji2, $tanggal, $jam, $tempat)
-	{ // Membuat id_jadwal berdasarkan id, niy penguji, tanggal, dan tempat.
-		$id_jadwal 	= $id; //mengisi variabel id_jadwal dengan variabel id
-		$id_jadwal .= substr($penguji1,-3,8); //menambah kata dalam variabel id_jadwal dengan variabel penguji1 dimana berisi niy yang hanya diambil 3 digit pertama
-		$id_jadwal .= substr($penguji2,-3,8); //menambah kata dalam variabel id_jadwal dengan variabel penguji2 dimana berisi niy yang hanya diambil 3 digit pertama
-		$id_jadwal .= substr($tanggal,8,10); //menambah kata dalam variabel id_jadwal dengan variabel tanggal dimana berisi niy yang hanya diambil 2 digit terakhir
-		$id_jadwal .= $jam; //menambah kata dalam variabel id_jadwal dengan variabel jam
-		$id_jadwal .= $tempat; //menambah kata dalam variabel id_jadwal dengan variabel tempat
-		return $id_jadwal; //mengembalikan nilai dari variabel id_jadwal
+	{ 	// Membuat id_jadwal berdasarkan id, niy penguji, tanggal, dan tempat.
+		$id_jadwal 	= $id; 			//mengisi variabel id_jadwal dengan variabel id
+		$id_jadwal .= substr($penguji1,-3,8); 	//menambah kata dalam variabel id_jadwal dengan variabel penguji1 dimana berisi niy yang hanya diambil 3 digit pertama
+		$id_jadwal .= substr($penguji2,-3,8); 	//menambah kata dalam variabel id_jadwal dengan variabel penguji2 dimana berisi niy yang hanya diambil 3 digit pertama
+		$id_jadwal .= substr($tanggal,8,10); 	//menambah kata dalam variabel id_jadwal dengan variabel tanggal dimana berisi niy yang hanya diambil 2 digit terakhir
+		$id_jadwal .= $jam; 			//menambah kata dalam variabel id_jadwal dengan variabel jam
+		$id_jadwal .= $tempat; 			//menambah kata dalam variabel id_jadwal dengan variabel tempat
+		return $id_jadwal; 			//mengembalikan nilai dari variabel id_jadwal
 
 
 	}
@@ -179,10 +179,10 @@ class Penjadwalan extends Database{
 	}
 
 	public function CekPengujiDalamSehari($niy,$tanggal)
-	{ // function untuk mengecek apakah dosen dalam hari itu masih bisa menguji
-		//1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
+	{ 	// function untuk mengecek apakah dosen dalam hari itu masih bisa menguji
+		//UAS-1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
 		$db_DosenDalamSehari = $this->getDataBanyakPengujiDalamSehari($tanggal); // mengambil data banyak penguji dalam sehari lalu disimpan dalam variabel $db_DosenDalamSehari
-		foreach ($db_DosenDalamSehari as $key) {
+		foreach ($db_DosenDalamSehari as $key) { //melakukan perulangan sebanyak data dosen yang menguji pada hari itu
 			if($niy==$key['niy'] && $key['jumlahMenguji'] >= 3){ // mengecek apakah dosen dengan niy tersebut tidak lebih dari 3 kali menguji
 				return false; //mengembalikan nilai salah
 				break;
@@ -200,16 +200,16 @@ class Penjadwalan extends Database{
 	} 
 	
 	public function cekRuangWaktuDalamSehari($ruang,$waktu,$tanggal){ // Mengecek dalam tanggal tersebut apakah ada ruang dan waktu yang tabrakan atau sama
-		//1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
+		//UAS-1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
 		$query = "SELECT jam,tempat FROM penjadwalan WHERE tanggal='$tanggal'"; //query untuk mengambil data jam dan tempat dari tabel penjadwalan berdasarkan tanggal
-		$result=$this->eksekusi($query); //mengeksekusi query diatas
-		foreach ($result as $key) { //melakukan perulangan sebanyak data yg ada divariabel result
-			if($ruang==$key['tempat'] && $waktu==$key['jam']){ //mengecek apakah dari database ada tempat dan waktu yang sama di tanggal tersebut
-				return false; //mengembalikan nilai salah
-				break;
+		$result=$this->eksekusi($query); 					//mengeksekusi query diatas
+		foreach ($result as $key) { 						//melakukan perulangan sebanyak data yg ada divariabel result
+			if($ruang==$key['tempat'] && $waktu==$key['jam']){ 		//mengecek apakah dari database ada tempat dan waktu yang sama di tanggal tersebut
+				return false; 						//mengembalikan nilai salah
+				break;							//menghentikan perulangan
 			}
 		}
-		return true; //mengembalikan nilai benar
+		return true; 								//mengembalikan nilai benar
 	}
 	
 	public function cekDuaPengujiYangSama($penguji1,$penguji2) // fungsi ini untuk mengecek apakah ada dua penguji yang sama atau tidak.
@@ -365,10 +365,10 @@ class Penjadwalan extends Database{
 
 	public function getDataStatusPendadaran($nim)
 	{ // Mengambil status pendadaran mahasiswa dengan nim apakah lulus atau gagal
-		// Abima Nugraha
+		//UAS-1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
 		$query = "SELECT ujian_pendadaran.status as status_up from ujian_pendadaran where ujian_pendadaran.nim='$nim'"; // query untuk mendapatkan status dari tabel ujian_pendadaran berdasarkan nim
-		$result= $this->eksekusi($query); // mengeksekusi query diatas
-		return $result; // mengembalikan nilai dari hasil eksekusi query
+		$result= $this->eksekusi($query); 										// mengeksekusi query diatas
+		return $result; 												// mengembalikan nilai dari hasil eksekusi query
 	}
 
 	
@@ -466,7 +466,7 @@ class Penjadwalan extends Database{
 	
 	public function getDataDosenPenguji2byIdJadwal($id_jadwal)
 	{
-		//1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
+		//UAS-1700018148-Abima Febrian Nugraha-aimfn(abima febrian nugraha)
 		$query ="SELECT dosen.niy,dosen.nama as nama_dosen,dosen.email,dosen.bidang_keahlian FROM penguji JOIN dosen ON dosen.niy=penguji.niy WHERE id_jadwal='$id_jadwal' LIMIT 1,1"; //mendapatkan data dosen penguji ke 2 dengan id_jadwal
 		$result=$this->eksekusi($query); //mengeksekusi query diatas
 		return $result; //mengembalikan nilai data dosen penguji 2

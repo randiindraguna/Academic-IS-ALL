@@ -94,7 +94,7 @@ class Database
 		return $this->result; //mengembalikan hasil query diatas
 		
 	}
-	//Dibuat oleh randi indraguna
+	//Dibuat oleh ihsan fadhilah
 	public function UpdateDataMahasiswaMetopen($nim,$nama,$jenis_kelamin,$topik,$dosen,$bidang_minat){ //fungsi yang digunakan untuk mengupdate data mahasiswa metopen
 		$query="UPDATE mahasiswa_metopen SET nim='$nim',nama='$nama',jenis_kelamin='$jenis_kelamin',topik='$topik',
 				dosen='$dosen',bidang_minat='$bidang_minat' 

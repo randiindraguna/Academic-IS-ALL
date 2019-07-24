@@ -141,7 +141,7 @@ class Penjadwalan extends Database{
 
 	public function getDataBanyakRuangDalamSehari($tanggal){
 			//1700018174-M Andika Riski-Andikariski
-			//Fungsi untuk menghitung banyaknya ruang dalam sehari atau setiap tanggal akan di hitung jumlah ruangan yang terpakai  
+			//Fungsi untuk menghitung banyaknya ruang dalam sehari atau setiap tanggal akan di hitung jumlah ruangan yang terpakai dalam sehari itu
 			$query = "SELECT COUNT(*)as hitung,penjadwalan.tempat FROM penjadwalan WHERE penjadwalan.tanggal = '$tanggal'";
 			$sql=$this->eksekusi($query);
 			return $sql;   

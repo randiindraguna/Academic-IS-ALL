@@ -417,6 +417,11 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 		$this->eksekusi($query);
 		return $this->result;
 	}
+	public function getData_metopen(){
+		$query = "SELECT COUNT(nim) AS jml_metopen FROM mahasiswa_metopen WHERE status = 'metopen'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
 
 	// bagian mahasiswa
 	public function getDataMhs($nim){

@@ -310,7 +310,7 @@ class Penjadwalan extends Database{
 
 	public function getDataJadwal(){            // fungsi untuk menampilkan seluruh jadwal dari database dan di tamplkan pada halaman web
 		//1700018141-siti apryanti K- sitiapryantii
-		$query ="SELECT * FROM `penjadwalan`"; //  query atau sintax untuk mengambil data jadwal dari tabel penjadwalan
+		$query ="SELECT * FROM `penjadwalan`"; //  query atau sintax untuk mengambil data jadwal dari tabel penjadwalan agar data pada penjadwalan tampil
 		$sql = $this->eksekusi($query);        // mengeksekusi apakah query yang kita buat itu benar
 		return $sql;                           // pengembalian terhadap query yang di panggil 
 	}

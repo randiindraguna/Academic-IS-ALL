@@ -526,7 +526,7 @@ class Penjadwalan extends Database{
 		$query = "SELECT dosen.nama as nama_dosen,dosen.niy FROM dosen JOIN penguji on dosen.niy = penguji.niy JOIN penjadwalan on penjadwalan.id_jadwal = penguji.id_jadwal 
 		JOIN mahasiswa_metopen on mahasiswa_metopen.nim = penjadwalan.nim WHERE mahasiswa_metopen.nim=$nim AND penguji.id_jadwal = '$id_jadwal'"; // query mengambil data dosen, data jadwal mahasiswa berdasarkan nim, dan dosen dapat melihat mahasiswa mana yang kan dia uji 
 		$hasil=$this->eksekusi($query); // mengeksekusi query yang telah di buat
-		return $hasil; // pengembalian dari query yang di panggil
+		return $hasil; // pengembalian dari query yang di panggil pada function
 	}
 
 	//1700018116-Nanda Suci Pratwi-nandasuci

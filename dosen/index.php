@@ -2,6 +2,10 @@
 require_once('../database.php');
   $akses = new Database();
   $akses->connect();
+
+include "../pengelola/Class_analitik.php";
+  $cal = new Analitik();
+  $cal->connect(); 
  
 // mengaktifkan session
 session_start();
@@ -30,8 +34,9 @@ include '../templates/header_penjadwalan.php';
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <link rel="stylesheet" type="text/css" href="../pengelola/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../pengelola/css/style_dashboard.css">
     <!-- /\ambil css penjadwalan -->
     <!-- Tambahan CSS -->
     <link rel="stylesheet" href="../css/style_penjadwalan.css">
@@ -43,33 +48,142 @@ include '../templates/header_penjadwalan.php';
     <title>Selamat Datang Di Website Kami</title>
   </head>
   <body style="background-color= #808080;">
+        <center>
+          <ul style="width:30%;">
+            <div class="alert alert-warning">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    Selamat datang 
+                      <?php $user = $cal->getDataDsn($_SESSION['username']); 
+                        foreach ($user as $name) {
+                            echo $name['nama'];
+                    }
+                ?>
+            </div>
+          </ul>
+        </center>
     <table border="0" width="100%" height="100%" align="center">
-      <tr><td colspan="3"><br><br><br><br><br><br></td></tr>
-      <tr>
-        <td width="25%" rowspan="2"></td>
-        <td width="50%">
-          <table cellpadding="20"width="100%" border="0"  height="100%">
+      <tr><td colspan="3"><br><br></td></tr>
+      <div class="container">
+            <div class="alert alert-success fade in">
+              <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+              Selamat Datang <?php echo $_SESSION['username']; ?> 
+            </div>
+          <table border="0" width="70%" align="center">
             <tr>
-              <td bgcolor="#B5B5B5" style="width: 100%;height: 100%;border-radius: 20px;padding-top: 20px;padding-bottom: 20px;box-shadow: 0px 0px 5px 2px #d1d1d1;">
-                <center><h3>Selamat Datang Dosen<br>
-                  PRPL Manajemen Skripsi<br>
-                  Kelas C<br>
-                  Teknik Informatika<br>
-                </h3></center>
-
-
+              <td rowspan="2" width="30%">
+                <ul class="gaya-avatar">
+                  <center><img src="../pengelola/img/AV1.png" width="100px"></center>
+                  <center>
+                    <?php 
+                        //Profil Akun login 
+                        $usr = $_SESSION['username'];
+                        foreach ($cal->getDataDsn($usr) as $Profil) { ?>
+                          <br><br>
+                          <h2><?php echo $Profil['nama'] ?></h2>
+                          <h5><?php echo $Profil['niy'] ?></h5>
+                    <?php  }
+                    ?>
+                  </center>
+                </ul>
+              </td>
+              <td rowspan="3"></td>
+              <td>
+                  <ul class="gaya gaya-v2">
+                   <?php 
+                      foreach ($cal->getDataDsn($usr) as $email) { ?>
+                          <h2><?php echo $email['email'];  ?></h2>
+                          <h5>email </h5>
+                    <?php }
+                   ?>
+                  </ul>
+              </td>
+              <td rowspan="2"></td>
+              <td>
+                  <ul class="gaya gaya-v3">
+                    <?php 
+                      foreach ($cal->getJumMhs($usr) as $dsn){ ?>
+                        <h2><?php echo $dsn['jum_mhs'];  ?></h2>
+                        <h5>Mahasiswa</h5>
+                    <?php  }
+                    ?>
+                  </ul>
+              </td>
+              <td rowspan="2"></td>
+              <td>
+                  <ul class="gaya gaya-v4">
+                   <?php 
+                      foreach ($cal->getData_semester() as $smt){ 
+                          $temp = substr($smt['periode'],0,9) ?>
+                          <h2><?php echo $temp;  ?></h2>
+                          <h5>Periode</h5>
+                    <?php }
+                   ?>
+                  </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                  <ul class="gaya gaya-v5">
+                   <h2>
+                   <?php  
+                      $terdekat = mysqli_num_rows($cal->getJadwalTerdekat($usr));
+                        if ($terdekat > 0) {
+                          foreach ($cal->getJadwalTerdekat($usr) as $dsn) {
+                              echo $dsn['tgl_dekat'];
+                          }
+                        }else{
+                              echo "Kosong";
+                        }
+                    ?>
+                    </h2>
+                    <h5>Jadwal Terdekat</h5>
+                    
+                  </ul>
+              </td>
+              
+              <td>
+                  <ul class="gaya gaya-v6">
+                    <h2>
+                       <?php  
+                          $terdekat = mysqli_num_rows($cal->getJadwalTerdekat($usr));
+                            if ($terdekat > 0) {
+                              foreach ($cal->getJadwalTerdekat($usr) as $dsn) {
+                                  echo $dsn['jam_dekat'];
+                              }
+                            }else{
+                                  echo "-";
+                            }
+                        ?>
+                    </h2>
+                    <h5>Waktu</h5>
+                  </ul>
+                </div>
+              </td>
+              <td>
+                  <ul class="gaya gaya-v7">
+                    <h2>
+                        <?php  
+                          $terdekat = mysqli_num_rows($cal->getJadwalTerdekat($usr));
+                            if ($terdekat > 0) {
+                              foreach ($cal->getJadwalTerdekat($usr) as $dsn) {
+                                  echo $dsn['tmp_dekat'];
+                              }
+                            }else{
+                                  echo "-";
+                            }
+                        ?>
+                    </h2>
+                    <h5>Ruang</h5>
+                  </ul>
               </td>
             </tr>
           </table>
-        </td>
-        <td width="25%" rowspan="2"></td>
-      </tr>
-    </table>
-
+        </div>
+           
     <table cellpadding="27" border="0" width="100%" height="20%">
       <tr align="center">
         <td >
-          <br><br><br><br><br><br>
+          <br><br><br><br>
           <div  id="footer" style="height:50px; line-height:50px; background:#333; color:white;border-radius: 30px;">
             Copyright &copy; 2019
             Designed by Team Register Metopen

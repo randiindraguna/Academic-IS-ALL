@@ -381,7 +381,7 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 			}
 		}
 	}
-	
+
 	//dibuat oleh Ervin FIkot M(1700018127)
 	public function konversi($nilai_1, $nilai_2, $nilai_3){
 		$total = ($nilai_1 + $nilai_2 + $nilai_3);
@@ -400,7 +400,20 @@ private $host ,$user,$pass,$database,$conn,$result;  //tipe data private agar va
 	           	return 0;
 	       	}
 	}
+	// bagian pengelola
+	public function get_Profil($usr){
+		$query = "SELECT * FROM `login` WHERE user_name = '$usr'";
+		$this->eksekusi($query);
+		return $this->result;
+	}
 
+	public function getData_jumlah(){
+		$query = "SELECT COUNT(nim) AS jumlah FROM mahasiswa_metopen";
+		$this->eksekusi($query);
+		return $this->result;
+	}
+
+	// bagian mahasiswa
 	public function getDataMhs($nim){
 		$query = "SELECT * FROM mahasiswa_metopen WHERE nim = '$nim'";
 		$this->eksekusi($query);

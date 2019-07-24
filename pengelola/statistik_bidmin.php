@@ -12,7 +12,13 @@ if($_SESSION['status'] == "login"){
 }else{
   header("location:../index.php");
 }
-
+        if(isset($_POST['save'])){
+        if(!is_null($_POST['bidmin'])){
+            $bidang = $_POST['bidmin'] ;
+        }
+    }else{
+         $bidang = null;
+    }
 
 ?>
    <!DOCTYPE html>

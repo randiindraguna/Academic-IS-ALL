@@ -533,7 +533,7 @@ class Penjadwalan extends Database{
 	//1700018116-Nanda Suci Pratwi-nandasuci
 	public function getCountBimbinganSkripsi($nim)
 	{
-		$query = "SELECT COUNT(*) as jb from logbook_bimbingan WHERE id_skripsi = '$nim' AND jenis = 'skripsi'"; // 
+		$query = "SELECT COUNT(*) as jb from logbook_bimbingan WHERE id_skripsi = '$nim' AND jenis = 'skripsi'"; // berfungsi untuk menghitung seluru isi data yang ada dan tidak menghitung data kosong
 		$hasil = $this->eksekusi($query); // mengeksekusi query yang telah dibuat
 		return $hasil; // pengembalian queri yang di panggil 
 	}

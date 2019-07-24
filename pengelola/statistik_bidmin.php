@@ -11,8 +11,9 @@ if($_SESSION['status'] == "login"){
   //echo "Hai, selamat datang ". $_SESSION['username'];
 }else{
   header("location:../index.php");
-
 }
+
+
 ?>
    <!DOCTYPE html>
 <html lang="en">
@@ -40,7 +41,7 @@ if($_SESSION['status'] == "login"){
             <h2 class="judul"><center>Statistik<br>--BIDANG MINAT--</center></h2>
         <br>
        <div style="width: 800px;margin: 0px auto;">
-        <canvas id="myChart"></canvas>
+        <canvas id="<?=$bidang == null ? null : 'myChart' ?>"></canvas>
         </div>
         <script>
         var ctx = document.getElementById("myChart").getContext('2d');
@@ -92,14 +93,7 @@ if($_SESSION['status'] == "login"){
             }
         });
 
-        <?php 
-            $bidang = "Pilihan Bidang Minat";
-            if(isset($_POST['save'])){
-                $bidang = $_POST['bidmin'];
-            }
-        ?>
-
-    </script>
+           </script>
 
             <br><br>
             <h2 class="judul"><center>-- Data Mahasiswa -- </center></h2>
@@ -109,13 +103,13 @@ if($_SESSION['status'] == "login"){
             <!-- <div class="row"> -->
                 <div class="col-6 mt-2">
                     <label for="inputState"> Pilihan Bidang Minat </label>
-                        <select name="bidmin" id="inputState" class="form-control" >
-                            <option selected><?php echo $bidang; ?></option>
-                            <option value="Rekayasa Perangkat Lunak">Rekayasa Perangkat Lunak</option>
-                            <option value="Sistem Cerdas">Sistem Cerdas</option>
-                            <option value="Multimedia">Multimedia</option>
-                            <option value="Sistem Informasi">Sistem Informasi</option>
-                            <option value="Media Pembelajaran">Media Pembelajaran</option>
+                       <select name="bidmin" id="inputState" class="form-control" >
+                            <option value=""> Pilihan  </option>
+                            <option value="Rekayasa Perangkat Lunak" <?=$bidang == "Rekayasa Perangkat Lunak" ? 'selected' : 0 ?> >Rekayasa Perangkat Lunak</option>
+                            <option value="Sistem Cerdas" <?=$bidang == "Sistem Cerdas" ? 'selected' : 0 ?> >Sistem Cerdas</option>
+                            <option value="Multimedia" <?=$bidang == "Multimedia" ? 'selected' :    0 ?>>Multimedia</option>
+                            <option value="Sistem Informasi" <?=$bidang == "Sistem Informasi" ? 'selected' : 0 ?> >Sistem Informasi</option>
+                            <option value="Media Pembelajaran" <?=$bidang == "Media Pembelajaran" ? 'selected' : 0 ?> >Media Pembelajaran</option>
                         </select>                   
                 </div>
             <!-- </div> --> <br>

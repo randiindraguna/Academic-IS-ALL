@@ -235,6 +235,8 @@
 
 		public function DeleteDataSemprop($nim){ //sudah
 			//Dikerjakan oleh Rafida Kumalasari
+			//Dikerjakan oleh Rafida Kumalasari 1700018123
+			// uts/uas no 2 
 			$query="DELETE FROM seminar_proposal WHERE nim=$nim";
 			// query ini diperuntukkan untuk menghapus data dari tabel seminar proposal berdasarkan nim mana yang mau dihapus 
 			$this->eksekusi($query); //untuk mengeksekusi query diatas
@@ -243,13 +245,18 @@
 		}
 
 		public function lihatsempropmahasiswa1($nim){  // sudah
-			//dikerjakan rafida kumalasari
+			//dikerjakan rafida kumalasari 1700018123
+			//uts/uas no 2 
+// fungsi ini untuk menampilkan data nim ,nama, id_penguji, tanggal, nilai_proses_pembimbing, nilai_ujian_pembimbing, nilai_ujian_penguji, status dan id_jadwal
+
+
 			
 			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, penguji.id_penguji as id_penguji,penjadwalan.tanggal, seminar_proposal.nilai_proses_pembimbing, seminar_proposal.nilai_ujian_pembimbing, seminar_proposal.nilai_ujian_penguji, seminar_proposal.status, penjadwalan.id_jadwal FROM mahasiswa_metopen join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal join seminar_proposal on mahasiswa_metopen.nim=seminar_proposal.nim where mahasiswa_metopen.nim='$nim' limit 1";
-
+//menampilkan nim dan nama dari tabel mahasiswa_metopen ,menampilkan data id_penguji dari tabel penguji berdasarkan id_penguji, menampilan tanggal dari tabel penjadwalan, menampilkan nilai_proses_pembimbing dari tabel seminar_proposal, menampilkan nilai_ujian_penguji dari tabel seminar proposal , menampilkan status dari tabel seminar_proposal , menampilan id_penjadwalan dari tabel penjadwalan 
+//lalu digabungkan dengan tabel mahasiswa_metopen ,penjadwalan dimana dari kedua tabel tersebut harus ada yang sama kebetulan yang sama adalah nim digabungkan lagi dengan tabel penguji dimana pada tabel penguji dan tabel penjadwalan harus memiliki atribut yang sama yaitu id_jadwal lalu digabungkan lagi dengan tabel seminar_proposal dan mahasiswa_metopen yang dihubungkan oleh nim dimana 
+//dan diberikan query limit 1 agar tidak ada nim atau data mahasiswa yang double 
 			$this->eksekusi($query);
 			return $this->hasil;
-			
 			
 		}
 

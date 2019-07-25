@@ -175,10 +175,16 @@
 		}
 
 		public function UrutkanPengumumanPendadaranBerdasarkanNilai(){
-			//Dikerjakan oleh Firman Cahyono
+			//Dikerjakan FEBRI RAMADHAN
+
+			// fungsi ini bernama UrutkanPengumumanPendadaranBerdasarkanNilai
+			//fungsi ini untuk mengurutkan pengumuman Nilai Pendadaran berdasarkan Nilai
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as nama_mhs , SUM(ujian_pendadaran.nilai_pembimbing+ujian_pendadaran.nilai_penguji_1+ujian_pendadaran.nilai_penguji_2) as nilai, ujian_pendadaran.status FROM mahasiswa_metopen JOIN ujian_pendadaran ON mahasiswa_metopen.nim=ujian_pendadaran.nim group by mahasiswa_metopen.nim ORDER BY ujian_pendadaran.nim ASC";
+			
 			$this->eksekusi($query);
 			return $this->hasil;
+
+
 
 
 

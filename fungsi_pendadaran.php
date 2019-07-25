@@ -214,8 +214,9 @@
 			//Dikerjakan oleh Rafida Kumalasari
 			//Sudah dikerjakan oleh Rafida
 			$query="DELETE FROM ujian_pendadaran WHERE nim='$nim'";	
-			$this->eksekusi($query);
-			return $this->hasil;
+			// query ini diperuntukkan untuk menghapus data dari tabel seminar proposal berdasarkan nim mana yang mau dihapus 
+			$this->eksekusi($query); //untuk mengeksekusi query diatas
+			return $this->hasil; //menampilkan hasil query
 			
 			
 		}
@@ -223,8 +224,11 @@
 		//Dikerjakan oleh Rafida Kumalasari
 			//Sudah dikerjakan oleh Rafida
 			$query = "SELECT * from ujian_pendadaran where nim=$nim";
-			$this->eksekusi($query);
-			return $this->hasil;
+			// query ini digunakan untuk memanggil data dari tabel ujian_pendadaran berdasarkan nim
+
+			$this->eksekusi($query); //untuk mengeksekusi query diatas
+			return $this->hasil; //menampilkan hasil query
+
 		}
 
 		

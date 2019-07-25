@@ -253,10 +253,11 @@
 		
 //FUNGSI RIZAL ADIJISMAN
 		public function UpdateNilaiDanStatusPendadaran1($nim,$status,$nilai_penguji_1,$nilai_penguji_2,$nilai_pembimbing){
-			//Dikerjakan oleh Rizal Adijisman
-			$query="UPDATE ujian_pendadaran SET status='$status', nilai_penguji_1='$nilai_penguji_1', nilai_penguji_2='$nilai_penguji_2', nilai_pembimbing='$nilai_pembimbing' WHERE nim='$nim'"; //edit
-			$this->eksekusi($query);
-			return $this->hasil;			
+			//Dikerjakan oleh Rizal Adijisman (1700018135)
+			//fungsi ini untuk mengupdate nilai dan status mahasiswa
+			$query="UPDATE ujian_pendadaran SET status='$status', nilai_penguji_1='$nilai_penguji_1', nilai_penguji_2='$nilai_penguji_2', nilai_pembimbing='$nilai_pembimbing' WHERE nim='$nim'"; //query ini untuk meng-update nilai dan status mahasiswa yang sudah diubah pada from update
+			$this->eksekusi($query); //untuk mengeksekusi query diatas
+			return $this->hasil; //menampilkan hasil query			
 		}
 
 		public function UpdateNilaiDanStatusPendadaran2($nim){ //sudah??

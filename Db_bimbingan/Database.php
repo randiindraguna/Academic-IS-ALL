@@ -122,12 +122,18 @@
 
 		public function mengurutkan_lama_bimbingan_dari_yang_terlama($dosen)    
 		{
-			// dibuat oleh rifal
+			// Arifaleo Nurdin 1700018158
+			// penjelasan : fungsi dari query ini untuk menghitung lama bimbingan dari mahasiswa tergantung dari status mahasiswa itu, jika status mahasiswa METOPEN, maka akan dihitung muai dari awal mahasiswa tersebut daftar metopen hingga hari ini, namun jika status mahasiswa SKRIPSI, maka akan dihitung muai dari lulus metopen hingga hari ini. dan diurutkan mulai dari yang terbesar ke yang terkecil.
+
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan, DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) as lamabimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ORDER BY DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) desc";
-			// fungsi dari query ini untuk menghitung lama bimbingan dari mahasiswa tergantung dari status mahasiswa itu,
-			// jika status mahasiswa METOPEN, maka akan dihitung muai dari awal mahasiswa tersebut daftar metopen hingga hari
-			// ini, namun jika status mahasiswa SKRIPSI, maka akan dihitung muai dari lulus metopen hingga hari ini. dan 
-			// diurutkan mulai dari yang terbesar ke yang terkecil.
+			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
+			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
+		}
+		public function mencari_data_log_melalui_kata_yang_ingin_dicari($nim, $materi_key)
+		{
+			//dibuat oleh Arifaleo Nurdin 1700018158
+			//KETERANGAN : Fungsi ini digunakan untuk mencari data atau riwayat logbook bimbingan dari mahasiswa tertentu, dengan dengan menampilkan model, id, nama, nim, dan nama dosennya dengan mengirimkan kata-kata yang ingin dicari dan setiap data logbook bimbingan yang terdapat kata-kata yang dicari maka akan tampil.
+			$query = "SELECT *,logbook_bimbingan.jenis as model,logbook_bimbingan.id_logbook as id,mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm, dosen.nama as namdis from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen WHERE mahasiswa_metopen.nim= $nim AND materi_bimbingan LIKE '%$materi_key%'";
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
@@ -227,22 +233,9 @@
 		// 	return $this->result; // menembalikan nilai dari hasil eksekusi fungsi eksekusi(); yang di taruh di variabel $result
 		// }
 
-		//dibuat oleh Arifaleo Nurdin (1700018158)
-		//KETERANGAN : Fungsi ini digunakan untuk mencari data atau riwayat logbook bimbingan dari
-		//			   mahasiswa tertentu, dengan dengan menampilkan model, id, nama, nim, dan nama dosennya 
-		//			   dengan mengirimkan kata-kata yang ingin dicari dan setiap data logbook bimbingan yang 
-		//			   terdapat kata-kata yang dicari maka akan tampil.
+		
 	    
-		public function mencari_data_log_melalui_kata_yang_ingin_dicari($nim, $materi_key)
-		{
-			$query = "SELECT *,logbook_bimbingan.jenis as model,logbook_bimbingan.id_logbook as id,mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm, dosen.nama as namdis from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen WHERE mahasiswa_metopen.nim= $nim AND materi_bimbingan LIKE '%$materi_key%'"; 
-			//Query untuk menampilkan model, id, nama, nim, dan nama dosennya dengan menjoin tabel logbook_bimbingan ke skripsi dengan
-			//id_skripsi pada log_bimbingan sama dengan id_skripsi pada skripsi lalu di joinkan ke mahasiswa_metopen dengan nim pada 
-			//mahasiswa_metopen sama dengan nim pada skripsi lalu dijoinkan dosen dengan niy pada dosen sama dengan Dosen pada 
-			//mahasiswa_metopen dimana nim pada mahasiswa_metopen sama dengan kata atau materi yang dicari "key"
-			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
-			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
-		}
+
 
 		public function getNimFromId_log($nim)
 		{

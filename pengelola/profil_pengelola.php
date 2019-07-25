@@ -140,7 +140,7 @@ include '../templates/header_penjadwalan.php';
                                     <div style="margin:20px;">
                                   <div class = "container">
                                     <div class="wrapper">
-                                      <form action="ubah_sandi.php" method="POST"  class="form-signin">       
+                                      <form action="../ubah_sandi.php" method="POST"  class="form-signin">       
                                           <h3 class="form-signin-heading">Silahkan Mengisi Data</h3>
                                           <hr class="colorgraph"><br>
                                           <input type="password" class="form-control" name="oldpass" placeholder="Password lama" required="" autofocus="" /><br>

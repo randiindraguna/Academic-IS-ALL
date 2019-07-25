@@ -11,7 +11,7 @@ require_once('../database.php');
 session_start();
  
 // cek apakah user telah login, jika belum login maka di alihkan ke halaman login
-if($_SESSION['status'] == "login"){
+if($_SESSION['status'] == "login" && $_SESSION['level']=='admin'){
   // menampilkan pesan selamat datang
   //echo "Hai, selamat datang ". $_SESSION['username'];
 }else{

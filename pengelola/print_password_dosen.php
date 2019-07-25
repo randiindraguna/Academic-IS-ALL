@@ -41,9 +41,9 @@ if($_SESSION['status'] == "login"){
 	<center>
 	<table class='tablex'cellpadding='5'>
 		<tr  class='trx' id='cl'>
+			<td  class='tdx'>No</td>
 			<td  class='tdx'>Username</td>
 			<td  class='tdx'>Password</td>
-			<td  class='tdx'>No</td>
 		</tr>
 		<?php
 			$i=0;

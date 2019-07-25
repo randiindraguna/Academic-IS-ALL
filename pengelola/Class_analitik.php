@@ -240,7 +240,7 @@ class Analitik
 	public function getData_dosen(){
 		$query = "SELECT COUNT(niy) AS jml_dosen FROM dosen";//untuk menampilkan jumlah dosen dari tabel dosen
 		$this->eksekusi($query);//untuk mengeksekusi query diatas
-		return $this->result;//untuk hasil query diatas
+		return $this->result;//mengembalikan hasil dari query diatas
 	}
 
 	// ===================== Pengerjaan oleh Rifka Riyani Radilla - 1700018171 =============================//

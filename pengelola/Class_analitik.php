@@ -42,10 +42,11 @@ class Analitik
 
 	public function jumlah_ampu_bimbingan($bidang){
 		$query="SELECT dosen.nama AS dos_bing, dosen.niy AS niy ,COUNT(mahasiswa_metopen.dosen) 
-				AS jumlah_ampu FROM dosen JOIN mahasiswa_metopen 
-				WHERE dosen.niy = mahasiswa_metopen.dosen 
-				AND mahasiswa_metopen.bidang_minat = '$bidang' 
-				GROUP BY dosen.niy ORDER BY jumlah_ampu ASC"; //untuk menampilkan Jumlah Mahasiswa Bimbingan Masing - Masing Dosen    dan direpresentasikan dalam Grafik 
+				AS jumlah_ampu FROM dosen JOIN mahasiswa_metopen WHERE dosen.niy = mahasiswa_metopen.dosen 
+				AND mahasiswa_metopen.bidang_minat = '$bidang' GROUP BY dosen.niy ORDER BY jumlah_ampu ASC"; 
+				// Query yang berfungsi untuk menghitung jumlah mahasiswa bimbingan dari tiap tiap dosen pembimbing
+				// dengan pengelompokkan dosen berdasrakan bidang minat mahasiswa
+
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
@@ -54,15 +55,21 @@ class Analitik
 		$query="SELECT dosen.nama AS Dosen_pembimbing, dosen.bidang_keahlian AS Bidang, 
 				COUNT(mahasiswa_metopen.dosen) AS Jumlah_Mhs_Diampu FROM dosen JOIN mahasiswa_metopen 
 				WHERE dosen.niy = mahasiswa_metopen.dosen AND mahasiswa_metopen.bidang_minat = '$bidang' 
-				GROUP BY dosen.niy"; //untuk menampilkan Profil data dosen yang terpresentasi oleh grafik
+				GROUP BY dosen.niy"; 
+				//query yang berfungsi untuk menampilkan profil dosen pembimbing berdasarkan pengelompokan 
+				//bidang minat mahasiswa
+
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
 
 	public function getNilai_semprop(){
 		$query = "SELECT nim, nilai_proses_pembimbing AS nilai_1, nilai_ujian_pembimbing AS nilai_2, nilai_ujian_penguji AS nilai_3 FROM seminar_proposal";
-		$this->eksekusi($query);
-		return $this->result;
+		//query yang berfungsi untuk mengambil nilai seminar proposal dari nilai proses bimbingan, 
+		//nilai ujian bimbingan, nilai ujian penguji berdasrkan nim mahasiswa yang mengikuti seminar proposal
+
+		$this->eksekusi($query); //mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
 	}
 
 	public function getJadwalTerdekat($niy){
@@ -70,15 +77,18 @@ class Analitik
 			 	  FROM dosen JOIN penguji ON dosen.niy = penguji.niy JOIN penjadwalan 
 				  ON penguji.id_jadwal = penjadwalan.id_jadwal  WHERE dosen.niy = '$niy' 
 				  ORDER BY penjadwalan.tanggal DESC LIMIT 1";
-	    $this->eksekusi($query);
-		return $this->result;
+				  //query yang berfungsi untuk menampilkan jadwal dosen terdekat untuk di tampilkan di history dashboard
+				  //agar dosen dapat mengetahui jadwal terdekatnya secara lebih cepat
+
+	    $this->eksekusi($query); //mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
 	}
 
 	public function getDosentakpenguji(){
-		foreach ($this->getData_dosen as $dsn1) {
-			foreach ($this->getDosenPenguji as $dsn2) {
-				$temp = $dsn1['jml_dosen'] - $dsn2['total'];
-				return $temp;
+		foreach ($this->getData_dosen as $dsn1) {       		// foreach tingkat 1 untuk mengambil data dosen 
+			foreach ($this->getDosenPenguji as $dsn2) {			// foreach tingkat 2 untuk mengambil data dosen sebagai penguji
+				$temp = $dsn1['jml_dosen'] - $dsn2['total'];	// variabel $temp sebagai penampung dari jumlah dosen yang bukan penguji
+				return $temp;									// mengembalkan nilai $temp dan mengirimkan ke pengguna function
 			}
 		}
 	}
@@ -194,16 +204,7 @@ class Analitik
 		$this->eksekusi($query);  //Eksekusi query diatas
 		return $this->result;  //Mengembalikan hasil dari query diatas
 	}
-		public function getcek_nilai_undaran(){ //query untuk mengecek apakah ruangan untuk undaran masih kosong semua atau tidak
-		$query="SELECT tempat from penjadwalan WHERE jenis_ujian='UNDARAN'";
-		$this->eksekusi($query); //Eksekusi query diatas
-		return $this->result;  //Mengembalikan hasil dari query diatas
-	}
-	public function getcek_nilai_semprop(){
-		$query="SELECT tempat from penjadwalan WHERE jenis_ujian='SEMPROP'";
-		$this->eksekusi($query);
-		return $this->result; 
-	}
+	
 	// ===================== Pengerjaan oleh Tiara Anggraini Ghaib - 1700018175 =============================//
 
 	public function tanggal_undaran($tgl){
@@ -241,6 +242,12 @@ class Analitik
 		$query = "SELECT COUNT(niy) AS jml_dosen FROM dosen";//untuk menampilkan jumlah dosen dari tabel dosen
 		$this->eksekusi($query);//untuk mengeksekusi query diatas
 		return $this->result;//mengembalikan hasil dari query diatas
+	}
+
+	public function getcek_nilai_semprop(){
+		$query="SELECT tempat from penjadwalan WHERE jenis_ujian='SEMPROP'";
+		$this->eksekusi($query);
+		return $this->result; 
 	}
 
 	// ===================== Pengerjaan oleh Rifka Riyani Radilla - 1700018171 =============================//
@@ -313,22 +320,10 @@ class Analitik
 		return $this->result;//untuk hasil query diatas
 	}
 
-	public function konversi($nilai_1, $nilai_2, $nilai_3){//untuk mengkonversi nilai kelulusan mahasiswa dari angka ke huruf
-		$total = ($nilai_1 + $nilai_2 + $nilai_3);//untuk menampilkan jumlah keseluruhan nilai
-		$rerata = ($total/3);//untuk menampilkan rata-rata keseluruhan nilai
-			if ($rerata >=80){
-				return 'A';
-	        }elseif (($rerata <80) && ($rerata >=60)) {
-	            return 'B';      
-	        }elseif (($rerata <60) && ($rerata >=40)) {
-	            return 'C';      
-	        }elseif (($rerata <40) && ($rerata >=20)) {
-	            return 'D';       
-	        }elseif (($rerata <20) && ($rerata >=0)) {
-	            return 'E';      
-	        }else{
-	           	return 0;
-	       	}
+	public function getcek_nilai_undaran(){ //query untuk mengecek apakah ruangan untuk undaran masih kosong semua atau tidak
+		$query="SELECT tempat from penjadwalan WHERE jenis_ujian='UNDARAN'";
+		$this->eksekusi($query); //Eksekusi query diatas
+		return $this->result;  //Mengembalikan hasil dari query diatas
 	}
 
 	public function get_Profil($usr){

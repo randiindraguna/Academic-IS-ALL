@@ -142,16 +142,25 @@
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
-		//fungsi intan
+		
 		public function mengurutkan_judul($dosen) // tambah parameter jika diperlukan
 		{
-			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as  judul, DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) as lamabimbingan, mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy = $dosen GROUP BY  mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0  ORDER BY mahasiswa_metopen.topik  asc";
-			// query untuk mengurutkan judul metopen atau judul skripsi mahasiswa mulai dari yang terkecil ke yang terbesar (A-Z) 
+			// ennu intan iksan 1700018126
+			// penjelasan : query untuk mengurutkan judul metopen atau judul skripsi mahasiswa mulai dari yang terkecil ke yang terbesar (A-Z) 
 
+			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as  judul, DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) as lamabimbingan, mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy = $dosen GROUP BY  mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0  ORDER BY mahasiswa_metopen.topik  asc";
 	     	$this->eksekusi($query); //berguna untuk mengeksekusi query sql diatas yang telah dibuat.
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		} 
+		public function getNimFromId_log($nim)
+		{
+			// ennu intan iksan 1700018126
+			// penjelasan : fungsi yang berguna untuk mengembalikan nilai NIM dari satu mahasiswa dari id log di tabel logbook bimbingan
 
+			$query="SELECT mahasiswa_metopen.nim as nim from mahasiswa_metopen join logbook_bimbingan on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi and logbook_bimbingan.id_logbook = $nim";
+			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
+			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
+		}
 		
 		
 		public function update_data($materi_bimbingan,$tanggal_bimbingan,$jam,$id_logbook)
@@ -243,14 +252,7 @@
 	    
 
 
-		public function getNimFromId_log($nim)
-		{
-			// intan
-			$query="SELECT mahasiswa_metopen.nim as nim from mahasiswa_metopen join logbook_bimbingan on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi and logbook_bimbingan.id_logbook = $nim";
-			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
-			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
-
-		}
+		
 		
 		// Dendi Pradana (1600018224)
 		public function mengurutkan_nama_A_ke_Z($dosen) // tambah parameter jika di perlukan

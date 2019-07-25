@@ -234,7 +234,7 @@ class Analitik
 				WHERE jenis_ujian = 'UNDARAN' AND tanggal = '$tgl' 
 				AND tempat = '3'"; //untuk menampilkan tanggal dari tabel penjadwalan
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
-		return $this->result; //untuk hasil query diatas
+		return $this->result; //mengembalikan hasil dari query diatas
 	}
 
 	public function getData_dosen(){

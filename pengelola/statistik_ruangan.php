@@ -92,15 +92,15 @@ if ($hasil>0) {
                     data: [
                     <?php 
                     foreach($akses->getruang1_semprop() as $k){
-                    echo" $k[jumlah1]"; 
+                    echo" $k[jumlah1semprop]"; 
                     }?>,
                     <?php 
                     foreach($akses->getruang2_semprop() as $k){
-                    echo" $k[jumlah2]"; 
+                    echo" $k[jumlah2semprop]"; 
                     }?>,
                     <?php 
                     foreach($akses->getruang3_semprop() as $k){
-                    echo" $k[jumlah3]"; 
+                    echo" $k[jumlah3semprop]"; 
                     }?>,
                     ],
                     backgroundColor: [

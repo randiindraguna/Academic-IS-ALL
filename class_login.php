@@ -63,9 +63,9 @@
 		//nofand1700018152 
 		//penjelasan : fungsi ini digunakan pada list_password_dosen.php untuk menampilkan username dan password dosen yang belum mengubah passwordnya atau masih menggunakan password default
 		public function get_data_akun($level,$status_akun){
-			$query = "SELECT * FROM login where level='$level' and status_akun='$status_akun'";
-			$this->execute($query);
-			return $this->result;
+			$query = "SELECT * FROM login where level='$level' and status_akun='$status_akun'"; //query untuk select login berdasarkan level dan status akun
+			$this->execute($query); //mengeksekusi query
+			return $this->result; //return hasil
 		}
 		
 		//dibuat oleh Abdun Fattah Yolandanu (1700018168)

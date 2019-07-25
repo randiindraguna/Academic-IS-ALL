@@ -192,10 +192,18 @@
 //FUNGSI IFTITAH DWI
 		public function getDosenPenguji2()
 		//Dikerjakan oleh Iftitah Dwi Ulumiyah
+		//UAS no 2
 		{
 			$query = "SELECT dosen.nama as nama_dosen, dosen.niy from dosen join penguji on dosen.niy = penguji.niy where penguji.id_jadwal = 'UP11111111111'";
 			$this->eksekusi($query);
 			return $this->hasil;
+			//1.Saya akan menjelaskan function dosenpenguji2
+			//Disini saya akan menampilkan tabel nama dosen dan niy saja,dari tabel dosen
+			//2. kemudian kita gabungkan dengan penguji dimana dosen.niy= penguji.niy
+			//kita menggabungkan tabel tersebut biasanya disebut foreign key 
+			//artinya adalah hubungan tabel dosen dan penguji harus ada 
+			//yang sama agar bisa dihubungkan kebetulan yang sama adalah niy.
+			//3.Dimana pada untuk penguji2 yang memiliki id_jadwalnya "UP11111111111".
 			
 		}
 
@@ -206,6 +214,9 @@
 			
 			$this->eksekusi($query);
 			return $this->hasil;
+			//query ini menampilkan nim, nama_mhs dari tabel mahasiswa metopen dan nama_dsn dari tabel dosen dan nilai_proses_pembimmbing,nilai_ujian_pembimbing,nilai_ujian_penguji dari seminar_proposal
+			//pada kondisi ini kita menggabungkan tabel tabel mahasiswa_metopen dengan dosen dimana yang menjadi foreign keynya adalah dosen. 
+			//kemudian digabungkan lagi dengan tabel seminar_proposal dengan tabel mahasiswa_metopen yang menjadi foreign keynya adalah nim 
 			
 			
 		}

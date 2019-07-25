@@ -1,14 +1,15 @@
 <?php 
 
 	// Fitur    :	Analitik / Statistik
-	// Ketua	:	Ervin Fikot M - 1700018127
-	// Anggota	:	1. Isnan Arif Cahyadi - 1700018161
-	// 				2. Ricco Yhandy Fernando - 1700018154
-	// 				3. Muhammad Nashir Al Latif - 1700018117
-	// 				4. Tiara Anggraini Ghaib - 1700018175
-	// 				5. Rifka Riyani Radilla - 1700018171
-	// 				6. Laifatul Mujahidah - 1700018159
-	// 				7. Heronitah Yhanzyah - 1700018129
+	// Ketua	:	Ervin Fikot M - 1700018127					|Pengerjaan 5 Function
+	// Anggota	:	1. Isnan Arif Cahyadi - 1700018161			|Pengerjaan 6 Function
+	// 				2. Ricco Yhandy Fernando - 1700018154		|Pengerjaan 6 Function
+	// 				3. Muhammad Nashir Al Latif - 1700018117 	|Pengerjaan 6 Function
+	// 				4. Tiara Anggraini Ghaib - 1700018175		|Pengerjaan 6 Function
+	// 				5. Rifka Riyani Radilla - 1700018171		|Pengerjaan 6 Function
+	// 				6. Laifatul Mujahidah - 1700018159			|Pengerjaan 6 Function
+	// 				7. Heronitah Yhanzyah - 1700018129			|Pengerjaan 6 Function
+	// Total Function : 47 Function Fitur dan 3 Function Sistem
 
 	//Class_Analitik => Berfungsi untuk menghimpun semua proses yang berjalan di User interface (UI) 
 	//				 	dan menghubungkan dengan Database, Selain itu Class_Analitik juga berfungsi sebagai

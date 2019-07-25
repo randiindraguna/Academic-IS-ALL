@@ -1,6 +1,49 @@
 <?php 
 
 
+//JAWABAN UTS & UAS
+
+	//1. 1700018137
+	//2. 1700018123
+	//3. 1700018125
+	//4. 1700018142
+	//5. 1700018124
+	//6. 1700018135
+	//7. 1700018146
+	//8. 1700018131
+
+		//No 1. Penjelasan Class
+
+			//Pada fitur ujian pendadaran hanya terdapat 1 class saja, yaitu class ujian_pendadaran.
+			//class ujian_pendadaran yaitu sebuah blue print atau cetakan untuk membuat object-object yang dibutuhkan pada fitur ujian pendadaran
+			//pada class ini terdapat beberapa atribut atau yaitu $host, $user, $pass, $db, $hasil, $konek, $cari, $nilai, $status 
+			//terdapat 18 method/function yaitu : 
+												//function __construct(), 
+												//function koneksi(), 
+												//function eksekusi(), 
+												//function lihatstatusmahasiswapendadaran(),
+												//function Lihatnilaipendadaran($nim), 
+												//function Lihatnilaipendadaran1($nim)
+												//function CariDataMahasiswaBerdasarkanNimpd($nim),  
+												//function LihatTanggalUjianPendadaran(),
+												//function LihatDataHasilInputanNilaiDanStatusPendadaran(),  
+												//function DeleteDataPendadaran($nim),
+												//function InputNilaiDanStatusPendadaran($nim,$id_pendadaran,$status,$nilai_penguji_1,$nilai_penguji_2,$nilai_pembimbing),
+												//function UpdateNilaiDanStatusPendadaran1($nim,$status,$nilai_penguji_1,$nilai_penguji_2,$nilai_pembimbing), 
+												//function UpdateNilaiDanStatusPendadaran2($nim)
+												//function LihatPengumumanNilaiDanStatusSemuaMahasiswaPendadaran(), 
+												//function CariMahasiswaBerdasarkanNimPadaPengumumanHasilPendadaran(),
+												//function UrutkanPengumumanPendadaranBerdasarkanNilai(), 
+												//function HitungJumlahMahasiswaLuluspendadaran(),
+												//function HitungJumlahMahasiswaTidakLulusSemprop(), 
+												
+		
+			
+			//pada fitur ini terdapat function yang memiliki 3 level yaitu admin,mahasiswa, dan dosen pembimbing
+			//pada level admin dapat mengelola dan menginput nilai, pada level mahasiswa hanya dapat melihat nilainya, pada level dosen  pembimbing hanya dapat melihat nilai mahasiswa yang dibimbing
+
+
+
 	//class untuk data-data yang diperlukan pada fitur ujian pendadaran
 	class ujian_pendadaran{
 
@@ -29,6 +72,81 @@
 		public function eksekusi($query){
 			$this->hasil = mysqli_query($this->konek, $query);
 		}
+
+
+
+
+
+//FUNGSI Aditya Angga Ramadhan
+//UTS & UAS No 2. Penjelasan Function
+
+		
+		public function CariDataMahasiswaBerdasarkanNimpd($nim){
+			//Dikerjakan oleh Aditya Angga Ramadhan (1700018131)
+
+			// fungsi ini bernama CariMahasiswaBerdasarkanNimpd , fungsi ini digunakan untuk searching atau pencarian data mahasiswa pada level admin yang akan menginputkan nilai ujian pendadaran, yang meliputi data : nim, nama mahasiswa, nama dosen pembimbing, id dosen penguji.
+		
+			// fungsi ini menjoinkan 4 tabel yaitu tabel mahasiswa_metopen, dosen, penjadwalan dan penguji dengan primary key tabel mahasiswa metopen yaitu nim, tabel dosen yaitu niy, tabel penjadwalan yaitu id_jadwal,tabel penguji yaitu id_penguji
+		
+			// tabel mahasiswa_metopen yang terfapat FK dosen join dengan tabel dosen pada PK niy, kemudian mahasiswa_metopen pada PK nim join dengan penjadwalan pada FK nim , kemudian tabel penjadwalan pada PK id jadwal join dengan tabel penguji pada FK id_jadwal, dan $nim sebagai parameter untuk mengirim mahasiswa_metopen.nim pada variabel $nim di function  CariDataMahasiswaBerdasarkanNimpd($nim) 
+
+
+			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, mahasiswa_metopen.topik, dosen.nama as nama_dsn, penguji.id_penguji as id_penguji, penjadwalan.tanggal, penjadwalan.id_jadwal FROM mahasiswa_metopen JOIN dosen ON mahasiswa_metopen.dosen=dosen.niy join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal and mahasiswa_metopen.nim=$nim LIMIT 1";
+
+			$this->eksekusi($query);
+			return $this->hasil;	
+		}
+
+
+		public function lihatnilaipendadaran($nim){
+			//Dikerjakan oleh Aditya Angga Ramadhan (1700018131)
+
+			// fungsi ini bernama lihatnilaipendadaran, fungsi ini digunakan untuk melihat nilai ujian pendadaran dari mahasiswa dilevel dosen yang ingin melihat nilai ujian pendadaran dari mahasiswa bimbinganya, yang meliputi data : nim, nama, id penguji, tanggal ujian, nilai penguji 1, nilai penguji 2, nilai pembimbing, status
+
+			// fungsi ini menjoinkan 4 tabel yaitu tabel mahasiswa_metopen dengan PK nim, tabel penjadwalan dengan PK id_jadwal, tabel penguji dengan PK id_penguji, tabel ujian_pendadaran dengan PK id_pendadaran
+
+			// tabel mahasiswa_metopen dengan PK nim join dengan penjadwalan dengan FK nim, kemudian tabel penguji dengan FK id_jadwal join dengan penguji pada FK id_jadwal , kemudian join pada tabel ujian pendadaran dengan FK nim join mahasiswa_metopen dengan PK nim
+
+
+
+			$query = " SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, penguji.id_penguji as id_penguji,penjadwalan.tanggal, ujian_pendadaran.nilai_penguji_1, ujian_pendadaran.nilai_penguji_2, ujian_pendadaran.nilai_pembimbing, ujian_pendadaran.status, penjadwalan.id_jadwal FROM mahasiswa_metopen join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim where mahasiswa_metopen.nim=$nim limit 1";
+
+			$this->eksekusi($query);
+			return $this->hasil;
+
+		}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		public function lihatstatusmahasiswapendadaran($nim){
 			//Dikerjakan oleh Satria Gradienta
 
@@ -43,14 +161,7 @@
 
 		}
 
-		public function lihatnilaipendadaran($nim){
-			//dikerjakan Siti issari sabhati
-			$query = " SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, penguji.id_penguji as id_penguji,penjadwalan.tanggal, ujian_pendadaran.nilai_penguji_1, ujian_pendadaran.nilai_penguji_2, ujian_pendadaran.nilai_pembimbing, ujian_pendadaran.status, penjadwalan.id_jadwal FROM mahasiswa_metopen join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim where mahasiswa_metopen.nim=$nim limit 1";
-
-			$this->eksekusi($query);
-			return $this->hasil;
-
-		}
+		
 
 		public function lihatnilaipendadaran1($nim){
 			//dikerjakan muhammad adi rezky
@@ -62,7 +173,7 @@
 
 		}
 		public function getDosenPenguji1()
-		//Dikerjakan oleh Aditya Angga Ramadhan
+		//Dikerjakan oleh Siti Isari Sabati
 		{
 			$query = "SELECT dosen.nama as nama_dosen, dosen.niy from dosen join penguji on dosen.niy = penguji.niy where penguji.id_jadwal = 'SP1298563860'";
 			$this->eksekusi($query);
@@ -81,14 +192,7 @@
 
 
 		
-		public function CariDataMahasiswaBerdasarkanNimpd($nim){
-			//Dikerjakan oleh Aditya Angga Ramadhan
-			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, mahasiswa_metopen.topik, dosen.nama as nama_dsn, penguji.id_penguji as id_penguji, penjadwalan.tanggal, penjadwalan.id_jadwal FROM mahasiswa_metopen JOIN dosen ON mahasiswa_metopen.dosen=dosen.niy join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal and mahasiswa_metopen.nim=$nim LIMIT 1";
-
-			$this->eksekusi($query);
-			return $this->hasil;
-			
-		}
+		
 
 		public function LihatTanggalUjianPendadaran(){
 			//Dikerjakan oleh Satria Gradienta
@@ -175,16 +279,10 @@
 		}
 
 		public function UrutkanPengumumanPendadaranBerdasarkanNilai(){
-			//Dikerjakan FEBRI RAMADHAN
-
-			// fungsi ini bernama UrutkanPengumumanPendadaranBerdasarkanNilai
-			//fungsi ini untuk mengurutkan pengumuman Nilai Pendadaran berdasarkan Nilai
+			//Dikerjakan oleh Firman Cahyono
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as nama_mhs , SUM(ujian_pendadaran.nilai_pembimbing+ujian_pendadaran.nilai_penguji_1+ujian_pendadaran.nilai_penguji_2) as nilai, ujian_pendadaran.status FROM mahasiswa_metopen JOIN ujian_pendadaran ON mahasiswa_metopen.nim=ujian_pendadaran.nim group by mahasiswa_metopen.nim ORDER BY ujian_pendadaran.nim ASC";
-			
 			$this->eksekusi($query);
 			return $this->hasil;
-
-
 
 
 

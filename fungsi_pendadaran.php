@@ -23,20 +23,23 @@
 												//function eksekusi(), 
 												//function lihatstatusmahasiswapendadaran(),
 												//function Lihatnilaipendadaran($nim), 
-												//function Lihatnilaipendadaran1($nim)
+												//function Lihatnilaipendadaran1($nim),
 												//function CariDataMahasiswaBerdasarkanNimpd($nim),  
-												//function LihatTanggalUjianPendadaran(),
+												//function LihatTanggalUjianPendadaran(), 
 												//function LihatDataHasilInputanNilaiDanStatusPendadaran(),  
-												//function DeleteDataPendadaran($nim),
-												//function InputNilaiDanStatusPendadaran($nim,$id_pendadaran,$status,$nilai_penguji_1,$nilai_penguji_2,$nilai_pembimbing),
+												//function DeleteDataPendadaran($nim), 
+												//function InputNilaiDanStatusPendadaran($nim,$id_pendadaran,$status,$nilai_penguji_1,$nilai_penguji_2,$nilai_pembimbing), 
 												//function UpdateNilaiDanStatusPendadaran1($nim,$status,$nilai_penguji_1,$nilai_penguji_2,$nilai_pembimbing), 
-												//function UpdateNilaiDanStatusPendadaran2($nim)
+												//function UpdateNilaiDanStatusPendadaran2($nim) 
 												//function LihatPengumumanNilaiDanStatusSemuaMahasiswaPendadaran(), 
-												//function CariMahasiswaBerdasarkanNimPadaPengumumanHasilPendadaran(),
+												//function CariMahasiswaBerdasarkanNimPadaPengumumanHasilPendadaran(), 
 												//function UrutkanPengumumanPendadaranBerdasarkanNilai(), 
-												//function HitungJumlahMahasiswaLuluspendadaran(),
+												//function HitungJumlahMahasiswaLuluspendadaran(), 
 												//function HitungJumlahMahasiswaTidakLulusSemprop(), 
-												
+												//function getDosenPenguji1($id_jadwal), 
+												//function getDosenPenguji2(), 
+												//function ujianpendadaran($nim), 
+												//function updatestatuspendadakan($status,$nim), 
 		
 			
 			//pada fitur ini terdapat function yang memiliki 3 level yaitu admin,mahasiswa, dan dosen pembimbing

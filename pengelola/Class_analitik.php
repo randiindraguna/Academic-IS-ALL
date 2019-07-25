@@ -343,14 +343,14 @@ class Analitik
 	public function Semprop_gender($gender){
 		$query = "SELECT COUNT(mahasiswa_metopen.nim) AS jum_lulus, seminar_proposal.status AS stt
 				  FROM mahasiswa_metopen JOIN seminar_proposal ON mahasiswa_metopen.nim = seminar_proposal.nim 
-				  WHERE seminar_proposal.status = 'lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender' GROUP BY seminar_proposal.status";
+				  WHERE seminar_proposal.status = 'lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender' GROUP BY seminar_proposal.status"; // query untuk menampilkan jumlah mahasiswa yang tidak lulus bedasarkan inputan jenis kelamin
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
 	public function Semprop_gender_tl($gender){
 		$query = "SELECT COUNT(mahasiswa_metopen.nim) AS jum_tlulus, seminar_proposal.status AS stt
 				  FROM mahasiswa_metopen JOIN seminar_proposal ON mahasiswa_metopen.nim = seminar_proposal.nim 
-				  WHERE seminar_proposal.status = 'tidak_lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender' GROUP BY seminar_proposal.status";
+				  WHERE seminar_proposal.status = 'tidak_lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender' GROUP BY seminar_proposal.status"; // query untuk menampilkan jumlah mahasiswa yang tidak lulus bedasarkan inputan jenis kelamin
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
@@ -358,29 +358,29 @@ class Analitik
 	public function undaran_gender($gender){
 		$query = "SELECT COUNT(mahasiswa_metopen.nim) AS jum_lulus, ujian_pendadaran.status AS stt
 				  FROM mahasiswa_metopen JOIN ujian_pendadaran ON mahasiswa_metopen.nim = ujian_pendadaran.nim 
-				  WHERE ujian_pendadaran.status = 'lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender'";
+				  WHERE ujian_pendadaran.status = 'lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender'"; // query untuk menampilkan jumlah mahasiswa yang tidak lulus bedasarkan inputan jenis kelamin
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
 	public function undaran_gender_tl($gender){
 		$query = "SELECT COUNT(mahasiswa_metopen.nim) AS jum_tlulus, ujian_pendadaran.status AS stt
 				  FROM mahasiswa_metopen JOIN ujian_pendadaran ON mahasiswa_metopen.nim = ujian_pendadaran.nim 
-				  WHERE ujian_pendadaran.status = 'tidak_lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender'";
+				  WHERE ujian_pendadaran.status = 'tidak_lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender'"; // query untuk menampilkan jumlah mahasiswa yang tidak lulus bedasarkan inputan jenis kelamin
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
 
 	public function getData_jumlah(){
-		$query = "SELECT COUNT(nim) AS jumlah FROM mahasiswa_metopen";
-		$this->eksekusi($query);
-		return $this->result;
+		$query = "SELECT COUNT(nim) AS jumlah FROM mahasiswa_metopen"; //query untuk menampilkan jumlah mahasiswa metopen
+		$this->eksekusi($query); //mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
 	}
 
 	public function getJum_bbg($nim){
 		$query = "SELECT COUNT(logbook_bimbingan.id_logbook) AS jml_bbg FROM logbook_bimbingan JOIN mahasiswa_metopen 
-				  ON logbook_bimbingan.id_skripsi = mahasiswa_metopen.nim WHERE mahasiswa_metopen.nim = '$nim'";
-		$this->eksekusi($query);
-		return $this->result;
+				  ON logbook_bimbingan.id_skripsi = mahasiswa_metopen.nim WHERE mahasiswa_metopen.nim = '$nim'"; //query untuk menampilkan banyaknya bimbingan pada mahasisawa (yang sedang login)
+		$this->eksekusi($query); //mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
 	}
 
 	// =============================================================================================================

@@ -131,7 +131,7 @@ class Database
 		$this->eksekusi($query); // berguna untuk mengeksekusi query sql diatas yang telah dibuat
 		return $this->result; //untuk mengembalikan hasil eksekusi fungsi 
 	}
-	//Dikerjakan oleh Eef Mekelliano
+	//Dikerjakan oleh Eef Mekelliano - 1700018130
 	public function DeleteMahasiswaMetopen($nim){ // Fungsi ini untuk menghapus data mahasiswa metopen
 		$query="DELETE FROM mahasiswa_metopen WHERE nim='$nim'"; // Query ini digunakan untuk menghapus data mahasiswa yang telah mendaftar metopen
 		$this->eksekusi($query); // untuk mengeksekusi query sql diatas yang telah dibuat
@@ -161,7 +161,7 @@ class Database
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk mengembalikan hasil query diatas
 	}
-	//Dikerjakan oleh Eef Mekelliano
+	//Dikerjakan oleh Eef Mekelliano - 1700018130
 		public function getsatuDosen($niy){
 		$query="SELECT * from dosen where niy='$niy'"; //query ini untuk menampilkan satu dosen yang dipilih
 		$this->eksekusi($query); //untuk mengeksekusi query diatas

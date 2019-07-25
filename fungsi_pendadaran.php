@@ -329,11 +329,14 @@
 			return $this->hasil;
 		
 		}
-//FUNGSI IBRAHIM
+//FUNGSI IBRAHIM 1400018037
 
 		public function HitungJumlahMahasiswaTidakLuluspendadaran(){
 			//Dikerjakan oleh Mohammad Ibrahim
 
+			//fungsi ini bernama HitungJumlahMahasiswaTidakLulusPendadaran
+			// fungsi ini untuk menghitung jumlah mahasiswa yang tidak lulus Pendadaran
+			//dan menampilkan jumlah mahasiswa yang statusnya tidak lulus Pendadaran
 
 			$query = "SELECT COUNT(ujian_pendadaran.status ) as tidak_lulus FROM ujian_pendadaran WHERE status='tidak_lulus'";
 			

@@ -352,7 +352,7 @@
 			
 		}
 
-//FUNGSI M. Ibrahim
+//FUNGSI M. Ibrahim 1400018037
 
 		public function HitungJumlahMahasiswaTidakLulusSemprop(){
 			//Dikerjakan oleh Mohammad Ibrahim

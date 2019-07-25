@@ -147,7 +147,7 @@ if($_SESSION['status'] == "login"){
 
        
        
-        
+        //diedit oleh ibrahim
 
         <tr>
           <td align='center'>$key[nim]</td>
@@ -159,7 +159,7 @@ if($_SESSION['status'] == "login"){
           <td align='center'>$grade</td>
           <td align='center'>$key[status]</td>
           <td align='center'><a href='update_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>EDIT</a>
-          <a href='delete_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary'>DELETE</a></td>
+          <a href='delete_pendadaran_diadmin.php?nim=$key[nim]' role='button' class='btn btn-outline-primary' onclick='if(!confirm(`apakah anda yakin?`)){return false}'>DELETE</a></td> //brtanya apakah yakin delet?
           </tr>
          
         ";

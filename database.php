@@ -79,7 +79,7 @@ class Database
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //mengembalikan hasil dari query diatas
 	}
-	//Dibuat oleh randi indraguna
+	//Dibuat oleh randi indraguna-1700018156
 	public function FormUpdateDataMahasiswaMetopen($nim){ //fungsi yang digunakan untuk menampilkan form update data mahasiswa metopen
 		$query = "SELECT nim, nama, jenis_kelamin, topik, dosen, bidang_minat 
 				FROM mahasiswa_metopen 
@@ -88,7 +88,7 @@ class Database
 		return $this->result; //mengembalikan hasil query diatas
 		
 	}
-	//Dibuat oleh randi indraguna
+	//Dibuat oleh randi indraguna-1700018156
 	public function FormUpdateDataSemester($id_semester){ //fungsi yang digunakan untuk menampilkan form update data semester
 		$query = "SELECT id_semester, periode, status FROM semester where id_semester='$id_semester'"; //query untuk menampilkan form update berdasarkan $id_semester yang akan di pilih untuk di update
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
@@ -103,7 +103,7 @@ class Database
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //mengembalikan hasil query diatas
 	}
-	//Dibuat oleh randi indraguna
+	//Dibuat oleh randi indraguna-1700018156
 	public function UpdateDataSemester($id_semester,$periode,$status){ //fungsi yang digunakan untuk mengupdate data semester
 		$query="UPDATE semester SET id_semester='$id_semester',periode='$periode',status='$status' 
 		WHERE id_semester='$id_semester'"; //query untuk mengupdate data semester yang telah diubah di form update semester
@@ -141,19 +141,19 @@ class Database
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk mengembalikan hasil eksekusi query diatas
 	}
-	//Dikerjakan oleh randi indraguna
+	//Dikerjakan oleh randi indraguna-1700018156
 	public function SemesterTerbuka(){
 		$query="SELECT * from semester where status='terbuka'"; //query ini untuk menampilkan semester dengan status terbuka
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk mengembalikan hasil query diatas
 	}
-	//Dikerjakan oleh randi indraguna
+	//Dikerjakan oleh randi indraguna-1700018156
 	public function Inputsemester($periode,$status){ 
 		$query="INSERT INTO semester (periode,status) VALUES ('$periode','$status')"; //query ini untuk menampilkan form input semester (periode,status semester)
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk mengembalikan hasil query diatas
 	}
-	//Dikerjakan oleh randi indraguna
+	
 		public function Semester(){
 		$query="SELECT * from semester"; //query ini untuk menampilkan seluruh semester baik terbuka maupun yang tertutup
 		$this->eksekusi($query); //untuk mengeksekusi query diatas

@@ -261,7 +261,9 @@
 		}
 		public function updatestatusmetopen($status,$nim){
 	//Dikerjakan oleh Lalu Hendri Bagus Wira S
-
+			//Dikerjakan oleh Lalu Hendri Bagus Wira S 1700018146
+			//fungsi ini bernama updatestatusmetopen
+			//fungsi ini untuk meng update status metopen mahasiswa berdasarkan nim
 			$query = "UPDATE mahasiswa_metopen SET status='$status' WHERE mahasiswa_metopen.nim=$nim  ";
 			
 			$this->eksekusi($query);

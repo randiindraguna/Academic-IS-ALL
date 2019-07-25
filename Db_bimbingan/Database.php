@@ -4,7 +4,7 @@
 		class database fitur bimbingan skripsi :
 
 			class ini berguna menampung semua function yang ada pada fitur log bimbingan skripsi ,
-			class kami mempunyai total 18 function yang terdiri dari 1 function constructor dan 17 function return biasa , 
+			class kami mempunyai total 20 function yang terdiri dari 1 function constructor dan 19 function return biasa , 
 			kemudian kami juga mendeklarasikan 6 variabel yang memiliki hak akses private yang berarti variabel-variabel tersebut
 			hanya dapat di akses pada bagian class ini saja, kemudian untuk penjelasan setiap function yang ada pada class kami ini 
 			dapat di baca pada baris kode pada tiap-tiap function yang kami buat :) .
@@ -13,20 +13,20 @@
 			
 			- ketua : 
 
-				+ ancas wasita budi cahyadi [1700018164] => 5 FUNCTION
-				+ (wakil) abdun fattah yolandanu [1700018168] => 2 FUNCTION
+				+ ancas wasita budi cahyadi [1700018164] => 3 FUNCTION
+				+ (wakil) abdun fattah yolandanu [1700018168] => Fitur Login
 			
 			- anggota :
 
-				+ rizky muhamad hasan [1700018120] => 1 FUNCTION
-				+ ennu intan iksan [1700018126] => 1 FUNCTION
+				+ rizky muhamad hasan [1700018120] => 2 FUNCTION
+				+ ennu intan iksan [1700018126] => 2 FUNCTION
 				+ arifaleo nurdin [1700018158] => 2 FUNCTION  
-				+ nofand adlil M [1700018152] => 2 FUNCTION
-				+ nurzaitun safitri [1700018140] => 1 FUNCTION
-				+ dendi pradana [1600018224] => 1 FUNCTION
+				+ nofand adlil M [1700018152] => 3 FUNCTION
+				+ nurzaitun safitri [1700018140] => 2 FUNCTION
+				+ dendi pradana [1600018224] => 3 FUNCTION
 
 			- sisa function :
-0
+
 				+ function __construct()
 				+ function connect()
 				+ function eksekusi()
@@ -40,7 +40,6 @@
 			$this->pass=""; // mengisi variabel pass " " (kosong)
 			$this->database="manajemen_skripsi_prpl"; // mengisi variabel database dengan nama database di server localhost
 		}
-
 		public function connect(){
 			$this->conn=mysqli_connect($this->host,$this->user,$this->pass); // fungsi untuk menghubungkan database ke program web ini
 			mysqli_select_db($this->conn,$this->database); // fungsi untuk memilih database yang ingin di hubungkan
@@ -48,35 +47,33 @@
 				return die('Maaf, koneksi belum tersambung: '.mysqli_connect_error()); // jika fungsi untuk menghubungkan gagal/error maka akan ada kembalian berupa peringatan seperti yang tertulis
 			}
 		}
-
 		public function eksekusi($query){
 			$this->result=mysqli_query($this->conn,$query); // fungsi untuk mengeksekusi query query yang diberikan
-		}
-
-		// ancas
+		}	
 		public function show_data($jey) // menampilkan data skripsi mahasiswa, yang nanti ingin melakukan bimbingan
 		{
+			// ancas wasita budi cahyadi 1700018164
+			//penjelasan : menampilkan data mahasiswa metopen dengan model/status yang menujukkan apakah mahasiswa ini sedang dalam masa skripsi atau metopen
+
 			$query = "SELECT mahasiswa_metopen.status as model,mahasiswa_metopen.nim as idsk, dosen.nama as namdos ,mahasiswa_metopen.topik as judul , mahasiswa_metopen.nama as name , mahasiswa_metopen.nim as nim from dosen join mahasiswa_metopen on dosen.niy = mahasiswa_metopen.dosen and mahasiswa_metopen.nim = $jey ";
-			// menampilkan data mahasiswa metopen dengan model/status yang menujukkan apakah mahasiswa ini sedang dalam masa skripsi atau metopen
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
-
-		
-		// ancas
 		public function select_one_mahasiswa($key)  // di gunakan ketika ingin melihat log bimbingan satu mahasiswa
 		{
-			$query = "SELECT *,logbook_bimbingan.jenis as model,logbook_bimbingan.id_logbook as id,mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm, dosen.nama as namdis from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and mahasiswa_metopen.nim = $key";
-			// query sql yang digunakan untuk menampilkan data satu mahasiswa untuk melihat data pada logbimbingan sebagai fungsi search berdasarkan nim pada skripsi
+			// ancas wasita budi cahyadi 1700018164
+			// penjelasan : query sql yang digunakan untuk menampilkan data satu mahasiswa untuk melihat data pada logbimbingan berdasarkan nim pada skripsi
+
+			$query = "SELECT *,logbook_bimbingan.jenis as model,logbook_bimbingan.id_logbook as id,mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm, dosen.nama as namdis from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and mahasiswa_metopen.nim = $key"; 
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
-
-		// ancas 1700018164 
 		public function select_one_mahasiswa_by_id_log($key)  
 		{
+			// ancas wasita budi cahyadi 1700018164 
+			// penjelsan : query sql yang digunakan untuk menampilkan data satu mahasiswa, untuk mengedit datanya di tabel logbimbingan berdasarkan id_logbook
+
 			$query = "SELECT *,logbook_bimbingan.jenis as model,logbook_bimbingan.id_logbook as id,mahasiswa_metopen.nama as namaa, mahasiswa_metopen.nim as Nm, dosen.nama as namdis from logbook_bimbingan join mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and logbook_bimbingan.id_logbook = $key";
-			// query sql yang digunakan untuk menampilkan data satu mahasiswa untuk mengedit datanya di tabel logbimbingan berdasarkan id logbook
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}

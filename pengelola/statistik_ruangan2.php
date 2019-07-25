@@ -93,15 +93,15 @@ if ($hasil>0) {
                     data: [
                     <?php 
                     foreach($akses->getruang1_undaran() as $k){
-                    echo" $k[jumlah21]"; 
+                    echo" $k[jumlah1undaran]"; 
                     }?>,
                     <?php 
                     foreach($akses->getruang2_undaran() as $k){
-                    echo" $k[jumlah22]"; 
+                    echo" $k[jumlah2undaran]"; 
                     }?>,
                     <?php 
                     foreach($akses->getruang3_undaran() as $k){
-                    echo" $k[jumlah23]"; 
+                    echo" $k[jumlah3undaran]"; 
                     }?>,
                     ],
                     backgroundColor: [

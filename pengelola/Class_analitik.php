@@ -180,17 +180,17 @@ class Analitik
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
 	public function getruang1_undaran(){
-		$query="SELECT count(tempat)as jumlah21 from penjadwalan where tempat='1'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
+		$query="SELECT count(tempat)as jumlah1undaran from penjadwalan where tempat='1'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
 	public function getruang2_undaran(){
-		$query="SELECT count(tempat)as jumlah22 from penjadwalan where tempat='2'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
+		$query="SELECT count(tempat)as jumlah2undaran from penjadwalan where tempat='2'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
 	public function getruang3_undaran(){
-		$query="SELECT count(tempat)as jumlah23 from penjadwalan where tempat='3'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
+		$query="SELECT count(tempat)as jumlah3undaran from penjadwalan where tempat='3'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}

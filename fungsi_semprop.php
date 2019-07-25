@@ -265,6 +265,7 @@
 
 		public function LihatDataHasilInputanNilaiDanStatusSemprop($nim){ //sudah
 			//Dikerjakan oleh Iftitah Dwi Ulumiyah (1700018124)
+			//UTS / UAS no 2
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as nama_mhs, seminar_proposal.nilai_proses_pembimbing, seminar_proposal.status, seminar_proposal.nilai_ujian_pembimbing, seminar_proposal.nilai_ujian_penguji FROM mahasiswa_metopen JOIN seminar_proposal ON mahasiswa_metopen.nim=seminar_proposal.nim and mahasiswa_metopen.nim=$nim";
 			$this->eksekusi($query);
 			return $this->hasil;
@@ -275,10 +276,14 @@
 
 		public function cetak($nim){
 			//dikerjakan iftitah dwi ulumiyah
+			//UTS/UAS no 2
 			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, dosen.nama as nama_dsn, seminar_proposal.nilai_proses_pembimbing, seminar_proposal.nilai_ujian_pembimbing, seminar_proposal.nilai_ujian_penguji from mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join seminar_proposal on mahasiswa_metopen.nim=seminar_proposal.nim where mahasiswa_metopen.nim=$nim";
 			
 			$this->eksekusi($query);
 			return $this->hasil;
+			////query ini menampilkan nim, nama_mhs dari tabel mahasiswa metopen dan nama_dsn dari tabel dosen dan nilai_proses_pembimmbing,nilai_ujian_pembimbing,nilai_ujian_penguji dari seminar_proposal
+			//pada kondisi ini kita menggabungkan tabel tabel mahasiswa_metopen dengan dosen dimana yang menjadi foreign keynya adalah dosen. 
+			//kemudian digabungkan lagi dengan tabel seminar_proposal dengan mahasiswa_metopen yang menjadi foreign keynya adalah nim 
 
 		}
 

@@ -147,23 +147,24 @@
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		} 
 
-		//Nur 1700018140
-		//fungsi dibawah ini untuk mengupdate data jika ada yang salah pada materi atau jam atau tanggal pada tabel logbook_bimbingan
+		
 		
 		public function update_data($materi_bimbingan,$tanggal_bimbingan,$jam,$id_logbook)
 		{
+			// Nurzaitun Safitri 1700018140
+			// fungsi dibawah ini untuk mengupdate data jika ada yang salah pada materi atau jam atau tanggal pada tabel logbook_bimbingan
+			// penjelasan : berguna untuk memperbaharui materi bimbingan , tanggal bimbingan dan jam bimbingan pada tabel log bimbingan berdasarkan parameter yang ada di fungsi sebagai variabl yang bernilai dinamis. 
+
 			$query = "UPDATE `logbook_bimbingan` SET `materi_bimbingan`='$materi_bimbingan',`tanggal_bimbingan`='$tanggal_bimbingan',`jam`='$jam' WHERE logbook_bimbingan.id_logbook = $id_logbook"; 
-			//berguna untuk memperbaharui materi bimbingan , tanggal bimbingan dan jam bimbingan pada tabel log bimbingan
-			// berdasarkan parameter yang ada di fungsi sebagai variabl yang bernilai dinamis. 
-	     
-	     $this->eksekusi($query); //berguna untuk mengeksekusi query sql diatas yang telah dibuat. 
-	     return $this->result; // untuk mengembalikan hasil eksekusi fungsi ini.
+		    $this->eksekusi($query); //berguna untuk mengeksekusi query sql diatas yang telah dibuat. 
+		    return $this->result; // untuk mengembalikan hasil eksekusi fungsi ini.
 		}
-		
 		public function mengurutkan_jumlah_konsultasi($dosen) // tambah parameter jika di perlukan
 		{
+			// Nurzaitun Safitri 1700018140 
+			// penjelasan : query untuk mengurutkan daftar mahasiswa yang di bimbing oleh satu dosen dengan pengurutan berdasarkan jumlah keseluruhan konsultasi / bimbingan satu mahasiswa dengan format pengurutan bertipe " desc " yang berarti mengurutkan dari (terbesar -> terkecil)
+
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as status_mahasiswa, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan, DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) as lamabimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ORDER BY COUNT(logbook_bimbingan.id_skripsi) desc";
-			// query untuk mengurutkan daftar mahasiswa yang di bimbing oleh satu dosen dengan pengurutan berdasarkan jumlah keseluruhan konsultasi / bimbingan satu mahasiswa dengan format pengurutan bertipe " desc " yang berarti mengurutkan dari (terbesar -> terkecil)
 			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}

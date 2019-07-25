@@ -18,20 +18,19 @@
 	class Login
 	{
 		
-		private $user, $pass, $host, $db, $result, $conn; //penjelasan seperti pada class Database milik fitur logbimbingan (class ini dibuat oleh tim fitur logbimbingan)
-
-		function __construct(){
-			$this->host = "localhost";
-			$this->user = "root";
-			$this->pass = "";
-			$this->db = "manajemen_skripsi_prpl";
+		private $user, $pass, $host, $db, $result, $conn; // variabel yang bersifat private yang hanya dapat di akses di dalam class Database ini saja
+		function __construct(){ // fungsi yang akan pertamakali di eksekusi ketika class Database ini di inisialisasikan
+			$this->host = "localhost"; // mengisi variabel host dengan  "localhost"
+			$this->user = "root";  // mengisi variabel user dengan " root " 
+			$this->pass = ""; // mengisi variabel pass " " (kosong)
+			$this->db = "manajemen_skripsi_prpl"; // mengisi variabel database dengan nama database di server localhost
 		}
-		public function connect(){ //penjelasan seperti pada class Database milik fitur logbimbingan
-			$this->conn = mysqli_connect($this->host,$this->user,$this->pass,$this->db);
+		public function connect(){ 
+			$this->conn = mysqli_connect($this->host,$this->user,$this->pass,$this->db); // fungsi untuk menghubungkan database ke program web ini
 		} 
 
-		public function execute($query){ //penjelasan seperti pada class Database milik fitur logbimbingan
-			$this->result = mysqli_query($this->conn, $query);
+		public function execute($query){ 
+			$this->result = mysqli_query($this->conn, $query);  // fungsi untuk mengeksekusi query query yang diberikan
 		}
 
 		//dibuat oleh Abdun Fattah Yolandanu (1700018168)

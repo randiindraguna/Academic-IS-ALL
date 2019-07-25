@@ -40,6 +40,7 @@
               <th>Topik</th>
               <th>Dosen</th>
               <th>Bidang Minat</th>
+              <th>Status</th>
               <th>Tanggal Daftar</th>
             </tr>
             
@@ -56,6 +57,7 @@
                   <td>$key[topik]</td>
                   <td>$key[namados]</td>
                   <td>$key[bidang_minat]</td>
+                  <td>$key[status]</td>
                   <td>$key[tanggal_mulai]</td>
                 </tr>
                 ";

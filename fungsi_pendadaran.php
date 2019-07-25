@@ -248,7 +248,11 @@
 		
 //FUNGSI LALU HENDRI
 		public function CariMahasiswaBerdasarkanNimPadaPengumumanHasilPendadaran($nim){
-			//Dikerjakan oleh Lalu Hendri Bagus Wira S
+			//Dikerjakan oleh Lalu Hendri Bagus Wira S 1700018146
+			//fungsi ini bernama CariMahasiswaBerdasarkanNimPadaPengumumanHasilPendadaran
+			//fungsi ini  untuk mencari data hasil pendadaran mahasiswa berdasarkan nim dengan menginputkan nim sebagai keynya
+			//nanti outputnya itu menampilkan NIM,Nama Mahasiswa,Topik,nilai penguji 1,nilai penguji 2,nilai pembimbing,status
+			//di fungsi ini kita menjoinkan dua tabel yaitu tabel mahasiswa_metopen,ujian_ pendadaran
 			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, mahasiswa_metopen.topik, ujian_pendadaran.nilai_penguji_1,ujian_pendadaran.nilai_penguji_2,ujian_pendadaran.nilai_pembimbing, ujian_pendadaran.status FROM mahasiswa_metopen join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim AND mahasiswa_metopen.nim=$nim";
 
 			$this->eksekusi($query);

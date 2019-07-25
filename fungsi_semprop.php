@@ -298,11 +298,14 @@
 		}
 
 
-//FUNGSI Firman Cahyono
+		//FUNGSI Febri Ramadhan 1500018299
 
 		public function UrutkanPengumumanSempropBerdasarkanNilai(){ 
-			//Dikerjakan oleh Firman Cahyono
+			//Dikerjakan oleh Febri Ramadhan
 
+			// fungsi ini bernama UrutkanPengumumanSempropBerdasarkanNilai
+			//fungsi ini untuk mengurutkan pengumuman Nilai semprop berdasarkan niai
+			
 			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as nama_mhs , SUM(seminar_proposal.nilai_proses_pembimbing+seminar_proposal.nilai_ujian_pembimbing+seminar_proposal.nilai_ujian_penguji) as nilai, seminar_proposal.status FROM mahasiswa_metopen JOIN seminar_proposal ON mahasiswa_metopen.nim=seminar_proposal.nim group by mahasiswa_metopen.nim ORDER BY seminar_proposal.nim ASC";
 			
 			$this->eksekusi($query);
@@ -311,7 +314,6 @@
 		}
 
 
-//FUNGSI Febri Ramadhan
 
 		public function HitungJumlahMahasiswaLulusSemprop(){
 			//Dikerjakan oleh Febri Ramadhan

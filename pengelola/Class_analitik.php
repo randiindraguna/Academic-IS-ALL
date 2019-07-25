@@ -160,44 +160,44 @@ class Analitik
 		$this->eksekusi($query);//mengeksekusi query diatas
 		return $this->result;//mengembalikan hasil dari query diatas 
 	}
-	// ===================== Pengerjaan oleh Muhammad Nashir Al Latif - 1700018117 =============================//
+	// ===================== Pengerjaan oleh Muhammad Nashir Allatif - 1700018117 =============================//
 
 	public function getruang1_semprop(){
-		$query="SELECT count(tempat)as jumlah1semprop from penjadwalan where tempat='1' and jenis_ujian='SEMPROP'";  //Query menampilkan jumlah pemakai ruangan di ruang 1, karena ini pakai jenis enum
-		$this->eksekusi($query);  //mengeksekusi query diatas
-		return $this->result;  //mengembalikan hasil dari query diatas
+		$query="SELECT count(tempat)as jumlah1semprop from penjadwalan where tempat='1' and jenis_ujian='SEMPROP'";  //Query menampilkan jumlah ruangan 1 pada Seminar proposal
+		$this->eksekusi($query);  //Eksekusi query diatas
+		return $this->result;  //Mengembalikan hasil dari query diatas
 	}
 
 	public function getruang2_semprop(){
-		$query="SELECT count(tempat)as jumlah2semprop from penjadwalan where tempat='2' and jenis_ujian='SEMPROP'";   //Query menampilkan jumlah pemakai ruangan di ruang 2, karena ini pakai jenis enum
-		$this->eksekusi($query);  //mengeksekusi query diatas
-		return $this->result;  //mengembalikan hasil dari query diatas
+		$query="SELECT count(tempat)as jumlah2semprop from penjadwalan where tempat='2' and jenis_ujian='SEMPROP'";   //Query menampilkan jumlah ruangan 2 pada Seminar proposal
+		$this->eksekusi($query);  //Eksekusi query diatas
+		return $this->result;  //Mengembalikan hasil dari query diatas
 	}
 
 	public function getruang3_semprop(){
-		$query="SELECT count(tempat)as jumlah3semprop from penjadwalan where tempat='3'  and jenis_ujian='SEMPROP'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
-		$this->eksekusi($query);  //mengeksekusi query diatas
-		return $this->result;  //mengembalikan hasil dari query diatas
+		$query="SELECT count(tempat)as jumlah3semprop from penjadwalan where tempat='3'  and jenis_ujian='SEMPROP'";   //Query menampilkan jumlah ruangan 3 pada Seminar proposal
+		$this->eksekusi($query);  //Eksekusi query diatas
+		return $this->result;  //Mengembalikan hasil dari query diatas
 	}
 	public function getruang1_undaran(){
-		$query="SELECT count(tempat)as jumlah1undaran from penjadwalan where tempat='1'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
-		$this->eksekusi($query);  //mengeksekusi query diatas
-		return $this->result;  //mengembalikan hasil dari query diatas
+		$query="SELECT count(tempat)as jumlah1undaran from penjadwalan where tempat='1'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah ruangan 1 pada undaran
+		$this->eksekusi($query);  //Eksekusi query diatas
+		return $this->result;  //Mengembalikan hasil dari query diatas
 	}
 	public function getruang2_undaran(){
-		$query="SELECT count(tempat)as jumlah2undaran from penjadwalan where tempat='2'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
-		$this->eksekusi($query);  //mengeksekusi query diatas
-		return $this->result;  //mengembalikan hasil dari query diatas
+		$query="SELECT count(tempat)as jumlah2undaran from penjadwalan where tempat='2'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah ruangan 2 pada undaran
+		$this->eksekusi($query);  //Eksekusi query diatas
+		return $this->result;  //Mengembalikan hasil dari query diatas
 	}
 	public function getruang3_undaran(){
-		$query="SELECT count(tempat)as jumlah3undaran from penjadwalan where tempat='3'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah pemakai ruangan di ruang 3, karena ini pakai jenis enum
-		$this->eksekusi($query);  //mengeksekusi query diatas
-		return $this->result;  //mengembalikan hasil dari query diatas
+		$query="SELECT count(tempat)as jumlah3undaran from penjadwalan where tempat='3'  and jenis_ujian='UNDARAN'";   //Query menampilkan jumlah ruangan 3 pada undaran
+		$this->eksekusi($query);  //Eksekusi query diatas
+		return $this->result;  //Mengembalikan hasil dari query diatas
 	}
-		public function getcek_nilai_undaran(){
+		public function getcek_nilai_undaran(){ //query untuk mengecek apakah ruangan untuk undaran masih kosong semua atau tidak
 		$query="SELECT tempat from penjadwalan WHERE jenis_ujian='UNDARAN'";
-		$this->eksekusi($query);
-		return $this->result; 
+		$this->eksekusi($query); //Eksekusi query diatas
+		return $this->result;  //Mengembalikan hasil dari query diatas
 	}
 	public function getcek_nilai_semprop(){
 		$query="SELECT tempat from penjadwalan WHERE jenis_ujian='SEMPROP'";

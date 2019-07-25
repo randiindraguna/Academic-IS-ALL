@@ -161,6 +161,8 @@
 		}
 		public function InputNilaiDanStatusPendadaran($nim,$id_pendadaran,$status,$nilai_penguji_1,$nilai_penguji_2,$nilai_pembimbing){
 			//Dikerjakan oleh Muhammad Adi Rezky
+			//fungsi ini untuk membuat inputan nilai di database 
+			//kemudian akan di eksekusi 
 
 			$query = "INSERT INTO ujian_pendadaran VALUES ('$nim','$id_pendadaran','$status','$nilai_penguji_1','$nilai_penguji_2','$nilai_pembimbing')";
 			$this->eksekusi($query);

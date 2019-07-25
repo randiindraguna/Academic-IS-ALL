@@ -68,8 +68,8 @@ include '../templates/header_penjadwalan.php';
     <label for='formGroupExampleInput'>Periode</label>
     <input name='periode' value='$key[periode]' type='text' class='form-control' id='formGroupExampleInput' placeholder='Example input'>
     <label for='formGroupExampleInput'>Status</label><br>
-    <input type='radio' value='Terbuka' name='status'> Terbuka
-    <input type='radio' value='Tertutup' name='status'> Tertutup
+    <input type='radio' value='Terbuka' name='status' required> Terbuka
+    <input type='radio' value='Tertutup' name='status' required> Tertutup
   </div>
         
         ";

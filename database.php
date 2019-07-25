@@ -23,6 +23,7 @@ seperti update dan hapus serta melihat mahasiswa yang dibimbing oleh dosen terte
 19.function Semester
 20.function Inputsemester
 21.function getsatuDosen
+22.function ceknim
 Untuk penjelasan function-function diatas akan dijelaskan pada class dibawah ini.
 */
 
@@ -35,7 +36,7 @@ class Database
 		$this->pass="";				// variabel pass diisi kosong
 		$this->database="manajemen_skripsi_prpl";	// variabel diisi database yang digunakan yang ada dalam sever localhost yaitu manajemen_skripsi_prpl
 	}
-	//Dibuat oleh agung parmono
+	//Dibuat oleh Agung Parmono-1700018143
 	public function connect(){	//fungsi yang digunakan untuk koneksi ke database manajemen_skripsi_prpl
 		$this->conn=mysqli_connect($this->host,$this->user,$this->pass);	//menghubungkan ke localhost
 		mysqli_select_db($this->conn,$this->database);						//menghubungkan ke database
@@ -43,12 +44,12 @@ class Database
 			return die('Maaf, koneksi belum tersambung: '.mysqli_connect_error()); //Maaf,koneksi belum tersambung
 		}
 	}
-	//Dibuat oleh agung parmono
+	//Dibuat oleh Agung Parmono-1700018143
 	public function eksekusi($query){	//fungsi yang digunakan untuk eksekusi query yang ada
 		$this->result=mysqli_query($this->conn,$query);	//mengembalikan hasil dari query yang dieksekusi
 		return $this->result; // menambahkan return
 	}
-	//Dibuat oleh agung parmono
+	//Dibuat oleh Agung Parmono-1700018143
 	public function getDosen(){	//fungsi yang dibuat untuk menampilkan seluruh data dosen
 		$query="SELECT * FROM dosen";	//query untuk menampilkan seluruh data dosen
 		$this->eksekusi($query);		//mengeksekusi query diatas
@@ -60,7 +61,7 @@ class Database
 		$this->eksekusi($query);	//mengeksekusi query diatas
 		return $this->result;		//untuk mengembalikan hasil eksekusi fungsi
 	}
-	//Dibuat oleh agung parmono
+	//Dibuat oleh Agung Parmono-1700018143
 	public function register($nim,$nama,$jenis_kelamin,$topik,$dosen,$bidang_minat,$tanggal_mulai){	//fungsi yang digunakan untuk mendaftarkan mahasiswa untuk metopen
 		$query = "INSERT INTO mahasiswa_metopen(nim,nama,jenis_kelamin,topik,dosen,bidang_minat,tanggal_mulai) VALUES ('$nim','$nama','$jenis_kelamin','$topik','$dosen','$bidang_minat','$tanggal_mulai')"; //query untuk menambah data mahasiswa berupa nim,nama,jenis kelamin,topik,dosen,bidang minat dan tanggal mulai yang akan disimpan pada tabel mahasiswa_metopen
 		$this->eksekusi($query);	//mengeksekusi query diatas
@@ -164,7 +165,7 @@ class Database
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk mengembalikan hasil query diatas
 	}
-	//Dikerjakan oleh agung parmono
+	//Dikerjakan oleh Agung Parmono-1700018143
 		public function ceknim($cek){
 		$query="SELECT COUNT(nim) AS jum FROM mahasiswa_metopen WHERE nim = '$cek'"; //query untuk menghitung jumlah mahasiswa berdasarkan nim
 		$this->eksekusi($query);  //untuk mengeksekusi query diatas

@@ -1,5 +1,5 @@
 <?php
-	require_once '../class_login.php';
+	require_once 'class_login.php';
 	$akses = new Login();
  	$akses->connect();
  	session_start();

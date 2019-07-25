@@ -66,7 +66,7 @@ class Database
 		$this->eksekusi($query);	//mengeksekusi query diatas
 		return $this->result;		//mengembalikan hasil dari query diatas
 	}
-	//Dibuat oleh Amir Fauzi Ansharif
+	//Dibuat oleh Amir Fauzi Ansharif-1700018121
 	public function getJumlahMhs(){ //fungsi yang di gunakan untuk mengambil jumlah mahasiswa
 		$query="SELECT COUNT(nim) as jumlah_mahasiswa FROM mahasiswa_metopen"; //query untuk mengambil jumlah mahasiswa berdasarkan nim
 		$this->eksekusi($query); //mengeksekusi query diatas
@@ -109,7 +109,7 @@ class Database
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //mengembalikan hasil query diatas
 	}
-	//Dibuat oleh amir fauzi ansharif
+	//Dibuat oleh Amir Fauzi Ansharif-1700018121
 	public function DeleteDataSemester($id_semester){ // Fungsi ini untuk menghapus data mahasiswa metopen
 		$query="DELETE FROM semester WHERE id_semester='$id_semester'"; // Query ini digunakan untuk menghapus data mahasiswa yang telah mendaftar metopen
 		$this->eksekusi($query); // untuk mengeksekusi query sql diatas yang telah dibuat
@@ -134,7 +134,7 @@ class Database
 		$this->eksekusi($query); // untuk mengeksekusi query sql diatas yang telah dibuat
 		return $this->result; // untuk mengembalikan hasil eksekusi pada fungsi ini.
 	}
-	//Dikerjakan oleh amir fauzi ansharif
+	//Dikerjakan oleh Amir Fauzi Ansharif-1700018121
 	public function getDataMahasiswaBimbinganDosenTertentu($niy){ //fungsi ini digunakan untuk menampilkan data mahasiswa bimbingan dari dosen tertentu dengan paramater $niy 
 		$query="SELECT mahasiswa_metopen.nama as nama_mhs, mahasiswa_metopen.nim as nim_mhs from mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy where dosen.niy='$niy'"; //query ini digunakan untuk menampilkan data mahasiswa bimbingan dari dosen tertentu
 		$this->eksekusi($query); //untuk mengeksekusi query diatas

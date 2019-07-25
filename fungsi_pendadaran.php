@@ -118,6 +118,7 @@
 
 			//Query untuk melihat status mahasiswa di pendadaran
 			//menampilkan nim di mahasiswa_metopen, nama di mahasiswa_metopen sebagai nama mahasiswa, status pada di ujian_pendadaran dari mmahasiswa_metopen join dosen pada dosen di mahasiswa_metopen dengan niy di dosen join dengan ujian_pendadaran pada nim di mahasiswa_metopen dengan nim di ujian_pendadaran where niy di dosen dengan pentunjuk nim
+			//kemudian nanti akan dieksekusi
 			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, ujian_pendadaran.status from mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim where dosen.niy='$nim'";
 
 			$this->eksekusi($query);
@@ -131,6 +132,7 @@
 
 			//Query untuk melihat tanggal ujian pendadaran
 			//menampilakn nim, nama mahasiswa, topik metoprn, nama dosen, penguji, tanggal, dari mahasiswa metopen join ke dosen pada mahasiswa_metopen di dosen, dosen di niy, di join penjadwalan pada mahasiswa_metopen pada dim, dengan penjadwalan di nim join penguji pada penjadwalan di id_jadwal dengan penguji di id_jadwal
+			//kemudian nanti akan dieksekusi
 			$query = "SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama AS nama_mhs, mahasiswa_metopen.topik, dosen.nama AS nama_dsn, penguji.id_penguji AS penguji, penjadwalan.tanggal FROM mahasiswa_metopen JOIN dosen ON mahasiswa_metopen.dosen=dosen.niy JOIN penjadwalan ON mahasiswa_metopen.nim=penjadwalan.nim JOIN penguji ON penjadwalan.id_jadwal=penguji.id_jadwal";
 			
 			$this->eksekusi($query);

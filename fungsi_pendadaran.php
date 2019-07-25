@@ -146,8 +146,12 @@
 
 //FUNGSI MUHAMMAD ADI REZKY		
 
+		
+
 		public function lihatnilaipendadaran1($nim){
 			//dikerjakan muhammad adi rezky
+			// fungsi ini untuk menampilkan nilai mahasiswa yang ada novbar di mahasiswa
+			// outputnya adalah adalah menampilkan nama mahasiswa, nama perwalian dosen, nilai ujian_pendadaran, tanggal ujian, nilai serta status mahasiswa
 			$query = " SELECT mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, dosen.nama  as nama_dsn, penjadwalan.tanggal, ujian_pendadaran.nilai_penguji_1, ujian_pendadaran.nilai_penguji_2, ujian_pendadaran.nilai_pembimbing, ujian_pendadaran.status,
 			penjadwalan.id_jadwal FROM mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join penjadwalan on mahasiswa_metopen.nim=penjadwalan.nim join penguji on penjadwalan.id_jadwal=penguji.id_jadwal join ujian_pendadaran on mahasiswa_metopen.nim=ujian_pendadaran.nim where mahasiswa_metopen.nim='$nim' LIMIT 1";
 

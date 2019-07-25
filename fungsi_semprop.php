@@ -133,6 +133,7 @@
 			//dikerjakan oleh m. adi rezky 
 			// fungsi ini berguna untuk mencari atau mencek mahasiswa, apakah mahasiswa itu sudah ternilai oleh admin atau belum..
 			// fungsi ini file hasil pencarian di admin..
+			
 			$query = "SELECT * from seminar_proposal where nim=$nim";
 			$this->eksekusi($query);
 			return $this->hasil;

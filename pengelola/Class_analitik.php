@@ -338,19 +338,19 @@ class Analitik
 		return $this->result;//untuk hasil query diatas
 	}
 
-	// ===================== Pengerjaan oleh Heronitah Yhanzyah - 1700018129 =============================//
+	// ===================== Pengerjaan oleh Heronitah Yanzyah - 1700018129 =============================//
  
 	public function Semprop_gender($gender){
 		$query = "SELECT COUNT(mahasiswa_metopen.nim) AS jum_lulus, seminar_proposal.status AS stt
 				  FROM mahasiswa_metopen JOIN seminar_proposal ON mahasiswa_metopen.nim = seminar_proposal.nim 
-				  WHERE seminar_proposal.status = 'lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender' GROUP BY seminar_proposal.status"; // query untuk menampilkan jumlah mahasiswa yang tidak lulus bedasarkan inputan jenis kelamin
+				  WHERE seminar_proposal.status = 'lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender' GROUP BY seminar_proposal.status"; // query untuk menampilkan jumlah mahasiswa yang  lulus ujian semprop bedasarkan inputan jenis kelamin
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}
 	public function Semprop_gender_tl($gender){
 		$query = "SELECT COUNT(mahasiswa_metopen.nim) AS jum_tlulus, seminar_proposal.status AS stt
 				  FROM mahasiswa_metopen JOIN seminar_proposal ON mahasiswa_metopen.nim = seminar_proposal.nim 
-				  WHERE seminar_proposal.status = 'tidak_lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender' GROUP BY seminar_proposal.status"; // query untuk menampilkan jumlah mahasiswa yang tidak lulus bedasarkan inputan jenis kelamin
+				  WHERE seminar_proposal.status = 'tidak_lulus' AND mahasiswa_metopen.jenis_kelamin = '$gender' GROUP BY seminar_proposal.status"; // query untuk menampilkan jumlah mahasiswa yang tidak lulus ujian semprop bedasarkan inputan jenis kelamin
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result; //untuk hasil query diatas
 	}

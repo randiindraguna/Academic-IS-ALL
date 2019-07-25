@@ -158,7 +158,7 @@ class Database
 		$this->eksekusi($query); //untuk mengeksekusi query diatas
 		return $this->result; //untuk mengembalikan hasil query diatas
 	}
-	//Dikerjakan oleh randi indraguna
+	//Dikerjakan oleh Eef Mekelliano
 		public function getsatuDosen($niy){
 		$query="SELECT * from dosen where niy='$niy'"; //query ini untuk menampilkan satu dosen yang dipilih
 		$this->eksekusi($query); //untuk mengeksekusi query diatas

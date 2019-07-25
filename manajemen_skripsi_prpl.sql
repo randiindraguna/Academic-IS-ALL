@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.6.5.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 24 Jul 2019 pada 17.37
--- Versi server: 10.1.35-MariaDB
--- Versi PHP: 7.2.9
+-- Generation Time: 25 Jul 2019 pada 02.42
+-- Versi Server: 10.1.21-MariaDB
+-- PHP Version: 5.6.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -446,7 +444,7 @@ INSERT INTO `mahasiswa_metopen` (`nim`, `nama`, `jenis_kelamin`, `topik`, `dosen
 ('1700018102', 'Teguh Pangestu', 'Laki-laki', 'Perancangan Aplikasi Pengelola Keuangan Pada Komputer Menggunakan Java', '60030480', 'Rekayasa Perangkat Lunak', 'metopen', '2019-04-16'),
 ('1700018103', 'Rio Subandi', 'Laki-laki', 'Perangkat Pemberi Pakan Ikan Pada Akuarium Dengan Menggunakan Mikrokontroler At328p-Au', '60090586', 'Sistem Cerdas', 'metopen', '2019-03-25'),
 ('1700018104', 'Agam Panuntas', 'Laki-laki', 'Penggunaan Gps Dan Mac Address Sebagai Location Based Service Untuk Aplikasi Mobile', '60030476', 'Rekayasa Perangkat Lunak', 'metopen', '2019-04-15'),
-('1700018105', 'Ainin Maftukhah', 'Perempuan', 'Rancang Bangun Aplikasi E-Voting Berbasis Web Service', '60110647', 'Sistem Informasi', 'metopen', '2019-06-28'),
+('1700018105', 'Ainin Maftukhah', 'Perempuan', 'Rancang Bangun Aplikasi E-Voting Berbasis Web Service', '60110647', 'Sistem Informasi', 'metopen', '2019-04-28'),
 ('1700018106', 'Brilian Anugra', 'Laki-laki', 'Pembuatan Aplikasi Pembelajaran Interaktif Tembang Macapat Berbasis Adobe Flash', '60160980', 'Media Pembelajaran', 'metopen', '2019-05-05'),
 ('1700018107', 'Okky Alwi Dwi R.', 'Perempuan', 'Komputerisasi Sistem Persediaan Obat Pada Apotik Kimia Parma', '60160952', 'Sistem Cerdas', 'metopen', '2019-01-05'),
 ('1700018108', 'Feni Sastriani', 'Perempuan', 'Rancang Bangun Aplikasi Monitoring Service Pada Server Menggunakan Sms Gateway', '60110648', 'Rekayasa Perangkat Lunak', 'metopen', '2019-02-05'),
@@ -657,26 +655,26 @@ INSERT INTO `ujian_pendadaran` (`nim`, `id_pendadaran`, `status`, `nilai_penguji
 --
 
 --
--- Indeks untuk tabel `dosen`
+-- Indexes for table `dosen`
 --
 ALTER TABLE `dosen`
   ADD PRIMARY KEY (`niy`);
 
 --
--- Indeks untuk tabel `logbook_bimbingan`
+-- Indexes for table `logbook_bimbingan`
 --
 ALTER TABLE `logbook_bimbingan`
   ADD PRIMARY KEY (`id_logbook`),
   ADD KEY `logbook_bimbingan_ibfk_1` (`id_skripsi`);
 
 --
--- Indeks untuk tabel `login`
+-- Indexes for table `login`
 --
 ALTER TABLE `login`
   ADD PRIMARY KEY (`user_name`);
 
 --
--- Indeks untuk tabel `mahasiswa_metopen`
+-- Indexes for table `mahasiswa_metopen`
 --
 ALTER TABLE `mahasiswa_metopen`
   ADD PRIMARY KEY (`nim`),
@@ -684,7 +682,7 @@ ALTER TABLE `mahasiswa_metopen`
   ADD KEY `Dosen_2` (`dosen`);
 
 --
--- Indeks untuk tabel `penguji`
+-- Indexes for table `penguji`
 --
 ALTER TABLE `penguji`
   ADD PRIMARY KEY (`id_penguji`),
@@ -692,66 +690,62 @@ ALTER TABLE `penguji`
   ADD KEY `id_jadwal` (`id_jadwal`);
 
 --
--- Indeks untuk tabel `penjadwalan`
+-- Indexes for table `penjadwalan`
 --
 ALTER TABLE `penjadwalan`
   ADD PRIMARY KEY (`id_jadwal`),
   ADD KEY `NIM` (`nim`);
 
 --
--- Indeks untuk tabel `prodi`
+-- Indexes for table `prodi`
 --
 ALTER TABLE `prodi`
   ADD PRIMARY KEY (`id_prodi`);
 
 --
--- Indeks untuk tabel `semester`
+-- Indexes for table `semester`
 --
 ALTER TABLE `semester`
   ADD PRIMARY KEY (`id_semester`);
 
 --
--- Indeks untuk tabel `seminar_proposal`
+-- Indexes for table `seminar_proposal`
 --
 ALTER TABLE `seminar_proposal`
   ADD PRIMARY KEY (`id_seminar`),
   ADD KEY `NIM` (`nim`);
 
 --
--- Indeks untuk tabel `ujian_pendadaran`
+-- Indexes for table `ujian_pendadaran`
 --
 ALTER TABLE `ujian_pendadaran`
   ADD PRIMARY KEY (`id_pendadaran`),
   ADD KEY `nim` (`nim`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `logbook_bimbingan`
+-- AUTO_INCREMENT for table `logbook_bimbingan`
 --
 ALTER TABLE `logbook_bimbingan`
   MODIFY `id_logbook` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
-
 --
--- AUTO_INCREMENT untuk tabel `penguji`
+-- AUTO_INCREMENT for table `penguji`
 --
 ALTER TABLE `penguji`
   MODIFY `id_penguji` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60822157;
-
 --
--- AUTO_INCREMENT untuk tabel `semester`
+-- AUTO_INCREMENT for table `semester`
 --
 ALTER TABLE `semester`
   MODIFY `id_semester` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
 --
--- AUTO_INCREMENT untuk tabel `seminar_proposal`
+-- AUTO_INCREMENT for table `seminar_proposal`
 --
 ALTER TABLE `seminar_proposal`
   MODIFY `id_seminar` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1700018075;
-
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
 --
@@ -792,7 +786,6 @@ ALTER TABLE `seminar_proposal`
 --
 ALTER TABLE `ujian_pendadaran`
   ADD CONSTRAINT `ujian_pendadaran_ibfk_1` FOREIGN KEY (`nim`) REFERENCES `mahasiswa_metopen` (`nim`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

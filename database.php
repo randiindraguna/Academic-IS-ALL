@@ -27,6 +27,7 @@ seperti update dan hapus serta melihat mahasiswa yang dibimbing oleh dosen terte
 Untuk penjelasan function-function diatas akan dijelaskan pada class dibawah ini.
 */
 
+
 class Database
 {
 	private $host ,$user,$pass,$database,$conn,$result; //tipe data private agar variabel hanya dapat digunakan dalam class

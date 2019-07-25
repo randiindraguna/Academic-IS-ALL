@@ -261,12 +261,14 @@
 		}
 
 		public function UpdateNilaiDanStatusPendadaran2($nim){ //sudah??
-			//Dikerjakan oleh Rizal Adijisman
+			//Dikerjakan oleh Rizal Adijisman (1700018135)
+			//fungsi ini bernama UpdateNilaiDanStatusPendadaran2
+			//fungsi ini untuk menampilkan form update nilai dan status dari data mahasiswa yg mengikuti pendadaran
 			
 			$query="SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as nama_mhs ,ujian_pendadaran.nilai_penguji_1,ujian_pendadaran.nilai_penguji_2, ujian_pendadaran.nilai_pembimbing, ujian_pendadaran.status FROM mahasiswa_metopen JOIN ujian_pendadaran ON mahasiswa_metopen.nim=ujian_pendadaran.nim and mahasiswa_metopen.nim=$nim"; //update
-			
-			$this->eksekusi($query);
-			return $this->hasil;
+			//untuk menampilkan from update berdasarkan nim yang dipilih untuk diupdate
+			$this->eksekusi($query); //untuk mengeksekusi query diatas
+			return $this->hasil; //mengembalikan hasil query diatas
 		}
 
 		

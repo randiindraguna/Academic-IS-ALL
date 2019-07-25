@@ -10,25 +10,25 @@
 	//6. 1700018137
 	//7. 1700018123
 	//8. 1700018124
-	//9.
-	//10.
-	//11.
+	//9. 1500018299
+	//10. 1400018037
 
 		//No 1. Penjelasan Class
 
 			//Pada fitur seminar prosal hanya terdapat 1 class saja, yaitu class Seminar_Proposal.
 			//class Seminar_Proposal yaitu sebuah blue print atau cetakan untuk membuat object-object yang dibutuhkan pada fitur seminar proposal
 			//pada class ini terdapat beberapa atribut atau yaitu $host, $user, $pass, $db, $hasil, $konek, $cari, $nilai, $status 
-			//terdapat 19 method/function yaitu : 
-												//function __construct(), function koneksi(), function eksekusi(), function lihatstatusmahasiswapembimbing(),
+			//terdapat 23 method/function yaitu : 
+												//function __construct(), function koneksi(), function eksekusi(), function lihatsempropmahasiswa($nim),
 												//function CariDataMahasiswaBerdasarkanNim($nim), function lihatsempropmahasiswa()
-												//function lihatsempropmahasiswa1($nim),  function LihatDataHasilInputanNilaiDanStatusSemprop($nim),
-												//function DeleteDataSemprop($nim),  function InputNilaiDanStatusSemprop($id_seminar,$nilai_proses_pembimbing,$status,$nim,$nilai_ujian_pembimbing,$nilai_ujian_penguji),
-												//function UpdateNilaiDanStatusSemprop1($nilai_proses_pembimbing,$status,$nim,$nilai_ujian_pembimbing,$nilai_ujian_penguji),
-												//function UpdateNilaiDanStatusSemprop2($nim), function LihatPengumumanNilaiDanStatusSemuaMahasiswa()
-												//function LihatPengumumanNilaiDanStatusSemuaMahasiswa(), function CariMahasiswaBerdasarkanNimPadaPengumumanHasilSemprop($nim)
-												//function UrutkanPengumumanSempropBerdasarkanNilai(), function HitungJumlahMahasiswaLulusSemprop()
-												//HitungJumlahMahasiswaTidakLulusSemprop(), function cetak($nim)
+												//function InputNilaiDanStatusSemprop($id_seminar,$nilai_proses_pembimbing,$status,$nim,$nilai_ujian_pembimbing,$nilai_ujian_penguji),  function seminarproposal($nim),
+												//function UpdateNilaiDanStatusSemprop1($nilai_proses_pembimbing,$status,$nim,$nilai_ujian_pembimbing,$nilai_ujian_penguji),  function UpdateNilaiDanStatusSemprop2($nim),
+												//function LihatTanggalUjianSemprop(),
+												//function function login($username), function LihatPengumumanNilaiDanStatusSemuaMahasiswa()
+												//function LihatPengumumanNilaiDanStatusSemuaMahasiswa(), function getDosenPenguji($id_jadwal)
+												//function DeleteDataSemprop($nim), function lihatsempropmahasiswa1($nim), function LihatDataHasilInputanNilaiDanStatusSemprop($nim)
+												//function cetak($nim), function CariMahasiswaBerdasarkanNimPadaPengumumanHasilSemprop($nim), function updatestatusmetopen($status,$nim), function UrutkanPengumumanSempropBerdasarkanNilai()
+												//function HitungJumlahMahasiswaLulusSemprop(), function HitungJumlahMahasiswaTidakLulusSemprop(), function lihatstatusmahasiswapembimbing($niy)
 		
 			
 			//pada fitur ini terdapat function yang memiliki 3 level yaitu admin,mahasiswa, dan dosen pembimbing

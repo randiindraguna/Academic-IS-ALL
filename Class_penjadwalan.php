@@ -438,9 +438,9 @@ class Penjadwalan extends Database{
 		$result=$this->getDosenJamTanggalSamaBedaRuang($niy,$jam,$ruang,$tgl); //mengambil data dosen untuk mengecek tanggal dan ruang agar tidak bentrok
 		$result=$this->hitung_row($result);//menghitung row, menampilkan data
 		if ($result>0) {
-			return false;
+			return false; // mengembalikan nilai false
 		}else{
-			return true;
+			return true; // mengembalikan nilai true
 		}
 	}
 	
@@ -545,11 +545,6 @@ class Penjadwalan extends Database{
 		$query = "SELECT 
 					DATEDIFF(CURDATE(),penjadwalan.tanggal) as lamabimbingan 
 					from penjadwalan WHERE nim = '$nim' AND jenis_ujian = 'SEMPROP'";
-				// (
-				// ((YEAR(CURDATE()) - YEAR(penjadwalan.tanggal)) *365) +
-				// ((MONTH(CURDATE()) - MONTH(penjadwalan.tanggal)) *30)+
-				// ((DAY(CURDATE()) - DAY(penjadwalan.tanggal))) 
-				// )
 		$hasil = $this->eksekusi($query);
 		return $hasil;
 	}

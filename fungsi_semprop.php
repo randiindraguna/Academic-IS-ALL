@@ -181,6 +181,8 @@
 			
 			$this->eksekusi($query);
 			return $this->hasil;
+				//Untuk mengeksekusi query dengan menggunakan $this->eksekusi($query);
+				//Untuk pengembalian fungsi query dengan menggunakan return $this->hasil;
 						
 		}
 

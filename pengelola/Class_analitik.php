@@ -292,30 +292,30 @@ class Analitik
 	// ===================== Pengerjaan oleh Laifatul Mujahidah - 1700018159 =============================//
 
 	public function nama_prodi(){
-		$query = "SELECT * FROM prodi";
-		$this->eksekusi($query);
-		return $this->result;
+		$query = "SELECT * FROM prodi";//untuk menampilkan nama prodi pada tabel prodi
+		$this->eksekusi($query);//untuk mengeksekusi query diatas
+		return $this->result;//untuk hasil query diatas
 	}
 	public function lulus_semprop_prodi($stt){
 		$query = "SELECT COUNT(seminar_proposal.nim) AS jumlah_mhs, prodi.nama_prodi 
 				  FROM seminar_proposal JOIN prodi ON prodi.id_prodi = SUBSTRING(seminar_proposal.nim, 6, 2) 
 				  WHERE seminar_proposal.status = '$stt'
-				  GROUP BY prodi.nama_prodi ORDER BY jumlah_mhs ASC";
-		$this->eksekusi($query);
-		return $this->result;
+				  GROUP BY prodi.nama_prodi ORDER BY jumlah_mhs ASC";//untuk menampilkan jumlah kelulusan semprop tiap prodi pada tabel kelulusan semprop
+		$this->eksekusi($query);//untuk mengeksekusi query diatas
+		return $this->result;//untuk hasil query diatas
 	}
 
 	public function lulus_undaran_prodi($id,$stt){
 		$query = "SELECT COUNT(ujian_pendadaran.nim) AS jumlah_mhs, prodi.nama_prodi 
 				  FROM ujian_pendadaran JOIN prodi ON prodi.id_prodi = SUBSTRING(ujian_pendadaran.nim, 6, 2) 
-				  WHERE prodi.id_prodi = '$id' AND ujian_pendadaran.status = '$stt'";
-		$this->eksekusi($query);
-		return $this->result;
+				  WHERE prodi.id_prodi = '$id' AND ujian_pendadaran.status = '$stt'";//untuk menampilkan jumlah kelulusan ujian pendadaran prodi pada tabel kelulusan undaran
+		$this->eksekusi($query);//untuk mengeksekusi query diatas
+		return $this->result;//untuk hasil query diatas
 	}
 
-	public function konversi($nilai_1, $nilai_2, $nilai_3){
-		$total = ($nilai_1 + $nilai_2 + $nilai_3);
-		$rerata = ($total/3);
+	public function konversi($nilai_1, $nilai_2, $nilai_3){//untuk mengkonversi nilai kelulusan mahasiswa dari angka ke huruf
+		$total = ($nilai_1 + $nilai_2 + $nilai_3);//untuk menampilkan jumlah keseluruhan nilai
+		$rerata = ($total/3);//untuk menampilkan rata-rata keseluruhan nilai
 			if ($rerata >=80){
 				return 'A';
 	        }elseif (($rerata <80) && ($rerata >=60)) {
@@ -332,15 +332,15 @@ class Analitik
 	}
 
 	public function get_Profil($usr){
-			$query = "SELECT * FROM `login` WHERE user_name = '$usr'";
-			$this->eksekusi($query);
-			return $this->result;
+			$query = "SELECT * FROM `login` WHERE user_name = '$usr'";//untuk menampilkan semua tabel,dengan syarat  ussernamenya sesuai masukan user
+			$this->eksekusi($query);//untuk mengeksekusi query diatas
+			return $this->result;//untuk hasil query diatas
 	}
 
 	public function getDataDsn($niy){
-		$query = "SELECT * FROM dosen WHERE niy = '$niy'";
-		$this->eksekusi($query);
-		return $this->result;
+		$query = "SELECT * FROM dosen WHERE niy = '$niy'";//untuk menampilkan jumlah data dosen pada tabel dosen
+		$this->eksekusi($query);//untuk mengeksekusi query diatas
+		return $this->result;//untuk hasil query diatas
 	}
 
 	// ===================== Pengerjaan oleh Heronitah Yhanzyah - 1700018129 =============================//

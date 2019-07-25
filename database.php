@@ -72,7 +72,7 @@ class Database
 		$this->eksekusi($query); //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
-	//Dibuat oleh aurelia gofarawati
+	//Dibuat oleh Aurelia Gofarawati 1700018170
 	public function getJumlahDosen(){ //fungsi yang digunakan untuk mengambil jumlah dosen
 		$query="SELECT COUNT(niy) as jumlah_dosen FROM dosen"; //query untuk mengmbil jumlah dosen berdasarkan niy
 		$this->eksekusi($query); //mengeksekusi query diatas

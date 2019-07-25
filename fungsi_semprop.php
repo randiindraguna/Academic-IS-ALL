@@ -69,23 +69,6 @@
 			$this->hasil = mysqli_query($this->konek, $query);
 		}
 
-		public function lihatstatusmahasiswapembimbing($niy){
-			
-			$query = "SELECT  mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, seminar_proposal.status from mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join seminar_proposal on mahasiswa_metopen.nim=seminar_proposal.nim where dosen.niy=$niy";
-
-			$this->eksekusi($query);
-			return $this->hasil;
-		}
-
-
-
-
-
-
-
-
-
-
 //FUNGSI ADITYA ANGGA RAMADHAN
 
 		//UTS & UAS No 2. Penjelasan Function
@@ -200,9 +183,15 @@
 
 		public function login($username){
 			//dikerjakan oleh satria gradienta
+
+			//Query untuk login dengan nama user
+			//jika user benar maka login akan berhasil
+			//menselect semua dari login where usern_name dengan yang yang di tunjuk username
 			$query = "SELECT * from login where user_name=$username";
 			$this->eksekusi($query);
 			return $this->hasil;
+				//Untuk mengeksekusi query dengan menggunakan $this->eksekusi($query);
+				//Untuk pengembalian fungsi query dengan menggunakan return $this->hasil;
 		}
 
 
@@ -226,9 +215,15 @@
 		}
 
 		public function getDosenPenguji($id_jadwal)
-		//dikerjakan siti ishari
+		//dikerjakan siti issari sabhati (1700018137)
+		//dikerjakan siti issari Sabhati (1700018137)
+		//UTS / UAS NO.2
+		//fungsi ini digunakan untuk menampilkan dosen penguji nerdasarkan id jadwal mahasiswa
+
 		{
 			$query = "SELECT dosen.nama as nama_dosen, dosen.niy from dosen join penguji on dosen.niy = penguji.niy where penguji.id_jadwal = '$id_jadwal'";
+			//Menampilkan Nama dosen dari tabel dosen , Niy dari tabel dosen , lalu digabungkan dengan tabel penguji dan dicocokkan antara Niy dosen dengan Niy penguji dengan menginputkan id_jadwal mahasiswa dan akan menampilkan dosen pengui berdasarkan id_jadwal.
+		
 			$this->eksekusi($query);
 			return $this->hasil;
 			
@@ -350,6 +345,15 @@
 			$this->eksekusi($query);
 			return $this->hasil;
 
+		}
+
+//FUNGSI ???
+		public function lihatstatusmahasiswapembimbing($niy){
+			
+			$query = "SELECT  mahasiswa_metopen.nim, mahasiswa_metopen.nama as nama_mhs, seminar_proposal.status from mahasiswa_metopen join dosen on mahasiswa_metopen.dosen=dosen.niy join seminar_proposal on mahasiswa_metopen.nim=seminar_proposal.nim where dosen.niy=$niy";
+
+			$this->eksekusi($query);
+			return $this->hasil;
 		}
 
 		

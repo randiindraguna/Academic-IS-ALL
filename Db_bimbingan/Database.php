@@ -184,24 +184,34 @@
 		// 	return $this->result; // menembalikan nilai dari hasil eksekusi fungsi eksekusi(); yang di taruh di variabel $result
 		// }
 
-		// nofand 1700018152
-		// fungsi ini menampilkan data nama, nim, dan nama dosen pembimbing di header log bimbingan 
+		
 		public function getHeaderLogbimbingan($nim)
 		{
+			// Nofand Adlil M || 1700018152
+			// fungsi ini menampilkan data nama, nim, dan nama dosen pembimbing di header log bimbingan 
+			// penjelasan : menampilkan nama mahasiswa, nim mahasiswa dan nama dosen pembimbing yang nantinya di program di gunakan untuk header daftar log bimbingan di fitur mahasiswa
+
 			$query = "SELECT mahasiswa_metopen.nama as nama, mahasiswa_metopen.nim as nim, dosen.nama as namdos, dosen.niy as niy FROM mahasiswa_metopen join dosen on mahasiswa_metopen.dosen = dosen.niy and mahasiswa_metopen.nim = $nim";
-			// menampilkan nama mahasiswa, nim mahasiswa dan nama dosen pembimbing 
-			// yang nantinya di program di gunakan untuk header daftar log bimbingan
 			$this->eksekusi($query); // untuk mengeksekusi query sql di atas pada fungsi eksekusi yang ada pada class Database();
 			return $this->result; // menembalikan nilai dari hasil eksekusi fungsi eksekusi(); yang di taruh di variabel $result
 		}
-
 		public function getHeaderDosen($niy)
 		{
+			// Nofand Adlil M || 1700018152
+			// penjelasan : menampilkan nama dosen, niy dosen dan bidang minat yang nantinya di program di gunakan untuk header daftar log bimbingan di fitur dosen
+
 			$query = "SELECT * from dosen where dosen.niy = $niy";
-			// menampilkan nama mahasiswa, nim mahasiswa dan nama dosen pembimbing 
-			// yang nantinya di program di gunakan untuk header daftar log bimbingan
 			$this->eksekusi($query); // untuk mengeksekusi query sql di atas pada fungsi eksekusi yang ada pada class Database();
 			return $this->result; // menembalikan nilai dari hasil eksekusi fungsi eksekusi(); yang di taruh di variabel $result
+		}
+		public function mengurutkan_mahasiswa_berdasarkan_nim($dosen) // tambah parameter jika di perlukan
+		{
+			// Nofand Adlil M || 1700018152
+			// penjelsan : // query untuk mengurutkan data berdasarkan nim mahasiswa dari yang terkecil (asc)
+
+			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as status_mahasiswa,DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) as lamabimbingan, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ORDER BY mahasiswa_metopen.nim asc";
+			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
+			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
 
 		// danu 1700018168
@@ -261,14 +271,7 @@
 			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
 		}
 
-		public function mengurutkan_mahasiswa_berdasarkan_nim($dosen) // tambah parameter jika di perlukan
-		{
-			//punya nopan
-			$query = "SELECT mahasiswa_metopen.nim as nim, mahasiswa_metopen.nama as name, dosen.nama as namdos, mahasiswa_metopen.topik as judul ,mahasiswa_metopen.status as status_mahasiswa,DATEDIFF(CURDATE(),mahasiswa_metopen.tanggal_mulai) as lamabimbingan, COUNT(logbook_bimbingan.id_skripsi) AS jumlah_bimbingan FROM logbook_bimbingan right JOIN mahasiswa_metopen on mahasiswa_metopen.nim = logbook_bimbingan.id_skripsi join dosen on dosen.niy = mahasiswa_metopen.Dosen and dosen.niy=$dosen GROUP BY mahasiswa_metopen.nim HAVING COUNT(mahasiswa_metopen.nim)>=0 ORDER BY mahasiswa_metopen.nim asc";
-			// query untuk mengurutkan data berdasarkan nim mahasiswa dari yang terkecil 
-			$this->eksekusi($query); //untuk mengeksekusi query sql diatas yang telah dibuat
-			return $this->result; //untuk mengembalikan hasil eksekusi fungsi ini
-		}
+		
 
 		public function confert_hari($day){
 			// punya dendi

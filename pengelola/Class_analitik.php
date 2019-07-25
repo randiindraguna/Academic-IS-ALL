@@ -277,16 +277,16 @@ class Analitik
 	}
 
 	public function getData_skripsi(){
-		$query = "SELECT COUNT(nim) AS jml_skripsi FROM mahasiswa_metopen WHERE status = 'skripsi'";
-		$this->eksekusi($query);
-		return $this->result;
+		$query = "SELECT COUNT(nim) AS jml_skripsi FROM mahasiswa_metopen WHERE status = 'skripsi'"; //untuk menampilkan jumlah skripsi dari tabel metopen
+		$this->eksekusi($query); //untuk mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
 	}
 
 	public function getJumMhs($niy){
 		$query = "SELECT dosen.nama, COUNT(mahasiswa_metopen.nim) AS jum_mhs 
-				  FROM dosen JOIN mahasiswa_metopen ON dosen.niy = mahasiswa_metopen.dosen AND dosen.niy = '$niy'";
-		$this->eksekusi($query);
-		return $this->result;
+				  FROM dosen JOIN mahasiswa_metopen ON dosen.niy = mahasiswa_metopen.dosen AND dosen.niy = '$niy'"; //untuk menampilkan jumlah mahasiswa bimbingan tiap dosen
+		$this->eksekusi($query); //untuk mengeksekusi query diatas
+		return $this->result; //untuk hasil query diatas
 	}
 
 	// ===================== Pengerjaan oleh Laifatul Mujahidah - 1700018159 =============================//

@@ -108,16 +108,16 @@ class Analitik
 		return $this->result; //mengembalikan hasil query diatas
 	}
 
-	public function getData_metopen(){
-		$query = "SELECT COUNT(nim) AS jml_metopen FROM mahasiswa_metopen WHERE status = 'metopen'";
-		$this->eksekusi($query);
-		return $this->result;
+	public function getData_metopen(){ //fungsi untuk mendapatkan data mahasiswa metopen
+		$query = "SELECT COUNT(nim) AS jml_metopen FROM mahasiswa_metopen WHERE status = 'metopen'"; //query untuk menghitung jumlah mahasiswa dengan status metopen
+		$this->eksekusi($query); //mengeksekusi query diatas
+		return $this->result; //mengembalikan hasil query diatas
 	}
 
-	public function getDataMhs($nim){
-		$query = "SELECT * FROM mahasiswa_metopen WHERE nim = '$nim'";
-		$this->eksekusi($query);
-		return $this->result;
+	public function getDataMhs($nim){ //fungsi untuk mendapatkan data mahasiswa
+		$query = "SELECT * FROM mahasiswa_metopen WHERE nim = '$nim'"; //query untuk mengambil data mahasiswa tertentu
+		$this->eksekusi($query); //mengeksekusi query diatas
+		return $this->result; //mengembalikan hasil query diatas
 	}
 	// ===================== Pengerjaan oleh Ricco Yhandy Fernando - 1700018154 =============================//	
 

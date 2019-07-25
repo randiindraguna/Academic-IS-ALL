@@ -194,6 +194,16 @@ class Analitik
 		$this->eksekusi($query);  //mengeksekusi query diatas
 		return $this->result;  //mengembalikan hasil dari query diatas
 	}
+		public function getcek_nilai_undaran(){
+		$query="SELECT tempat from penjadwalan WHERE jenis_ujian='UNDARAN'";
+		$this->eksekusi($query);
+		return $this->result; 
+	}
+	public function getcek_nilai_semprop(){
+		$query="SELECT tempat from penjadwalan WHERE jenis_ujian='SEMPROP'";
+		$this->eksekusi($query);
+		return $this->result; 
+	}
 	// ===================== Pengerjaan oleh Tiara Anggraini Ghaib - 1700018175 =============================//
 
 	public function tanggal_undaran($tgl){

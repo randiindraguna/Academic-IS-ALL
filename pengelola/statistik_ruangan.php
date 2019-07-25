@@ -76,7 +76,11 @@ if($_SESSION['status'] == "login"){
         <canvas id="myChart"></canvas>
         </div>
 
-
+<?php 
+$h1=$akses->getcek_nilai_semprop();
+$hasil=mysqli_num_rows($h1);
+if ($hasil>0) {
+ ?>
     <script>
         var ctx = document.getElementById("myChart").getContext('2d');
         var myChart = new Chart(ctx, {
@@ -123,6 +127,15 @@ if($_SESSION['status'] == "login"){
             }
         });
     </script>
+    <?php 
+        }else{
+            ?>
+            <script type="text/javascript">
+                    alert('Ruangan untuk Seminar Proposal masih Kosong');
+                    history.back(self);
+                </script>
+       <?php }
+     ?>
             <!--Grafik--></br>
  <div class="row">
     <div class="col-sm-4" style=""></div>

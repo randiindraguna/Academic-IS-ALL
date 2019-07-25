@@ -75,7 +75,12 @@ if($_SESSION['status'] == "login"){
        <div style="width: 800px;margin: 0px auto;">
         <canvas id="myChart"></canvas>
         </div>
+<?php 
 
+$h1=$akses->getcek_nilai_undaran();
+$hasil=mysqli_num_rows($h1);
+if ($hasil>0) {
+ ?>
 
     <script>
         var ctx = document.getElementById("myChart").getContext('2d');
@@ -123,6 +128,16 @@ if($_SESSION['status'] == "login"){
             }
         });
     </script>
+
+    <?php 
+        }else{
+            ?>
+            <script type="text/javascript">
+                    alert('Ruangan untuk Ujian Pendadaran masih Kosong');
+                    history.back(self);
+                </script>
+       <?php }
+     ?>
             <!--Grafik--></br>
  <div class="row">
     <div class="col-sm-4" style=""><button class="btn-primary"><a href="statistik_ruangan.php" class="previous">&laquo; Previous</a></div>

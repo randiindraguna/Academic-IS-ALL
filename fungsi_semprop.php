@@ -183,9 +183,15 @@
 
 		public function login($username){
 			//dikerjakan oleh satria gradienta
+
+			//Query untuk login dengan nama user
+			//jika user benar maka login akan berhasil
+			//menselect semua dari login where usern_name dengan yang yang di tunjuk username
 			$query = "SELECT * from login where user_name=$username";
 			$this->eksekusi($query);
 			return $this->hasil;
+				//Untuk mengeksekusi query dengan menggunakan $this->eksekusi($query);
+				//Untuk pengembalian fungsi query dengan menggunakan return $this->hasil;
 		}
 
 

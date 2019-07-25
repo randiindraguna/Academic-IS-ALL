@@ -24,7 +24,7 @@ include '../templates/header_penjadwalan.php';
 <html lang="en">
   <head>
     <?php 
-    include '../templates/navbar_mhs.html';
+    include '../templates/navbar_dosen.html';
     ?>
     <!-- Required meta tags -->
     <meta charset="utf-8">

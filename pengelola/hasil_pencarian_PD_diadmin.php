@@ -134,20 +134,7 @@ if($_SESSION['status'] == "login"){
   ";
   # code...
 
-                        foreach($akses->getDosenPenguji1($key['id_jadwal']) as $data1){
-                          echo "
-                 
-                          <input name='penguji' value='$data1[nama_dosen]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
-                         
-                          ";
-                        }
-                        foreach($akses->getDosenPenguji2($key['id_jadwal']) as $data1){
-                          echo "
-                          <label for='formGroupExampleInput'>PENGUJI 2 </label>
-                          <input name='penguji' value='$data1[nama_dosen]' type='text' readonly class='form-control' id='formGroupExampleInput' placeholder='Example input'>
-                         
-                          ";
-                        }
+                       
 
                         echo "
  
